@@ -29,10 +29,10 @@ __mu0_overload__ mu0_fp32_t  mu8_acos (const mu0_fp32_t  __x) { return mu8_acos_
 __mu0_overload__ mu0_fp16_t  mu8_acos (const mu0_fp16_t  __x) { return mu8_acos_fp16  (__x); }
 #	elif MU0_HAVE_GENERIC
 #	define mu8_acos(__x) __mu0_generic__(__x \
-	, mu0_fp128_t : mu8_acos_fp128    \
-	, mu0_fp64_t  : mu8_acos_fp64     \
-	, mu0_fp32_t  : mu8_acos_fp32     \
-	, mu0_fp16_t  : mu8_acos_fp16     \
+	, mu0_fp128_t : mu8_acos_fp128           \
+	, mu0_fp64_t  : mu8_acos_fp64            \
+	, mu0_fp32_t  : mu8_acos_fp32            \
+	, mu0_fp16_t  : mu8_acos_fp16            \
 ) (__x)
 #	elif MU0_HAVE_TYPEOF
 #	define mu8_acos(__x) mu8_cast(__mu0_typeof__(__x),                                           \
@@ -61,10 +61,10 @@ __mu0_overload__ mu0_fp32_t  mu8_acosh (const mu0_fp32_t  __x) { return mu8_acos
 __mu0_overload__ mu0_fp16_t  mu8_acosh (const mu0_fp16_t  __x) { return mu8_acosh_fp16  (__x); }
 #	elif MU0_HAVE_GENERIC
 #	define mu8_acosh(__x) __mu0_generic__(__x \
-	, mu0_fp128_t : mu8_acosh_fp128    \
-	, mu0_fp64_t  : mu8_acosh_fp64     \
-	, mu0_fp32_t  : mu8_acosh_fp32     \
-	, mu0_fp16_t  : mu8_acosh_fp16     \
+	, mu0_fp128_t : mu8_acosh_fp128           \
+	, mu0_fp64_t  : mu8_acosh_fp64            \
+	, mu0_fp32_t  : mu8_acosh_fp32            \
+	, mu0_fp16_t  : mu8_acosh_fp16            \
 ) (__x)
 #	elif MU0_HAVE_TYPEOF
 #	define mu8_acosh(__x) mu8_cast(__mu0_typeof__(__x),                                           \
@@ -93,10 +93,10 @@ __mu0_overload__ mu0_fp32_t  mu8_asin (const mu0_fp32_t  __x) { return mu8_asin_
 __mu0_overload__ mu0_fp16_t  mu8_asin (const mu0_fp16_t  __x) { return mu8_asin_fp16  (__x); }
 #	elif MU0_HAVE_GENERIC
 #	define mu8_asin(__x) __mu0_generic__(__x \
-	, mu0_fp128_t : mu8_asin_fp128    \
-	, mu0_fp64_t  : mu8_asin_fp64     \
-	, mu0_fp32_t  : mu8_asin_fp32     \
-	, mu0_fp16_t  : mu8_asin_fp16     \
+	, mu0_fp128_t : mu8_asin_fp128           \
+	, mu0_fp64_t  : mu8_asin_fp64            \
+	, mu0_fp32_t  : mu8_asin_fp32            \
+	, mu0_fp16_t  : mu8_asin_fp16            \
 ) (__x)
 #	elif MU0_HAVE_TYPEOF
 #	define mu8_asin(__x) mu8_cast(__mu0_typeof__(__x),                                           \
@@ -125,10 +125,10 @@ __mu0_overload__ mu0_fp32_t  mu8_asinh (const mu0_fp32_t  __x) { return mu8_asin
 __mu0_overload__ mu0_fp16_t  mu8_asinh (const mu0_fp16_t  __x) { return mu8_asinh_fp16  (__x); }
 #	elif MU0_HAVE_GENERIC
 #	define mu8_asinh(__x) __mu0_generic__(__x \
-	, mu0_fp128_t : mu8_asinh_fp128    \
-	, mu0_fp64_t  : mu8_asinh_fp64     \
-	, mu0_fp32_t  : mu8_asinh_fp32     \
-	, mu0_fp16_t  : mu8_asinh_fp16     \
+	, mu0_fp128_t : mu8_asinh_fp128           \
+	, mu0_fp64_t  : mu8_asinh_fp64            \
+	, mu0_fp32_t  : mu8_asinh_fp32            \
+	, mu0_fp16_t  : mu8_asinh_fp16            \
 ) (__x)
 #	elif MU0_HAVE_TYPEOF
 #	define mu8_asinh(__x) mu8_cast(__mu0_typeof__(__x),                                           \
@@ -157,10 +157,10 @@ __mu0_overload__ mu0_fp32_t  mu8_atan (const mu0_fp32_t  __x) { return mu8_atan_
 __mu0_overload__ mu0_fp16_t  mu8_atan (const mu0_fp16_t  __x) { return mu8_atan_fp16  (__x); }
 #	elif MU0_HAVE_GENERIC
 #	define mu8_atan(__x) __mu0_generic__(__x \
-	, mu0_fp128_t : mu8_atan_fp128    \
-	, mu0_fp64_t  : mu8_atan_fp64     \
-	, mu0_fp32_t  : mu8_atan_fp32     \
-	, mu0_fp16_t  : mu8_atan_fp16     \
+	, mu0_fp128_t : mu8_atan_fp128           \
+	, mu0_fp64_t  : mu8_atan_fp64            \
+	, mu0_fp32_t  : mu8_atan_fp32            \
+	, mu0_fp16_t  : mu8_atan_fp16            \
 ) (__x)
 #	elif MU0_HAVE_TYPEOF
 #	define mu8_atan(__x) mu8_cast(__mu0_typeof__(__x),                                           \
@@ -189,10 +189,10 @@ __mu0_overload__ mu0_fp32_t  mu8_atan2 (const mu0_fp32_t  __y, const mu0_fp32_t 
 __mu0_overload__ mu0_fp16_t  mu8_atan2 (const mu0_fp16_t  __y, const mu0_fp16_t  __x) { return mu8_atan2_fp16  (__y, __x); }
 #	elif MU0_HAVE_GENERIC
 #	define mu8_atan2(__y, __x) __mu0_generic__((__y)+(__x) \
-	, mu0_fp128_t : mu8_atan2_fp128                 \
-	, mu0_fp64_t  : mu8_atan2_fp64                  \
-	, mu0_fp32_t  : mu8_atan2_fp32                  \
-	, mu0_fp16_t  : mu8_atan2_fp16                  \
+	, mu0_fp128_t : mu8_atan2_fp128                        \
+	, mu0_fp64_t  : mu8_atan2_fp64                         \
+	, mu0_fp32_t  : mu8_atan2_fp32                         \
+	, mu0_fp16_t  : mu8_atan2_fp16                         \
 ) (__y, __x)
 #	elif MU0_HAVE_TYPEOF
 #	define mu8_atan2(__y, __x) mu8_cast(__mu0_typeof__(__y),                                                                                   \
@@ -221,10 +221,10 @@ __mu0_overload__ mu0_fp32_t  mu8_atanh (const mu0_fp32_t  __x) { return mu8_atan
 __mu0_overload__ mu0_fp16_t  mu8_atanh (const mu0_fp16_t  __x) { return mu8_atanh_fp16  (__x); }
 #	elif MU0_HAVE_GENERIC
 #	define mu8_atanh(__x) __mu0_generic__(__x \
-	, mu0_fp128_t : mu8_atanh_fp128    \
-	, mu0_fp64_t  : mu8_atanh_fp64     \
-	, mu0_fp32_t  : mu8_atanh_fp32     \
-	, mu0_fp16_t  : mu8_atanh_fp16     \
+	, mu0_fp128_t : mu8_atanh_fp128           \
+	, mu0_fp64_t  : mu8_atanh_fp64            \
+	, mu0_fp32_t  : mu8_atanh_fp32            \
+	, mu0_fp16_t  : mu8_atanh_fp16            \
 ) (__x)
 #	elif MU0_HAVE_TYPEOF
 #	define mu8_atanh(__x) mu8_cast(__mu0_typeof__(__x),                                           \
