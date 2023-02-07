@@ -1,0 +1,40 @@
+//
+// # -*- coding: utf-8, tab-width: 3 -*-
+
+//                                                           ___                                            //
+//                                                          /   \                                           //
+//                                            _   _  _   _  \ O /                                           //
+//                                           | | | || | | | / _ \                                           //
+//                                           | |_| || |_| |( (_) )                                          //
+//                                           | ._,_| \___/  \___/                                           //
+//                                           | |                                                            //
+//                                           |_|                                                            //
+
+// mu8_acosh.h
+//
+// Copyright (C) 2023 mu578. All rights reserved.
+//
+
+#include <mu8/mu8_math.h>
+
+mu8_fp128_t mu8_acosh_fp128 (const mu8_fp128_t x)
+{
+	return mu8_fp128(0);
+}
+
+mu8_fp64_t  mu8_acosh_fp64  (const mu8_fp64_t  x)
+{
+	return mu8_fp64(0);
+}
+
+mu8_fp32_t  mu8_acosh_fp32  (const mu8_fp32_t  x)
+{
+	return mu8_fp32(0);
+}
+
+mu8_fp16_t  mu8_acosh_fp16  (const mu8_fp16_t  x)
+{
+	return mu8_fp16(0);
+}
+
+/* EOF */
