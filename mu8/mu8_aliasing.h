@@ -20,7 +20,7 @@
 #ifndef MU8_ALIASING_H
 #define MU8_ALIASING_H 1
 
-MU8_BEGIN_CDECL
+MU0_BEGIN_CDECL
 
 #	define mu8_aliasing(_Tp, __alias) __alias ## _Tp
 
@@ -31,25 +31,25 @@ MU8_BEGIN_CDECL
 		return __unary_fn(x);                     \
 	} enum { /***/ }
 
-mu8_alias1(mu8_fp128_t, mu8_alias_acos, mu8_acos_fp128);
-mu8_alias1(mu8_fp64_t , mu8_alias_acos, mu8_acos_fp64 );
-mu8_alias1(mu8_fp32_t , mu8_alias_acos, mu8_acos_fp32 );
-mu8_alias1(mu8_fp16_t , mu8_alias_acos, mu8_acos_fp16 );
+mu8_alias1(mu0_fp128_t, mu8_alias_acos, mu8_acos_fp128);
+mu8_alias1(mu0_fp64_t , mu8_alias_acos, mu8_acos_fp64 );
+mu8_alias1(mu0_fp32_t , mu8_alias_acos, mu8_acos_fp32 );
+mu8_alias1(mu0_fp16_t , mu8_alias_acos, mu8_acos_fp16 );
 
-mu8_alias1(mu8_fp128_t, mu8_alias_acosh, mu8_acosh_fp128);
-mu8_alias1(mu8_fp64_t , mu8_alias_acosh, mu8_acosh_fp64 );
-mu8_alias1(mu8_fp32_t , mu8_alias_acosh, mu8_acosh_fp32 );
-mu8_alias1(mu8_fp16_t , mu8_alias_acosh, mu8_acosh_fp16 );
+mu8_alias1(mu0_fp128_t, mu8_alias_acosh, mu8_acosh_fp128);
+mu8_alias1(mu0_fp64_t , mu8_alias_acosh, mu8_acosh_fp64 );
+mu8_alias1(mu0_fp32_t , mu8_alias_acosh, mu8_acosh_fp32 );
+mu8_alias1(mu0_fp16_t , mu8_alias_acosh, mu8_acosh_fp16 );
 
-mu8_alias1(mu8_fp128_t, mu8_alias_asin, mu8_asin_fp128);
-mu8_alias1(mu8_fp64_t , mu8_alias_asin, mu8_asin_fp64 );
-mu8_alias1(mu8_fp32_t , mu8_alias_asin, mu8_asin_fp32 );
-mu8_alias1(mu8_fp16_t , mu8_alias_asin, mu8_asin_fp16 );
+mu8_alias1(mu0_fp128_t, mu8_alias_asin, mu8_asin_fp128);
+mu8_alias1(mu0_fp64_t , mu8_alias_asin, mu8_asin_fp64 );
+mu8_alias1(mu0_fp32_t , mu8_alias_asin, mu8_asin_fp32 );
+mu8_alias1(mu0_fp16_t , mu8_alias_asin, mu8_asin_fp16 );
 
-mu8_alias1(mu8_fp128_t, mu8_alias_asinh, mu8_asinh_fp128);
-mu8_alias1(mu8_fp64_t , mu8_alias_asinh, mu8_asinh_fp64 );
-mu8_alias1(mu8_fp32_t , mu8_alias_asinh, mu8_asinh_fp32 );
-mu8_alias1(mu8_fp16_t , mu8_alias_asinh, mu8_asinh_fp16 );
+mu8_alias1(mu0_fp128_t, mu8_alias_asinh, mu8_asinh_fp128);
+mu8_alias1(mu0_fp64_t , mu8_alias_asinh, mu8_asinh_fp64 );
+mu8_alias1(mu0_fp32_t , mu8_alias_asinh, mu8_asinh_fp32 );
+mu8_alias1(mu0_fp16_t , mu8_alias_asinh, mu8_asinh_fp16 );
 
 #	define mu8_alias_acos(_Tp, __x) \
 	mu8_aliasing(_Tp, mu8_alias_acos)(__x)
@@ -63,7 +63,7 @@ mu8_alias1(mu8_fp16_t , mu8_alias_asinh, mu8_asinh_fp16 );
 #	define mu8_alias_asinh(_Tp, __x) \
 	mu8_aliasing(_Tp, mu8_alias_asinh)(__x)
 
-MU8_END_CDECL
+MU0_END_CDECL
 
 #endif /* !MU8_ALIASING_H */
 

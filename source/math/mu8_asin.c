@@ -17,24 +17,24 @@
 
 #include <mu8/mu8_math.h>
 
-mu8_fp128_t mu8_asin_fp128 (const mu8_fp128_t x)
+mu0_fp128_t mu8_asin_fp128 (const mu0_fp128_t x)
 {
-	return mu8_fp128(0);
+	return mu0_fp128(0);
 }
 
-mu8_fp64_t  mu8_asin_fp64  (const mu8_fp64_t  x)
+mu0_fp64_t  mu8_asin_fp64  (const mu0_fp64_t  x)
 {
-	return mu8_fp64(0);
+	return mu0_fp64(0);
 }
 
-mu8_fp32_t  mu8_asin_fp32  (const mu8_fp32_t  x)
+mu0_fp32_t  mu8_asin_fp32  (const mu0_fp32_t  x)
 {
-	return mu8_fp32(0);
+	return mu0_fp32(0);
 }
 
-mu8_fp16_t  mu8_asin_fp16  (const mu8_fp16_t  x)
+mu0_fp16_t  mu8_asin_fp16  (const mu0_fp16_t  x)
 {
-	return mu8_fp16(0);
+	return mu0_fp16(0);
 }
 
 /* EOF */
