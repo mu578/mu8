@@ -5,7 +5,6 @@
       "locale": "cpp",
       "random": "cpp",
       "chrono": "cpp",
-      "mu8_floating_point.h": "c"
    },
    "C_Cpp.errorSquiggles": "disabled",
    "C_Cpp.default.includePath": [
