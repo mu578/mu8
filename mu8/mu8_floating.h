@@ -20,19 +20,19 @@
 #ifndef MU8_FLOATING_H
 #define MU8_FLOATING_H 1
 
-#	undef  M8_USE_FLOAT128
-#	undef  M8_HAVE_FLOAT128
+#	undef  MU8_USE_FLOAT128
+#	undef  MU8_HAVE_FLOAT128
 
-#	undef  M8_USE_FLOAT16
-#	undef  M8_HAVE_FLOAT16
+#	undef  MU8_USE_FLOAT16
+#	undef  MU8_HAVE_FLOAT16
 
-#	define M8_USE_FLOAT128  1
-#	define M8_HAVE_FLOAT128 0
+#	define MU8_USE_FLOAT128  1
+#	define MU8_HAVE_FLOAT128 0
 
-#	define M8_USE_FLOAT16   1
-#	define M8_HAVE_FLOAT16  0
+#	define MU8_USE_FLOAT16   1
+#	define MU8_HAVE_FLOAT16  0
 
-#	if M8_USE_FLOAT16
+#	if MU8_USE_FLOAT16
 #		undef  __STDC_WANT_IEC_60559_TYPES_EXT__
 #		define __STDC_WANT_IEC_60559_TYPES_EXT__ 1
 #	endif
@@ -44,16 +44,16 @@ MU8_BEGIN_CDECL
 
 typedef long double            mu8_fpex_t;
 
-#	if M8_USE_FLOAT128
-#	if M8_HAVE_CC_CLANG
+#	if MU8_USE_FLOAT128
+#	if MU8_HAVE_CC_CLANG
 #		if !__is_identifier(_Float128)
-#			undef  M8_HAVE_FLOAT128
-#			define M8_HAVE_FLOAT128 1
+#			undef  MU8_HAVE_FLOAT128
+#			define MU8_HAVE_FLOAT128 1
 			__extension__
 			typedef _Float128     mu8_fp128_t;
 #		elif !__is_identifier(__float128)
-#			undef  M8_HAVE_FLOAT128
-#			define M8_HAVE_FLOAT128 1
+#			undef  MU8_HAVE_FLOAT128
+#			define MU8_HAVE_FLOAT128 1
 			__extension__
 			typedef __float128    mu8_fp128_t;
 #		else
@@ -69,16 +69,16 @@ typedef double                 mu8_fp128_t;
 typedef double                 mu8_fp64_t;
 typedef float                  mu8_fp32_t;
 
-#	if M8_USE_FLOAT16
-#	if M8_HAVE_CC_CLANG
+#	if MU8_USE_FLOAT16
+#	if MU8_HAVE_CC_CLANG
 #		if !__is_identifier(_Float16)
-#			undef  M8_HAVE_FLOAT16
-#			define M8_HAVE_FLOAT16 1
+#			undef  MU8_HAVE_FLOAT16
+#			define MU8_HAVE_FLOAT16 1
 			__extension__
 			typedef _Float16      mu8_fp16_t;
 #		elif !__is_identifier(__fp16)
-#			undef  M8_HAVE_FLOAT16
-#			define M8_HAVE_FLOAT16 1
+#			undef  MU8_HAVE_FLOAT16
+#			define MU8_HAVE_FLOAT16 1
 			__extension__
 			typedef __fp16        mu8_fp16_t;
 #		else

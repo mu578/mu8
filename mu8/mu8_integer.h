@@ -20,11 +20,11 @@
 #ifndef MU8_INTEGER_H
 #define MU8_INTEGER_H 1
 
-#	undef  M8_USE_INT128
-#	undef  M8_HAVE_INT128
+#	undef  MU8_USE_INT128
+#	undef  MU8_HAVE_INT128
 
-#	define M8_USE_INT128  1
-#	define M8_HAVE_INT128 0
+#	define MU8_USE_INT128  1
+#	define MU8_HAVE_INT128 0
 
 #include <stddef.h>
 #include <stdint.h>
@@ -32,15 +32,15 @@
 
 MU8_BEGIN_CDECL
 
-#	if   M8_USE_INT128
-#	if   M8_HAVE_GNUC
+#	if   MU8_USE_INT128
+#	if   MU8_HAVE_GNUC
 __extension__
 typedef __int128                 mu8_sint128_t;
 #	endif
-#	elif M8_HAVE_CC_CLANG
+#	elif MU8_HAVE_CC_CLANG
 #		if !__is_identifier(__int128_t)
-#			undef  M8_HAVE_INT128
-#			define M8_HAVE_INT128 1
+#			undef  MU8_HAVE_INT128
+#			define MU8_HAVE_INT128 1
 			__extension__
 			typedef __int128_t      mu8_sint128_t;
 #		else
