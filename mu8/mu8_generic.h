@@ -35,7 +35,7 @@ __mu0_overload__ mu0_fp16_t  mu8_acos (const mu0_fp16_t  __x) { return mu8_acos_
 	, mu0_fp16_t  : mu8_acos_fp16            \
 ) (__x)
 #	elif MU0_HAVE_TYPEOF
-#	define mu8_acos(__x) mu8_cast(__mu0_typeof__(__x),                                           \
+#	define mu8_acos(__x) mu8_cast(__mu0_kindof__(__x),                                           \
 	(                                                                                            \
 		  __mu0_isoftype__(mu0_fp128_t, __x) ? mu8_acos_fp128 (mu8_const_fp128(mu0_fp128_t, __x)) \
 		: __mu0_isoftype__(mu0_fp64_t,  __x) ? mu8_acos_fp64  (mu8_const_fp64(mu0_fp64_t  , __x)) \
@@ -67,7 +67,7 @@ __mu0_overload__ mu0_fp16_t  mu8_acosh (const mu0_fp16_t  __x) { return mu8_acos
 	, mu0_fp16_t  : mu8_acosh_fp16            \
 ) (__x)
 #	elif MU0_HAVE_TYPEOF
-#	define mu8_acosh(__x) mu8_cast(__mu0_typeof__(__x),                                           \
+#	define mu8_acosh(__x) mu8_cast(__mu0_kindof__(__x),                                           \
 	(                                                                                             \
 		  __mu0_isoftype__(mu0_fp128_t, __x) ? mu8_acosh_fp128 (mu8_const_fp128(mu0_fp128_t, __x)) \
 		: __mu0_isoftype__(mu0_fp64_t,  __x) ? mu8_acosh_fp64  (mu8_const_fp64(mu0_fp64_t  , __x)) \
@@ -99,7 +99,7 @@ __mu0_overload__ mu0_fp16_t  mu8_asin (const mu0_fp16_t  __x) { return mu8_asin_
 	, mu0_fp16_t  : mu8_asin_fp16            \
 ) (__x)
 #	elif MU0_HAVE_TYPEOF
-#	define mu8_asin(__x) mu8_cast(__mu0_typeof__(__x),                                           \
+#	define mu8_asin(__x) mu8_cast(__mu0_kindof__(__x),                                           \
 	(                                                                                            \
 		  __mu0_isoftype__(mu0_fp128_t, __x) ? mu8_asin_fp128 (mu8_const_fp128(mu0_fp128_t, __x)) \
 		: __mu0_isoftype__(mu0_fp64_t,  __x) ? mu8_asin_fp64  (mu8_const_fp64(mu0_fp64_t  , __x)) \
@@ -131,7 +131,7 @@ __mu0_overload__ mu0_fp16_t  mu8_asinh (const mu0_fp16_t  __x) { return mu8_asin
 	, mu0_fp16_t  : mu8_asinh_fp16            \
 ) (__x)
 #	elif MU0_HAVE_TYPEOF
-#	define mu8_asinh(__x) mu8_cast(__mu0_typeof__(__x),                                           \
+#	define mu8_asinh(__x) mu8_cast(__mu0_kindof__(__x),                                           \
 	(                                                                                             \
 		  __mu0_isoftype__(mu0_fp128_t, __x) ? mu8_asinh_fp128 (mu8_const_fp128(mu0_fp128_t, __x)) \
 		: __mu0_isoftype__(mu0_fp64_t,  __x) ? mu8_asinh_fp64  (mu8_const_fp64(mu0_fp64_t  , __x)) \
@@ -163,7 +163,7 @@ __mu0_overload__ mu0_fp16_t  mu8_atan (const mu0_fp16_t  __x) { return mu8_atan_
 	, mu0_fp16_t  : mu8_atan_fp16            \
 ) (__x)
 #	elif MU0_HAVE_TYPEOF
-#	define mu8_atan(__x) mu8_cast(__mu0_typeof__(__x),                                           \
+#	define mu8_atan(__x) mu8_cast(__mu0_kindof__(__x),                                           \
 	(                                                                                            \
 		  __mu0_isoftype__(mu0_fp128_t, __x) ? mu8_atan_fp128 (mu8_const_fp128(mu0_fp128_t, __x)) \
 		: __mu0_isoftype__(mu0_fp64_t,  __x) ? mu8_atan_fp64  (mu8_const_fp64(mu0_fp64_t  , __x)) \
@@ -195,7 +195,7 @@ __mu0_overload__ mu0_fp16_t  mu8_atan2 (const mu0_fp16_t  __y, const mu0_fp16_t 
 	, mu0_fp16_t  : mu8_atan2_fp16                         \
 ) (__y, __x)
 #	elif MU0_HAVE_TYPEOF
-#	define mu8_atan2(__y, __x) mu8_cast(__mu0_typeof__(__y),                                                                                   \
+#	define mu8_atan2(__y, __x) mu8_cast(__mu0_kindof__(__y),                                                                                   \
 	(                                                                                                                                          \
 		  __mu0_isoftype__(mu0_fp128_t, ((__y)+(__x))) ? mu8_atan2_fp128 (mu8_const_fp128(mu0_fp128_t, __y), mu8_const_fp128(mu0_fp128_t, __x)) \
 		: __mu0_isoftype__(mu0_fp64_t,  ((__y)+(__x))) ? mu8_atan2_fp64  (mu8_const_fp64(mu0_fp64_t  , __y), mu8_const_fp64(mu0_fp64_t  , __x)) \
@@ -227,7 +227,7 @@ __mu0_overload__ mu0_fp16_t  mu8_atanh (const mu0_fp16_t  __x) { return mu8_atan
 	, mu0_fp16_t  : mu8_atanh_fp16            \
 ) (__x)
 #	elif MU0_HAVE_TYPEOF
-#	define mu8_atanh(__x) mu8_cast(__mu0_typeof__(__x),                                           \
+#	define mu8_atanh(__x) mu8_cast(__mu0_kindof__(__x),                                           \
 	(                                                                                             \
 		  __mu0_isoftype__(mu0_fp128_t, __x) ? mu8_atanh_fp128 (mu8_const_fp128(mu0_fp128_t, __x)) \
 		: __mu0_isoftype__(mu0_fp64_t,  __x) ? mu8_atanh_fp64  (mu8_const_fp64(mu0_fp64_t  , __x)) \
