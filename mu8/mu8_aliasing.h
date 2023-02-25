@@ -29,21 +29,21 @@ MU0_BEGIN_CDECL
 	_Tp mu8_aliasing(_Tp, __alias) (const _Tp __a) \
 	{                                              \
 		return __unary_fn(__a);                     \
-	} enum { /***/ }
+	} __mu0_delineate__
 
 #	define mu8_alias2(_Tp, __alias, __binary_fn)                  \
 	__mu0_static_inline__                                         \
 	_Tp mu8_aliasing(_Tp, __alias) (const _Tp __a, const _Tp __b) \
 	{                                                             \
 		return __binary_fn(__a, __b);                              \
-	} enum { /***/ }
+	} __mu0_delineate__
 
 #	define mu8_alias3(_Tp, __alias, __trinary_fn)                                \
 	__mu0_static_inline__                                                        \
 	_Tp mu8_aliasing(_Tp, __alias) (const _Tp __a, const _Tp __b, const _Tp __c) \
 	{                                                                            \
 		return __trinary_fn(__a, __b, __c);                                       \
-	} enum { /***/ }
+	} __mu0_delineate__
 
 mu8_alias1(mu0_fp128_t, mu8_alias_acos, mu8_acos_fp128);
 mu8_alias1(mu0_fp64_t , mu8_alias_acos, mu8_acos_fp64 );
