@@ -19,22 +19,82 @@
 
 mu0_fp128_t mu8_atanh_fp128 (const mu0_fp128_t x)
 {
-	return mu0_fp128(0);
+#	if MU0_HAVE_CC_CLANG
+#		if MU0_HAVE_FLOAT128
+#			if  (__has_builtin(__builtin_atanhf128))
+				return __builtin_atanhf128(x);
+#			elif (__has_builtin(__builtin_atanhl))
+				return mu0_fp128(__builtin_atanhl(mu0_const_fpex(x)));
+#			else
+				return mu0_fp128(atanhl(mu0_const_fpex(x)));
+#			endif
+#		else
+#			if (__has_builtin(__builtin_atanhl))
+				return __builtin_atanhl(x);
+#			else
+				return atanhl(x);
+#			endif
+#		endif
+#	elif MU0_HAVE_CC_GNUCC
+		return __builtin_atanhl(x);
+#	else
+	return atanhl(x);
+#	endif
 }
 
 mu0_fp64_t  mu8_atanh_fp64  (const mu0_fp64_t  x)
 {
-	return mu0_fp64(0);
+#	if MU0_HAVE_CC_CLANG
+#		if  (__has_builtin(__builtin_atanh))
+			return __builtin_atanh(x);
+#		else
+		return atanh(x);
+#		endif
+#	elif MU0_HAVE_CC_GNUCC
+		return __builtin_atanh(x);
+#	else
+		return atanh(x);
+#	endif
 }
 
 mu0_fp32_t  mu8_atanh_fp32  (const mu0_fp32_t  x)
 {
-	return mu0_fp32(0);
+#	if MU0_HAVE_CC_CLANG
+#		if  (__has_builtin(__builtin_atanhf))
+			return __builtin_atanhf(x);
+#		else
+		return atanhf(x);
+#		endif
+#	elif MU0_HAVE_CC_GNUCC
+		return __builtin_atanhf(x);
+#	else
+		return atanhf(x);
+#	endif
 }
 
 mu0_fp16_t  mu8_atanh_fp16  (const mu0_fp16_t  x)
 {
-	return mu0_fp16(0);
+#	if MU0_HAVE_CC_CLANG
+#		if MU0_HAVE_FLOAT16
+#			if  (__has_builtin(__builtin_atanhf16))
+				return __builtin_atanhf16(x);
+#			elif (__has_builtin(__builtin_atanhf))
+				return mu0_fp16(__builtin_atanhf(mu0_const_fp32(x)));
+#			else
+				return mu0_fp16(atanhf(mu0_const_fp32(x)));
+#			endif
+#		else
+#			if (__has_builtin(__builtin_atanhf))
+				return __builtin_atanhf(x);
+#			else
+				return atanhf(x);
+#			endif
+#		endif
+#	elif MU0_HAVE_CC_GNUCC
+		return __builtin_atanhf(x);
+#	else
+	return atanhf(x);
+#	endif
 }
 
 /* EOF */
