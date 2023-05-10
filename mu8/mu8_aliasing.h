@@ -130,6 +130,26 @@ __mu8_alias1__(mu0_fp64_t , mu8_alias_expm1   , mu8_expm1_fp64 );
 __mu8_alias1__(mu0_fp32_t , mu8_alias_expm1   , mu8_expm1_fp32 );
 __mu8_alias1__(mu0_fp16_t , mu8_alias_expm1   , mu8_expm1_fp16 );
 
+__mu8_alias1__(mu0_fp128_t, mu8_alias_fabs    , mu8_fabs_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_fabs    , mu8_fabs_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_fabs    , mu8_fabs_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_fabs    , mu8_fabs_fp16 );
+
+__mu8_alias2__(mu0_fp128_t, mu8_alias_fdim    , mu8_fdim_fp128);
+__mu8_alias2__(mu0_fp64_t , mu8_alias_fdim    , mu8_fdim_fp64 );
+__mu8_alias2__(mu0_fp32_t , mu8_alias_fdim    , mu8_fdim_fp32 );
+__mu8_alias2__(mu0_fp16_t , mu8_alias_fdim    , mu8_fdim_fp16 );
+
+__mu8_alias1__(mu0_fp128_t, mu8_alias_floor   , mu8_floor_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_floor   , mu8_floor_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_floor   , mu8_floor_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_floor   , mu8_floor_fp16 );
+
+__mu8_alias3__(mu0_fp128_t, mu8_alias_fma     , mu8_fma_fp128);
+__mu8_alias3__(mu0_fp64_t , mu8_alias_fma     , mu8_fma_fp64 );
+__mu8_alias3__(mu0_fp32_t , mu8_alias_fma     , mu8_fma_fp32 );
+__mu8_alias3__(mu0_fp16_t , mu8_alias_fma     , mu8_fma_fp16 );
+
 #	define mu8_alias_acos(_Tp, __x) \
 	__mu8_aliasing__(_Tp, mu8_alias_acos)(__x)
 
@@ -180,6 +200,18 @@ __mu8_alias1__(mu0_fp16_t , mu8_alias_expm1   , mu8_expm1_fp16 );
 
 #	define mu8_alias_expm1(_Tp, __x) \
 	__mu8_aliasing__(_Tp, mu8_alias_expm1)(__x)
+
+#	define mu8_alias_fabs(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_fabs)(__x)
+
+#	define mu8_alias_fdim(_Tp, __x, __y) \
+	__mu8_aliasing__(_Tp, mu8_alias_fdim)(__x, __y)
+
+#	define mu8_alias_floor(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_floor)(__x)
+
+#	define mu8_alias_fma(_Tp, __x, __y, __z) \
+	__mu8_aliasing__(_Tp, mu8_alias_fma)(__x, __y, __z)
 
 MU0_END_CDECL
 
