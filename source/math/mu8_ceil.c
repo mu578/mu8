@@ -10,90 +10,90 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu8_asinh.c
+// mu8_ceil.c
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
 #include <mu8/mu8_math.h>
 
-mu0_fp128_t mu8_asinh_fp128 (const mu0_fp128_t x)
+mu0_fp128_t mu8_ceil_fp128 (const mu0_fp128_t x)
 {
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT128
-#			if  (__has_builtin(__builtin_asinhf128))
-				return __builtin_asinhf128(x);
-#			elif (__has_builtin(__builtin_asinhl))
-				return mu0_fp128(__builtin_asinhl(mu0_const_fpex(x)));
+#			if  (__has_builtin(__builtin_ceilf128))
+				return __builtin_ceilf128(x);
+#			elif (__has_builtin(__builtin_ceill))
+				return mu0_fp128(__builtin_ceill(mu0_const_fpex(x)));
 #			else
-				return mu0_fp128(asinhl(mu0_const_fpex(x)));
+				return mu0_fp128(ceill(mu0_const_fpex(x)));
 #			endif
 #		else
-#			if (__has_builtin(__builtin_asinhl))
-				return __builtin_asinhl(x);
+#			if (__has_builtin(__builtin_ceill))
+				return __builtin_ceill(x);
 #			else
-				return asinhl(x);
+				return ceill(x);
 #			endif
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_asinhl(x);
+		return __builtin_ceill(x);
 #	else
-	return asinhl(x);
+	return ceill(x);
 #	endif
 }
 
-mu0_fp64_t  mu8_asinh_fp64  (const mu0_fp64_t  x)
+mu0_fp64_t  mu8_ceil_fp64  (const mu0_fp64_t  x)
 {
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
-#		if  (__has_builtin(__builtin_asinh))
-			return __builtin_asinh(x);
+#		if  (__has_builtin(__builtin_ceil))
+			return __builtin_ceil(x);
 #		else
-		return asinh(x);
+		return ceil(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_asinh(x);
+		return __builtin_ceil(x);
 #	else
-		return asinh(x);
+		return ceil(x);
 #	endif
 }
 
-mu0_fp32_t  mu8_asinh_fp32  (const mu0_fp32_t  x)
+mu0_fp32_t  mu8_ceil_fp32  (const mu0_fp32_t  x)
 {
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
-#		if  (__has_builtin(__builtin_asinhf))
-			return __builtin_asinhf(x);
+#		if  (__has_builtin(__builtin_ceilf))
+			return __builtin_ceilf(x);
 #		else
-		return asinhf(x);
+		return ceilf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_asinhf(x);
+		return __builtin_ceilf(x);
 #	else
-		return asinhf(x);
+		return ceilf(x);
 #	endif
 }
 
-mu0_fp16_t  mu8_asinh_fp16  (const mu0_fp16_t  x)
+mu0_fp16_t  mu8_ceil_fp16  (const mu0_fp16_t  x)
 {
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT16
-#			if  (__has_builtin(__builtin_asinhf16))
-				return __builtin_asinhf16(x);
-#			elif (__has_builtin(__builtin_asinhf))
-				return mu0_fp16(__builtin_asinhf(mu0_const_fp32(x)));
+#			if  (__has_builtin(__builtin_ceilf16))
+				return __builtin_ceilf16(x);
+#			elif (__has_builtin(__builtin_ceilf))
+				return mu0_fp16(__builtin_ceilf(mu0_const_fp32(x)));
 #			else
-				return mu0_fp16(asinhf(mu0_const_fp32(x)));
+				return mu0_fp16(ceilf(mu0_const_fp32(x)));
 #			endif
 #		else
-#			if (__has_builtin(__builtin_asinhf))
-				return __builtin_asinhf(x);
+#			if (__has_builtin(__builtin_ceilf))
+				return __builtin_ceilf(x);
 #			else
-				return asinhf(x);
+				return ceilf(x);
 #			endif
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_asinhf(x);
+		return __builtin_ceilf(x);
 #	else
-	return asinhf(x);
+	return ceilf(x);
 #	endif
 }
 

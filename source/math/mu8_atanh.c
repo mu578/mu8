@@ -10,7 +10,7 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu8_atanh.h
+// mu8_atanh.c
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
@@ -19,7 +19,7 @@
 
 mu0_fp128_t mu8_atanh_fp128 (const mu0_fp128_t x)
 {
-#	if MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT128
 #			if  (__has_builtin(__builtin_atanhf128))
 				return __builtin_atanhf128(x);
@@ -44,7 +44,7 @@ mu0_fp128_t mu8_atanh_fp128 (const mu0_fp128_t x)
 
 mu0_fp64_t  mu8_atanh_fp64  (const mu0_fp64_t  x)
 {
-#	if MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if  (__has_builtin(__builtin_atanh))
 			return __builtin_atanh(x);
 #		else
@@ -59,7 +59,7 @@ mu0_fp64_t  mu8_atanh_fp64  (const mu0_fp64_t  x)
 
 mu0_fp32_t  mu8_atanh_fp32  (const mu0_fp32_t  x)
 {
-#	if MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if  (__has_builtin(__builtin_atanhf))
 			return __builtin_atanhf(x);
 #		else
@@ -74,7 +74,7 @@ mu0_fp32_t  mu8_atanh_fp32  (const mu0_fp32_t  x)
 
 mu0_fp16_t  mu8_atanh_fp16  (const mu0_fp16_t  x)
 {
-#	if MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT16
 #			if  (__has_builtin(__builtin_atanhf16))
 				return __builtin_atanhf16(x);

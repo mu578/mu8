@@ -45,40 +45,90 @@ MU0_BEGIN_CDECL
 		return __trinary_fn(__a, __b, __c);                                           \
 	} __mu0_delineate__
 
-__mu8_alias1__(mu0_fp128_t, mu8_alias_acos, mu8_acos_fp128);
-__mu8_alias1__(mu0_fp64_t , mu8_alias_acos, mu8_acos_fp64 );
-__mu8_alias1__(mu0_fp32_t , mu8_alias_acos, mu8_acos_fp32 );
-__mu8_alias1__(mu0_fp16_t , mu8_alias_acos, mu8_acos_fp16 );
+__mu8_alias1__(mu0_fp128_t, mu8_alias_acos    , mu8_acos_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_acos    , mu8_acos_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_acos    , mu8_acos_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_acos    , mu8_acos_fp16 );
 
-__mu8_alias1__(mu0_fp128_t, mu8_alias_acosh, mu8_acosh_fp128);
-__mu8_alias1__(mu0_fp64_t , mu8_alias_acosh, mu8_acosh_fp64 );
-__mu8_alias1__(mu0_fp32_t , mu8_alias_acosh, mu8_acosh_fp32 );
-__mu8_alias1__(mu0_fp16_t , mu8_alias_acosh, mu8_acosh_fp16 );
+__mu8_alias1__(mu0_fp128_t, mu8_alias_acos    , mu8_acosh_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_acosh   , mu8_acosh_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_acosh   , mu8_acosh_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_acosh   , mu8_acosh_fp16 );
 
-__mu8_alias1__(mu0_fp128_t, mu8_alias_asin, mu8_asin_fp128);
-__mu8_alias1__(mu0_fp64_t , mu8_alias_asin, mu8_asin_fp64 );
-__mu8_alias1__(mu0_fp32_t , mu8_alias_asin, mu8_asin_fp32 );
-__mu8_alias1__(mu0_fp16_t , mu8_alias_asin, mu8_asin_fp16 );
+__mu8_alias1__(mu0_fp128_t, mu8_alias_asin    , mu8_asin_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_asin    , mu8_asin_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_asin    , mu8_asin_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_asin    , mu8_asin_fp16 );
 
-__mu8_alias1__(mu0_fp128_t, mu8_alias_asinh, mu8_asinh_fp128);
-__mu8_alias1__(mu0_fp64_t , mu8_alias_asinh, mu8_asinh_fp64 );
-__mu8_alias1__(mu0_fp32_t , mu8_alias_asinh, mu8_asinh_fp32 );
-__mu8_alias1__(mu0_fp16_t , mu8_alias_asinh, mu8_asinh_fp16 );
+__mu8_alias1__(mu0_fp128_t, mu8_alias_asinh   , mu8_asinh_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_asinh   , mu8_asinh_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_asinh   , mu8_asinh_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_asinh   , mu8_asinh_fp16 );
 
-__mu8_alias1__(mu0_fp128_t, mu8_alias_atan, mu8_atan_fp128);
-__mu8_alias1__(mu0_fp64_t , mu8_alias_atan, mu8_atan_fp64 );
-__mu8_alias1__(mu0_fp32_t , mu8_alias_atan, mu8_atan_fp32 );
-__mu8_alias1__(mu0_fp16_t , mu8_alias_atan, mu8_atan_fp16 );
+__mu8_alias1__(mu0_fp128_t, mu8_alias_atan    , mu8_atan_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_atan    , mu8_atan_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_atan    , mu8_atan_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_atan    , mu8_atan_fp16 );
 
-__mu8_alias2__(mu0_fp128_t, mu8_alias_atan2, mu8_atan2_fp128);
-__mu8_alias2__(mu0_fp64_t , mu8_alias_atan2, mu8_atan2_fp64 );
-__mu8_alias2__(mu0_fp32_t , mu8_alias_atan2, mu8_atan2_fp32 );
-__mu8_alias2__(mu0_fp16_t , mu8_alias_atan2, mu8_atan2_fp16 );
+__mu8_alias2__(mu0_fp128_t, mu8_alias_atan2   , mu8_atan2_fp128);
+__mu8_alias2__(mu0_fp64_t , mu8_alias_atan2   , mu8_atan2_fp64 );
+__mu8_alias2__(mu0_fp32_t , mu8_alias_atan2   , mu8_atan2_fp32 );
+__mu8_alias2__(mu0_fp16_t , mu8_alias_atan2   , mu8_atan2_fp16 );
 
-__mu8_alias1__(mu0_fp128_t, mu8_alias_atanh, mu8_atanh_fp128);
-__mu8_alias1__(mu0_fp64_t , mu8_alias_atanh, mu8_atanh_fp64 );
-__mu8_alias1__(mu0_fp32_t , mu8_alias_atanh, mu8_atanh_fp32 );
-__mu8_alias1__(mu0_fp16_t , mu8_alias_atanh, mu8_atanh_fp16 );
+__mu8_alias1__(mu0_fp128_t, mu8_alias_atanh   , mu8_atanh_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_atanh   , mu8_atanh_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_atanh   , mu8_atanh_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_atanh   , mu8_atanh_fp16 );
+
+__mu8_alias1__(mu0_fp128_t, mu8_alias_cbrt    , mu8_cbrt_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_cbrt    , mu8_cbrt_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_cbrt    , mu8_cbrt_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_cbrt    , mu8_cbrt_fp16 );
+
+__mu8_alias1__(mu0_fp128_t, mu8_alias_ceil    , mu8_ceil_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_ceil    , mu8_ceil_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_ceil    , mu8_ceil_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_ceil    , mu8_ceil_fp16 );
+
+__mu8_alias2__(mu0_fp128_t, mu8_alias_copysign, mu8_copysign_fp128);
+__mu8_alias2__(mu0_fp64_t , mu8_alias_copysign, mu8_copysign_fp64 );
+__mu8_alias2__(mu0_fp32_t , mu8_alias_copysign, mu8_copysign_fp32 );
+__mu8_alias2__(mu0_fp16_t , mu8_alias_copysign, mu8_copysign_fp16 );
+
+__mu8_alias1__(mu0_fp128_t, mu8_alias_cos     , mu8_cos_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_cos     , mu8_cos_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_cos     , mu8_cos_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_cos     , mu8_cos_fp16 );
+
+__mu8_alias1__(mu0_fp128_t, mu8_alias_cosh    , mu8_cosh_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_cosh    , mu8_cosh_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_cosh    , mu8_cosh_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_cosh    , mu8_cosh_fp16 );
+
+__mu8_alias1__(mu0_fp128_t, mu8_alias_erf     , mu8_erf_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_erf     , mu8_erf_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_erf     , mu8_erf_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_erf     , mu8_erf_fp16 );
+
+__mu8_alias1__(mu0_fp128_t, mu8_alias_erfc    , mu8_erfc_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_erfc    , mu8_erfc_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_erfc    , mu8_erfc_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_erfc    , mu8_erfc_fp16 );
+
+__mu8_alias1__(mu0_fp128_t, mu8_alias_exp     , mu8_exp_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_exp     , mu8_exp_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_exp     , mu8_exp_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_exp     , mu8_exp_fp16 );
+
+__mu8_alias1__(mu0_fp128_t, mu8_alias_exp2    , mu8_exp2_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_exp2    , mu8_exp2_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_exp2    , mu8_exp2_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_exp2    , mu8_exp2_fp16 );
+
+__mu8_alias1__(mu0_fp128_t, mu8_alias_expm1   , mu8_expm1_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_expm1   , mu8_expm1_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_expm1   , mu8_expm1_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_expm1   , mu8_expm1_fp16 );
 
 #	define mu8_alias_acos(_Tp, __x) \
 	__mu8_aliasing__(_Tp, mu8_alias_acos)(__x)
@@ -100,6 +150,36 @@ __mu8_alias1__(mu0_fp16_t , mu8_alias_atanh, mu8_atanh_fp16 );
 
 #	define mu8_alias_atanh(_Tp, __x) \
 	__mu8_aliasing__(_Tp, mu8_alias_atanh)(__x)
+
+#	define mu8_alias_cbrt(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_cbrt)(__x)
+
+#	define mu8_alias_ceil(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_ceil)(__x)
+
+#	define mu8_alias_copysign(_Tp, __x, __y) \
+	__mu8_aliasing__(_Tp, mu8_alias_copysign)(__x, __y)
+
+#	define mu8_alias_cos(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_cos)(__x)
+
+#	define mu8_alias_cosh(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_cosh)(__x)
+
+#	define mu8_alias_erf(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_erf)(__x)
+
+#	define mu8_alias_erfc(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_erfc)(__x)
+
+#	define mu8_alias_exp(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_exp)(__x)
+
+#	define mu8_alias_exp2(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_exp2)(__x)
+
+#	define mu8_alias_expm1(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_expm1)(__x)
 
 MU0_END_CDECL
 

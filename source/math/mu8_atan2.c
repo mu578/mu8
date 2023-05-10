@@ -10,7 +10,7 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu8_atan2.h
+// mu8_atan2.c
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
@@ -19,22 +19,82 @@
 
 mu0_fp128_t mu8_atan2_fp128 (const mu0_fp128_t y, const mu0_fp128_t x)
 {
-	return mu0_fp128(0);
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#		if MU0_HAVE_FLOAT128
+#			if  (__has_builtin(__builtin_atan2f128))
+				return __builtin_atan2f128(y, x);
+#			elif (__has_builtin(__builtin_atan2l))
+				return mu0_fp128(__builtin_atan2l(mu0_const_fpex(y), mu0_const_fpex(x)));
+#			else
+				return mu0_fp128(atan2l(mu0_const_fpex(y), mu0_const_fpex(x)));
+#			endif
+#		else
+#			if (__has_builtin(__builtin_atan2l))
+				return __builtin_atan2l(y, x);
+#			else
+				return atan2l(y, x);
+#			endif
+#		endif
+#	elif MU0_HAVE_CC_GNUCC
+		return __builtin_atan2l(y, x);
+#	else
+	return atan2l(y, x);
+#	endif
 }
 
 mu0_fp64_t  mu8_atan2_fp64  (const mu0_fp64_t  y, const mu0_fp64_t  x)
 {
-	return mu0_fp64(0);
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#		if  (__has_builtin(__builtin_atan2))
+			return __builtin_atan2(y, x);
+#		else
+		return atan2(y, x);
+#		endif
+#	elif MU0_HAVE_CC_GNUCC
+		return __builtin_atan2(y, x);
+#	else
+		return atan2(y, x);
+#	endif
 }
 
 mu0_fp32_t  mu8_atan2_fp32  (const mu0_fp32_t  y, const mu0_fp32_t  x)
 {
-	return mu0_fp32(0);
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#		if  (__has_builtin(__builtin_atan2f))
+			return __builtin_atan2f(y, x);
+#		else
+		return atan2f(y, x);
+#		endif
+#	elif MU0_HAVE_CC_GNUCC
+		return __builtin_atan2f(y, x);
+#	else
+		return atan2f(y, x);
+#	endif
 }
 
 mu0_fp16_t  mu8_atan2_fp16  (const mu0_fp16_t  y, const mu0_fp16_t  x)
 {
-	return mu0_fp16(0);
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#		if MU0_HAVE_FLOAT16
+#			if  (__has_builtin(__builtin_atan2f16))
+				return __builtin_atan2f16(y, x);
+#			elif (__has_builtin(__builtin_atan2f))
+				return mu0_fp16(__builtin_atan2f(mu0_const_fp32(y), mu0_const_fp32(x)));
+#			else
+				return mu0_fp16(atan2f(mu0_const_fp32(y), mu0_const_fp32(x)));
+#			endif
+#		else
+#			if (__has_builtin(__builtin_atan2f))
+				return __builtin_atan2f(y, x);
+#			else
+				return atan2f(y, x);
+#			endif
+#		endif
+#	elif MU0_HAVE_CC_GNUCC
+		return __builtin_atan2f(y, x);
+#	else
+	return atan2f(y, x);
+#	endif
 }
 
 /* EOF */

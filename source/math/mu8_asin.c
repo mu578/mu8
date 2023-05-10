@@ -10,7 +10,7 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu8_asin.h
+// mu8_asin.c
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
@@ -19,7 +19,7 @@
 
 mu0_fp128_t mu8_asin_fp128 (const mu0_fp128_t x)
 {
-#	if MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT128
 #			if  (__has_builtin(__builtin_asinf128))
 				return __builtin_asinf128(x);
@@ -44,7 +44,7 @@ mu0_fp128_t mu8_asin_fp128 (const mu0_fp128_t x)
 
 mu0_fp64_t  mu8_asin_fp64  (const mu0_fp64_t  x)
 {
-#	if MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if  (__has_builtin(__builtin_asin))
 			return __builtin_asin(x);
 #		else
@@ -59,7 +59,7 @@ mu0_fp64_t  mu8_asin_fp64  (const mu0_fp64_t  x)
 
 mu0_fp32_t  mu8_asin_fp32  (const mu0_fp32_t  x)
 {
-#	if MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if  (__has_builtin(__builtin_asinf))
 			return __builtin_asinf(x);
 #		else
@@ -74,7 +74,7 @@ mu0_fp32_t  mu8_asin_fp32  (const mu0_fp32_t  x)
 
 mu0_fp16_t  mu8_asin_fp16  (const mu0_fp16_t  x)
 {
-#	if MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT16
 #			if  (__has_builtin(__builtin_asinf16))
 				return __builtin_asinf16(x);
