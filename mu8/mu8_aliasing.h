@@ -45,11 +45,18 @@ MU0_BEGIN_CDECL
 		return __trinary_fn(__a, __b, __c);                                           \
 	} __mu0_delineate__
 
-#	define __mu8_alias4__(_Tp, Sint, __alias, __binary_fn)                 \
+#	define __mu8_alias4__(_Tp, __alias, __binary_fn)                       \
 	__mu0_static_inline__                                                  \
-	_Tp __mu8_aliasing__(_Tp, __alias) (const _Tp __a, mu0_sint32_t * __b) \
+	_Tp __mu8_aliasing__(_Tp, __alias) (const _Tp __a, mu0_sint64_t * __b) \
 	{                                                                      \
 		return __binary_fn(__a, __b);                                       \
+	} __mu0_delineate__
+
+#	define __mu8_alias5__(_Tp, __alias, __unary_fn)             \
+	__mu0_static_inline__                                       \
+	mu0_sint64_t __mu8_aliasing__(_Tp, __alias) (const _Tp __a) \
+	{                                                           \
+		return __unary_fn(__a);                                  \
 	} __mu0_delineate__
 
 __mu8_alias1__(mu0_fp128_t, mu8_alias_acos    , mu8_acos_fp128);
@@ -177,6 +184,26 @@ __mu8_alias4__(mu0_fp64_t , mu8_alias_frexp   , mu8_frexp_fp64 );
 __mu8_alias4__(mu0_fp32_t , mu8_alias_frexp   , mu8_frexp_fp32 );
 __mu8_alias4__(mu0_fp16_t , mu8_alias_frexp   , mu8_frexp_fp16 );
 
+__mu8_alias2__(mu0_fp128_t, mu8_alias_hypot   , mu8_hypot_fp128);
+__mu8_alias2__(mu0_fp64_t , mu8_alias_hypot   , mu8_hypot_fp64 );
+__mu8_alias2__(mu0_fp32_t , mu8_alias_hypot   , mu8_hypot_fp32 );
+__mu8_alias2__(mu0_fp16_t , mu8_alias_hypot   , mu8_hypot_fp16 );
+
+__mu8_alias5__(mu0_fp128_t, mu8_alias_ilogb   , mu8_ilogb_fp128);
+__mu8_alias5__(mu0_fp64_t , mu8_alias_ilogb   , mu8_ilogb_fp64 );
+__mu8_alias5__(mu0_fp32_t , mu8_alias_ilogb   , mu8_ilogb_fp32 );
+__mu8_alias5__(mu0_fp16_t , mu8_alias_ilogb   , mu8_ilogb_fp16 );
+
+__mu8_alias5__(mu0_fp128_t, mu8_alias_irint   , mu8_irint_fp128);
+__mu8_alias5__(mu0_fp64_t , mu8_alias_irint   , mu8_irint_fp64 );
+__mu8_alias5__(mu0_fp32_t , mu8_alias_irint   , mu8_irint_fp32 );
+__mu8_alias5__(mu0_fp16_t , mu8_alias_irint   , mu8_irint_fp16 );
+
+__mu8_alias5__(mu0_fp128_t, mu8_alias_iround  , mu8_iround_fp128);
+__mu8_alias5__(mu0_fp64_t , mu8_alias_iround  , mu8_iround_fp64 );
+__mu8_alias5__(mu0_fp32_t , mu8_alias_iround  , mu8_iround_fp32 );
+__mu8_alias5__(mu0_fp16_t , mu8_alias_iround  , mu8_iround_fp16 );
+
 #	define mu8_alias_acos(_Tp, __x) \
 	__mu8_aliasing__(_Tp, mu8_alias_acos)(__x)
 
@@ -251,6 +278,18 @@ __mu8_alias4__(mu0_fp16_t , mu8_alias_frexp   , mu8_frexp_fp16 );
 
 #	define mu8_alias_frexp(_Tp, __x, __e) \
 	__mu8_aliasing__(_Tp, mu8_alias_frexp)(__x, __e)
+
+#	define mu8_alias_hypot(_Tp, __x, __y) \
+	__mu8_aliasing__(_Tp, mu8_alias_hypot)(__x, __y)
+
+#	define mu8_alias_ilogb(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_ilogb)(__x)
+
+#	define mu8_alias_irint(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_irint)(__x)
+
+#	define mu8_alias_iround(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_iround)(__x)
 
 MU0_END_CDECL
 

@@ -17,7 +17,7 @@
 
 #include <mu8/mu8_math.h>
 
-mu0_fp128_t mu8_frexp_fp128 (const mu0_fp128_t x, mu0_sint32_t * e)
+mu0_fp128_t mu8_frexp_fp128 (const mu0_fp128_t x, mu0_sint64_t * e)
 {
 	mu0_fp128_t       r;
 	___mu0_sint4_t___ q = mu0_const_cast(___mu0_sint4_t___, *e);
@@ -46,7 +46,7 @@ mu0_fp128_t mu8_frexp_fp128 (const mu0_fp128_t x, mu0_sint32_t * e)
 	return  r;
 }
 
-mu0_fp64_t  mu8_frexp_fp64  (const mu0_fp64_t  x, mu0_sint32_t * e)
+mu0_fp64_t  mu8_frexp_fp64  (const mu0_fp64_t  x, mu0_sint64_t * e)
 {
 	mu0_fp64_t        r;
 	___mu0_sint4_t___ q = mu0_const_cast(___mu0_sint4_t___, *e);
@@ -65,7 +65,7 @@ mu0_fp64_t  mu8_frexp_fp64  (const mu0_fp64_t  x, mu0_sint32_t * e)
 	return  r;
 }
 
-mu0_fp32_t  mu8_frexp_fp32  (const mu0_fp32_t  x, mu0_sint32_t * e)
+mu0_fp32_t  mu8_frexp_fp32  (const mu0_fp32_t  x, mu0_sint64_t * e)
 {
 	mu0_fp32_t        r;
 	___mu0_sint4_t___ q = mu0_const_cast(___mu0_sint4_t___, *e);
@@ -84,7 +84,7 @@ mu0_fp32_t  mu8_frexp_fp32  (const mu0_fp32_t  x, mu0_sint32_t * e)
 	return  r;
 }
 
-mu0_fp16_t  mu8_frexp_fp16  (const mu0_fp16_t  x, mu0_sint32_t * e)
+mu0_fp16_t  mu8_frexp_fp16  (const mu0_fp16_t  x, mu0_sint64_t * e)
 {
 	mu0_fp16_t        r;
 	___mu0_sint4_t___ q = mu0_const_cast(___mu0_sint4_t___, *e);
