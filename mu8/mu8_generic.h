@@ -1025,7 +1025,7 @@ __mu0_overload__ mu0_fp16_t  mu8_jn (const mu0_sint64_t __n, const mu0_fp16_t  _
 	, mu0_fp64_t  : mu8_jn_fp64                 \
 	, mu0_fp32_t  : mu8_jn_fp32                 \
 	, mu0_fp16_t  : mu8_jn_fp16                 \
-) (__x)
+) (__n, __x)
 #	elif MU0_HAVE_TYPEOF
 #	define mu8_jn(__n, __x) mu8_cast(__mu0_kindof__(__x),                                                             \
 	(                                                                                                                 \
@@ -1057,7 +1057,7 @@ __mu0_overload__ mu0_fp16_t  mu8_ldexp (const mu0_fp16_t  __x, const mu0_sint64_
 	, mu0_fp64_t  : mu8_ldexp_fp64                 \
 	, mu0_fp32_t  : mu8_ldexp_fp32                 \
 	, mu0_fp16_t  : mu8_ldexp_fp16                 \
-) (__x)
+) (__x, __n)
 #	elif MU0_HAVE_TYPEOF
 #	define mu8_ldexp(__x, __n) mu8_cast(__mu0_kindof__(__x),                                                             \
 	(                                                                                                                    \
@@ -1153,7 +1153,7 @@ __mu0_overload__ mu0_fp16_t  mu8_yn (const mu0_sint64_t __n, const mu0_fp16_t  _
 	, mu0_fp64_t  : mu8_yn_fp64                 \
 	, mu0_fp32_t  : mu8_yn_fp32                 \
 	, mu0_fp16_t  : mu8_yn_fp16                 \
-) (__x)
+) (__n, __x)
 #	elif MU0_HAVE_TYPEOF
 #	define mu8_yn(__n, __x) mu8_cast(__mu0_kindof__(__x),                                                             \
 	(                                                                                                                 \
