@@ -15,7 +15,6 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-
 #include <mu0/mu0_floating.h>
 #include <mu0/mu0_integer.h>
 
@@ -193,6 +192,31 @@ mu0_fp128_t  mu8_lgamma_fp128   (const mu0_fp128_t x);
 mu0_fp64_t   mu8_lgamma_fp64    (const mu0_fp64_t  x);
 mu0_fp32_t   mu8_lgamma_fp32    (const mu0_fp32_t  x);
 mu0_fp16_t   mu8_lgamma_fp16    (const mu0_fp16_t  x);
+
+mu0_fp128_t  mu8_log_fp128      (const mu0_fp128_t x);
+mu0_fp64_t   mu8_log_fp64       (const mu0_fp64_t  x);
+mu0_fp32_t   mu8_log_fp32       (const mu0_fp32_t  x);
+mu0_fp16_t   mu8_log_fp16       (const mu0_fp16_t  x);
+
+mu0_fp128_t  mu8_log1p_fp128    (const mu0_fp128_t x);
+mu0_fp64_t   mu8_log1p_fp64     (const mu0_fp64_t  x);
+mu0_fp32_t   mu8_log1p_fp32     (const mu0_fp32_t  x);
+mu0_fp16_t   mu8_log1p_fp16     (const mu0_fp16_t  x);
+
+mu0_fp128_t  mu8_log2_fp128     (const mu0_fp128_t x);
+mu0_fp64_t   mu8_log2_fp64      (const mu0_fp64_t  x);
+mu0_fp32_t   mu8_log2_fp32      (const mu0_fp32_t  x);
+mu0_fp16_t   mu8_log2_fp16      (const mu0_fp16_t  x);
+
+mu0_fp128_t  mu8_log10_fp128    (const mu0_fp128_t x);
+mu0_fp64_t   mu8_log10_fp64     (const mu0_fp64_t  x);
+mu0_fp32_t   mu8_log10_fp32     (const mu0_fp32_t  x);
+mu0_fp16_t   mu8_log10_fp16     (const mu0_fp16_t  x);
+
+mu0_fp128_t  mu8_logb_fp128     (const mu0_fp128_t x);
+mu0_fp64_t   mu8_logb_fp64      (const mu0_fp64_t  x);
+mu0_fp32_t   mu8_logb_fp32      (const mu0_fp32_t  x);
+mu0_fp16_t   mu8_logb_fp16      (const mu0_fp16_t  x);
 
 mu0_fp128_t  mu8_y0_fp128       (const mu0_fp128_t x);
 mu0_fp64_t   mu8_y0_fp64        (const mu0_fp64_t  x);

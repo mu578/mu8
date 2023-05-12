@@ -244,6 +244,31 @@ __mu8_alias1__(mu0_fp64_t , mu8_alias_lgamma  , mu8_lgamma_fp64 );
 __mu8_alias1__(mu0_fp32_t , mu8_alias_lgamma  , mu8_lgamma_fp32 );
 __mu8_alias1__(mu0_fp16_t , mu8_alias_lgamma  , mu8_lgamma_fp16 );
 
+__mu8_alias1__(mu0_fp128_t, mu8_alias_log     , mu8_log_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_log     , mu8_log_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_log     , mu8_log_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_log     , mu8_log_fp16 );
+
+__mu8_alias1__(mu0_fp128_t, mu8_alias_log1p   , mu8_log1p_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_log1p   , mu8_log1p_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_log1p   , mu8_log1p_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_log1p   , mu8_log1p_fp16 );
+
+__mu8_alias1__(mu0_fp128_t, mu8_alias_log2    , mu8_log2_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_log2    , mu8_log2_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_log2    , mu8_log2_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_log2    , mu8_log2_fp16 );
+
+__mu8_alias1__(mu0_fp128_t, mu8_alias_log10   , mu8_log10_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_log10   , mu8_log10_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_log10   , mu8_log10_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_log10   , mu8_log10_fp16 );
+
+__mu8_alias1__(mu0_fp128_t, mu8_alias_logb    , mu8_logb_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_logb    , mu8_logb_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_logb    , mu8_logb_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_logb    , mu8_logb_fp16 );
+
 __mu8_alias1__(mu0_fp128_t, mu8_alias_y0      , mu8_y0_fp128);
 __mu8_alias1__(mu0_fp64_t , mu8_alias_y0      , mu8_y0_fp64 );
 __mu8_alias1__(mu0_fp32_t , mu8_alias_y0      , mu8_y0_fp32 );
@@ -360,6 +385,21 @@ __mu8_alias6__(mu0_fp16_t , mu8_alias_yn      , mu8_yn_fp16 );
 
 #	define mu8_alias_lgamma(_Tp, __x) \
 	__mu8_aliasing__(_Tp, mu8_alias_lgamma)(__x)
+
+#	define mu8_alias_log(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_log)(__x)
+
+#	define mu8_alias_log1p(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_log1p)(__x)
+
+#	define mu8_alias_log2(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_log2)(__x)
+
+#	define mu8_alias_log10(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_log10)(__x)
+
+#	define mu8_alias_logb(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_logb)(__x)
 
 #	define mu8_alias_y0(_Tp, __x) \
 	__mu8_aliasing__(_Tp, mu8_alias_y0)(__x)
