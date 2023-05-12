@@ -184,11 +184,15 @@ mu0_fp64_t   mu8_jn_fp64        (const mu0_sint64_t n, const mu0_fp64_t  x);
 mu0_fp32_t   mu8_jn_fp32        (const mu0_sint64_t n, const mu0_fp32_t  x);
 mu0_fp16_t   mu8_jn_fp16        (const mu0_sint64_t n, const mu0_fp16_t  x);
 
-
 mu0_fp128_t  mu8_ldexp_fp128    (const mu0_fp128_t x, const mu0_sint64_t n);
 mu0_fp64_t   mu8_ldexp_fp64     (const mu0_fp64_t  x, const mu0_sint64_t n);
 mu0_fp32_t   mu8_ldexp_fp32     (const mu0_fp32_t  x, const mu0_sint64_t n);
 mu0_fp16_t   mu8_ldexp_fp16     (const mu0_fp16_t  x, const mu0_sint64_t n);
+
+mu0_fp128_t  mu8_lgamma_fp128   (const mu0_fp128_t x);
+mu0_fp64_t   mu8_lgamma_fp64    (const mu0_fp64_t  x);
+mu0_fp32_t   mu8_lgamma_fp32    (const mu0_fp32_t  x);
+mu0_fp16_t   mu8_lgamma_fp16    (const mu0_fp16_t  x);
 
 mu0_fp128_t  mu8_y0_fp128       (const mu0_fp128_t x);
 mu0_fp64_t   mu8_y0_fp64        (const mu0_fp64_t  x);

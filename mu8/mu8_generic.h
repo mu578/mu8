@@ -1174,6 +1174,38 @@ __mu0_overload__ mu0_fp16_t  mu8_yn (const mu0_sint64_t __n, const mu0_fp16_t  _
 	)
 #	endif
 
+# if    MU0_HAVE_OVERLOAD
+__mu0_overload__ mu0_fp128_t mu8_lgamma (const mu0_fp128_t __x) { return mu8_lgamma_fp128 (__x); }
+__mu0_overload__ mu0_fp64_t  mu8_lgamma (const mu0_fp64_t  __x) { return mu8_lgamma_fp64  (__x); }
+__mu0_overload__ mu0_fp32_t  mu8_lgamma (const mu0_fp32_t  __x) { return mu8_lgamma_fp32  (__x); }
+__mu0_overload__ mu0_fp16_t  mu8_lgamma (const mu0_fp16_t  __x) { return mu8_lgamma_fp16  (__x); }
+#	elif MU0_HAVE_GENERIC
+#	define mu8_lgamma(__x) __mu0_generic__(__x \
+	, mu0_fp128_t : mu8_lgamma_fp128           \
+	, mu0_fp64_t  : mu8_lgamma_fp64            \
+	, mu0_fp32_t  : mu8_lgamma_fp32            \
+	, mu0_fp16_t  : mu8_lgamma_fp16            \
+) (__x)
+#	elif MU0_HAVE_TYPEOF
+#	define mu8_lgamma(__x) mu8_cast(__mu0_kindof__(__x),                                           \
+	(                                                                                              \
+		  __mu0_isofkind__(mu0_fp128_t, __x) ? mu8_lgamma_fp128 (mu8_const_fp128(mu0_fp128_t, __x)) \
+		: __mu0_isofkind__(mu0_fp64_t,  __x) ? mu8_lgamma_fp64  (mu8_const_fp64(mu0_fp64_t  , __x)) \
+		: __mu0_isofkind__(mu0_fp32_t,  __x) ? mu8_lgamma_fp32  (mu8_const_fp32(mu0_fp32_t  , __x)) \
+		: __mu0_isofkind__(mu0_fp16_t,  __x) ? mu8_lgamma_fp16  (mu8_const_fp16(mu0_fp16_t  , __x)) \
+		: 0                                                                                         \
+	))
+#	else
+#	define mu8_lgamma(__x)                                                                         \
+	(                                                                                              \
+		  __mu0_isofsize__(mu0_fp128_t, __x) ? mu8_lgamma_fp128 (mu8_const_fp128(mu0_fp128_t, __x)) \
+		: __mu0_isofsize__(mu0_fp64_t,  __x) ? mu8_lgamma_fp64  (mu8_const_fp64(mu0_fp64_t  , __x)) \
+		: __mu0_isofsize__(mu0_fp32_t,  __x) ? mu8_lgamma_fp32  (mu8_const_fp32(mu0_fp32_t  , __x)) \
+		: __mu0_isofsize__(mu0_fp16_t,  __x) ? mu8_lgamma_fp16  (mu8_const_fp16(mu0_fp16_t  , __x)) \
+		: 0                                                                                         \
+	)
+#	endif
+
 MU0_END_CDECL
 
 #endif /* !MU8_GENERIC_H */

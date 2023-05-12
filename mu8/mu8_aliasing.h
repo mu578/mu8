@@ -239,6 +239,11 @@ __mu8_alias7__(mu0_fp64_t , mu8_alias_ldexp   , mu8_ldexp_fp64 );
 __mu8_alias7__(mu0_fp32_t , mu8_alias_ldexp   , mu8_ldexp_fp32 );
 __mu8_alias7__(mu0_fp16_t , mu8_alias_ldexp   , mu8_ldexp_fp16 );
 
+__mu8_alias1__(mu0_fp128_t, mu8_alias_lgamma  , mu8_lgamma_fp128);
+__mu8_alias1__(mu0_fp64_t , mu8_alias_lgamma  , mu8_lgamma_fp64 );
+__mu8_alias1__(mu0_fp32_t , mu8_alias_lgamma  , mu8_lgamma_fp32 );
+__mu8_alias1__(mu0_fp16_t , mu8_alias_lgamma  , mu8_lgamma_fp16 );
+
 __mu8_alias1__(mu0_fp128_t, mu8_alias_y0      , mu8_y0_fp128);
 __mu8_alias1__(mu0_fp64_t , mu8_alias_y0      , mu8_y0_fp64 );
 __mu8_alias1__(mu0_fp32_t , mu8_alias_y0      , mu8_y0_fp32 );
@@ -352,6 +357,9 @@ __mu8_alias6__(mu0_fp16_t , mu8_alias_yn      , mu8_yn_fp16 );
 
 #	define mu8_alias_ldexp(_Tp, __x, __n) \
 	__mu8_aliasing__(_Tp, mu8_alias_ldexp)(__x, __n)
+
+#	define mu8_alias_lgamma(_Tp, __x) \
+	__mu8_aliasing__(_Tp, mu8_alias_lgamma)(__x)
 
 #	define mu8_alias_y0(_Tp, __x) \
 	__mu8_aliasing__(_Tp, mu8_alias_y0)(__x)
