@@ -17,6 +17,7 @@
 
 #include <mu0/mu0_floating.h>
 #include <mu0/mu0_integer.h>
+#include <mu0/mu0_string.h>
 
 #ifndef MU8_MATH_H
 #define MU8_MATH_H 1
@@ -217,6 +218,16 @@ mu0_fp128_t  mu8_logb_fp128     (const mu0_fp128_t x);
 mu0_fp64_t   mu8_logb_fp64      (const mu0_fp64_t  x);
 mu0_fp32_t   mu8_logb_fp32      (const mu0_fp32_t  x);
 mu0_fp16_t   mu8_logb_fp16      (const mu0_fp16_t  x);
+
+mu0_fp128_t  mu8_modf_fp128     (const mu0_fp128_t x, mu0_fp128_t * f);
+mu0_fp64_t   mu8_modf_fp64      (const mu0_fp64_t  x, mu0_fp64_t  * f);
+mu0_fp32_t   mu8_modf_fp32      (const mu0_fp32_t  x, mu0_fp32_t  * f);
+mu0_fp16_t   mu8_modf_fp16      (const mu0_fp16_t  x, mu0_fp16_t  * f);
+
+mu0_fp128_t  mu8_nan_fp128      (const mu0_tchar8_t * s);
+mu0_fp64_t   mu8_nan_fp64       (const mu0_tchar8_t * s);
+mu0_fp32_t   mu8_nan_fp32       (const mu0_tchar8_t * s);
+mu0_fp16_t   mu8_nan_fp16       (const mu0_tchar8_t * s);
 
 mu0_fp128_t  mu8_y0_fp128       (const mu0_fp128_t x);
 mu0_fp64_t   mu8_y0_fp64        (const mu0_fp64_t  x);

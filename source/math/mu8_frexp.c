@@ -20,7 +20,7 @@
 mu0_fp128_t mu8_frexp_fp128 (const mu0_fp128_t x, mu0_sint64_t * e)
 {
 	mu0_fp128_t       r;
-	___mu0_sint4_t___ q = mu0_const_cast(___mu0_sint4_t___, *e);
+	___mu0_sint4_t___ q = 0;
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT128
 #			if  (__has_builtin(__builtin_frexpf128))
@@ -42,14 +42,14 @@ mu0_fp128_t mu8_frexp_fp128 (const mu0_fp128_t x, mu0_sint64_t * e)
 #	else
 	r = frexpl(x, &q);
 #	endif
-	*e = mu0_const_sint32(q);
+	*e = mu0_const_sint64(q);
 	return  r;
 }
 
 mu0_fp64_t  mu8_frexp_fp64  (const mu0_fp64_t  x, mu0_sint64_t * e)
 {
 	mu0_fp64_t        r;
-	___mu0_sint4_t___ q = mu0_const_cast(___mu0_sint4_t___, *e);
+	___mu0_sint4_t___ q = 0;
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if  (__has_builtin(__builtin_frexp))
 			r = __builtin_frexp(x, &q);
@@ -61,14 +61,14 @@ mu0_fp64_t  mu8_frexp_fp64  (const mu0_fp64_t  x, mu0_sint64_t * e)
 #	else
 		r = frexp(x, &q);
 #	endif
-	*e = mu0_const_sint32(q);
+	*e = mu0_const_sint64(q);
 	return  r;
 }
 
 mu0_fp32_t  mu8_frexp_fp32  (const mu0_fp32_t  x, mu0_sint64_t * e)
 {
 	mu0_fp32_t        r;
-	___mu0_sint4_t___ q = mu0_const_cast(___mu0_sint4_t___, *e);
+	___mu0_sint4_t___ q = 0;
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if  (__has_builtin(__builtin_frexpf))
 			r = __builtin_frexpf(x, &q);
@@ -80,14 +80,14 @@ mu0_fp32_t  mu8_frexp_fp32  (const mu0_fp32_t  x, mu0_sint64_t * e)
 #	else
 		r = frexpf(x, &q);
 #	endif
-	*e = mu0_const_sint32(q);
+	*e = mu0_const_sint64(q);
 	return  r;
 }
 
 mu0_fp16_t  mu8_frexp_fp16  (const mu0_fp16_t  x, mu0_sint64_t * e)
 {
 	mu0_fp16_t        r;
-	___mu0_sint4_t___ q = mu0_const_cast(___mu0_sint4_t___, *e);
+	___mu0_sint4_t___ q = 0;
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT16
 #			if  (__has_builtin(__builtin_frexpf16))
@@ -109,7 +109,7 @@ mu0_fp16_t  mu8_frexp_fp16  (const mu0_fp16_t  x, mu0_sint64_t * e)
 #	else
 	r = frexpf(x, &q);
 #	endif
-	*e = mu0_const_sint32(q);
+	*e = mu0_const_sint64(q);
 	return  r;
 }
 
