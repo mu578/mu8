@@ -1543,6 +1543,234 @@ __mu0_overload__ mu0_fp16_t  mu8_modf (const mu0_fp16_t  __x, mu0_fp16_t  * __f)
 #	endif
 
 # if    MU0_HAVE_OVERLOAD
+__mu0_overload__ mu0_fp128_t mu8_nearbyint (const mu0_fp128_t __x) { return mu8_nearbyint_fp128 (__x); }
+__mu0_overload__ mu0_fp64_t  mu8_nearbyint (const mu0_fp64_t  __x) { return mu8_nearbyint_fp64  (__x); }
+__mu0_overload__ mu0_fp32_t  mu8_nearbyint (const mu0_fp32_t  __x) { return mu8_nearbyint_fp32  (__x); }
+__mu0_overload__ mu0_fp16_t  mu8_nearbyint (const mu0_fp16_t  __x) { return mu8_nearbyint_fp16  (__x); }
+#	elif MU0_HAVE_GENERIC && MU0_HAVE_FLOAT16
+#	define mu8_nearbyint(__x) __mu0_generic__(__x \
+	, mu0_fp128_t : mu8_nearbyint_fp128           \
+	, mu0_fp64_t  : mu8_nearbyint_fp64            \
+	, mu0_fp32_t  : mu8_nearbyint_fp32            \
+	, mu0_fp16_t  : mu8_nearbyint_fp16            \
+) (__x)
+#	elif MU0_HAVE_GENERIC
+#	define mu8_nearbyint(__x) __mu0_generic__(__x \
+	, mu0_fp128_t : mu8_nearbyint_fp128           \
+	, mu0_fp64_t  : mu8_nearbyint_fp64            \
+	, mu0_fp32_t  : mu8_nearbyint_fp32            \
+) (__x)
+#	elif MU0_HAVE_TYPEOF
+#	define mu8_nearbyint(__x) mu8_cast(__mu0_kindof__(__x),                                           \
+	(                                                                                                 \
+		  __mu0_isofkind__(mu0_fp128_t, __x) ? mu8_nearbyint_fp128 (mu8_const_fp128(mu0_fp128_t, __x)) \
+		: __mu0_isofkind__(mu0_fp64_t,  __x) ? mu8_nearbyint_fp64  (mu8_const_fp64(mu0_fp64_t  , __x)) \
+		: __mu0_isofkind__(mu0_fp32_t,  __x) ? mu8_nearbyint_fp32  (mu8_const_fp32(mu0_fp32_t  , __x)) \
+		: __mu0_isofkind__(mu0_fp16_t,  __x) ? mu8_nearbyint_fp16  (mu8_const_fp16(mu0_fp16_t  , __x)) \
+		: 0                                                                                            \
+	))
+#	else
+#	define mu8_nearbyint(__x)                                                                         \
+	(                                                                                                 \
+		  __mu0_isofsize__(mu0_fp128_t, __x) ? mu8_nearbyint_fp128 (mu8_const_fp128(mu0_fp128_t, __x)) \
+		: __mu0_isofsize__(mu0_fp64_t,  __x) ? mu8_nearbyint_fp64  (mu8_const_fp64(mu0_fp64_t  , __x)) \
+		: __mu0_isofsize__(mu0_fp32_t,  __x) ? mu8_nearbyint_fp32  (mu8_const_fp32(mu0_fp32_t  , __x)) \
+		: __mu0_isofsize__(mu0_fp16_t,  __x) ? mu8_nearbyint_fp16  (mu8_const_fp16(mu0_fp16_t  , __x)) \
+		: 0                                                                                            \
+	)
+#	endif
+
+# if    MU0_HAVE_OVERLOAD
+__mu0_overload__ mu0_fp128_t mu8_nextafter (const mu0_fp128_t __x, const mu0_fp128_t __y) { return mu8_nextafter_fp128 (__x, __y); }
+__mu0_overload__ mu0_fp64_t  mu8_nextafter (const mu0_fp64_t  __x, const mu0_fp64_t  __y) { return mu8_nextafter_fp64  (__x, __y); }
+__mu0_overload__ mu0_fp32_t  mu8_nextafter (const mu0_fp32_t  __x, const mu0_fp32_t  __y) { return mu8_nextafter_fp32  (__x, __y); }
+__mu0_overload__ mu0_fp16_t  mu8_nextafter (const mu0_fp16_t  __x, const mu0_fp16_t  __y) { return mu8_nextafter_fp16  (__x, __y); }
+#	elif MU0_HAVE_GENERIC && MU0_HAVE_FLOAT16
+#	define mu8_nextafter(__x, __y) __mu0_generic__((__x)+(__y) \
+	, mu0_fp128_t : mu8_nextafter_fp128                        \
+	, mu0_fp64_t  : mu8_nextafter_fp64                         \
+	, mu0_fp32_t  : mu8_nextafter_fp32                         \
+	, mu0_fp16_t  : mu8_nextafter_fp16                         \
+) (__x, __y)
+#	elif MU0_HAVE_GENERIC
+#	define mu8_nextafter(__x, __y) __mu0_generic__((__x)+(__y) \
+	, mu0_fp128_t : mu8_nextafter_fp128                        \
+	, mu0_fp64_t  : mu8_nextafter_fp64                         \
+	, mu0_fp32_t  : mu8_nextafter_fp32                         \
+) (__x, __y)
+#	elif MU0_HAVE_TYPEOF
+#	define mu8_nextafter(__x, __y) mu8_cast(__mu0_kindof__(__x),                                                                                   \
+	(                                                                                                                                              \
+		  __mu0_isofkind__(mu0_fp128_t, ((__x)+(__y))) ? mu8_nextafter_fp128 (mu8_const_fp128(mu0_fp128_t, __x), mu8_const_fp128(mu0_fp128_t, __y)) \
+		: __mu0_isofkind__(mu0_fp64_t,  ((__x)+(__y))) ? mu8_nextafter_fp64  (mu8_const_fp64(mu0_fp64_t  , __x), mu8_const_fp64(mu0_fp64_t  , __y)) \
+		: __mu0_isofkind__(mu0_fp32_t,  ((__x)+(__y))) ? mu8_nextafter_fp32  (mu8_const_fp32(mu0_fp32_t  , __x), mu8_const_fp32(mu0_fp32_t  , __y)) \
+		: __mu0_isofkind__(mu0_fp16_t,  ((__x)+(__y))) ? mu8_nextafter_fp16  (mu8_const_fp16(mu0_fp16_t  , __x), mu8_const_fp16(mu0_fp16_t  , __y)) \
+		: 0                                                                                                                                         \
+	))
+#	else
+#	define mu8_nextafter(__x, __y)                                                                                                                 \
+	(                                                                                                                                              \
+		  __mu0_isofsize__(mu0_fp128_t, ((__x)+(__y))) ? mu8_nextafter_fp128 (mu8_const_fp128(mu0_fp128_t, __x), mu8_const_fp128(mu0_fp128_t, __y)) \
+		: __mu0_isofsize__(mu0_fp64_t,  ((__x)+(__y))) ? mu8_nextafter_fp64  (mu8_const_fp64(mu0_fp64_t  , __x), mu8_const_fp64(mu0_fp64_t  , __y)) \
+		: __mu0_isofsize__(mu0_fp32_t,  ((__x)+(__y))) ? mu8_nextafter_fp32  (mu8_const_fp32(mu0_fp32_t  , __x), mu8_const_fp32(mu0_fp32_t  , __y)) \
+		: __mu0_isofsize__(mu0_fp16_t,  ((__x)+(__y))) ? mu8_nextafter_fp16  (mu8_const_fp16(mu0_fp16_t  , __x), mu8_const_fp16(mu0_fp16_t  , __y)) \
+		: 0                                                                                                                                         \
+	)
+#	endif
+
+# if    MU0_HAVE_OVERLOAD
+__mu0_overload__ mu0_fp128_t mu8_nexttoward (const mu0_fp128_t __x, const mu0_fp128_t __y) { return mu8_nexttoward_fp128 (__x, __y); }
+__mu0_overload__ mu0_fp64_t  mu8_nexttoward (const mu0_fp64_t  __x, const mu0_fp64_t  __y) { return mu8_nexttoward_fp64  (__x, __y); }
+__mu0_overload__ mu0_fp32_t  mu8_nexttoward (const mu0_fp32_t  __x, const mu0_fp32_t  __y) { return mu8_nexttoward_fp32  (__x, __y); }
+__mu0_overload__ mu0_fp16_t  mu8_nexttoward (const mu0_fp16_t  __x, const mu0_fp16_t  __y) { return mu8_nexttoward_fp16  (__x, __y); }
+#	elif MU0_HAVE_GENERIC && MU0_HAVE_FLOAT16
+#	define mu8_nexttoward(__x, __y) __mu0_generic__((__x)+(__y) \
+	, mu0_fp128_t : mu8_nexttoward_fp128                        \
+	, mu0_fp64_t  : mu8_nexttoward_fp64                         \
+	, mu0_fp32_t  : mu8_nexttoward_fp32                         \
+	, mu0_fp16_t  : mu8_nexttoward_fp16                         \
+) (__x, __y)
+#	elif MU0_HAVE_GENERIC
+#	define mu8_nexttoward(__x, __y) __mu0_generic__((__x)+(__y) \
+	, mu0_fp128_t : mu8_nexttoward_fp128                        \
+	, mu0_fp64_t  : mu8_nexttoward_fp64                         \
+	, mu0_fp32_t  : mu8_nexttoward_fp32                         \
+) (__x, __y)
+#	elif MU0_HAVE_TYPEOF
+#	define mu8_nexttoward(__x, __y) mu8_cast(__mu0_kindof__(__x),                                                                                   \
+	(                                                                                                                                               \
+		  __mu0_isofkind__(mu0_fp128_t, ((__x)+(__y))) ? mu8_nexttoward_fp128 (mu8_const_fp128(mu0_fp128_t, __x), mu8_const_fp128(mu0_fp128_t, __y)) \
+		: __mu0_isofkind__(mu0_fp64_t,  ((__x)+(__y))) ? mu8_nexttoward_fp64  (mu8_const_fp64(mu0_fp64_t  , __x), mu8_const_fp64(mu0_fp64_t  , __y)) \
+		: __mu0_isofkind__(mu0_fp32_t,  ((__x)+(__y))) ? mu8_nexttoward_fp32  (mu8_const_fp32(mu0_fp32_t  , __x), mu8_const_fp32(mu0_fp32_t  , __y)) \
+		: __mu0_isofkind__(mu0_fp16_t,  ((__x)+(__y))) ? mu8_nexttoward_fp16  (mu8_const_fp16(mu0_fp16_t  , __x), mu8_const_fp16(mu0_fp16_t  , __y)) \
+		: 0                                                                                                                                          \
+	))
+#	else
+#	define mu8_nexttoward(__x, __y)                                                                                                                 \
+	(                                                                                                                                               \
+		  __mu0_isofsize__(mu0_fp128_t, ((__x)+(__y))) ? mu8_nexttoward_fp128 (mu8_const_fp128(mu0_fp128_t, __x), mu8_const_fp128(mu0_fp128_t, __y)) \
+		: __mu0_isofsize__(mu0_fp64_t,  ((__x)+(__y))) ? mu8_nexttoward_fp64  (mu8_const_fp64(mu0_fp64_t  , __x), mu8_const_fp64(mu0_fp64_t  , __y)) \
+		: __mu0_isofsize__(mu0_fp32_t,  ((__x)+(__y))) ? mu8_nexttoward_fp32  (mu8_const_fp32(mu0_fp32_t  , __x), mu8_const_fp32(mu0_fp32_t  , __y)) \
+		: __mu0_isofsize__(mu0_fp16_t,  ((__x)+(__y))) ? mu8_nexttoward_fp16  (mu8_const_fp16(mu0_fp16_t  , __x), mu8_const_fp16(mu0_fp16_t  , __y)) \
+		: 0                                                                                                                                          \
+	)
+#	endif
+
+# if    MU0_HAVE_OVERLOAD
+__mu0_overload__ mu0_fp128_t mu8_pow (const mu0_fp128_t __x, const mu0_fp128_t __y) { return mu8_pow_fp128 (__x, __y); }
+__mu0_overload__ mu0_fp64_t  mu8_pow (const mu0_fp64_t  __x, const mu0_fp64_t  __y) { return mu8_pow_fp64  (__x, __y); }
+__mu0_overload__ mu0_fp32_t  mu8_pow (const mu0_fp32_t  __x, const mu0_fp32_t  __y) { return mu8_pow_fp32  (__x, __y); }
+__mu0_overload__ mu0_fp16_t  mu8_pow (const mu0_fp16_t  __x, const mu0_fp16_t  __y) { return mu8_pow_fp16  (__x, __y); }
+#	elif MU0_HAVE_GENERIC && MU0_HAVE_FLOAT16
+#	define mu8_pow(__x, __y) __mu0_generic__((__x)+(__y) \
+	, mu0_fp128_t : mu8_pow_fp128                        \
+	, mu0_fp64_t  : mu8_pow_fp64                         \
+	, mu0_fp32_t  : mu8_pow_fp32                         \
+	, mu0_fp16_t  : mu8_pow_fp16                         \
+) (__x, __y)
+#	elif MU0_HAVE_GENERIC
+#	define mu8_pow(__x, __y) __mu0_generic__((__x)+(__y) \
+	, mu0_fp128_t : mu8_pow_fp128                        \
+	, mu0_fp64_t  : mu8_pow_fp64                         \
+	, mu0_fp32_t  : mu8_pow_fp32                         \
+) (__x, __y)
+#	elif MU0_HAVE_TYPEOF
+#	define mu8_pow(__x, __y) mu8_cast(__mu0_kindof__(__x),                                                                                   \
+	(                                                                                                                                        \
+		  __mu0_isofkind__(mu0_fp128_t, ((__x)+(__y))) ? mu8_pow_fp128 (mu8_const_fp128(mu0_fp128_t, __x), mu8_const_fp128(mu0_fp128_t, __y)) \
+		: __mu0_isofkind__(mu0_fp64_t,  ((__x)+(__y))) ? mu8_pow_fp64  (mu8_const_fp64(mu0_fp64_t  , __x), mu8_const_fp64(mu0_fp64_t  , __y)) \
+		: __mu0_isofkind__(mu0_fp32_t,  ((__x)+(__y))) ? mu8_pow_fp32  (mu8_const_fp32(mu0_fp32_t  , __x), mu8_const_fp32(mu0_fp32_t  , __y)) \
+		: __mu0_isofkind__(mu0_fp16_t,  ((__x)+(__y))) ? mu8_pow_fp16  (mu8_const_fp16(mu0_fp16_t  , __x), mu8_const_fp16(mu0_fp16_t  , __y)) \
+		: 0                                                                                                                                   \
+	))
+#	else
+#	define mu8_pow(__x, __y)                                                                                                                 \
+	(                                                                                                                                        \
+		  __mu0_isofsize__(mu0_fp128_t, ((__x)+(__y))) ? mu8_pow_fp128 (mu8_const_fp128(mu0_fp128_t, __x), mu8_const_fp128(mu0_fp128_t, __y)) \
+		: __mu0_isofsize__(mu0_fp64_t,  ((__x)+(__y))) ? mu8_pow_fp64  (mu8_const_fp64(mu0_fp64_t  , __x), mu8_const_fp64(mu0_fp64_t  , __y)) \
+		: __mu0_isofsize__(mu0_fp32_t,  ((__x)+(__y))) ? mu8_pow_fp32  (mu8_const_fp32(mu0_fp32_t  , __x), mu8_const_fp32(mu0_fp32_t  , __y)) \
+		: __mu0_isofsize__(mu0_fp16_t,  ((__x)+(__y))) ? mu8_pow_fp16  (mu8_const_fp16(mu0_fp16_t  , __x), mu8_const_fp16(mu0_fp16_t  , __y)) \
+		: 0                                                                                                                                   \
+	)
+#	endif
+
+# if    MU0_HAVE_OVERLOAD
+__mu0_overload__ mu0_fp128_t mu8_remainder (const mu0_fp128_t __x, const mu0_fp128_t __y) { return mu8_remainder_fp128 (__x, __y); }
+__mu0_overload__ mu0_fp64_t  mu8_remainder (const mu0_fp64_t  __x, const mu0_fp64_t  __y) { return mu8_remainder_fp64  (__x, __y); }
+__mu0_overload__ mu0_fp32_t  mu8_remainder (const mu0_fp32_t  __x, const mu0_fp32_t  __y) { return mu8_remainder_fp32  (__x, __y); }
+__mu0_overload__ mu0_fp16_t  mu8_remainder (const mu0_fp16_t  __x, const mu0_fp16_t  __y) { return mu8_remainder_fp16  (__x, __y); }
+#	elif MU0_HAVE_GENERIC && MU0_HAVE_FLOAT16
+#	define mu8_remainder(__x, __y) __mu0_generic__((__x)+(__y) \
+	, mu0_fp128_t : mu8_remainder_fp128                        \
+	, mu0_fp64_t  : mu8_remainder_fp64                         \
+	, mu0_fp32_t  : mu8_remainder_fp32                         \
+	, mu0_fp16_t  : mu8_remainder_fp16                         \
+) (__x, __y)
+#	elif MU0_HAVE_GENERIC
+#	define mu8_remainder(__x, __y) __mu0_generic__((__x)+(__y) \
+	, mu0_fp128_t : mu8_remainder_fp128                        \
+	, mu0_fp64_t  : mu8_remainder_fp64                         \
+	, mu0_fp32_t  : mu8_remainder_fp32                         \
+) (__x, __y)
+#	elif MU0_HAVE_TYPEOF
+#	define mu8_remainder(__x, __y) mu8_cast(__mu0_kindof__(__x),                                                                                   \
+	(                                                                                                                                              \
+		  __mu0_isofkind__(mu0_fp128_t, ((__x)+(__y))) ? mu8_remainder_fp128 (mu8_const_fp128(mu0_fp128_t, __x), mu8_const_fp128(mu0_fp128_t, __y)) \
+		: __mu0_isofkind__(mu0_fp64_t,  ((__x)+(__y))) ? mu8_remainder_fp64  (mu8_const_fp64(mu0_fp64_t  , __x), mu8_const_fp64(mu0_fp64_t  , __y)) \
+		: __mu0_isofkind__(mu0_fp32_t,  ((__x)+(__y))) ? mu8_remainder_fp32  (mu8_const_fp32(mu0_fp32_t  , __x), mu8_const_fp32(mu0_fp32_t  , __y)) \
+		: __mu0_isofkind__(mu0_fp16_t,  ((__x)+(__y))) ? mu8_remainder_fp16  (mu8_const_fp16(mu0_fp16_t  , __x), mu8_const_fp16(mu0_fp16_t  , __y)) \
+		: 0                                                                                                                                         \
+	))
+#	else
+#	define mu8_remainder(__x, __y)                                                                                                                 \
+	(                                                                                                                                              \
+		  __mu0_isofsize__(mu0_fp128_t, ((__x)+(__y))) ? mu8_remainder_fp128 (mu8_const_fp128(mu0_fp128_t, __x), mu8_const_fp128(mu0_fp128_t, __y)) \
+		: __mu0_isofsize__(mu0_fp64_t,  ((__x)+(__y))) ? mu8_remainder_fp64  (mu8_const_fp64(mu0_fp64_t  , __x), mu8_const_fp64(mu0_fp64_t  , __y)) \
+		: __mu0_isofsize__(mu0_fp32_t,  ((__x)+(__y))) ? mu8_remainder_fp32  (mu8_const_fp32(mu0_fp32_t  , __x), mu8_const_fp32(mu0_fp32_t  , __y)) \
+		: __mu0_isofsize__(mu0_fp16_t,  ((__x)+(__y))) ? mu8_remainder_fp16  (mu8_const_fp16(mu0_fp16_t  , __x), mu8_const_fp16(mu0_fp16_t  , __y)) \
+		: 0                                                                                                                                         \
+	)
+#	endif
+
+# if    MU0_HAVE_OVERLOAD
+__mu0_overload__ mu0_fp128_t mu8_remquo (const mu0_fp128_t __x, const mu0_fp128_t __y, mu0_sint64_t * __q) { return mu8_remquo_fp128 (__x, __y, __q); }
+__mu0_overload__ mu0_fp64_t  mu8_remquo (const mu0_fp64_t  __x, const mu0_fp64_t  __y, mu0_sint64_t * __q) { return mu8_remquo_fp64  (__x, __y, __q); }
+__mu0_overload__ mu0_fp32_t  mu8_remquo (const mu0_fp32_t  __x, const mu0_fp32_t  __y, mu0_sint64_t * __q) { return mu8_remquo_fp32  (__x, __y, __q); }
+__mu0_overload__ mu0_fp16_t  mu8_remquo (const mu0_fp16_t  __x, const mu0_fp16_t  __y, mu0_sint64_t * __q) { return mu8_remquo_fp16  (__x, __y, __q); }
+#	elif MU0_HAVE_GENERIC && MU0_HAVE_FLOAT16
+#	define mu8_remquo(__x, __y, __q) __mu0_generic__((__x)+(__y) \
+	, mu0_fp128_t : mu8_remquo_fp128                             \
+	, mu0_fp64_t  : mu8_remquo_fp64                              \
+	, mu0_fp32_t  : mu8_remquo_fp32                              \
+	, mu0_fp16_t  : mu8_remquo_fp16                              \
+) (__x, __y, __q)
+#	elif MU0_HAVE_GENERIC
+#	define mu8_remquo(__x, __y, __q) __mu0_generic__((__x)+(__y) \
+	, mu0_fp128_t : mu8_remquo_fp128                             \
+	, mu0_fp64_t  : mu8_remquo_fp64                              \
+	, mu0_fp32_t  : mu8_remquo_fp32                              \
+) (__x, __y, __q)
+#	elif MU0_HAVE_TYPEOF
+#	define mu8_remquo(__x, __y, __q) mu8_cast(__mu0_kindof__(__x),                                                                                   \
+	(                                                                                                                                                \
+		  __mu0_isofkind__(mu0_fp128_t, ((__x)+(__y))) ? mu8_remquo_fp128 (mu8_const_fp128(mu0_fp128_t, __x), mu8_const_fp128(mu0_fp128_t, __y), __q) \
+		: __mu0_isofkind__(mu0_fp64_t,  ((__x)+(__y))) ? mu8_remquo_fp64  (mu8_const_fp64(mu0_fp64_t  , __x), mu8_const_fp64(mu0_fp64_t  , __y), __q) \
+		: __mu0_isofkind__(mu0_fp32_t,  ((__x)+(__y))) ? mu8_remquo_fp32  (mu8_const_fp32(mu0_fp32_t  , __x), mu8_const_fp32(mu0_fp32_t  , __y), __q) \
+		: __mu0_isofkind__(mu0_fp16_t,  ((__x)+(__y))) ? mu8_remquo_fp16  (mu8_const_fp16(mu0_fp16_t  , __x), mu8_const_fp16(mu0_fp16_t  , __y), __q) \
+		: 0                                                                                                                                           \
+	))
+#	else
+#	define mu8_remquo(__x, __y, __q)                                                                                                                 \
+	(                                                                                                                                                \
+		  __mu0_isofsize__(mu0_fp128_t, ((__x)+(__y))) ? mu8_remquo_fp128 (mu8_const_fp128(mu0_fp128_t, __x), mu8_const_fp128(mu0_fp128_t, __y), __q) \
+		: __mu0_isofsize__(mu0_fp64_t,  ((__x)+(__y))) ? mu8_remquo_fp64  (mu8_const_fp64(mu0_fp64_t  , __x), mu8_const_fp64(mu0_fp64_t  , __y), __q) \
+		: __mu0_isofsize__(mu0_fp32_t,  ((__x)+(__y))) ? mu8_remquo_fp32  (mu8_const_fp32(mu0_fp32_t  , __x), mu8_const_fp32(mu0_fp32_t  , __y), __q) \
+		: __mu0_isofsize__(mu0_fp16_t,  ((__x)+(__y))) ? mu8_remquo_fp16  (mu8_const_fp16(mu0_fp16_t  , __x), mu8_const_fp16(mu0_fp16_t  , __y), __q) \
+		: 0                                                                                                                                           \
+	)
+#	endif
+
+# if    MU0_HAVE_OVERLOAD
 __mu0_overload__ mu0_fp128_t mu8_y0 (const mu0_fp128_t __x) { return mu8_y0_fp128 (__x); }
 __mu0_overload__ mu0_fp64_t  mu8_y0 (const mu0_fp64_t  __x) { return mu8_y0_fp64  (__x); }
 __mu0_overload__ mu0_fp32_t  mu8_y0 (const mu0_fp32_t  __x) { return mu8_y0_fp32  (__x); }
