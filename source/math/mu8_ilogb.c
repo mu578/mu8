@@ -24,9 +24,9 @@ mu0_sint64_t mu8_ilogb_fp128 (const mu0_fp128_t x)
 #			if  (__has_builtin(__builtin_ilogbf128))
 				return __builtin_ilogbf128(x);
 #			elif (__has_builtin(__builtin_ilogbl))
-				return mu0_fp128(__builtin_ilogbl(mu0_const_fpex(x)));
+				return __builtin_ilogbl(mu0_const_fpex(x));
 #			else
-				return mu0_fp128(ilogbl(mu0_const_fpex(x)));
+				return ilogbl(mu0_const_fpex(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_ilogbl))
@@ -79,9 +79,9 @@ mu0_sint64_t mu8_ilogb_fp16  (const mu0_fp16_t  x)
 #			if  (__has_builtin(__builtin_ilogbf16))
 				return __builtin_ilogbf16(x);
 #			elif (__has_builtin(__builtin_ilogbf))
-				return mu0_fp16(__builtin_ilogbf(mu0_const_fp32(x)));
+				return __builtin_ilogbf(mu0_const_fp32(x));
 #			else
-				return mu0_fp16(ilogbf(mu0_const_fp32(x)));
+				return ilogbf(mu0_const_fp32(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_ilogbf))
