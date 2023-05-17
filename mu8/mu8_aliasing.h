@@ -24,67 +24,67 @@ MU0_BEGIN_CDECL
 
 #	define __mu8_aliasing__(_Tp, __alias) __alias ## _ ## _Tp
 
-#	define __mu8_alias01__(_Tp, __alias, __unary_fn)                                             \
-	__mu0_static_inline__                                                                        \
-	const _Tp __mu8_aliasing__(_Tp, __alias) (const _Tp __a)                                     \
-	{                                                                                            \
-		return __unary_fn(__a);                                                                   \
+#	define __mu8_alias01__(_Tp, __alias, __unary_fn)                                            \
+	__mu0_static_inline__                                                                       \
+	const _Tp __mu8_aliasing__(_Tp, __alias) (const _Tp __a)                                    \
+	{                                                                                           \
+		return __unary_fn(__a);                                                                  \
 	} __mu0_delineate__
 
-#	define __mu8_alias02__(_Tp, __alias, __binary_fn)                                            \
-	__mu0_static_inline__                                                                        \
-	const _Tp __mu8_aliasing__(_Tp, __alias) (const _Tp __a, const _Tp __b)                      \
-	{                                                                                            \
-		return __binary_fn(__a, __b);                                                             \
+#	define __mu8_alias02__(_Tp, __alias, __binary_fn)                                           \
+	__mu0_static_inline__                                                                       \
+	const _Tp __mu8_aliasing__(_Tp, __alias) (const _Tp __a, const _Tp __b)                     \
+	{                                                                                           \
+		return __binary_fn(__a, __b);                                                            \
 	} __mu0_delineate__
 
-#	define __mu8_alias03__(_Tp, __alias, __trinary_fn)                                           \
-	__mu0_static_inline__                                                                        \
-	const _Tp __mu8_aliasing__(_Tp, __alias) (const _Tp __a, const _Tp __b, const _Tp __c)       \
-	{                                                                                            \
-		return __trinary_fn(__a, __b, __c);                                                       \
+#	define __mu8_alias03__(_Tp, __alias, __trinary_fn)                                          \
+	__mu0_static_inline__                                                                       \
+	const _Tp __mu8_aliasing__(_Tp, __alias) (const _Tp __a, const _Tp __b, const _Tp __c)      \
+	{                                                                                           \
+		return __trinary_fn(__a, __b, __c);                                                      \
 	} __mu0_delineate__
 
-#	define __mu8_alias04__(_Tp, __alias, __binary_fn)                                            \
-	__mu0_static_inline__                                                                        \
-	const _Tp __mu8_aliasing__(_Tp, __alias) (const _Tp __a, mu0_sint64_t * __b)                 \
-	{                                                                                            \
-		return __binary_fn(__a, __b);                                                             \
+#	define __mu8_alias04__(_Tp, __alias, __binary_fn)                                           \
+	__mu0_static_inline__                                                                       \
+	const _Tp __mu8_aliasing__(_Tp, __alias) (const _Tp __a, mu0_sint64_t * __b)                \
+	{                                                                                           \
+		return __binary_fn(__a, __b);                                                            \
 	} __mu0_delineate__
 
-#	define __mu8_alias05__(_Tp, __alias, __unary_fn)                                             \
-	__mu0_static_inline__                                                                        \
-	const mu0_sint64_t __mu8_aliasing__(_Tp, __alias) (const _Tp __a)                            \
-	{                                                                                            \
-		return __unary_fn(__a);                                                                   \
+#	define __mu8_alias05__(_Tp, __alias, __unary_fn)                                            \
+	__mu0_static_inline__                                                                       \
+	const mu0_sint64_t __mu8_aliasing__(_Tp, __alias) (const _Tp __a)                           \
+	{                                                                                           \
+		return __unary_fn(__a);                                                                  \
 	} __mu0_delineate__
 
-#	define __mu8_alias06__(_Tp, __alias, __binary_fn)                                            \
-	__mu0_static_inline__                                                                        \
-	const _Tp __mu8_aliasing__(_Tp, __alias) (const mu0_sint64_t __a, const _Tp __a)             \
-	{                                                                                            \
-		return __binary_fn(__a, __b);                                                             \
+#	define __mu8_alias06__(_Tp, __alias, __binary_fn)                                           \
+	__mu0_static_inline__                                                                       \
+	const _Tp __mu8_aliasing__(_Tp, __alias) (const mu0_sint64_t __a, const _Tp __a)            \
+	{                                                                                           \
+		return __binary_fn(__a, __b);                                                            \
 	} __mu0_delineate__
 
-#	define __mu8_alias07__(_Tp, __alias, __binary_fn)                                            \
-	__mu0_static_inline__                                                                        \
-	const _Tp __mu8_aliasing__(_Tp, __alias) (const _Tp __a, const mu0_sint64_t __b)             \
-	{                                                                                            \
-		return __binary_fn(__a, __b);                                                             \
+#	define __mu8_alias07__(_Tp, __alias, __binary_fn)                                           \
+	__mu0_static_inline__                                                                       \
+	const _Tp __mu8_aliasing__(_Tp, __alias) (const _Tp __a, const mu0_sint64_t __b)            \
+	{                                                                                           \
+		return __binary_fn(__a, __b);                                                            \
 	} __mu0_delineate__
 
-#	define __mu8_alias08__(_Tp, __alias, __binary_fn)                                            \
-	__mu0_static_inline__                                                                        \
-	const _Tp __mu8_aliasing__(_Tp, __alias) (const _Tp __a, _Tp * __b)                          \
-	{                                                                                            \
-		return __binary_fn(__a, __b);                                                             \
+#	define __mu8_alias08__(_Tp, __alias, __binary_fn)                                           \
+	__mu0_static_inline__                                                                       \
+	const _Tp __mu8_aliasing__(_Tp, __alias) (const _Tp __a, _Tp * __b)                         \
+	{                                                                                           \
+		return __binary_fn(__a, __b);                                                            \
 	} __mu0_delineate__
 
-#	define __mu8_alias09__(_Tp, __alias, __unary_fn)                                             \
-	__mu0_static_inline__                                                                        \
-	const _Tp __mu8_aliasing__(_Tp, __alias) (const mu0_tchar8_t * __a)                          \
-	{                                                                                            \
-		return __unary_fn(__a);                                                                   \
+#	define __mu8_alias09__(_Tp, __alias, __unary_fn)                                            \
+	__mu0_static_inline__                                                                       \
+	const _Tp __mu8_aliasing__(_Tp, __alias) (const mu0_tchar8_t * __a)                         \
+	{                                                                                           \
+		return __unary_fn(__a);                                                                  \
 	} __mu0_delineate__
 
 #	define __mu8_alias10__(_Tp, __alias, __trinary_fn)                                          \
@@ -560,7 +560,7 @@ __mu8_alias06__(mu0_fp16_t , mu8_alias_yn        , mu8_yn_fp16 );
 	__mu8_aliatang__(_Tp, mu8_alias_tanh)(__x)
 
 #	define mu8_alias_tgamma(_Tp, __x) \
-	__mu8_aliatgammag__(_Tp, mu8_alias_tgamma)(__x)
+	__mu8_aliasing__(_Tp, mu8_alias_tgamma)(__x)
 
 #	define mu8_alias_trunc(_Tp, __x) \
 	__mu8_aliasing__(_Tp, mu8_alias_trunc)(__x)

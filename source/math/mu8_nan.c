@@ -76,7 +76,7 @@ mu0_fp16_t  mu8_nan_fp16  (const mu0_tchar8_t * s)
 {
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT16
-#			if  (__has_builtin(__builtin_nanf16))
+#			if  (__has_builtin(__builtin_nanf16_BUG)) /* @TODO: broken */
 				return __builtin_nanf16(s);
 #			elif (__has_builtin(__builtin_nanf))
 				return mu0_fp16(__builtin_nanf(s));
