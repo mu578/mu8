@@ -15,8 +15,7 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu0/mu0_floating.h>
-#include <mu0/mu0_integer.h>
+#include <mu8/mu8_floating.h>
 #include <mu0/mu0_string.h>
 
 #ifndef MU8_MATH_H
@@ -258,6 +257,56 @@ mu0_fp128_t  mu8_remquo_fp128     (const mu0_fp128_t x, const mu0_fp128_t y, mu0
 mu0_fp64_t   mu8_remquo_fp64      (const mu0_fp64_t  x, const mu0_fp64_t  y, mu0_sint64_t * q);
 mu0_fp32_t   mu8_remquo_fp32      (const mu0_fp32_t  x, const mu0_fp32_t  y, mu0_sint64_t * q);
 mu0_fp16_t   mu8_remquo_fp16      (const mu0_fp16_t  x, const mu0_fp16_t  y, mu0_sint64_t * q);
+
+mu0_fp128_t  mu8_rint_fp128       (const mu0_fp128_t x);
+mu0_fp64_t   mu8_rint_fp64        (const mu0_fp64_t  x);
+mu0_fp32_t   mu8_rint_fp32        (const mu0_fp32_t  x);
+mu0_fp16_t   mu8_rint_fp16        (const mu0_fp16_t  x);
+
+mu0_fp128_t  mu8_round_fp128      (const mu0_fp128_t x);
+mu0_fp64_t   mu8_round_fp64       (const mu0_fp64_t  x);
+mu0_fp32_t   mu8_round_fp32       (const mu0_fp32_t  x);
+mu0_fp16_t   mu8_round_fp16       (const mu0_fp16_t  x);
+
+mu0_fp128_t  mu8_scalbn_fp128     (const mu0_fp128_t x, const mu0_sint64_t n);
+mu0_fp64_t   mu8_scalbn_fp64      (const mu0_fp64_t  x, const mu0_sint64_t n);
+mu0_fp32_t   mu8_scalbn_fp32      (const mu0_fp32_t  x, const mu0_sint64_t n);
+mu0_fp16_t   mu8_scalbn_fp16      (const mu0_fp16_t  x, const mu0_sint64_t n);
+
+mu0_fp128_t  mu8_sin_fp128        (const mu0_fp128_t x);
+mu0_fp64_t   mu8_sin_fp64         (const mu0_fp64_t  x);
+mu0_fp32_t   mu8_sin_fp32         (const mu0_fp32_t  x);
+mu0_fp16_t   mu8_sin_fp16         (const mu0_fp16_t  x);
+
+mu0_fp128_t  mu8_sinh_fp128       (const mu0_fp128_t x);
+mu0_fp64_t   mu8_sinh_fp64        (const mu0_fp64_t  x);
+mu0_fp32_t   mu8_sinh_fp32        (const mu0_fp32_t  x);
+mu0_fp16_t   mu8_sinh_fp16        (const mu0_fp16_t  x);
+
+mu0_fp128_t  mu8_sqrt_fp128       (const mu0_fp128_t x);
+mu0_fp64_t   mu8_sqrt_fp64        (const mu0_fp64_t  x);
+mu0_fp32_t   mu8_sqrt_fp32        (const mu0_fp32_t  x);
+mu0_fp16_t   mu8_sqrt_fp16        (const mu0_fp16_t  x);
+
+mu0_fp128_t  mu8_tan_fp128        (const mu0_fp128_t x);
+mu0_fp64_t   mu8_tan_fp64         (const mu0_fp64_t  x);
+mu0_fp32_t   mu8_tan_fp32         (const mu0_fp32_t  x);
+mu0_fp16_t   mu8_tan_fp16         (const mu0_fp16_t  x);
+
+mu0_fp128_t  mu8_tanh_fp128       (const mu0_fp128_t x);
+mu0_fp64_t   mu8_tanh_fp64        (const mu0_fp64_t  x);
+mu0_fp32_t   mu8_tanh_fp32        (const mu0_fp32_t  x);
+mu0_fp16_t   mu8_tanh_fp16        (const mu0_fp16_t  x);
+
+mu0_fp128_t  mu8_tgamma_fp128     (const mu0_fp128_t x);
+mu0_fp64_t   mu8_tgamma_fp64      (const mu0_fp64_t  x);
+mu0_fp32_t   mu8_tgamma_fp32      (const mu0_fp32_t  x);
+mu0_fp16_t   mu8_tgamma_fp16      (const mu0_fp16_t  x);
+
+mu0_fp128_t  mu8_trunc_fp128      (const mu0_fp128_t x);
+mu0_fp64_t   mu8_trunc_fp64       (const mu0_fp64_t  x);
+mu0_fp32_t   mu8_trunc_fp32       (const mu0_fp32_t  x);
+mu0_fp16_t   mu8_trunc_fp16       (const mu0_fp16_t  x);
 
 mu0_fp128_t  mu8_y0_fp128         (const mu0_fp128_t x);
 mu0_fp64_t   mu8_y0_fp64          (const mu0_fp64_t  x);
