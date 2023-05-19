@@ -23,19 +23,19 @@
 
 MU0_BEGIN_CDECL
 
-enum mu9_classify
+enum mu8_classify
 {
-	  mu9_classify_infinite  = mu0_fp_classify_infinite
-	, mu9_classify_nan       = mu0_fp_classify_nan
-	, mu9_classify_normal    = mu0_fp_classify_normal
-	, mu9_classify_subnormal = mu0_fp_classify_subnormal
-	, mu9_classify_zero      = mu0_fp_classify_zero
+	  mu8_classify_infinite  = mu0_fp_classify_infinite
+	, mu8_classify_nan       = mu0_fp_classify_nan
+	, mu8_classify_normal    = mu0_fp_classify_normal
+	, mu8_classify_subnormal = mu0_fp_classify_subnormal
+	, mu8_classify_zero      = mu0_fp_classify_zero
 };
 
-__mu0_static_inline__ enum mu9_classify mu8_classify_fp128 (const mu0_fp128_t __x) { return mu0_fp_classify (__x);                            }
-__mu0_static_inline__ enum mu9_classify mu8_classify_fp64  (const mu0_fp64_t  __x) { return mu0_fp_classify (__x);                            }
-__mu0_static_inline__ enum mu9_classify mu8_classify_fp32  (const mu0_fp32_t  __x) { return mu0_fp_classify (__x);                            }
-__mu0_static_inline__ enum mu9_classify mu8_classify_fp16  (const mu0_fp16_t  __x) { return mu0_fp_classify (__x);                            }
+__mu0_static_inline__ enum mu8_classify mu8_classify_fp128 (const mu0_fp128_t __x) { return mu0_fp_classify (__x);                            }
+__mu0_static_inline__ enum mu8_classify mu8_classify_fp64  (const mu0_fp64_t  __x) { return mu0_fp_classify (__x);                            }
+__mu0_static_inline__ enum mu8_classify mu8_classify_fp32  (const mu0_fp32_t  __x) { return mu0_fp_classify (__x);                            }
+__mu0_static_inline__ enum mu8_classify mu8_classify_fp16  (const mu0_fp16_t  __x) { return mu0_fp_classify (__x);                            }
 
 __mu0_static_inline__ const mu0_bool_t  mu8_isfinite_fp128 (const mu0_fp128_t __x) { return mu0_fp_isfinite (__x)== 0 ? mu0_false : mu0_true; }
 __mu0_static_inline__ const mu0_bool_t  mu8_isfinite_fp64  (const mu0_fp64_t  __x) { return mu0_fp_isfinite (__x)== 0 ? mu0_false : mu0_true; }
