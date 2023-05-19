@@ -20,6 +20,10 @@
 
 void mu8_zmul1_fp128 (mu0_fp128_t * cr, mu0_fp128_t * ci, const mu0_fp128_t ar, const mu0_fp128_t ai, const mu0_fp128_t b)
 {
+#	if MU0_HAVE_FASTMATH
+	*cr = ar * b;
+	*ci = ai * b;
+#	else
 	if (mu8_isinf_fp128(b)) {
 		*cr = b;
 		*ci = mu0_fp128_inf;
@@ -33,10 +37,15 @@ void mu8_zmul1_fp128 (mu0_fp128_t * cr, mu0_fp128_t * ci, const mu0_fp128_t ar, 
 		*cr = ar * b;
 		*ci = ai * b;
 	}
+#	endif
 }
 
 void mu8_zmul1_fp64  (mu0_fp64_t  * cr, mu0_fp64_t  * ci, const mu0_fp64_t  ar, const mu0_fp64_t  ai, const mu0_fp64_t  b)
 {
+#	if MU0_HAVE_FASTMATH
+	*cr = ar * b;
+	*ci = ai * b;
+#	else
 	if (mu8_isinf_fp64(b)) {
 		*cr = b;
 		*ci = mu0_fp64_inf;
@@ -50,10 +59,15 @@ void mu8_zmul1_fp64  (mu0_fp64_t  * cr, mu0_fp64_t  * ci, const mu0_fp64_t  ar, 
 		*cr = ar * b;
 		*ci = ai * b;
 	}
+#	endif
 }
 
 void mu8_zmul1_fp32  (mu0_fp32_t  * cr, mu0_fp32_t  * ci, const mu0_fp32_t  ar, const mu0_fp32_t  ai, const mu0_fp32_t  b)
 {
+#	if MU0_HAVE_FASTMATH
+	*cr = ar * b;
+	*ci = ai * b;
+#	else
 	if (mu8_isinf_fp32(b)) {
 		*cr = b;
 		*ci = mu0_fp32_inf;
@@ -67,10 +81,15 @@ void mu8_zmul1_fp32  (mu0_fp32_t  * cr, mu0_fp32_t  * ci, const mu0_fp32_t  ar, 
 		*cr = ar * b;
 		*ci = ai * b;
 	}
+#	endif
 }
 
 void mu8_zmul1_fp16  (mu0_fp16_t  * cr, mu0_fp16_t  * ci, const mu0_fp16_t  ar, const mu0_fp16_t  ai, const mu0_fp16_t  b)
 {
+#	if MU0_HAVE_FASTMATH
+	*cr = ar * b;
+	*ci = ai * b;
+#	else
 	if (mu8_isinf_fp16(b)) {
 		*cr = b;
 		*ci = mu0_fp16_inf;
@@ -84,6 +103,7 @@ void mu8_zmul1_fp16  (mu0_fp16_t  * cr, mu0_fp16_t  * ci, const mu0_fp16_t  ar, 
 		*cr = ar * b;
 		*ci = ai * b;
 	}
+#	endif
 }
 
 /* EOF */
