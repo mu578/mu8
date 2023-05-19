@@ -10,35 +10,55 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu8_zsub.c
+// mu8_znorm.c
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
 #include <mu8/mu8_math_annex.h>
 
-void mu8_zsub_fp128 (mu0_fp128_t * cr, mu0_fp128_t * ci, const mu0_fp128_t ar, const mu0_fp128_t ai, const mu0_fp128_t br, const mu0_fp128_t bi)
+mu0_fp128_t mu8_znorm_fp128 (const mu0_fp128_t zr, const mu0_fp128_t zi)
 {
-	*cr = ar - br;
-	*ci = ai - bi;
+	if (mu8_isinf_fp128(zr)) {
+		return mu0_fp128_inf;
+	}
+	if (mu8_isinf_fp128(zi)) {
+		return mu0_fp128_inf;
+	}
+	return mu8_raise2_fp128(zi) + mu8_raise2_fp128(zr);
 }
 
-void mu8_zsub_fp64  (mu0_fp64_t  * cr, mu0_fp64_t  * ci, const mu0_fp64_t  ar, const mu0_fp64_t  ai, const mu0_fp64_t  br, const mu0_fp64_t  bi)
+mu0_fp64_t  mu8_znorm_fp64  (const mu0_fp64_t  zr, const mu0_fp64_t  zi)
 {
-	*cr = ar - br;
-	*ci = ai - bi;
+	if (mu8_isinf_fp64(zr)) {
+		return mu0_fp64_inf;
+	}
+	if (mu8_isinf_fp64(zi)) {
+		return mu0_fp64_inf;
+	}
+	return mu8_raise2_fp64(zi) + mu8_raise2_fp64(zr);
 }
 
-void mu8_zsub_fp32  (mu0_fp32_t  * cr, mu0_fp32_t  * ci, const mu0_fp32_t  ar, const mu0_fp32_t  ai, const mu0_fp32_t  br, const mu0_fp32_t  bi)
+mu0_fp32_t  mu8_znorm_fp32  (const mu0_fp32_t  zr, const mu0_fp32_t  zi)
 {
-	*cr = ar - br;
-	*ci = ai - bi;
+	if (mu8_isinf_fp32(zr)) {
+		return mu0_fp32_inf;
+	}
+	if (mu8_isinf_fp32(zi)) {
+		return mu0_fp32_inf;
+	}
+	return mu8_raise2_fp32(zi) + mu8_raise2_fp32(zr);
 }
 
-void mu8_zsub_fp16  (mu0_fp16_t  * cr, mu0_fp16_t  * ci, const mu0_fp16_t  ar, const mu0_fp16_t  ai, const mu0_fp16_t  br, const mu0_fp16_t  bi)
+mu0_fp16_t  mu8_znorm_fp16  (const mu0_fp16_t  zr, const mu0_fp16_t  zi)
 {
-	*cr = ar - br;
-	*ci = ai - bi;
+	if (mu8_isinf_fp16(zr)) {
+		return mu0_fp16_inf;
+	}
+	if (mu8_isinf_fp16(zi)) {
+		return mu0_fp16_inf;
+	}
+	return mu8_raise2_fp16(zi) + mu8_raise2_fp16(zr);
 }
 
 /* EOF */
