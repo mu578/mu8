@@ -65,6 +65,11 @@ void         mu8_zsub_fp64   (mu0_fp64_t  * cr, mu0_fp64_t  * ci, const mu0_fp64
 void         mu8_zsub_fp32   (mu0_fp32_t  * cr, mu0_fp32_t  * ci, const mu0_fp32_t  ar, const mu0_fp32_t  ai, const mu0_fp32_t  br, const mu0_fp32_t  bi);
 void         mu8_zsub_fp16   (mu0_fp16_t  * cr, mu0_fp16_t  * ci, const mu0_fp16_t  ar, const mu0_fp16_t  ai, const mu0_fp16_t  br, const mu0_fp16_t  bi);
 
+void         mu8_zmul1_fp128 (mu0_fp128_t * cr, mu0_fp128_t * ci, const mu0_fp128_t ar, const mu0_fp128_t ai, const mu0_fp128_t b);
+void         mu8_zmul1_fp64  (mu0_fp64_t  * cr, mu0_fp64_t  * ci, const mu0_fp64_t  ar, const mu0_fp64_t  ai, const mu0_fp64_t  b);
+void         mu8_zmul1_fp32  (mu0_fp32_t  * cr, mu0_fp32_t  * ci, const mu0_fp32_t  ar, const mu0_fp32_t  ai, const mu0_fp32_t  b);
+void         mu8_zmul1_fp16  (mu0_fp16_t  * cr, mu0_fp16_t  * ci, const mu0_fp16_t  ar, const mu0_fp16_t  ai, const mu0_fp16_t  b);
+
 MU0_END_CDECL
 
 #endif /* !MU8_COMPLEX_ANNEX_H */
