@@ -24,9 +24,9 @@ mu0_fp128_t mu8_log1p_fp128 (const mu0_fp128_t x)
 #			if  (__has_builtin(__builtin_log1pf128))
 				return __builtin_log1pf128(x);
 #			elif (__has_builtin(__builtin_log1pl))
-				return mu0_fp128(__builtin_log1pl(mu0_const_fpex(x)));
+				return mu0_const_fp128(__builtin_log1pl(x));
 #			else
-				return mu0_fp128(log1pl(mu0_const_fpex(x)));
+				return mu0_const_fp128(log1pl(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_log1pl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_log1p_fp16  (const mu0_fp16_t  x)
 #			if  (__has_builtin(__builtin_log1pf16))
 				return __builtin_log1pf16(x);
 #			elif (__has_builtin(__builtin_log1pf))
-				return mu0_fp16(__builtin_log1pf(mu0_const_fp32(x)));
+				return mu0_const_fp16(__builtin_log1pf(x));
 #			else
-				return mu0_fp16(log1pf(mu0_const_fp32(x)));
+				return mu0_const_fp16(log1pf(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_log1pf))

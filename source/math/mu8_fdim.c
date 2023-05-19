@@ -24,9 +24,9 @@ mu0_fp128_t mu8_fdim_fp128 (const mu0_fp128_t x, const mu0_fp128_t y)
 #			if  (__has_builtin(__builtin_fdimf128))
 				return __builtin_fdimf128(x, y);
 #			elif (__has_builtin(__builtin_fdiml))
-				return mu0_fp128(__builtin_fdiml(mu0_const_fpex(x), mu0_const_fpex(y)));
+				return mu0_const_fp128(__builtin_fdiml(x, y));
 #			else
-				return mu0_fp128(fdiml(mu0_const_fpex(x), mu0_const_fpex(y)));
+				return mu0_const_fp128(fdiml(x, y));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_fdiml))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_fdim_fp16  (const mu0_fp16_t  x, const mu0_fp16_t  y)
 #			if  (__has_builtin(__builtin_fdimf16))
 				return __builtin_fdimf16(x, y);
 #			elif (__has_builtin(__builtin_fdimf))
-				return mu0_fp16(__builtin_fdimf(mu0_const_fp32(x), mu0_const_fp32(y)));
+				return mu0_const_fp16(__builtin_fdimf(x, y));
 #			else
-				return mu0_fp16(fdimf(mu0_const_fp32(x), mu0_const_fp32(y)));
+				return mu0_const_fp16(fdimf(x, y));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_fdimf))

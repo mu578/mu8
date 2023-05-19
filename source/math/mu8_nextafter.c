@@ -24,9 +24,9 @@ mu0_fp128_t mu8_nextafter_fp128 (const mu0_fp128_t x, const mu0_fp128_t y)
 #			if  (__has_builtin(__builtin_nextafterf128))
 				return __builtin_nextafterf128(x, y);
 #			elif (__has_builtin(__builtin_nextafterl))
-				return mu0_fp128(__builtin_nextafterl(mu0_const_fpex(x), mu0_const_fpex(y)));
+				return mu0_const_fp128(__builtin_nextafterl(x, y));
 #			else
-				return mu0_fp128(nextafterl(mu0_const_fpex(x), mu0_const_fpex(y)));
+				return mu0_const_fp128(nextafterl(x, y));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_nextafterl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_nextafter_fp16  (const mu0_fp16_t  x, const mu0_fp16_t  y)
 #			if  (__has_builtin(__builtin_nextafterf16))
 				return __builtin_nextafterf16(x, y);
 #			elif (__has_builtin(__builtin_nextafterf))
-				return mu0_fp16(__builtin_nextafterf(mu0_const_fp32(x), mu0_const_fp32(y)));
+				return mu0_const_fp16(__builtin_nextafterf(x, y));
 #			else
-				return mu0_fp16(nextafterf(mu0_const_fp32(x), mu0_const_fp32(y)));
+				return mu0_const_fp16(nextafterf(x, y));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_nextafterf))

@@ -10,37 +10,23 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu8_y0.c
+// mu8_math_annex.h
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
 #include <mu8/mu8_math.h>
 
-mu0_fp128_t mu8_y0_fp128 (const mu0_fp128_t x)
-{
-	return mu0_const_fp128(mu8_y0_fp64(mu0_const_fp64(x)));
-}
+#ifndef MU8_MATH_ANNEX_H
+#define MU8_MATH_ANNEX_H 1
 
-mu0_fp64_t  mu8_y0_fp64  (const mu0_fp64_t  x)
-{
-#	if   MU0_HAVE_CC_MSVCC
-	return _y0(x);
-#	elif MU0_HAVE_CC_ITLCC && MU0_HAVE_WINDOWS
-	return _y0(x);
-#	else
-	return y0(x);
-#	endif
-}
+mu0_fp128_t mu8_raise2_fp128 (const mu0_fp128_t x);
+mu0_fp64_t  mu8_raise2_fp64  (const mu0_fp64_t  x);
+mu0_fp32_t  mu8_raise2_fp32  (const mu0_fp32_t  x);
+mu0_fp16_t  mu8_raise2_fp16  (const mu0_fp16_t  x);
 
-mu0_fp32_t  mu8_y0_fp32  (const mu0_fp32_t  x)
-{
-	return mu0_fp32(mu8_y0_fp64(mu0_const_fp64(x)));
-}
+MU0_END_CDECL
 
-mu0_fp16_t  mu8_y0_fp16  (const mu0_fp16_t  x)
-{
-	return mu0_const_fp16(mu8_y0_fp64(mu0_const_fp64(x)));
-}
+#endif /* !MU8_MATH_ANNEX_H */
 
 /* EOF */

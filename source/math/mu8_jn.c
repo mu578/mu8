@@ -19,7 +19,7 @@
 
 mu0_fp128_t mu8_jn_fp128 (const mu0_sint64_t n, const mu0_fp128_t x)
 {
-	return mu0_fp128(mu8_jn_fp64(n, mu0_const_fp64(x)));
+	return mu0_const_fp128(mu8_jn_fp64(n, mu0_const_fp64(x)));
 }
 
 mu0_fp64_t  mu8_jn_fp64  (const mu0_sint64_t n, const mu0_fp64_t  x)
@@ -40,7 +40,7 @@ mu0_fp32_t  mu8_jn_fp32  (const mu0_sint64_t n, const mu0_fp32_t  x)
 
 mu0_fp16_t  mu8_jn_fp16  (const mu0_sint64_t n, const mu0_fp16_t  x)
 {
-	return mu0_fp16(mu8_jn_fp64(n, mu0_const_fp64(x)));
+	return mu0_const_fp16(mu8_jn_fp64(n, mu0_const_fp64(x)));
 }
 
 /* EOF */

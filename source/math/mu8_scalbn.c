@@ -24,9 +24,9 @@ mu0_fp128_t mu8_scalbn_fp128 (const mu0_fp128_t x, const mu0_sint64_t n)
 #			if  (__has_builtin(__builtin_scalblnf128))
 				return __builtin_scalblnf128(x, mu0_const_cast(___mu0_sintx_t___, n));
 #			elif (__has_builtin(__builtin_scalblnl))
-				return mu0_fp128(__builtin_scalblnl(mu0_const_fpex(x), mu0_const_cast(___mu0_sintx_t___, n)));
+				return mu0_const_fp128(__builtin_scalblnl(x, mu0_const_cast(___mu0_sintx_t___, n)));
 #			else
-				return mu0_fp128(scalblnl(mu0_const_fpex(x), mu0_const_cast(___mu0_sintx_t___, n)));
+				return mu0_const_fp128(scalblnl(x, mu0_const_cast(___mu0_sintx_t___, n)));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_scalblnl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_scalbn_fp16  (const mu0_fp16_t  x, const mu0_sint64_t n)
 #			if  (__has_builtin(__builtin_scalblnf16))
 				return __builtin_scalblnf16(x, mu0_const_cast(___mu0_sintx_t___, n));
 #			elif (__has_builtin(__builtin_scalblnf))
-				return mu0_fp16(__builtin_scalblnf(mu0_const_fp32(x), mu0_const_cast(___mu0_sintx_t___, n)));
+				return mu0_const_fp16(__builtin_scalblnf(x, mu0_const_cast(___mu0_sintx_t___, n)));
 #			else
-				return mu0_fp16(scalblnf(mu0_const_fp32(x), mu0_const_cast(___mu0_sintx_t___, n)));
+				return mu0_const_fp16(scalblnf(x, mu0_const_cast(___mu0_sintx_t___, n)));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_scalblnf))

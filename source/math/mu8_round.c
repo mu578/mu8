@@ -24,9 +24,9 @@ mu0_fp128_t mu8_round_fp128 (const mu0_fp128_t x)
 #			if  (__has_builtin(__builtin_roundf128))
 				return __builtin_roundf128(x);
 #			elif (__has_builtin(__builtin_roundl))
-				return mu0_fp128(__builtin_roundl(mu0_const_fpex(x)));
+				return mu0_const_fp128(__builtin_roundl(x));
 #			else
-				return mu0_fp128(roundl(mu0_const_fpex(x)));
+				return mu0_const_fp128(roundl(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_roundl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_round_fp16  (const mu0_fp16_t  x)
 #			if  (__has_builtin(__builtin_roundf16))
 				return __builtin_roundf16(x);
 #			elif (__has_builtin(__builtin_roundf))
-				return mu0_fp16(__builtin_roundf(mu0_const_fp32(x)));
+				return mu0_const_fp16(__builtin_roundf(x));
 #			else
-				return mu0_fp16(roundf(mu0_const_fp32(x)));
+				return mu0_const_fp16(roundf(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_roundf))

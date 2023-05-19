@@ -24,9 +24,9 @@ mu0_fp128_t mu8_atan2_fp128 (const mu0_fp128_t y, const mu0_fp128_t x)
 #			if  (__has_builtin(__builtin_atan2f128))
 				return __builtin_atan2f128(y, x);
 #			elif (__has_builtin(__builtin_atan2l))
-				return mu0_fp128(__builtin_atan2l(mu0_const_fpex(y), mu0_const_fpex(x)));
+				return mu0_const_fp128(__builtin_atan2l(y, x));
 #			else
-				return mu0_fp128(atan2l(mu0_const_fpex(y), mu0_const_fpex(x)));
+				return mu0_const_fp128(atan2l(y, x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_atan2l))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_atan2_fp16  (const mu0_fp16_t  y, const mu0_fp16_t  x)
 #			if  (__has_builtin(__builtin_atan2f16))
 				return __builtin_atan2f16(y, x);
 #			elif (__has_builtin(__builtin_atan2f))
-				return mu0_fp16(__builtin_atan2f(mu0_const_fp32(y), mu0_const_fp32(x)));
+				return mu0_const_fp16(__builtin_atan2f(y, x));
 #			else
-				return mu0_fp16(atan2f(mu0_const_fp32(y), mu0_const_fp32(x)));
+				return mu0_const_fp16(atan2f(y, x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_atan2f))

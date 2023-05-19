@@ -24,9 +24,9 @@ mu0_fp128_t mu8_ceil_fp128 (const mu0_fp128_t x)
 #			if  (__has_builtin(__builtin_ceilf128))
 				return __builtin_ceilf128(x);
 #			elif (__has_builtin(__builtin_ceill))
-				return mu0_fp128(__builtin_ceill(mu0_const_fpex(x)));
+				return mu0_const_fp128(__builtin_ceill(x));
 #			else
-				return mu0_fp128(ceill(mu0_const_fpex(x)));
+				return mu0_const_fp128(ceill(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_ceill))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_ceil_fp16  (const mu0_fp16_t  x)
 #			if  (__has_builtin(__builtin_ceilf16))
 				return __builtin_ceilf16(x);
 #			elif (__has_builtin(__builtin_ceilf))
-				return mu0_fp16(__builtin_ceilf(mu0_const_fp32(x)));
+				return mu0_const_fp16(__builtin_ceilf(x));
 #			else
-				return mu0_fp16(ceilf(mu0_const_fp32(x)));
+				return mu0_const_fp16(ceilf(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_ceilf))

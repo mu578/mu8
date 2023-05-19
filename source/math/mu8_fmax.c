@@ -24,9 +24,9 @@ mu0_fp128_t mu8_fmax_fp128 (const mu0_fp128_t x, const mu0_fp128_t y)
 #			if  (__has_builtin(__builtin_fmaxf128))
 				return __builtin_fmaxf128(x, y);
 #			elif (__has_builtin(__builtin_fmaxl))
-				return mu0_fp128(__builtin_fmaxl(mu0_const_fpex(x), mu0_const_fpex(y)));
+				return mu0_const_fp128(__builtin_fmaxl(x, y));
 #			else
-				return mu0_fp128(fmaxl(mu0_const_fpex(x), mu0_const_fpex(y)));
+				return mu0_const_fp128(fmaxl(x, y));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_fmaxl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_fmax_fp16  (const mu0_fp16_t  x, const mu0_fp16_t  y)
 #			if  (__has_builtin(__builtin_fmaxf16))
 				return __builtin_fmaxf16(x, y);
 #			elif (__has_builtin(__builtin_fmaxf))
-				return mu0_fp16(__builtin_fmaxf(mu0_const_fp32(x), mu0_const_fp32(y)));
+				return mu0_const_fp16(__builtin_fmaxf(x, y));
 #			else
-				return mu0_fp16(fmaxf(mu0_const_fp32(x), mu0_const_fp32(y)));
+				return mu0_const_fp16(fmaxf(x, y));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_fmaxf))

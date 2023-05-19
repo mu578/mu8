@@ -24,9 +24,9 @@ mu0_sint64_t mu8_irint_fp128 (const mu0_fp128_t x)
 #			if  (__has_builtin(__builtin_llrintf128))
 				return __builtin_llrintf128(x);
 #			elif (__has_builtin(__builtin_llrintl))
-				return __builtin_llrintl(mu0_const_fpex(x));
+				return __builtin_llrintl(x);
 #			else
-				return llrintl(mu0_const_fpex(x));
+				return llrintl(x);
 #			endif
 #		else
 #			if (__has_builtin(__builtin_llrintl))
@@ -79,9 +79,9 @@ mu0_sint64_t mu8_irint_fp16  (const mu0_fp16_t  x)
 #			if  (__has_builtin(__builtin_llrintf16))
 				return __builtin_llrintf16(x);
 #			elif (__has_builtin(__builtin_llrintf))
-				return __builtin_llrintf(mu0_const_fp32(x));
+				return __builtin_llrintf(x);
 #			else
-				return llrintf(mu0_const_fp32(x));
+				return llrintf(x);
 #			endif
 #		else
 #			if (__has_builtin(__builtin_llrintf))

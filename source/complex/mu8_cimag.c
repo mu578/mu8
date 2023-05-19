@@ -10,90 +10,106 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu8_rint.c
+// mu8_cimag.c
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu8/mu8_math.h>
+#include <mu8/mu8_complex_annex.h>
 
-mu0_fp128_t mu8_rint_fp128 (const mu0_fp128_t x)
+mu0_fp128_t mu8_cimag_fp128 (const mu0_cfp128_t z)
 {
+#	if MU0_HAVE_STDCOMPLEX
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT128
-#			if  (__has_builtin(__builtin_rintf128))
-				return __builtin_rintf128(x);
-#			elif (__has_builtin(__builtin_rintl))
-				return mu0_const_fp128(__builtin_rintl(x));
+#			if  (__has_builtin(__builtin_cimagf128))
+				return __builtin_cimagf128(z);
+#			elif (__has_builtin(__builtin_cimagl))
+				return mu0_const_fp128(__builtin_cimagl(z));
 #			else
-				return mu0_const_fp128(rintl(x));
+				return mu0_const_fp128(cimagl(z));
 #			endif
 #		else
-#			if (__has_builtin(__builtin_rintl))
-				return __builtin_rintl(x);
+#			if (__has_builtin(__builtin_cimagl))
+				return __builtin_cimagl(z);
 #			else
-				return rintl(x);
+				return cimagl(z);
 #			endif
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_rintl(x);
+		return __builtin_cimagl(z);
 #	else
-	return rintl(x);
+	return cimagl(z);
+#	endif
+#	else
+	return z.u_im;
 #	endif
 }
 
-mu0_fp64_t  mu8_rint_fp64  (const mu0_fp64_t  x)
+mu0_fp64_t  mu8_cimag_fp64  (const mu0_cfp64_t  z)
 {
+#	if MU0_HAVE_STDCOMPLEX
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
-#		if  (__has_builtin(__builtin_rint))
-			return __builtin_rint(x);
+#		if  (__has_builtin(__builtin_cimag))
+			return __builtin_cimag(z);
 #		else
-		return rint(x);
+		return cimag(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_rint(x);
+		return __builtin_cimag(z);
 #	else
-		return rint(x);
+		return cimag(z);
+#	endif
+#	else
+	return z.u_im;
 #	endif
 }
 
-mu0_fp32_t  mu8_rint_fp32  (const mu0_fp32_t  x)
+mu0_fp32_t  mu8_cimag_fp32  (const mu0_cfp32_t  z)
 {
+#	if MU0_HAVE_STDCOMPLEX
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
-#		if  (__has_builtin(__builtin_rintf))
-			return __builtin_rintf(x);
+#		if  (__has_builtin(__builtin_cimagf))
+			return __builtin_cimagf(z);
 #		else
-		return rintf(x);
+		return cimagf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_rintf(x);
+		return __builtin_cimagf(z);
 #	else
-		return rintf(x);
+		return cimagf(z);
+#	endif
+#	else
+	return z.u_im;
 #	endif
 }
 
-mu0_fp16_t  mu8_rint_fp16  (const mu0_fp16_t  x)
+mu0_fp16_t  mu8_cimag_fp16  (const mu0_cfp16_t  z)
 {
+#	if MU0_HAVE_STDCOMPLEX
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT16
-#			if  (__has_builtin(__builtin_rintf16))
-				return __builtin_rintf16(x);
-#			elif (__has_builtin(__builtin_rintf))
-				return mu0_const_fp16(__builtin_rintf(x));
+#			if  (__has_builtin(__builtin_cimagf16))
+				return __builtin_cimagf16(z);
+#			elif (__has_builtin(__builtin_cimagf))
+				return mu0_const_fp16(__builtin_cimagf(z));
 #			else
-				return mu0_const_fp16(rintf(x));
+				return mu0_const_fp16(cimagf(z));
 #			endif
 #		else
-#			if (__has_builtin(__builtin_rintf))
-				return __builtin_rintf(x);
+#			if (__has_builtin(__builtin_cimagf))
+				return __builtin_cimagf(z);
 #			else
-				return rintf(x);
+				return cimagf(z);
 #			endif
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_rintf(x);
+		return __builtin_cimagf(z);
 #	else
-	return rintf(x);
+	return cimagf(z);
+#	endif
+#	else
+	return z.u_im;
 #	endif
 }
 

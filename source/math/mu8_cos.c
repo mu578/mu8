@@ -24,9 +24,9 @@ mu0_fp128_t mu8_cos_fp128 (const mu0_fp128_t x)
 #			if  (__has_builtin(__builtin_cosf128))
 				return __builtin_cosf128(x);
 #			elif (__has_builtin(__builtin_cosl))
-				return mu0_fp128(__builtin_cosl(mu0_const_fpex(x)));
+				return mu0_const_fp128(__builtin_cosl(x));
 #			else
-				return mu0_fp128(cosl(mu0_const_fpex(x)));
+				return mu0_const_fp128(cosl(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_cosl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_cos_fp16  (const mu0_fp16_t  x)
 #			if  (__has_builtin(__builtin_cosf16))
 				return __builtin_cosf16(x);
 #			elif (__has_builtin(__builtin_cosf))
-				return mu0_fp16(__builtin_cosf(mu0_const_fp32(x)));
+				return mu0_const_fp16(__builtin_cosf(x));
 #			else
-				return mu0_fp16(cosf(mu0_const_fp32(x)));
+				return mu0_const_fp16(cosf(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_cosf))

@@ -24,9 +24,9 @@ mu0_fp128_t mu8_erf_fp128 (const mu0_fp128_t x)
 #			if  (__has_builtin(__builtin_erff128))
 				return __builtin_erff128(x);
 #			elif (__has_builtin(__builtin_erfl))
-				return mu0_fp128(__builtin_erfl(mu0_const_fpex(x)));
+				return mu0_const_fp128(__builtin_erfl(x));
 #			else
-				return mu0_fp128(erfl(mu0_const_fpex(x)));
+				return mu0_const_fp128(erfl(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_erfl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_erf_fp16  (const mu0_fp16_t  x)
 #			if  (__has_builtin(__builtin_erff16))
 				return __builtin_erff16(x);
 #			elif (__has_builtin(__builtin_erff))
-				return mu0_fp16(__builtin_erff(mu0_const_fp32(x)));
+				return mu0_const_fp16(__builtin_erff(x));
 #			else
-				return mu0_fp16(erff(mu0_const_fp32(x)));
+				return mu0_const_fp16(erff(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_erff))

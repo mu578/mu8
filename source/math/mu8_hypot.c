@@ -24,9 +24,9 @@ mu0_fp128_t mu8_hypot_fp128 (const mu0_fp128_t x, const mu0_fp128_t y)
 #			if  (__has_builtin(__builtin_hypotf128))
 				return __builtin_hypotf128(x, y);
 #			elif (__has_builtin(__builtin_hypotl))
-				return mu0_fp128(__builtin_hypotl(mu0_const_fpex(x), mu0_const_fpex(y)));
+				return mu0_const_fp128(__builtin_hypotl(x, y));
 #			else
-				return mu0_fp128(hypotl(mu0_const_fpex(x), mu0_const_fpex(y)));
+				return mu0_const_fp128(hypotl(x, y));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_hypotl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_hypot_fp16  (const mu0_fp16_t  x, const mu0_fp16_t  y)
 #			if  (__has_builtin(__builtin_hypotf16))
 				return __builtin_hypotf16(x, y);
 #			elif (__has_builtin(__builtin_hypotf))
-				return mu0_fp16(__builtin_hypotf(mu0_const_fp32(x), mu0_const_fp32(y)));
+				return mu0_const_fp16(__builtin_hypotf(x, y));
 #			else
-				return mu0_fp16(hypotf(mu0_const_fp32(x), mu0_const_fp32(y)));
+				return mu0_const_fp16(hypotf(x, y));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_hypotf))

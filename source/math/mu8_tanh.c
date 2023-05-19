@@ -24,9 +24,9 @@ mu0_fp128_t mu8_tanh_fp128 (const mu0_fp128_t x)
 #			if  (__has_builtin(__builtin_tanhf128))
 				return __builtin_tanhf128(x);
 #			elif (__has_builtin(__builtin_tanhl))
-				return mu0_fp128(__builtin_tanhl(mu0_const_fpex(x)));
+				return mu0_const_fp128(__builtin_tanhl(x));
 #			else
-				return mu0_fp128(tanhl(mu0_const_fpex(x)));
+				return mu0_const_fp128(tanhl(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_tanhl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_tanh_fp16  (const mu0_fp16_t  x)
 #			if  (__has_builtin(__builtin_tanhf16))
 				return __builtin_tanhf16(x);
 #			elif (__has_builtin(__builtin_tanhf))
-				return mu0_fp16(__builtin_tanhf(mu0_const_fp32(x)));
+				return mu0_const_fp16(__builtin_tanhf(x));
 #			else
-				return mu0_fp16(tanhf(mu0_const_fp32(x)));
+				return mu0_const_fp16(tanhf(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_tanhf))

@@ -26,9 +26,9 @@ mu0_fp128_t mu8_remquo_fp128 (const mu0_fp128_t x, const mu0_fp128_t y, mu0_sint
 #			if  (__has_builtin(__builtin_remquof128))
 				r = __builtin_remquof128(x, y, &e);
 #			elif (__has_builtin(__builtin_remquol))
-				r = mu0_fp128(__builtin_remquol(mu0_const_fpex(x), mu0_const_fpex(y), &e));
+				r = mu0_fp128(__builtin_remquol(x, y, &e));
 #			else
-				r = mu0_fp128(remquol(mu0_const_fpex(x), mu0_const_fpex(y), &e));
+				r = mu0_fp128(remquol(x, y, &e));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_remquol))
@@ -93,9 +93,9 @@ mu0_fp16_t  mu8_remquo_fp16  (const mu0_fp16_t  x, const mu0_fp16_t  y, mu0_sint
 #			if  (__has_builtin(__builtin_remquof16))
 				r = __builtin_remquof16(x, y, &e);
 #			elif (__has_builtin(__builtin_remquof))
-				r = mu0_fp16(__builtin_remquof(mu0_const_fp32(x), mu0_const_fp32(y), &e));
+				r = mu0_fp16(__builtin_remquof(x, y, &e));
 #			else
-				r = mu0_fp16(remquof(mu0_const_fp32(x), mu0_const_fp32(y), &e));
+				r = mu0_fp16(remquof(x, y, &e));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_remquof))

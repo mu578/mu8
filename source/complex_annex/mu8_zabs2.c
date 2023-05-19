@@ -10,37 +10,31 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu8_y0.c
+// mu8_zabs2.c
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu8/mu8_math.h>
+#include <mu8/mu8_math_annex.h>
 
-mu0_fp128_t mu8_y0_fp128 (const mu0_fp128_t x)
+mu0_fp128_t mu8_zabs2_fp128 (const mu0_fp128_t zr, const mu0_fp128_t zi)
 {
-	return mu0_const_fp128(mu8_y0_fp64(mu0_const_fp64(x)));
+	return mu8_raise2_fp128(zi) + mu8_raise2_fp128(zr);
 }
 
-mu0_fp64_t  mu8_y0_fp64  (const mu0_fp64_t  x)
+mu0_fp64_t  mu8_zabs2_fp64  (const mu0_fp64_t  zr, const mu0_fp64_t  zi)
 {
-#	if   MU0_HAVE_CC_MSVCC
-	return _y0(x);
-#	elif MU0_HAVE_CC_ITLCC && MU0_HAVE_WINDOWS
-	return _y0(x);
-#	else
-	return y0(x);
-#	endif
+	return mu8_raise2_fp64(zi) + mu8_raise2_fp64(zr);
 }
 
-mu0_fp32_t  mu8_y0_fp32  (const mu0_fp32_t  x)
+mu0_fp32_t  mu8_zabs2_fp32  (const mu0_fp32_t  zr, const mu0_fp32_t  zi)
 {
-	return mu0_fp32(mu8_y0_fp64(mu0_const_fp64(x)));
+	return mu8_raise2_fp32(zi) + mu8_raise2_fp32(zr);
 }
 
-mu0_fp16_t  mu8_y0_fp16  (const mu0_fp16_t  x)
+mu0_fp16_t  mu8_zabs2_fp16  (const mu0_fp16_t  zr, const mu0_fp16_t  zi)
 {
-	return mu0_const_fp16(mu8_y0_fp64(mu0_const_fp64(x)));
+	return mu8_raise2_fp16(zi) + mu8_raise2_fp16(zr);
 }
 
 /* EOF */

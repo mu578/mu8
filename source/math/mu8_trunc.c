@@ -24,9 +24,9 @@ mu0_fp128_t mu8_trunc_fp128 (const mu0_fp128_t x)
 #			if  (__has_builtin(__builtin_truncf128))
 				return __builtin_truncf128(x);
 #			elif (__has_builtin(__builtin_truncl))
-				return mu0_fp128(__builtin_truncl(mu0_const_fpex(x)));
+				return mu0_const_fp128(__builtin_truncl(x));
 #			else
-				return mu0_fp128(truncl(mu0_const_fpex(x)));
+				return mu0_const_fp128(truncl(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_truncl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_trunc_fp16  (const mu0_fp16_t  x)
 #			if  (__has_builtin(__builtin_truncf16))
 				return __builtin_truncf16(x);
 #			elif (__has_builtin(__builtin_truncf))
-				return mu0_fp16(__builtin_truncf(mu0_const_fp32(x)));
+				return mu0_const_fp16(__builtin_truncf(x));
 #			else
-				return mu0_fp16(truncf(mu0_const_fp32(x)));
+				return mu0_const_fp16(truncf(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_truncf))

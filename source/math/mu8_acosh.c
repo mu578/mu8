@@ -24,9 +24,9 @@ mu0_fp128_t mu8_acosh_fp128 (const mu0_fp128_t x)
 #			if  (__has_builtin(__builtin_acoshf128))
 				return __builtin_acoshf128(x);
 #			elif (__has_builtin(__builtin_acoshl))
-				return mu0_fp128(__builtin_acoshl(mu0_const_fpex(x)));
+				return mu0_const_fp128(__builtin_acoshl(x));
 #			else
-				return mu0_fp128(acoshl(mu0_const_fpex(x)));
+				return mu0_const_fp128(acoshl(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_acoshl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_acosh_fp16  (const mu0_fp16_t  x)
 #			if  (__has_builtin(__builtin_acoshf16))
 				return __builtin_acoshf16(x);
 #			elif (__has_builtin(__builtin_acoshf))
-				return mu0_fp16(__builtin_acoshf(mu0_const_fp32(x)));
+				return mu0_const_fp16(__builtin_acoshf(x));
 #			else
-				return mu0_fp16(acoshf(mu0_const_fp32(x)));
+				return mu0_const_fp16(acoshf(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_acoshf))

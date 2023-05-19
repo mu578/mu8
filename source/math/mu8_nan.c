@@ -24,9 +24,9 @@ mu0_fp128_t mu8_nan_fp128 (const mu0_tchar8_t * s)
 #			if  (__has_builtin(__builtin_nanf128))
 				return __builtin_nanf128(s);
 #			elif (__has_builtin(__builtin_nanl))
-				return mu0_fp128(__builtin_nanl(s));
+				return mu0_const_fp128(__builtin_nanl(s));
 #			else
-				return mu0_fp128(nanl(s));
+				return mu0_const_fp128(nanl(s));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_nanl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_nan_fp16  (const mu0_tchar8_t * s)
 #			if  (__has_builtin(__builtin_nanf16_BUG)) /* @TODO: broken */
 				return __builtin_nanf16(s);
 #			elif (__has_builtin(__builtin_nanf))
-				return mu0_fp16(__builtin_nanf(s));
+				return mu0_const_fp16(__builtin_nanf(s));
 #			else
-				return mu0_fp16(nanf(s));
+				return mu0_const_fp16(nanf(s));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_nanf))

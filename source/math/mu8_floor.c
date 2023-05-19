@@ -24,9 +24,9 @@ mu0_fp128_t mu8_floor_fp128 (const mu0_fp128_t x)
 #			if  (__has_builtin(__builtin_floorf128))
 				return __builtin_floorf128(x);
 #			elif (__has_builtin(__builtin_floorl))
-				return mu0_fp128(__builtin_floorl(mu0_const_fpex(x)));
+				return mu0_const_fp128(__builtin_floorl(x));
 #			else
-				return mu0_fp128(floorl(mu0_const_fpex(x)));
+				return mu0_const_fp128(floorl(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_floorl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_floor_fp16  (const mu0_fp16_t  x)
 #			if  (__has_builtin(__builtin_floorf16))
 				return __builtin_floorf16(x);
 #			elif (__has_builtin(__builtin_floorf))
-				return mu0_fp16(__builtin_floorf(mu0_const_fp32(x)));
+				return mu0_const_fp16(__builtin_floorf(x));
 #			else
-				return mu0_fp16(floorf(mu0_const_fp32(x)));
+				return mu0_const_fp16(floorf(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_floorf))

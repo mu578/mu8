@@ -24,9 +24,9 @@ mu0_fp128_t mu8_lgamma_fp128 (const mu0_fp128_t x)
 #			if  (__has_builtin(__builtin_lgammaf128))
 				return __builtin_lgammaf128(x);
 #			elif (__has_builtin(__builtin_lgammal))
-				return mu0_fp128(__builtin_lgammal(mu0_const_fpex(x)));
+				return mu0_const_fp128(__builtin_lgammal(x));
 #			else
-				return mu0_fp128(lgammal(mu0_const_fpex(x)));
+				return mu0_const_fp128(lgammal(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_lgammal))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_lgamma_fp16  (const mu0_fp16_t  x)
 #			if  (__has_builtin(__builtin_lgammaf16))
 				return __builtin_lgammaf16(x);
 #			elif (__has_builtin(__builtin_lgammaf))
-				return mu0_fp16(__builtin_lgammaf(mu0_const_fp32(x)));
+				return mu0_const_fp16(__builtin_lgammaf(x));
 #			else
-				return mu0_fp16(lgammaf(mu0_const_fp32(x)));
+				return mu0_const_fp16(lgammaf(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_lgammaf))

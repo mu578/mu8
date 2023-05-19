@@ -24,9 +24,9 @@ mu0_fp128_t mu8_nearbyint_fp128 (const mu0_fp128_t x)
 #			if  (__has_builtin(__builtin_nearbyintf128))
 				return __builtin_nearbyintf128(x);
 #			elif (__has_builtin(__builtin_nearbyintl))
-				return mu0_fp128(__builtin_nearbyintl(mu0_const_fpex(x)));
+				return mu0_const_fp128(__builtin_nearbyintl(x));
 #			else
-				return mu0_fp128(nearbyintl(mu0_const_fpex(x)));
+				return mu0_const_fp128(nearbyintl(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_nearbyintl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_nearbyint_fp16  (const mu0_fp16_t  x)
 #			if  (__has_builtin(__builtin_nearbyintf16))
 				return __builtin_nearbyintf16(x);
 #			elif (__has_builtin(__builtin_nearbyintf))
-				return mu0_fp16(__builtin_nearbyintf(mu0_const_fp32(x)));
+				return mu0_const_fp16(__builtin_nearbyintf(x));
 #			else
-				return mu0_fp16(nearbyintf(mu0_const_fp32(x)));
+				return mu0_const_fp16(nearbyintf(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_nearbyintf))

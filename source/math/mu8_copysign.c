@@ -24,9 +24,9 @@ mu0_fp128_t mu8_copysign_fp128 (const mu0_fp128_t x, const mu0_fp128_t y)
 #			if  (__has_builtin(__builtin_copysignf128))
 				return __builtin_copysignf128(x, y);
 #			elif (__has_builtin(__builtin_copysignl))
-				return mu0_fp128(__builtin_copysignl(mu0_const_fpex(x), mu0_const_fpex(y)));
+				return mu0_const_fp128(__builtin_copysignl(x, y));
 #			else
-				return mu0_fp128(copysignl(mu0_const_fpex(x), mu0_const_fpex(y)));
+				return mu0_const_fp128(copysignl(x, y));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_copysignl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_copysign_fp16  (const mu0_fp16_t  x, const mu0_fp16_t  y)
 #			if  (__has_builtin(__builtin_copysignf16))
 				return __builtin_copysignf16(x, y);
 #			elif (__has_builtin(__builtin_copysignf))
-				return mu0_fp16(__builtin_copysignf(mu0_const_fp32(x), mu0_const_fp32(y)));
+				return mu0_const_fp16(__builtin_copysignf(x, y));
 #			else
-				return mu0_fp16(copysignf(mu0_const_fp32(x), mu0_const_fp32(y)));
+				return mu0_const_fp16(copysignf(x, y));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_copysignf))

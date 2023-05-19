@@ -24,9 +24,9 @@ mu0_fp128_t mu8_sin_fp128 (const mu0_fp128_t x)
 #			if  (__has_builtin(__builtin_sinf128))
 				return __builtin_sinf128(x);
 #			elif (__has_builtin(__builtin_sinl))
-				return mu0_fp128(__builtin_sinl(mu0_const_fpex(x)));
+				return mu0_const_fp128(__builtin_sinl(x));
 #			else
-				return mu0_fp128(sinl(mu0_const_fpex(x)));
+				return mu0_const_fp128(sinl(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_sinl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_sin_fp16  (const mu0_fp16_t  x)
 #			if  (__has_builtin(__builtin_sinf16))
 				return __builtin_sinf16(x);
 #			elif (__has_builtin(__builtin_sinf))
-				return mu0_fp16(__builtin_sinf(mu0_const_fp32(x)));
+				return mu0_const_fp16(__builtin_sinf(x));
 #			else
-				return mu0_fp16(sinf(mu0_const_fp32(x)));
+				return mu0_const_fp16(sinf(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_sinf))

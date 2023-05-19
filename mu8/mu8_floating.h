@@ -10,7 +10,7 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu8_floating.h
+// mu0_floating.h
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
@@ -23,86 +23,44 @@
 
 MU0_BEGIN_CDECL
 
-#	undef  ___mu8_fp_ilogb0___
-#	undef  ___mu8_fp_ilogbnan___
-#	undef  ___mu8_fp_infinite___
-#	undef  ___mu8_fp_nan___
-#	undef  ___mu8_fp_normal___
-#	undef  ___mu8_fp_subnormal___
-#	undef  ___mu8_fp_zero___
-
-#	define ___mu8_fp_ilogb0___                FP_ILOGB0
-#	define ___mu8_fp_ilogbnan___              FP_ILOGBNAN
-#	define ___mu8_fp_infinite___              FP_INFINITE
-#	define ___mu8_fp_nan___                   FP_NAN
-#	define ___mu8_fp_normal___                FP_NORMAL
-#	define ___mu8_fp_subnormal___             FP_SUBNORMAL
-#	define ___mu8_fp_zero___                  FP_ZERO
-
-#	undef  ___mu8_fpclassify___
-#	undef  ___mu8_isfinite___
-#	undef  ___mu8_isgreater___
-#	undef  ___mu8_isgreaterequal___
-#	undef  ___mu8_isinf___
-#	undef  ___mu8_isless___
-#	undef  ___mu8_islessequal___
-#	undef  ___mu8_islessgreater___
-#	undef  ___mu8_isnan___
-#	undef  ___mu8_isnormal___
-#	undef  ___mu8_isunordered___
-#	undef  ___mu8_signbit___
-
-#	define ___mu8_fpclassify___(__x)          fpclassify(__x)
-#	define ___mu8_isfinite___(__x)            isfinite(__x)
-#	define ___mu8_isgreater___(__x, __y)      isgreater(__x, __y)
-#	define ___mu8_isgreaterequal___(__x, __y) isgreaterequal(__x, __y)
-#	define ___mu8_isinf___(__x)               isinf(__x)
-#	define ___mu8_isless___(__x, __y)         isless(__x, __y)
-#	define ___mu8_islessequal___(__x, __y)    islessequal(__x, __y)
-#	define ___mu8_islessgreater___(__x, __y)  islessgreater(__x, __y)
-#	define ___mu8_isnan___(__x)               isnan(__x)
-#	define ___mu8_isnormal___(__x)            isnormal(__x)
-#	define ___mu8_isunordered___(___x, __y)   isunordered(__x, __y)
-#	define ___mu8_signbit___(__x)             signbit(__x)
-
-enum mu8_classify
+enum mu9_classify
 {
-	  mu8_classify_infinite  = ___mu8_fp_infinite___
-	, mu8_classify_nan       = ___mu8_fp_nan___
-	, mu8_classify_normal    = ___mu8_fp_normal___
-	, mu8_classify_subnormal = ___mu8_fp_subnormal___
-	, mu8_classify_zero      = ___mu8_fp_zero___
+	  mu9_classify_infinite  = mu0_fp_classify_infinite
+	, mu9_classify_nan       = mu0_fp_classify_nan
+	, mu9_classify_normal    = mu0_fp_classify_normal
+	, mu9_classify_subnormal = mu0_fp_classify_subnormal
+	, mu9_classify_zero      = mu0_fp_classify_zero
 };
 
-__mu0_static_inline__ enum mu8_classify mu8_classify_fp128 (const mu0_fp128_t __x) { return ___mu8_fpclassify___ (__x);                                                               }
-__mu0_static_inline__ enum mu8_classify mu8_classify_fp64  (const mu0_fp64_t  __x) { return ___mu8_fpclassify___ (__x);                                                               }
-__mu0_static_inline__ enum mu8_classify mu8_classify_fp32  (const mu0_fp32_t  __x) { return ___mu8_fpclassify___ (__x);                                                               }
-__mu0_static_inline__ enum mu8_classify mu8_classify_fp16  (const mu0_fp16_t  __x) { return ___mu8_fpclassify___ (__x);                                                               }
+__mu0_static_inline__ enum mu9_classify mu8_classify_fp128 (const mu0_fp128_t __x) { return mu0_fp_classify (__x);                            }
+__mu0_static_inline__ enum mu9_classify mu8_classify_fp64  (const mu0_fp64_t  __x) { return mu0_fp_classify (__x);                            }
+__mu0_static_inline__ enum mu9_classify mu8_classify_fp32  (const mu0_fp32_t  __x) { return mu0_fp_classify (__x);                            }
+__mu0_static_inline__ enum mu9_classify mu8_classify_fp16  (const mu0_fp16_t  __x) { return mu0_fp_classify (__x);                            }
 
-__mu0_static_inline__ const mu0_bool_t  mu8_isfinite_fp128 (const mu0_fp128_t __x) { return ___mu8_isfinite___   (__x) == 0 ? mu0_false : mu0_true;                                   }
-__mu0_static_inline__ const mu0_bool_t  mu8_isfinite_fp64  (const mu0_fp64_t  __x) { return ___mu8_isfinite___   (__x) == 0 ? mu0_false : mu0_true;                                   }
-__mu0_static_inline__ const mu0_bool_t  mu8_isfinite_fp32  (const mu0_fp32_t  __x) { return ___mu8_isfinite___   (__x) == 0 ? mu0_false : mu0_true;                                   }
-__mu0_static_inline__ const mu0_bool_t  mu8_isfinite_fp16  (const mu0_fp16_t  __x) { return ___mu8_isfinite___   (__x) == 0 ? mu0_false : mu0_true;                                   }
+__mu0_static_inline__ const mu0_bool_t  mu8_isfinite_fp128 (const mu0_fp128_t __x) { return mu0_fp_isfinite (__x)== 0 ? mu0_false : mu0_true; }
+__mu0_static_inline__ const mu0_bool_t  mu8_isfinite_fp64  (const mu0_fp64_t  __x) { return mu0_fp_isfinite (__x)== 0 ? mu0_false : mu0_true; }
+__mu0_static_inline__ const mu0_bool_t  mu8_isfinite_fp32  (const mu0_fp32_t  __x) { return mu0_fp_isfinite (__x)== 0 ? mu0_false : mu0_true; }
+__mu0_static_inline__ const mu0_bool_t  mu8_isfinite_fp16  (const mu0_fp16_t  __x) { return mu0_fp_isfinite (__x)== 0 ? mu0_false : mu0_true; }
 
-__mu0_static_inline__ const mu0_bool_t  mu8_isinf_fp128    (const mu0_fp128_t __x) { return ___mu8_isinf___      (__x) == 0 ? mu0_false : mu0_true;                                   }
-__mu0_static_inline__ const mu0_bool_t  mu8_isinf_fp64     (const mu0_fp64_t  __x) { return ___mu8_isinf___      (__x) == 0 ? mu0_false : mu0_true;                                   }
-__mu0_static_inline__ const mu0_bool_t  mu8_isinf_fp32     (const mu0_fp32_t  __x) { return ___mu8_isinf___      (__x) == 0 ? mu0_false : mu0_true;                                   }
-__mu0_static_inline__ const mu0_bool_t  mu8_isinf_fp16     (const mu0_fp16_t  __x) { return ___mu8_isinf___      (__x) == 0 ? mu0_false : mu0_true;                                   }
+__mu0_static_inline__ const mu0_bool_t  mu8_isinf_fp128    (const mu0_fp128_t __x) { return mu0_fp_isinf    (__x)== 0 ? mu0_false : mu0_true; }
+__mu0_static_inline__ const mu0_bool_t  mu8_isinf_fp64     (const mu0_fp64_t  __x) { return mu0_fp_isinf    (__x)== 0 ? mu0_false : mu0_true; }
+__mu0_static_inline__ const mu0_bool_t  mu8_isinf_fp32     (const mu0_fp32_t  __x) { return mu0_fp_isinf    (__x)== 0 ? mu0_false : mu0_true; }
+__mu0_static_inline__ const mu0_bool_t  mu8_isinf_fp16     (const mu0_fp16_t  __x) { return mu0_fp_isinf    (__x)== 0 ? mu0_false : mu0_true; }
 
-__mu0_static_inline__ const mu0_bool_t  mu8_isnan_fp128    (const mu0_fp128_t __x) { return ___mu8_isnan___      (__x) == 0 ? mu0_false : mu0_true;                                   }
-__mu0_static_inline__ const mu0_bool_t  mu8_isnan_fp64     (const mu0_fp64_t  __x) { return ___mu8_isnan___      (__x) == 0 ? mu0_false : mu0_true;                                   }
-__mu0_static_inline__ const mu0_bool_t  mu8_isnan_fp32     (const mu0_fp32_t  __x) { return ___mu8_isnan___      (__x) == 0 ? mu0_false : mu0_true;                                   }
-__mu0_static_inline__ const mu0_bool_t  mu8_isnan_fp16     (const mu0_fp16_t  __x) { return ___mu8_isnan___      (__x) == 0 ? mu0_false : mu0_true;                                   }
+__mu0_static_inline__ const mu0_bool_t  mu8_isnan_fp128    (const mu0_fp128_t __x) { return mu0_fp_isnan    (__x)== 0 ? mu0_false : mu0_true; }
+__mu0_static_inline__ const mu0_bool_t  mu8_isnan_fp64     (const mu0_fp64_t  __x) { return mu0_fp_isnan    (__x)== 0 ? mu0_false : mu0_true; }
+__mu0_static_inline__ const mu0_bool_t  mu8_isnan_fp32     (const mu0_fp32_t  __x) { return mu0_fp_isnan    (__x)== 0 ? mu0_false : mu0_true; }
+__mu0_static_inline__ const mu0_bool_t  mu8_isnan_fp16     (const mu0_fp16_t  __x) { return mu0_fp_isnan    (__x)== 0 ? mu0_false : mu0_true; }
 
-__mu0_static_inline__ const mu0_bool_t  mu8_isnormal_fp128 (const mu0_fp128_t __x) { return ___mu8_isnormal___   (__x) == 0 ? mu0_false : mu0_true;                                   }
-__mu0_static_inline__ const mu0_bool_t  mu8_isnormal_fp64  (const mu0_fp64_t  __x) { return ___mu8_isnormal___   (__x) == 0 ? mu0_false : mu0_true;                                   }
-__mu0_static_inline__ const mu0_bool_t  mu8_isnormal_fp32  (const mu0_fp32_t  __x) { return ___mu8_isnormal___   (__x) == 0 ? mu0_false : mu0_true;                                   }
-__mu0_static_inline__ const mu0_bool_t  mu8_isnormal_fp16  (const mu0_fp16_t  __x) { return ___mu8_isnormal___   (__x) == 0 ? mu0_false : mu0_true;                                   }
+__mu0_static_inline__ const mu0_bool_t  mu8_isnormal_fp128 (const mu0_fp128_t __x) { return mu0_fp_isnormal (__x)== 0 ? mu0_false : mu0_true; }
+__mu0_static_inline__ const mu0_bool_t  mu8_isnormal_fp64  (const mu0_fp64_t  __x) { return mu0_fp_isnormal (__x)== 0 ? mu0_false : mu0_true; }
+__mu0_static_inline__ const mu0_bool_t  mu8_isnormal_fp32  (const mu0_fp32_t  __x) { return mu0_fp_isnormal (__x)== 0 ? mu0_false : mu0_true; }
+__mu0_static_inline__ const mu0_bool_t  mu8_isnormal_fp16  (const mu0_fp16_t  __x) { return mu0_fp_isnormal (__x)== 0 ? mu0_false : mu0_true; }
 
-__mu0_static_inline__ const mu0_fp128_t mu8_signbit_fp128  (const mu0_fp128_t __x) { return ___mu8_signbit___    (__x) == 0 ? __mu0_fp128_const__ (1.0) : -__mu0_fp128_const__ (1.0); }
-__mu0_static_inline__ const mu0_fp64_t  mu8_signbit_fp64   (const mu0_fp64_t  __x) { return ___mu8_signbit___    (__x) == 0 ? __mu0_fp64_const__  (1.0) : -__mu0_fp64_const__  (1.0); }
-__mu0_static_inline__ const mu0_fp32_t  mu8_signbit_fp32   (const mu0_fp32_t  __x) { return ___mu8_signbit___    (__x) == 0 ? __mu0_fp32_const__  (1.0) : -__mu0_fp32_const__  (1.0); }
-__mu0_static_inline__ const mu0_fp16_t  mu8_signbit_fp16   (const mu0_fp16_t  __x) { return ___mu8_signbit___    (__x) == 0 ? __mu0_fp16_const__  (1.0) : -__mu0_fp16_const__  (1.0); }
+__mu0_static_inline__ const mu0_fp128_t mu8_signbit_fp128  (const mu0_fp128_t __x) { return mu0_fp_signbit  (__x)== 0 ? 1         : -1;       }
+__mu0_static_inline__ const mu0_fp64_t  mu8_signbit_fp64   (const mu0_fp64_t  __x) { return mu0_fp_signbit  (__x)== 0 ? 1         : -1;       }
+__mu0_static_inline__ const mu0_fp32_t  mu8_signbit_fp32   (const mu0_fp32_t  __x) { return mu0_fp_signbit  (__x)== 0 ? 1         : -1;       }
+__mu0_static_inline__ const mu0_fp16_t  mu8_signbit_fp16   (const mu0_fp16_t  __x) { return mu0_fp_signbit  (__x)== 0 ? 1         : -1;       }
 
 MU0_END_CDECL
 

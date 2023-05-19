@@ -24,9 +24,9 @@ mu0_fp128_t mu8_cbrt_fp128 (const mu0_fp128_t x)
 #			if  (__has_builtin(__builtin_cbrtf128))
 				return __builtin_cbrtf128(x);
 #			elif (__has_builtin(__builtin_cbrtl))
-				return mu0_fp128(__builtin_cbrtl(mu0_const_fpex(x)));
+				return mu0_const_fp128(__builtin_cbrtl(x));
 #			else
-				return mu0_fp128(cbrtl(mu0_const_fpex(x)));
+				return mu0_const_fp128(cbrtl(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_cbrtl))
@@ -79,9 +79,9 @@ mu0_fp16_t  mu8_cbrt_fp16  (const mu0_fp16_t  x)
 #			if  (__has_builtin(__builtin_cbrtf16))
 				return __builtin_cbrtf16(x);
 #			elif (__has_builtin(__builtin_cbrtf))
-				return mu0_fp16(__builtin_cbrtf(mu0_const_fp32(x)));
+				return mu0_const_fp16(__builtin_cbrtf(x));
 #			else
-				return mu0_fp16(cbrtf(mu0_const_fp32(x)));
+				return mu0_const_fp16(cbrtf(x));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_cbrtf))

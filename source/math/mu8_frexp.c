@@ -26,9 +26,9 @@ mu0_fp128_t mu8_frexp_fp128 (const mu0_fp128_t x, mu0_sint64_t * e)
 #			if  (__has_builtin(__builtin_frexpf128))
 				r = __builtin_frexpf128(x, &q);
 #			elif (__has_builtin(__builtin_frexpl))
-				r = mu0_fp128(__builtin_frexpl(mu0_const_fpex(x), &q));
+				r = mu0_fp128(__builtin_frexpl(x, &q));
 #			else
-				r = mu0_fp128(frexpl(mu0_const_fpex(x), &q));
+				r = mu0_fp128(frexpl(x, &q));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_frexpl))
@@ -93,9 +93,9 @@ mu0_fp16_t  mu8_frexp_fp16  (const mu0_fp16_t  x, mu0_sint64_t * e)
 #			if  (__has_builtin(__builtin_frexpf16))
 				r = __builtin_frexpf16(x, &q);
 #			elif (__has_builtin(__builtin_frexpf))
-				r = mu0_fp16(__builtin_frexpf(mu0_const_fp32(x), &q));
+				r = mu0_fp16(__builtin_frexpf(x, &q));
 #			else
-				r = mu0_fp16(frexpf(mu0_const_fp32(x), &q));
+				r = mu0_fp16(frexpf(x, &q));
 #			endif
 #		else
 #			if (__has_builtin(__builtin_frexpf))
