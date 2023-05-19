@@ -130,30 +130,6 @@ mu0_cfp64_t  mu8_ctanh_fp64   (const mu0_cfp64_t  z);
 mu0_cfp32_t  mu8_ctanh_fp32   (const mu0_cfp32_t  z);
 mu0_cfp16_t  mu8_ctanh_fp16   (const mu0_cfp16_t  z);
 
-//#!
-//#! complex number arithmetic addition.
-//#!
-
-mu0_cfp128_t mu8_cadd_fp128   (const mu0_cfp128_t a, const mu0_cfp128_t b);
-mu0_cfp64_t  mu8_cadd_fp64    (const mu0_cfp64_t  a, const mu0_cfp64_t  b);
-mu0_cfp32_t  mu8_cadd_fp32    (const mu0_cfp32_t  a, const mu0_cfp32_t  b);
-mu0_cfp16_t  mu8_cadd_fp16    (const mu0_cfp16_t  a, const mu0_cfp16_t  b);
-
-mu0_cfp128_t mu8_csub_fp128   (const mu0_cfp128_t a, const mu0_cfp128_t b);
-mu0_cfp64_t  mu8_csub_fp64    (const mu0_cfp64_t  a, const mu0_cfp64_t  b);
-mu0_cfp32_t  mu8_csub_fp32    (const mu0_cfp32_t  a, const mu0_cfp32_t  b);
-mu0_cfp16_t  mu8_csub_fp16    (const mu0_cfp16_t  a, const mu0_cfp16_t  b);
-
-mu0_cfp128_t mu8_cmul_fp128   (const mu0_cfp128_t a, const mu0_cfp128_t b);
-mu0_cfp64_t  mu8_cmul_fp64    (const mu0_cfp64_t  a, const mu0_cfp64_t  b);
-mu0_cfp32_t  mu8_cmul_fp32    (const mu0_cfp32_t  a, const mu0_cfp32_t  b);
-mu0_cfp16_t  mu8_cmul_fp16    (const mu0_cfp16_t  a, const mu0_cfp16_t  b);
-
-mu0_cfp128_t mu8_cdiv_fp128   (const mu0_cfp128_t a, const mu0_cfp128_t b);
-mu0_cfp64_t  mu8_cdiv_fp64    (const mu0_cfp64_t  a, const mu0_cfp64_t  b);
-mu0_cfp32_t  mu8_cdiv_fp32    (const mu0_cfp32_t  a, const mu0_cfp32_t  b);
-mu0_cfp16_t  mu8_cdiv_fp16    (const mu0_cfp16_t  a, const mu0_cfp16_t  b);
-
 MU0_END_CDECL
 
 #endif /* !MU8_COMPLEX_H */
