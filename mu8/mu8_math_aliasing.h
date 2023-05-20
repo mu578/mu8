@@ -10,15 +10,15 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// __mu8_aliasing__.h
+// mu8_math_aliasing.h
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
 #include <mu8/mu8_math.h>
 
-#ifndef MU8_ALIASING_H
-#define MU8_ALIASING_H 1
+#ifndef MU8_MATH_ALIASING_H
+#define MU8_MATH_ALIASING_H 1
 
 MU0_BEGIN_CDECL
 
@@ -576,6 +576,6 @@ __mu8_alias06__(mu0_fp16_t , mu8_alias_yn        , mu8_yn_fp16 );
 
 MU0_END_CDECL
 
-#endif /* !MU8_ALIASING_H */
+#endif /* !MU8_MATH_ALIASING_H */
 
 /* EOF */

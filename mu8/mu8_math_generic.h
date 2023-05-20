@@ -10,15 +10,15 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu8_generic.h
+// mu8_math_generic.h
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
 #include <mu8/mu8_math.h>
 
-#ifndef MU8_GENERIC_H
-#define MU8_GENERIC_H 1
+#ifndef MU8_MATH_GENERIC_H
+#define MU8_MATH_GENERIC_H 1
 
 MU0_BEGIN_CDECL
 
@@ -2266,6 +2266,6 @@ __mu0_overload__ mu0_fp16_t  mu8_yn (const mu0_sint64_t __n, const mu0_fp16_t  _
 
 MU0_END_CDECL
 
-#endif /* !MU8_GENERIC_H */
+#endif /* !MU8_MATH_GENERIC_H */
 
 /* EOF */
