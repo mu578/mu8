@@ -17,9 +17,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/checkout@master
       with:
         repository: mu578/mu0
+    - uses: actions/checkout@v3
     - name: Run distcheck
       run: cd mk && make -f mu8.mk distcheck
 
