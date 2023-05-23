@@ -19,7 +19,7 @@
 
 mu0_fp128_t mu8_nan_fp128 (const mu0_tchar8_t * s)
 {
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
 #		if MU0_HAVE_FLOAT128
 #			if  (__has_builtin(__builtin_nanf128))
 				return __builtin_nanf128(s);
@@ -44,7 +44,7 @@ mu0_fp128_t mu8_nan_fp128 (const mu0_tchar8_t * s)
 
 mu0_fp64_t  mu8_nan_fp64  (const mu0_tchar8_t * s)
 {
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
 #		if  (__has_builtin(__builtin_nan))
 			return __builtin_nan(s);
 #		else
@@ -59,7 +59,7 @@ mu0_fp64_t  mu8_nan_fp64  (const mu0_tchar8_t * s)
 
 mu0_fp32_t  mu8_nan_fp32  (const mu0_tchar8_t * s)
 {
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
 #		if  (__has_builtin(__builtin_nanf))
 			return __builtin_nanf(s);
 #		else
@@ -74,7 +74,7 @@ mu0_fp32_t  mu8_nan_fp32  (const mu0_tchar8_t * s)
 
 mu0_fp16_t  mu8_nan_fp16  (const mu0_tchar8_t * s)
 {
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
 #		if MU0_HAVE_FLOAT16
 #			if  (__has_builtin(__builtin_nanf16_BUG)) /* @TODO: broken */
 				return __builtin_nanf16(s);

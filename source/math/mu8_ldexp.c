@@ -19,7 +19,7 @@
 
 mu0_fp128_t mu8_ldexp_fp128 (const mu0_fp128_t x, const mu0_sint64_t n)
 {
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
 #		if MU0_HAVE_FLOAT128
 #			if  (__has_builtin(__builtin_ldexpf128))
 				return __builtin_ldexpf128(x, mu0_const_cast(___mu0_sint4_t___, n));
@@ -44,7 +44,7 @@ mu0_fp128_t mu8_ldexp_fp128 (const mu0_fp128_t x, const mu0_sint64_t n)
 
 mu0_fp64_t  mu8_ldexp_fp64  (const mu0_fp64_t  x, const mu0_sint64_t n)
 {
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
 #		if  (__has_builtin(__builtin_ldexp))
 			return __builtin_ldexp(x, mu0_const_cast(___mu0_sint4_t___, n));
 #		else
@@ -59,7 +59,7 @@ mu0_fp64_t  mu8_ldexp_fp64  (const mu0_fp64_t  x, const mu0_sint64_t n)
 
 mu0_fp32_t  mu8_ldexp_fp32  (const mu0_fp32_t  x, const mu0_sint64_t n)
 {
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
 #		if  (__has_builtin(__builtin_ldexpf))
 			return __builtin_ldexpf(x, mu0_const_cast(___mu0_sint4_t___, n));
 #		else
@@ -74,7 +74,7 @@ mu0_fp32_t  mu8_ldexp_fp32  (const mu0_fp32_t  x, const mu0_sint64_t n)
 
 mu0_fp16_t  mu8_ldexp_fp16  (const mu0_fp16_t  x, const mu0_sint64_t n)
 {
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
 #		if MU0_HAVE_FLOAT16
 #			if  (__has_builtin(__builtin_ldexpf16))
 				return __builtin_ldexpf16(x, mu0_const_cast(___mu0_sint4_t___, n));

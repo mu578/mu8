@@ -19,7 +19,7 @@
 
 mu0_fp128_t mu8_fmod_fp128 (const mu0_fp128_t x, const mu0_fp128_t y)
 {
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
 #		if MU0_HAVE_FLOAT128
 #			if  (__has_builtin(__builtin_fmodf128))
 				return __builtin_fmodf128(x, y);
@@ -44,7 +44,7 @@ mu0_fp128_t mu8_fmod_fp128 (const mu0_fp128_t x, const mu0_fp128_t y)
 
 mu0_fp64_t  mu8_fmod_fp64  (const mu0_fp64_t  x, const mu0_fp64_t  y)
 {
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
 #		if  (__has_builtin(__builtin_fmod))
 			return __builtin_fmod(x, y);
 #		else
@@ -59,7 +59,7 @@ mu0_fp64_t  mu8_fmod_fp64  (const mu0_fp64_t  x, const mu0_fp64_t  y)
 
 mu0_fp32_t  mu8_fmod_fp32  (const mu0_fp32_t  x, const mu0_fp32_t  y)
 {
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
 #		if  (__has_builtin(__builtin_fmodf))
 			return __builtin_fmodf(x, y);
 #		else
@@ -74,7 +74,7 @@ mu0_fp32_t  mu8_fmod_fp32  (const mu0_fp32_t  x, const mu0_fp32_t  y)
 
 mu0_fp16_t  mu8_fmod_fp16  (const mu0_fp16_t  x, const mu0_fp16_t  y)
 {
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
 #		if MU0_HAVE_FLOAT16
 #			if  (__has_builtin(__builtin_fmodf16))
 				return __builtin_fmodf16(x, y);
