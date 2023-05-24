@@ -20,7 +20,7 @@
 mu0_fp128_t mu8_creal_fp128 (const mu0_cfp128_t z)
 {
 #	if MU0_HAVE_STDCOMPLEX
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT128
 #			if  (__has_builtin(__builtin_crealf128))
 				return __builtin_crealf128(z);
@@ -49,7 +49,7 @@ mu0_fp128_t mu8_creal_fp128 (const mu0_cfp128_t z)
 mu0_fp64_t  mu8_creal_fp64  (const mu0_cfp64_t  z)
 {
 #	if MU0_HAVE_STDCOMPLEX
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if  (__has_builtin(__builtin_creal))
 			return __builtin_creal(z);
 #		else
@@ -68,7 +68,7 @@ mu0_fp64_t  mu8_creal_fp64  (const mu0_cfp64_t  z)
 mu0_fp32_t  mu8_creal_fp32  (const mu0_cfp32_t  z)
 {
 #	if MU0_HAVE_STDCOMPLEX
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if  (__has_builtin(__builtin_crealf))
 			return __builtin_crealf(z);
 #		else
@@ -87,7 +87,7 @@ mu0_fp32_t  mu8_creal_fp32  (const mu0_cfp32_t  z)
 mu0_fp16_t  mu8_creal_fp16  (const mu0_cfp16_t  z)
 {
 #	if MU0_HAVE_STDCOMPLEX
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT16
 #			if  (__has_builtin(__builtin_crealf16))
 				return __builtin_crealf16(z);
