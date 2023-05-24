@@ -28,8 +28,8 @@ void mu8_zpow_fp128 (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t xr, c
 		*zr = xr;
 		*zi = xi;
 	} else {
-		mu8_zlog_fp128(zr, zi, xr, xi);
-		mu8_zmul_fp128(zr, zi, yr, yi, *zr, *zi);
+		mu8_zlog_fp128(zr, zi,  xr,  xi);
+		mu8_zmul_fp128(zr, zi,  yr,  yi, *zr, *zi);
 		mu8_zexp_fp128(zr, zi, *zr, *zi);
 	}
 }
@@ -43,8 +43,8 @@ void mu8_zpow_fp64  (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  xr, c
 		*zr = xr;
 		*zi = xi;
 	} else {
-		mu8_zlog_fp64(zr, zi, xr, xi);
-		mu8_zmul_fp64(zr, zi, yr, yi, *zr, *zi);
+		mu8_zlog_fp64(zr, zi,  xr,  xi);
+		mu8_zmul_fp64(zr, zi,  yr,  yi, *zr, *zi);
 		mu8_zexp_fp64(zr, zi, *zr, *zi);
 	}
 }
@@ -58,8 +58,8 @@ void mu8_zpow_fp32  (mu0_fp32_t  * zr, mu0_fp32_t  * zi, const mu0_fp32_t  xr, c
 		*zr = xr;
 		*zi = xi;
 	} else {
-		mu8_zlog_fp32(zr, zi, xr, xi);
-		mu8_zmul_fp32(zr, zi, yr, yi, *zr, *zi);
+		mu8_zlog_fp32(zr, zi,  xr,  xi);
+		mu8_zmul_fp32(zr, zi,  yr,  yi, *zr, *zi);
 		mu8_zexp_fp32(zr, zi, *zr, *zi);
 	}
 }
@@ -73,8 +73,8 @@ void mu8_zpow_fp16  (mu0_fp16_t  * zr, mu0_fp16_t  * zi, const mu0_fp16_t  xr, c
 		*zr = xr;
 		*zi = xi;
 	} else {
-		mu8_zlog_fp16(zr, zi, xr, xi);
-		mu8_zmul_fp16(zr, zi, yr, yi, *zr, *zi);
+		mu8_zlog_fp16(zr, zi,  xr,  xi);
+		mu8_zmul_fp16(zr, zi,  yr,  yi, *zr, *zi);
 		mu8_zexp_fp16(zr, zi, *zr, *zi);
 	}
 }
