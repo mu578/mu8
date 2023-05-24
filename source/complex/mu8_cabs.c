@@ -42,7 +42,7 @@ mu0_fp128_t mu8_cabs_fp128 (const mu0_cfp128_t z)
 	return cabsl(z);
 #	endif
 #	else
-	return mu8_zabs_fp128(z.u_re, z.u_im);
+	return mu8_zabs_fp128 (z.u_re, z.u_im);
 #	endif
 }
 
@@ -61,7 +61,7 @@ mu0_fp64_t  mu8_cabs_fp64  (const mu0_cfp64_t  z)
 		return cabs(z);
 #	endif
 #	else
-	return mu8_zabs_fp64(z.u_re, z.u_im);
+	return mu8_zabs_fp64  (z.u_re, z.u_im);
 #	endif
 }
 
@@ -80,7 +80,7 @@ mu0_fp32_t  mu8_cabs_fp32  (const mu0_cfp32_t  z)
 		return cabsf(z);
 #	endif
 #	else
-	return mu8_zabs_fp32(z.u_re, z.u_im);
+	return mu8_zabs_fp32  (z.u_re, z.u_im);
 #	endif
 }
 
@@ -109,7 +109,7 @@ mu0_fp16_t  mu8_cabs_fp16  (const mu0_cfp16_t  z)
 	return cabsf(z);
 #	endif
 #	else
-	return mu8_zabs_fp16(z.u_re, z.u_im);
+	return mu8_zabs_fp16  (z.u_re, z.u_im);
 #	endif
 }
 

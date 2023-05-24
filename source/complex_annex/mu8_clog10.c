@@ -10,56 +10,55 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu8_zmod.c
+// mu8_clog10.c
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
 #include <mu8/mu8_complex_annex.h>
-#include <mu8/mu8_math_annex.h>
 
-mu0_fp128_t mu8_zmod_fp128 (const mu0_fp128_t zr, const mu0_fp128_t zi)
+mu0_cfp128_t mu8_clog10_fp128 (const mu0_cfp128_t z)
 {
-	if (mu8_isinf_fp128 (zr)) {
-		return mu0_fp128_inf;
-	}
-	if (mu8_isinf_fp128 (zi)) {
-		return mu0_fp128_inf;
-	}
-	return mu8_sqrt_fp128 (mu8_znorm_fp128 (zr, zi));
+#	if MU0_HAVE_STDCOMPLEX
+	return mu8_clog_fp128 (z) / mu8_clog_fp128 (mu0_cfp128 (10.0, 0.0));
+#	else
+	mu0_cfp128_t c = { 0 };
+	mu8_zlog2_fp128 (&c.u_re, &c.u_im, z.u_re, z.u_im);
+	return c; 
+#	endif
 }
 
-mu0_fp64_t  mu8_zmod_fp64  (const mu0_fp64_t  zr, const mu0_fp64_t  zi)
+mu0_cfp64_t  mu8_clog10_fp64  (const mu0_cfp64_t  z)
 {
-	if (mu8_isinf_fp64  (zr)) {
-		return mu0_fp64_inf;
-	}
-	if (mu8_isinf_fp64  (zi)) {
-		return mu0_fp64_inf;
-	}
-	return mu8_sqrt_fp64  (mu8_znorm_fp64  (zr, zi));
+#	if MU0_HAVE_STDCOMPLEX
+	return mu8_clog_fp64  (z) / mu8_clog_fp64  (mu0_cfp64  (10.0, 0.0));
+#	else
+	mu0_cfp64_t  c = { 0 };
+	mu8_zlog2_fp64  (&c.u_re, &c.u_im, z.u_re, z.u_im);
+	return c; 
+#	endif
 }
 
-mu0_fp32_t  mu8_zmod_fp32  (const mu0_fp32_t  zr, const mu0_fp32_t  zi)
+mu0_cfp32_t  mu8_clog10_fp32  (const mu0_cfp32_t  z)
 {
-	if (mu8_isinf_fp32  (zr)) {
-		return mu0_fp32_inf;
-	}
-	if (mu8_isinf_fp32  (zi)) {
-		return mu0_fp32_inf;
-	}
-	return mu8_sqrt_fp32  (mu8_znorm_fp32  (zr, zi));
+#	if MU0_HAVE_STDCOMPLEX
+	return mu8_clog_fp32  (z) / mu8_clog_fp32  (mu0_cfp32  (10.0, 0.0));
+#	else
+	mu0_cfp32_t  c = { 0 };
+	mu8_zlog2_fp32  (&c.u_re, &c.u_im, z.u_re, z.u_im);
+	return c; 
+#	endif
 }
 
-mu0_fp16_t  mu8_zmod_fp16  (const mu0_fp16_t  zr, const mu0_fp16_t  zi)
+mu0_cfp16_t  mu8_clog10_fp16  (const mu0_cfp16_t  z)
 {
-	if (mu8_isinf_fp16  (zr)) {
-		return mu0_fp16_inf;
-	}
-	if (mu8_isinf_fp16  (zi)) {
-		return mu0_fp16_inf;
-	}
-	return mu8_sqrt_fp16  (mu8_znorm_fp16  (zr, zi));
+#	if MU0_HAVE_STDCOMPLEX
+	return mu8_clog_fp16  (z) / mu8_clog_fp16  (mu0_cfp16  (10.0, 0.0));
+#	else
+	mu0_cfp16_t  c = { 0 };
+	mu8_zlog2_fp16  (&c.u_re, &c.u_im, z.u_re, z.u_im);
+	return c; 
+#	endif
 }
 
 /* EOF */

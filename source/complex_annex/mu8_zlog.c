@@ -1,3 +1,4 @@
+
 //
 // # -*- coding: utf-8, tab-width: 3 -*-
 
@@ -10,7 +11,7 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu8_zmod.c
+// mu8_zlog.c
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
@@ -18,48 +19,28 @@
 #include <mu8/mu8_complex_annex.h>
 #include <mu8/mu8_math_annex.h>
 
-mu0_fp128_t mu8_zmod_fp128 (const mu0_fp128_t zr, const mu0_fp128_t zi)
+void mu8_zlog_fp128 (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t ar, const mu0_fp128_t ai)
 {
-	if (mu8_isinf_fp128 (zr)) {
-		return mu0_fp128_inf;
-	}
-	if (mu8_isinf_fp128 (zi)) {
-		return mu0_fp128_inf;
-	}
-	return mu8_sqrt_fp128 (mu8_znorm_fp128 (zr, zi));
+	*zr = mu8_log_fp128  (mu8_zabs_fp128(ar, ai));
+	*zi = mu8_zarg_fp128 (ar, ai);
 }
 
-mu0_fp64_t  mu8_zmod_fp64  (const mu0_fp64_t  zr, const mu0_fp64_t  zi)
+void mu8_zlog_fp64  (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  ar, const mu0_fp64_t  ai)
 {
-	if (mu8_isinf_fp64  (zr)) {
-		return mu0_fp64_inf;
-	}
-	if (mu8_isinf_fp64  (zi)) {
-		return mu0_fp64_inf;
-	}
-	return mu8_sqrt_fp64  (mu8_znorm_fp64  (zr, zi));
+	*zr = mu8_log_fp64   (mu8_zabs_fp64(ar, ai));
+	*zi = mu8_zarg_fp64  (ar, ai);
 }
 
-mu0_fp32_t  mu8_zmod_fp32  (const mu0_fp32_t  zr, const mu0_fp32_t  zi)
+void mu8_zlog_fp32  (mu0_fp32_t  * zr, mu0_fp32_t  * zi, const mu0_fp32_t  ar, const mu0_fp32_t  ai)
 {
-	if (mu8_isinf_fp32  (zr)) {
-		return mu0_fp32_inf;
-	}
-	if (mu8_isinf_fp32  (zi)) {
-		return mu0_fp32_inf;
-	}
-	return mu8_sqrt_fp32  (mu8_znorm_fp32  (zr, zi));
+	*zr = mu8_log_fp32   (mu8_zabs_fp32(ar, ai));
+	*zi = mu8_zarg_fp32  (ar, ai);
 }
 
-mu0_fp16_t  mu8_zmod_fp16  (const mu0_fp16_t  zr, const mu0_fp16_t  zi)
+void mu8_zlog_fp16  (mu0_fp16_t  * zr, mu0_fp16_t  * zi, const mu0_fp16_t  ar, const mu0_fp16_t  ai)
 {
-	if (mu8_isinf_fp16  (zr)) {
-		return mu0_fp16_inf;
-	}
-	if (mu8_isinf_fp16  (zi)) {
-		return mu0_fp16_inf;
-	}
-	return mu8_sqrt_fp16  (mu8_znorm_fp16  (zr, zi));
+	*zr = mu8_log_fp16   (mu8_zabs_fp16(ar, ai));
+	*zi = mu8_zarg_fp16  (ar, ai);
 }
 
 /* EOF */

@@ -10,106 +10,114 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu8_carg.c
+// mu8_clog.c
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
 #include <mu8/mu8_complex_annex.h>
 
-mu0_fp128_t mu8_carg_fp128 (const mu0_cfp128_t z)
+mu0_cfp128_t mu8_clog_fp128 (const mu0_cfp128_t z)
 {
 #	if MU0_HAVE_STDCOMPLEX
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT128
-#			if  (__has_builtin(__builtin_cargf128))
-				return __builtin_cargf128(z);
-#			elif (__has_builtin(__builtin_cargl))
-				return mu0_const_fp128(__builtin_cargl(z));
+#			if  (__has_builtin(__builtin_clogf128))
+				return __builtin_clogf128(z);
+#			elif (__has_builtin(__builtin_clogl))
+				return mu0_const_fp128(__builtin_clogl(z));
 #			else
-				return mu0_const_fp128(cargl(z));
+				return mu0_const_fp128(clogl(z));
 #			endif
 #		else
-#			if (__has_builtin(__builtin_cargl))
-				return __builtin_cargl(z);
+#			if (__has_builtin(__builtin_clogl))
+				return __builtin_clogl(z);
 #			else
-				return cargl(z);
+				return clogl(z);
 #			endif
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_cargl(z);
+		return __builtin_clogl(z);
 #	else
-	return cargl(z);
+	return clogl(z);
 #	endif
 #	else
-	return mu8_zarg_fp128 (z.u_re, z.u_im);
+	mu0_cfp128_t  c = { 0 };
+	mu8_zlog_fp128 (&c.u_re, &c.u_im, z.u_re, z.u_im);
+	return c;
 #	endif
 }
 
-mu0_fp64_t  mu8_carg_fp64  (const mu0_cfp64_t  z)
+mu0_cfp64_t  mu8_clog_fp64  (const mu0_cfp64_t  z)
 {
 #	if MU0_HAVE_STDCOMPLEX
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
-#		if  (__has_builtin(__builtin_carg))
-			return __builtin_carg(z);
+#		if  (__has_builtin(__builtin_clog))
+			return __builtin_clog(z);
 #		else
-		return carg(z);
+		return clog(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_carg(z);
+		return __builtin_clog(z);
 #	else
-		return carg(z);
+		return clog(z);
 #	endif
 #	else
-	return mu8_zarg_fp64  (z.u_re, z.u_im);
+	mu0_cfp64_t  c = { 0 };
+	mu8_zlog_fp64  (&c.u_re, &c.u_im, z.u_re, z.u_im);
+	return c;
 #	endif
 }
 
-mu0_fp32_t  mu8_carg_fp32  (const mu0_cfp32_t  z)
+mu0_cfp32_t  mu8_clog_fp32  (const mu0_cfp32_t  z)
 {
 #	if MU0_HAVE_STDCOMPLEX
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
-#		if  (__has_builtin(__builtin_cargf))
-			return __builtin_cargf(z);
+#		if  (__has_builtin(__builtin_clogf))
+			return __builtin_clogf(z);
 #		else
-		return cargf(z);
+		return clogf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_cargf(z);
+		return __builtin_clogf(z);
 #	else
-		return cargf(z);
+		return clogf(z);
 #	endif
 #	else
-	return mu8_zarg_fp32  (z.u_re, z.u_im);
+	mu0_cfp32_t  c = { 0 };
+	mu8_zlog_fp32  (&c.u_re, &c.u_im, z.u_re, z.u_im);
+	return c;
 #	endif
 }
 
-mu0_fp16_t  mu8_carg_fp16  (const mu0_cfp16_t  z)
+mu0_cfp16_t  mu8_clog_fp16  (const mu0_cfp16_t  z)
 {
 #	if MU0_HAVE_STDCOMPLEX
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT16
-#			if  (__has_builtin(__builtin_cargf16))
-				return __builtin_cargf16(z);
-#			elif (__has_builtin(__builtin_cargf))
-				return mu0_const_fp16(__builtin_cargf(z));
+#			if  (__has_builtin(__builtin_clogf16))
+				return __builtin_clogf16(z);
+#			elif (__has_builtin(__builtin_clogf))
+				return mu0_const_fp16(__builtin_clogf(z));
 #			else
-				return mu0_const_fp16(cargf(z));
+				return mu0_const_fp16(clogf(z));
 #			endif
 #		else
-#			if (__has_builtin(__builtin_cargf))
-				return __builtin_cargf(z);
+#			if (__has_builtin(__builtin_clogf))
+				return __builtin_clogf(z);
 #			else
-				return cargf(z);
+				return clogf(z);
 #			endif
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_cargf(z);
+		return __builtin_clogf(z);
 #	else
-	return cargf(z);
+	return clogf(z);
 #	endif
 #	else
-	return mu8_zarg_fp16  (z.u_re, z.u_im);
+	mu0_cfp16_t  c = { 0 };
+	mu8_zlog_fp16  (&c.u_re, &c.u_im, z.u_re, z.u_im);
+	return c;
 #	endif
 }
 

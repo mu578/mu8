@@ -19,22 +19,22 @@
 
 mu0_fp128_t mu8_zarg_fp128 (const mu0_fp128_t zr, const mu0_fp128_t zi)
 {
-	return mu8_atan2_fp128(zi, zr);
+	return mu8_atan2_fp128 (zi, zr);
 }
 
 mu0_fp64_t  mu8_zarg_fp64  (const mu0_fp64_t  zr, const mu0_fp64_t  zi)
 {
-	return mu8_atan2_fp64(zi, zr);
+	return mu8_atan2_fp64  (zi, zr);
 }
 
 mu0_fp32_t  mu8_zarg_fp32  (const mu0_fp32_t  zr, const mu0_fp32_t  zi)
 {
-	return mu8_atan2_fp32(zi, zr);
+	return mu8_atan2_fp32  (zi, zr);
 }
 
 mu0_fp16_t  mu8_zarg_fp16  (const mu0_fp16_t  zr, const mu0_fp16_t  zi)
 {
-	return mu8_atan2_fp16(zi, zr);
+	return mu8_atan2_fp16  (zi, zr);
 }
 
 /* EOF */
