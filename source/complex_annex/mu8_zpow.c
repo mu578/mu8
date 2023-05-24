@@ -21,7 +21,7 @@
 
 void mu8_zpow_fp128 (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t xr, const mu0_fp128_t xi, const mu0_fp128_t yr, const mu0_fp128_t yi)
 {
-	if (yr == mu0_fp128_zero && yi ==mu0_fp128_zero) {
+	if (yr == mu0_fp128_zero && yi == mu0_fp128_zero) {
 		*zr = mu0_fp128_one;
 		*zi = mu0_fp128_zero;
 	} else if (yr == mu0_fp128_one && yi == mu0_fp128_zero) {
@@ -36,7 +36,7 @@ void mu8_zpow_fp128 (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t xr, c
 
 void mu8_zpow_fp64  (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  xr, const mu0_fp64_t  xi, const mu0_fp64_t  yr, const mu0_fp64_t  yi)
 {
-	if (yr == mu0_fp64_zero && yi ==mu0_fp64_zero) {
+	if (yr == mu0_fp64_zero && yi == mu0_fp64_zero) {
 		*zr = mu0_fp64_one;
 		*zi = mu0_fp64_zero;
 	} else if (yr == mu0_fp64_one && yi == mu0_fp64_zero) {
@@ -51,7 +51,7 @@ void mu8_zpow_fp64  (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  xr, c
 
 void mu8_zpow_fp32  (mu0_fp32_t  * zr, mu0_fp32_t  * zi, const mu0_fp32_t  xr, const mu0_fp32_t  xi, const mu0_fp32_t  yr, const mu0_fp32_t  yi)
 {
-	if (yr == mu0_fp32_zero && yi ==mu0_fp32_zero) {
+	if (yr == mu0_fp32_zero && yi == mu0_fp32_zero) {
 		*zr = mu0_fp32_one;
 		*zi = mu0_fp32_zero;
 	} else if (yr == mu0_fp32_one && yi == mu0_fp32_zero) {
@@ -66,7 +66,7 @@ void mu8_zpow_fp32  (mu0_fp32_t  * zr, mu0_fp32_t  * zi, const mu0_fp32_t  xr, c
 
 void mu8_zpow_fp16  (mu0_fp16_t  * zr, mu0_fp16_t  * zi, const mu0_fp16_t  xr, const mu0_fp16_t  xi, const mu0_fp16_t  yr, const mu0_fp16_t  yi)
 {
-	if (yr == mu0_fp16_zero && yi ==mu0_fp16_zero) {
+	if (yr == mu0_fp16_zero && yi == mu0_fp16_zero) {
 		*zr = mu0_fp16_one;
 		*zi = mu0_fp16_zero;
 	} else if (yr == mu0_fp16_one && yi == mu0_fp16_zero) {
