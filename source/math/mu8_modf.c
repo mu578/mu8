@@ -26,13 +26,13 @@ mu0_fp128_t mu8_modf_fp128 (const mu0_fp128_t x, mu0_fp128_t * f)
 #			elif (__has_builtin(__builtin_modfl))
 				mu0_fp128_t r;
 				mu0_fpex_t  q;
-				r  = mu0_fp128(__builtin_modfl(x, &q));
+				 r = mu0_fp128(__builtin_modfl(x, &q));
 				*f = mu0_const_fp128(q);
 				return r;
 #			else
 				mu0_fp128_t r;
 				mu0_fpex_t  q;
-				r  = mu0_fp128(modfl(x, &q));
+				 r = mu0_fp128(modfl(x, &q));
 				*f = mu0_const_fp128(q);
 				return r;
 #			endif
@@ -89,13 +89,13 @@ mu0_fp16_t  mu8_modf_fp16  (const mu0_fp16_t  x, mu0_fp16_t  * f)
 #			elif (__has_builtin(__builtin_modff))
 				mu0_fp16_t r;
 				mu0_fp32_t q;
-				r  = mu0_fp16(__builtin_modff(x, &q));
+				 r = mu0_fp16(__builtin_modff(x, &q));
 				*f = mu0_fp16(q);
 				return r;
 #			else
 				mu0_fp16_t r;
 				mu0_fp32_t q;
-				r  = mu0_fp16(modff(x, &q));
+				 r = mu0_fp16(modff(x, &q));
 				*f = mu0_fp16(q);
 				return r;
 #			endif

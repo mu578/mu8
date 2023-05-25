@@ -24,8 +24,8 @@ void mu8_zatanh_fp128 (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t ar,
 {
 	mu0_fp128_t wr, wi, dr, di;
 	if (mu8_isinf_fp128(ai)) {
-			*zr = mu8_copysign_fp128(mu0_fp128_zero, ar);
-			*zi = mu8_copysign_fp128(mu8_math_pi2_fp128, ai);
+		*zr = mu8_copysign_fp128(mu0_fp128_zero, ar);
+		*zi = mu8_copysign_fp128(mu8_math_pi2_fp128, ai);
 	} else if (mu8_isnan_fp128(ai)) {
 		if (mu8_isinf_fp128(ar) || ar == mu0_fp128_zero) {
 			*zr = mu8_copysign_fp128(mu0_fp128_zero, ar);
@@ -58,8 +58,8 @@ void mu8_zatanh_fp64  (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  ar,
 {
 	mu0_fp64_t  wr, wi, dr, di;
 	if (mu8_isinf_fp64(ai)) {
-			*zr = mu8_copysign_fp64(mu0_fp64_zero, ar);
-			*zi = mu8_copysign_fp64(mu8_math_pi2_fp64, ai);
+		*zr = mu8_copysign_fp64(mu0_fp64_zero, ar);
+		*zi = mu8_copysign_fp64(mu8_math_pi2_fp64, ai);
 	} else if (mu8_isnan_fp64(ai)) {
 		if (mu8_isinf_fp64(ar) || ar == mu0_fp64_zero) {
 			*zr = mu8_copysign_fp64(mu0_fp64_zero, ar);
@@ -92,8 +92,8 @@ void mu8_zatanh_fp32  (mu0_fp32_t  * zr, mu0_fp32_t  * zi, const mu0_fp32_t  ar,
 {
 	mu0_fp32_t  wr, wi, dr, di;
 	if (mu8_isinf_fp32(ai)) {
-			*zr = mu8_copysign_fp32(mu0_fp32_zero, ar);
-			*zi = mu8_copysign_fp32(mu8_math_pi2_fp32, ai);
+		*zr = mu8_copysign_fp32(mu0_fp32_zero, ar);
+		*zi = mu8_copysign_fp32(mu8_math_pi2_fp32, ai);
 	} else if (mu8_isnan_fp32(ai)) {
 		if (mu8_isinf_fp32(ar) || ar == mu0_fp32_zero) {
 			*zr = mu8_copysign_fp32(mu0_fp32_zero, ar);
@@ -126,8 +126,8 @@ void mu8_zatanh_fp16  (mu0_fp16_t  * zr, mu0_fp16_t  * zi, const mu0_fp16_t  ar,
 {
 	mu0_fp16_t  wr, wi, dr, di;
 	if (mu8_isinf_fp16(ai)) {
-			*zr = mu8_copysign_fp16(mu0_fp16_zero, ar);
-			*zi = mu8_copysign_fp16(mu8_math_pi2_fp16, ai);
+		*zr = mu8_copysign_fp16(mu0_fp16_zero, ar);
+		*zi = mu8_copysign_fp16(mu8_math_pi2_fp16, ai);
 	} else if (mu8_isnan_fp16(ai)) {
 		if (mu8_isinf_fp16(ar) || ar == mu0_fp16_zero) {
 			*zr = mu8_copysign_fp16(mu0_fp16_zero, ar);
