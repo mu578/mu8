@@ -22,6 +22,8 @@
 
 MU0_BEGIN_CDECL
 
+//#! Compile time aliases compatible with mu9's unary, binary and trinary operations.
+
 #	define __mu8_aliasing__(_Tp, __alias) __alias ## _ ## _Tp
 
 #	define __mu8_alias01__(_Tp, __alias, __unary_fn)                                            \
