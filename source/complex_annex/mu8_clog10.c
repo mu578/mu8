@@ -24,7 +24,7 @@ mu0_cfp128_t mu8_clog10_fp128 (const mu0_cfp128_t z)
 #	else
 	mu0_cfp128_t c = { 0 };
 	mu8_zlog10_fp128 (&c.u_re, &c.u_im, z.u_re, z.u_im);
-	return c; 
+	return c;
 #	endif
 }
 
@@ -35,7 +35,7 @@ mu0_cfp64_t  mu8_clog10_fp64  (const mu0_cfp64_t  z)
 #	else
 	mu0_cfp64_t  c = { 0 };
 	mu8_zlog10_fp64  (&c.u_re, &c.u_im, z.u_re, z.u_im);
-	return c; 
+	return c;
 #	endif
 }
 
@@ -46,7 +46,7 @@ mu0_cfp32_t  mu8_clog10_fp32  (const mu0_cfp32_t  z)
 #	else
 	mu0_cfp32_t  c = { 0 };
 	mu8_zlog10_fp32  (&c.u_re, &c.u_im, z.u_re, z.u_im);
-	return c; 
+	return c;
 #	endif
 }
 
@@ -57,7 +57,7 @@ mu0_cfp16_t  mu8_clog10_fp16  (const mu0_cfp16_t  z)
 #	else
 	mu0_cfp16_t  c = { 0 };
 	mu8_zlog10_fp16  (&c.u_re, &c.u_im, z.u_re, z.u_im);
-	return c; 
+	return c;
 #	endif
 }
 
