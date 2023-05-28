@@ -70,7 +70,7 @@ mu0_fp16_t  mu8_exp10_fp16  (const mu0_fp16_t  x)
 				return mu8_pow_fp16(mu0_fp16_ten, x);
 #			endif
 #		else
-#			return mu8_pow_fp16(mu0_fp16_ten, x);
+			return mu8_pow_fp16(mu0_fp16_ten, x);
 #		endif
 #	else
 	return mu8_pow_fp16(mu0_fp16_ten, x);
