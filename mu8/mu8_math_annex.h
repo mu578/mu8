@@ -22,6 +22,11 @@
 
 MU0_BEGIN_CDECL
 
+mu0_fp128_t  mu8_exp10_fp128 (const mu0_fp128_t x);
+mu0_fp64_t   mu8_exp10_fp64  (const mu0_fp64_t  x);
+mu0_fp32_t   mu8_exp10_fp32  (const mu0_fp32_t  x);
+mu0_fp16_t   mu8_exp10_fp16  (const mu0_fp16_t  x);
+
 mu0_fp128_t mu8_raise2_fp128 (const mu0_fp128_t x);
 mu0_fp64_t  mu8_raise2_fp64  (const mu0_fp64_t  x);
 mu0_fp32_t  mu8_raise2_fp32  (const mu0_fp32_t  x);

@@ -22,24 +22,24 @@ mu0_cfp128_t mu8_cacosh_fp128 (const mu0_cfp128_t z)
 #	if MU0_HAVE_STDCOMPLEX
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT128
-#			if  (__has_builtin(__builtin_c acoshf128))
-				return __builtin_c acoshf128(z);
-#			elif (__has_builtin(__builtin_c acoshl))
-				return mu0_const_fp128(__builtin_c acoshl(z));
+#			if  (__has_builtin(__builtin_cacoshf128))
+				return __builtin_cacoshf128(z);
+#			elif (__has_builtin(__builtin_cacoshl))
+				return mu0_const_fp128(__builtin_cacoshl(z));
 #			else
 				return mu0_const_fp128(c acoshl(z));
 #			endif
 #		else
-#			if (__has_builtin(__builtin_c acoshl))
-				return __builtin_c acoshl(z);
+#			if (__has_builtin(__builtin_cacoshl))
+				return __builtin_cacoshl(z);
 #			else
-				return c acoshl(z);
+				return cacoshl(z);
 #			endif
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_c acoshl(z);
+		return __builtin_cacoshl(z);
 #	else
-	return c acoshl(z);
+	return cacoshl(z);
 #	endif
 #	else
 	mu0_cfp128_t  c = { 0 };
@@ -52,15 +52,15 @@ mu0_cfp64_t  mu8_cacosh_fp64  (const mu0_cfp64_t  z)
 {
 #	if MU0_HAVE_STDCOMPLEX
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
-#		if  (__has_builtin(__builtin_c acosh))
-			return __builtin_c acosh(z);
+#		if  (__has_builtin(__builtin_cacosh))
+			return __builtin_cacosh(z);
 #		else
-		return c acosh(z);
+		return cacosh(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_c acosh(z);
+		return __builtin_cacosh(z);
 #	else
-		return c acosh(z);
+		return cacosh(z);
 #	endif
 #	else
 	mu0_cfp64_t  c = { 0 };
@@ -73,15 +73,15 @@ mu0_cfp32_t  mu8_cacosh_fp32  (const mu0_cfp32_t  z)
 {
 #	if MU0_HAVE_STDCOMPLEX
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
-#		if  (__has_builtin(__builtin_c acoshf))
-			return __builtin_c acoshf(z);
+#		if  (__has_builtin(__builtin_cacoshf))
+			return __builtin_cacoshf(z);
 #		else
-		return c acoshf(z);
+		return cacoshf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_c acoshf(z);
+		return __builtin_cacoshf(z);
 #	else
-		return c acoshf(z);
+		return cacoshf(z);
 #	endif
 #	else
 	mu0_cfp32_t  c = { 0 };
@@ -95,24 +95,24 @@ mu0_cfp16_t  mu8_cacosh_fp16  (const mu0_cfp16_t  z)
 #	if MU0_HAVE_STDCOMPLEX
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
 #		if MU0_HAVE_FLOAT16
-#			if  (__has_builtin(__builtin_c acoshf16))
-				return __builtin_c acoshf16(z);
-#			elif (__has_builtin(__builtin_c acoshf))
-				return mu0_const_fp16(__builtin_c acoshf(z));
+#			if  (__has_builtin(__builtin_cacoshf16))
+				return __builtin_cacoshf16(z);
+#			elif (__has_builtin(__builtin_cacoshf))
+				return mu0_const_fp16(__builtin_cacoshf(z));
 #			else
 				return mu0_const_fp16(c acoshf(z));
 #			endif
 #		else
-#			if (__has_builtin(__builtin_c acoshf))
-				return __builtin_c acoshf(z);
+#			if (__has_builtin(__builtin_cacoshf))
+				return __builtin_cacoshf(z);
 #			else
-				return c acoshf(z);
+				return cacoshf(z);
 #			endif
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_c acoshf(z);
+		return __builtin_cacoshf(z);
 #	else
-	return c acoshf(z);
+	return cacoshf(z);
 #	endif
 #	else
 	mu0_cfp16_t  c = { 0 };
