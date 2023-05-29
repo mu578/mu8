@@ -62,6 +62,14 @@ __mu0_static__ const mu0_fp64_t  mu8_math_pi4_fp64  = mu0_const_fp64  (__mu8_mat
 __mu0_static__ const mu0_fp32_t  mu8_math_pi4_fp32  = mu0_const_fp32  (__mu8_math_pi4__);
 __mu0_static__ const mu0_fp16_t  mu8_math_pi4_fp16  = mu0_const_fp16  (__mu8_math_pi4__);
 
+//#! log(2).
+#	define __mu8_math_ln2__ +0.693147180559945309417232121458176568075500134360255254120E+00
+
+__mu0_static__ const mu0_fp128_t mu8_math_ln2_fp128 = mu0_const_fp128 (__mu8_math_ln2__);
+__mu0_static__ const mu0_fp64_t  mu8_math_ln2_fp64  = mu0_const_fp64  (__mu8_math_ln2__);
+__mu0_static__ const mu0_fp32_t  mu8_math_ln2_fp32  = mu0_const_fp32  (__mu8_math_ln2__);
+__mu0_static__ const mu0_fp16_t  mu8_math_ln2_fp16  = mu0_const_fp16  (__mu8_math_ln2__);
+
 MU0_END_CDECL
 
 #endif /* !MU8_MATH_CONSTANT_H */

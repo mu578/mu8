@@ -10,35 +10,44 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu8_math_annex.h
+// mu8_exp2m1.c
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
+#include <mu8/mu8_math_constant.h>
 #include <mu8/mu8_math.h>
 
-#ifndef MU8_MATH_ANNEX_H
-#define MU8_MATH_ANNEX_H 1
+mu0_fp128_t mu8_exp2m1_fp128 (const mu0_fp128_t x)
+{
+	if (x < -__mu0_fp128_const__(0.8) && x > __mu0_fp128_const__(0.8)) {
+		return mu8_exp2_fp128(x) - mu0_fp128_one;
+	}
+	return mu8_expm1_fp128(x * mu8_math_ln2_fp128);
+}
 
-MU0_BEGIN_CDECL
+mu0_fp64_t  mu8_exp2m1_fp64  (const mu0_fp64_t  x)
+{
+	if (x < -__mu0_fp64_const__(0.8) && x > __mu0_fp64_const__(0.8)) {
+		return mu8_exp2_fp64(x) - mu0_fp64_one;
+	}
+	return mu8_expm1_fp64(x * mu8_math_ln2_fp64);
+}
 
-mu0_fp128_t mu8_exp2m1_fp128 (const mu0_fp128_t x);
-mu0_fp64_t  mu8_exp2m1_fp64  (const mu0_fp64_t  x);
-mu0_fp32_t  mu8_exp2m1_fp32  (const mu0_fp32_t  x);
-mu0_fp16_t  mu8_exp2m1_fp16  (const mu0_fp16_t  x);
+mu0_fp32_t  mu8_exp2m1_fp32  (const mu0_fp32_t  x)
+{
+	if (x < -__mu0_fp32_const__(0.8) && x > __mu0_fp32_const__(0.8)) {
+		return mu8_exp2_fp32(x) - mu0_fp32_one;
+	}
+	return mu8_expm1_fp32(x * mu8_math_ln2_fp32);
+}
 
-mu0_fp128_t mu8_exp10_fp128  (const mu0_fp128_t x);
-mu0_fp64_t  mu8_exp10_fp64   (const mu0_fp64_t  x);
-mu0_fp32_t  mu8_exp10_fp32   (const mu0_fp32_t  x);
-mu0_fp16_t  mu8_exp10_fp16   (const mu0_fp16_t  x);
-
-mu0_fp128_t mu8_raise2_fp128 (const mu0_fp128_t x);
-mu0_fp64_t  mu8_raise2_fp64  (const mu0_fp64_t  x);
-mu0_fp32_t  mu8_raise2_fp32  (const mu0_fp32_t  x);
-mu0_fp16_t  mu8_raise2_fp16  (const mu0_fp16_t  x);
-
-MU0_END_CDECL
-
-#endif /* !MU8_MATH_ANNEX_H */
+mu0_fp16_t  mu8_exp2m1_fp16  (const mu0_fp16_t  x)
+{
+	if (x < -__mu0_fp16_const__(0.8) && x > __mu0_fp16_const__(0.8)) {
+		return mu8_exp2_fp16(x) - mu0_fp16_one;
+	}
+	return mu8_expm1_fp16(x * mu8_math_ln2_fp16);
+}
 
 /* EOF */
