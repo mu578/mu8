@@ -53,8 +53,8 @@ mu0_sint128_t mu8_rempio2_fp128 (const mu0_fp128_t x, mu0_fp128_t * z)
 
 mu0_sint64_t  mu8_rempio2_fp64  (const mu0_fp64_t  x, mu0_fp64_t  * z)
 {
-	mu0_fp64_t   y = x, w;
-	mu0_sint64_t r = 0;
+	mu0_fp64_t    y = x, w;
+	mu0_sint64_t  r = 0;
 	*z              = mu0_fp64_zero;
 	if (mu8_fisval_fp64(y)) {
 		if (mu8_fabs_fp64(y) <= __mu0_fp64_const__(0.25)) {
@@ -87,8 +87,8 @@ mu0_sint64_t  mu8_rempio2_fp64  (const mu0_fp64_t  x, mu0_fp64_t  * z)
 
 mu0_sint64_t  mu8_rempio2_fp32  (const mu0_fp32_t  x, mu0_fp32_t  * z)
 {
-	mu0_fp32_t   y = x, w;
-	mu0_sint64_t r = 0;
+	mu0_fp32_t    y = x, w;
+	mu0_sint64_t  r = 0;
 	*z              = mu0_fp32_zero;
 	if (mu8_fisval_fp32(y)) {
 		if (mu8_fabs_fp32(y) <= __mu0_fp32_const__(0.25)) {
@@ -121,8 +121,8 @@ mu0_sint64_t  mu8_rempio2_fp32  (const mu0_fp32_t  x, mu0_fp32_t  * z)
 
 mu0_sint32_t  mu8_rempio2_fp16  (const mu0_fp16_t  x, mu0_fp16_t  * z)
 {
-	mu0_fp16_t   y = x, w;
-	mu0_sint32_t r = 0;
+	mu0_fp16_t    y = x, w;
+	mu0_sint32_t  r = 0;
 	*z              = mu0_fp16_zero;
 	if (mu8_fisval_fp16(y)) {
 		if (mu8_fabs_fp16(y) <= __mu0_fp16_const__(0.25)) {
