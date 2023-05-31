@@ -53,7 +53,7 @@ mu0_fp64_t  mu8_cimag_fp64  (const mu0_cfp64_t  z)
 #		if  (__has_builtin(__builtin_cimag))
 			return __builtin_cimag(z);
 #		else
-		return cimag(z);
+			return cimag(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cimag(z);
@@ -72,7 +72,7 @@ mu0_fp32_t  mu8_cimag_fp32  (const mu0_cfp32_t  z)
 #		if  (__has_builtin(__builtin_cimagf))
 			return __builtin_cimagf(z);
 #		else
-		return cimagf(z);
+			return cimagf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cimagf(z);

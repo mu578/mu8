@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_cbrt_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_cbrt))
 			return __builtin_cbrt(x);
 #		else
-		return cbrt(x);
+			return cbrt(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cbrt(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_cbrt_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_cbrtf))
 			return __builtin_cbrtf(x);
 #		else
-		return cbrtf(x);
+			return cbrtf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cbrtf(x);

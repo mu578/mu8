@@ -53,7 +53,7 @@ mu0_fp64_t  mu8_creal_fp64  (const mu0_cfp64_t  z)
 #		if  (__has_builtin(__builtin_creal))
 			return __builtin_creal(z);
 #		else
-		return creal(z);
+			return creal(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_creal(z);
@@ -72,7 +72,7 @@ mu0_fp32_t  mu8_creal_fp32  (const mu0_cfp32_t  z)
 #		if  (__has_builtin(__builtin_crealf))
 			return __builtin_crealf(z);
 #		else
-		return crealf(z);
+			return crealf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_crealf(z);

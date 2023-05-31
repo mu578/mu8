@@ -55,7 +55,7 @@ mu0_cfp64_t  mu8_cproj_fp64  (const mu0_cfp64_t  z)
 #		if  (__has_builtin(__builtin_cproj))
 			return __builtin_cproj(z);
 #		else
-		return cproj(z);
+			return cproj(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cproj(z);
@@ -76,7 +76,7 @@ mu0_cfp32_t  mu8_cproj_fp32  (const mu0_cfp32_t  z)
 #		if  (__has_builtin(__builtin_cprojf))
 			return __builtin_cprojf(z);
 #		else
-		return cprojf(z);
+			return cprojf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cprojf(z);

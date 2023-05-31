@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_trunc_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_trunc))
 			return __builtin_trunc(x);
 #		else
-		return trunc(x);
+			return trunc(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_trunc(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_trunc_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_truncf))
 			return __builtin_truncf(x);
 #		else
-		return truncf(x);
+			return truncf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_truncf(x);

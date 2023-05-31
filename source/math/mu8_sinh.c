@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_sinh_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_sinh))
 			return __builtin_sinh(x);
 #		else
-		return sinh(x);
+			return sinh(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_sinh(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_sinh_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_sinhf))
 			return __builtin_sinhf(x);
 #		else
-		return sinhf(x);
+			return sinhf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_sinhf(x);

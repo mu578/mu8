@@ -53,7 +53,7 @@ mu0_fp64_t  mu8_carg_fp64  (const mu0_cfp64_t  z)
 #		if  (__has_builtin(__builtin_carg))
 			return __builtin_carg(z);
 #		else
-		return carg(z);
+			return carg(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_carg(z);
@@ -72,7 +72,7 @@ mu0_fp32_t  mu8_carg_fp32  (const mu0_cfp32_t  z)
 #		if  (__has_builtin(__builtin_cargf))
 			return __builtin_cargf(z);
 #		else
-		return cargf(z);
+			return cargf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cargf(z);

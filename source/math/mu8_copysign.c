@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_copysign_fp64  (const mu0_fp64_t  x, const mu0_fp64_t  y)
 #		if  (__has_builtin(__builtin_copysign))
 			return __builtin_copysign(x, y);
 #		else
-		return copysign(x, y);
+			return copysign(x, y);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_copysign(x, y);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_copysign_fp32  (const mu0_fp32_t  x, const mu0_fp32_t  y)
 #		if  (__has_builtin(__builtin_copysignf))
 			return __builtin_copysignf(x, y);
 #		else
-		return copysignf(x, y);
+			return copysignf(x, y);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_copysignf(x, y);

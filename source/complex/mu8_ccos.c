@@ -55,7 +55,7 @@ mu0_cfp64_t  mu8_ccos_fp64  (const mu0_cfp64_t  z)
 #		if  (__has_builtin(__builtin_ccos))
 			return __builtin_ccos(z);
 #		else
-		return ccos(z);
+			return ccos(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_ccos(z);
@@ -76,7 +76,7 @@ mu0_cfp32_t  mu8_ccos_fp32  (const mu0_cfp32_t  z)
 #		if  (__has_builtin(__builtin_ccosf))
 			return __builtin_ccosf(z);
 #		else
-		return ccosf(z);
+			return ccosf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_ccosf(z);

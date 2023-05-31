@@ -55,7 +55,7 @@ mu0_cfp64_t  mu8_cpow_fp64  (const mu0_cfp64_t  x, const mu0_cfp64_t  y)
 #		if  (__has_builtin(__builtin_cpow))
 			return __builtin_cpow(x, y);
 #		else
-		return cpow(x, y);
+			return cpow(x, y);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cpow(x, y);
@@ -76,7 +76,7 @@ mu0_cfp32_t  mu8_cpow_fp32  (const mu0_cfp32_t  x, const mu0_cfp32_t  y)
 #		if  (__has_builtin(__builtin_cpowf))
 			return __builtin_cpowf(x, y);
 #		else
-		return cpowf(x, y);
+			return cpowf(x, y);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cpowf(x, y);

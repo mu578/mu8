@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_floor_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_floor))
 			return __builtin_floor(x);
 #		else
-		return floor(x);
+			return floor(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_floor(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_floor_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_floorf))
 			return __builtin_floorf(x);
 #		else
-		return floorf(x);
+			return floorf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_floorf(x);

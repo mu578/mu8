@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_pow_fp64  (const mu0_fp64_t  x, const mu0_fp64_t  y)
 #		if  (__has_builtin(__builtin_pow))
 			return __builtin_pow(x, y);
 #		else
-		return pow(x, y);
+			return pow(x, y);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_pow(x, y);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_pow_fp32  (const mu0_fp32_t  x, const mu0_fp32_t  y)
 #		if  (__has_builtin(__builtin_powf))
 			return __builtin_powf(x, y);
 #		else
-		return powf(x, y);
+			return powf(x, y);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_powf(x, y);

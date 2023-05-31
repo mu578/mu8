@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_erfc_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_erfc))
 			return __builtin_erfc(x);
 #		else
-		return erfc(x);
+			return erfc(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_erfc(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_erfc_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_erfcf))
 			return __builtin_erfcf(x);
 #		else
-		return erfcf(x);
+			return erfcf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_erfcf(x);

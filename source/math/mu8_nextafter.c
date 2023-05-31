@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_nextafter_fp64  (const mu0_fp64_t  x, const mu0_fp64_t  y)
 #		if  (__has_builtin(__builtin_nextafter))
 			return __builtin_nextafter(x, y);
 #		else
-		return nextafter(x, y);
+			return nextafter(x, y);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_nextafter(x, y);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_nextafter_fp32  (const mu0_fp32_t  x, const mu0_fp32_t  y)
 #		if  (__has_builtin(__builtin_nextafterf))
 			return __builtin_nextafterf(x, y);
 #		else
-		return nextafterf(x, y);
+			return nextafterf(x, y);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_nextafterf(x, y);

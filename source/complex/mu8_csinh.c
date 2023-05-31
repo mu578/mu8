@@ -55,7 +55,7 @@ mu0_cfp64_t  mu8_csinh_fp64  (const mu0_cfp64_t  z)
 #		if  (__has_builtin(__builtin_csinh))
 			return __builtin_csinh(z);
 #		else
-		return csinh(z);
+			return csinh(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_csinh(z);
@@ -76,7 +76,7 @@ mu0_cfp32_t  mu8_csinh_fp32  (const mu0_cfp32_t  z)
 #		if  (__has_builtin(__builtin_csinhf))
 			return __builtin_csinhf(z);
 #		else
-		return csinhf(z);
+			return csinhf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_csinhf(z);

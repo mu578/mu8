@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_atanh_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_atanh))
 			return __builtin_atanh(x);
 #		else
-		return atanh(x);
+			return atanh(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_atanh(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_atanh_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_atanhf))
 			return __builtin_atanhf(x);
 #		else
-		return atanhf(x);
+			return atanhf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_atanhf(x);

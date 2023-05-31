@@ -55,7 +55,7 @@ mu0_cfp64_t  mu8_cexp_fp64  (const mu0_cfp64_t  z)
 #		if  (__has_builtin(__builtin_cexp))
 			return __builtin_cexp(z);
 #		else
-		return cexp(z);
+			return cexp(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cexp(z);
@@ -76,7 +76,7 @@ mu0_cfp32_t  mu8_cexp_fp32  (const mu0_cfp32_t  z)
 #		if  (__has_builtin(__builtin_cexpf))
 			return __builtin_cexpf(z);
 #		else
-		return cexpf(z);
+			return cexpf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cexpf(z);

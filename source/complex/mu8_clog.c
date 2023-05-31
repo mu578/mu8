@@ -55,7 +55,7 @@ mu0_cfp64_t  mu8_clog_fp64  (const mu0_cfp64_t  z)
 #		if  (__has_builtin(__builtin_clog))
 			return __builtin_clog(z);
 #		else
-		return clog(z);
+			return clog(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_clog(z);
@@ -76,7 +76,7 @@ mu0_cfp32_t  mu8_clog_fp32  (const mu0_cfp32_t  z)
 #		if  (__has_builtin(__builtin_clogf))
 			return __builtin_clogf(z);
 #		else
-		return clogf(z);
+			return clogf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_clogf(z);

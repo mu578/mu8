@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_fdim_fp64  (const mu0_fp64_t  x, const mu0_fp64_t  y)
 #		if  (__has_builtin(__builtin_fdim))
 			return __builtin_fdim(x, y);
 #		else
-		return fdim(x, y);
+			return fdim(x, y);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_fdim(x, y);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_fdim_fp32  (const mu0_fp32_t  x, const mu0_fp32_t  y)
 #		if  (__has_builtin(__builtin_fdimf))
 			return __builtin_fdimf(x, y);
 #		else
-		return fdimf(x, y);
+			return fdimf(x, y);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_fdimf(x, y);

@@ -55,7 +55,7 @@ mu0_cfp64_t  mu8_catanh_fp64  (const mu0_cfp64_t  z)
 #		if  (__has_builtin(__builtin_catanh))
 			return __builtin_catanh(z);
 #		else
-		return catanh(z);
+			return catanh(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_catanh(z);
@@ -76,7 +76,7 @@ mu0_cfp32_t  mu8_catanh_fp32  (const mu0_cfp32_t  z)
 #		if  (__has_builtin(__builtin_catanhf))
 			return __builtin_catanhf(z);
 #		else
-		return catanhf(z);
+			return catanhf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_catanhf(z);

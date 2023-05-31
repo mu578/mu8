@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_lgamma_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_lgamma))
 			return __builtin_lgamma(x);
 #		else
-		return lgamma(x);
+			return lgamma(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_lgamma(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_lgamma_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_lgammaf))
 			return __builtin_lgammaf(x);
 #		else
-		return lgammaf(x);
+			return lgammaf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_lgammaf(x);

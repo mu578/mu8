@@ -55,7 +55,7 @@ mu0_cfp64_t  mu8_casin_fp64  (const mu0_cfp64_t  z)
 #		if  (__has_builtin(__builtin_casin))
 			return __builtin_casin(z);
 #		else
-		return casin(z);
+			return casin(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_casin(z);
@@ -76,7 +76,7 @@ mu0_cfp32_t  mu8_casin_fp32  (const mu0_cfp32_t  z)
 #		if  (__has_builtin(__builtin_casinf))
 			return __builtin_casinf(z);
 #		else
-		return casinf(z);
+			return casinf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_casinf(z);

@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_nan_fp64  (const mu0_tchar8_t * s)
 #		if  (__has_builtin(__builtin_nan))
 			return __builtin_nan(s);
 #		else
-		return nan(s);
+			return nan(s);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_nan(s);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_nan_fp32  (const mu0_tchar8_t * s)
 #		if  (__has_builtin(__builtin_nanf))
 			return __builtin_nanf(s);
 #		else
-		return nanf(s);
+			return nanf(s);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_nanf(s);

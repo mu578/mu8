@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_fmin_fp64  (const mu0_fp64_t  x, const mu0_fp64_t  y)
 #		if  (__has_builtin(__builtin_fmin))
 			return __builtin_fmin(x, y);
 #		else
-		return fmin(x, y);
+			return fmin(x, y);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_fmin(x, y);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_fmin_fp32  (const mu0_fp32_t  x, const mu0_fp32_t  y)
 #		if  (__has_builtin(__builtin_fminf))
 			return __builtin_fminf(x, y);
 #		else
-		return fminf(x, y);
+			return fminf(x, y);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_fminf(x, y);

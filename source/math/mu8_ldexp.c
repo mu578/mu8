@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_ldexp_fp64  (const mu0_fp64_t  x, const mu0_sint64_t n)
 #		if  (__has_builtin(__builtin_ldexp))
 			return __builtin_ldexp(x, mu0_const_cast(___mu0_sint4_t___, n));
 #		else
-		return ldexp(x, mu0_const_cast(___mu0_sint4_t___, n));
+			return ldexp(x, mu0_const_cast(___mu0_sint4_t___, n));
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_ldexp(x, mu0_const_cast(___mu0_sint4_t___, n));
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_ldexp_fp32  (const mu0_fp32_t  x, const mu0_sint64_t n)
 #		if  (__has_builtin(__builtin_ldexpf))
 			return __builtin_ldexpf(x, mu0_const_cast(___mu0_sint4_t___, n));
 #		else
-		return ldexpf(x, mu0_const_cast(___mu0_sint4_t___, n));
+			return ldexpf(x, mu0_const_cast(___mu0_sint4_t___, n));
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_ldexpf(x, mu0_const_cast(___mu0_sint4_t___, n));

@@ -48,7 +48,7 @@ mu0_sint64_t mu8_ilogb_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_ilogb))
 			return __builtin_ilogb(x);
 #		else
-		return ilogb(x);
+			return ilogb(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_ilogb(x);
@@ -63,7 +63,7 @@ mu0_sint64_t mu8_ilogb_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_ilogbf))
 			return __builtin_ilogbf(x);
 #		else
-		return ilogbf(x);
+			return ilogbf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_ilogbf(x);

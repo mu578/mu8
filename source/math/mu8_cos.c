@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_cos_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_cos))
 			return __builtin_cos(x);
 #		else
-		return cos(x);
+			return cos(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cos(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_cos_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_cosf))
 			return __builtin_cosf(x);
 #		else
-		return cosf(x);
+			return cosf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cosf(x);

@@ -55,7 +55,7 @@ mu0_cfp64_t  mu8_conj_fp64  (const mu0_cfp64_t  z)
 #		if  (__has_builtin(__builtin_conj))
 			return __builtin_conj(z);
 #		else
-		return conj(z);
+			return conj(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_conj(z);
@@ -76,7 +76,7 @@ mu0_cfp32_t  mu8_conj_fp32  (const mu0_cfp32_t  z)
 #		if  (__has_builtin(__builtin_conjf))
 			return __builtin_conjf(z);
 #		else
-		return conjf(z);
+			return conjf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_conjf(z);

@@ -44,7 +44,11 @@ mu0_fp128_t mu8_modf_fp128 (const mu0_fp128_t x, mu0_fp128_t * f)
 #			endif
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_modfl(x, f);
+	mu0_fp128_t r;
+	mu0_fpex_t  q;
+	 r = mu0_fp128(__builtin_modfl(x, &q));
+	*f = mu0_const_fp128(q);
+	return r;
 #	else
 	return modfl(x, f);
 #	endif
@@ -56,7 +60,7 @@ mu0_fp64_t  mu8_modf_fp64  (const mu0_fp64_t  x, mu0_fp64_t  * f)
 #		if  (__has_builtin(__builtin_modf))
 			return __builtin_modf(x, f);
 #		else
-		return modf(x, f);
+			return modf(x, f);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_modf(x, f);
@@ -71,7 +75,7 @@ mu0_fp32_t  mu8_modf_fp32  (const mu0_fp32_t  x, mu0_fp32_t  * f)
 #		if  (__has_builtin(__builtin_modff))
 			return __builtin_modff(x, f);
 #		else
-		return modff(x, f);
+			return modff(x, f);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_modff(x, f);
@@ -90,13 +94,13 @@ mu0_fp16_t  mu8_modf_fp16  (const mu0_fp16_t  x, mu0_fp16_t  * f)
 				mu0_fp16_t r;
 				mu0_fp32_t q;
 				 r = mu0_fp16(__builtin_modff(x, &q));
-				*f = mu0_fp16(q);
+				*f = mu0_const_fp16(q);
 				return r;
 #			else
 				mu0_fp16_t r;
 				mu0_fp32_t q;
 				 r = mu0_fp16(modff(x, &q));
-				*f = mu0_fp16(q);
+				*f = mu0_const_fp16(q);
 				return r;
 #			endif
 #		else
@@ -107,7 +111,11 @@ mu0_fp16_t  mu8_modf_fp16  (const mu0_fp16_t  x, mu0_fp16_t  * f)
 #			endif
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		return __builtin_modff(x, f);
+	mu0_fp16_t r;
+	mu0_fp32_t q;
+	 r = mu0_fp16(__builtin_modff(x, &q));
+	*f = mu0_const_fp16(q);
+	return r;
 #	else
 	return modff(x, f);
 #	endif

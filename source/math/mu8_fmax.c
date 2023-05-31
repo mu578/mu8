@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_fmax_fp64  (const mu0_fp64_t  x, const mu0_fp64_t  y)
 #		if  (__has_builtin(__builtin_fmax))
 			return __builtin_fmax(x, y);
 #		else
-		return fmax(x, y);
+			return fmax(x, y);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_fmax(x, y);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_fmax_fp32  (const mu0_fp32_t  x, const mu0_fp32_t  y)
 #		if  (__has_builtin(__builtin_fmaxf))
 			return __builtin_fmaxf(x, y);
 #		else
-		return fmaxf(x, y);
+			return fmaxf(x, y);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_fmaxf(x, y);

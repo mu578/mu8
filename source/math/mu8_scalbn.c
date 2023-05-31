@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_scalbn_fp64  (const mu0_fp64_t  x, const mu0_sint64_t n)
 #		if  (__has_builtin(__builtin_scalbln))
 			return __builtin_scalbln(x, mu0_const_cast(___mu0_sintx_t___, n));
 #		else
-		return scalbln(x, mu0_const_cast(___mu0_sintx_t___, n));
+			return scalbln(x, mu0_const_cast(___mu0_sintx_t___, n));
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_scalbln(x, mu0_const_cast(___mu0_sintx_t___, n));
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_scalbn_fp32  (const mu0_fp32_t  x, const mu0_sint64_t n)
 #		if  (__has_builtin(__builtin_scalblnf))
 			return __builtin_scalblnf(x, mu0_const_cast(___mu0_sintx_t___, n));
 #		else
-		return scalblnf(x, mu0_const_cast(___mu0_sintx_t___, n));
+			return scalblnf(x, mu0_const_cast(___mu0_sintx_t___, n));
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_scalblnf(x, mu0_const_cast(___mu0_sintx_t___, n));

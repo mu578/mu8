@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_asin_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_asin))
 			return __builtin_asin(x);
 #		else
-		return asin(x);
+			return asin(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_asin(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_asin_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_asinf))
 			return __builtin_asinf(x);
 #		else
-		return asinf(x);
+			return asinf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_asinf(x);

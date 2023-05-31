@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_fabs_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_fabs))
 			return __builtin_fabs(x);
 #		else
-		return fabs(x);
+			return fabs(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_fabs(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_fabs_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_fabsf))
 			return __builtin_fabsf(x);
 #		else
-		return fabsf(x);
+			return fabsf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_fabsf(x);

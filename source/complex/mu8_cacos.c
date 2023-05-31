@@ -55,7 +55,7 @@ mu0_cfp64_t  mu8_cacos_fp64  (const mu0_cfp64_t  z)
 #		if  (__has_builtin(__builtin_cacos))
 			return __builtin_cacos(z);
 #		else
-		return cacos(z);
+			return cacos(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cacos(z);
@@ -76,7 +76,7 @@ mu0_cfp32_t  mu8_cacos_fp32  (const mu0_cfp32_t  z)
 #		if  (__has_builtin(__builtin_cacosf))
 			return __builtin_cacosf(z);
 #		else
-		return cacosf(z);
+			return cacosf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cacosf(z);

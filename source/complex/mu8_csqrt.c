@@ -55,7 +55,7 @@ mu0_cfp64_t  mu8_csqrt_fp64  (const mu0_cfp64_t  z)
 #		if  (__has_builtin(__builtin_csqrt))
 			return __builtin_csqrt(z);
 #		else
-		return csqrt(z);
+			return csqrt(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_csqrt(z);
@@ -76,7 +76,7 @@ mu0_cfp32_t  mu8_csqrt_fp32  (const mu0_cfp32_t  z)
 #		if  (__has_builtin(__builtin_csqrtf))
 			return __builtin_csqrtf(z);
 #		else
-		return csqrtf(z);
+			return csqrtf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_csqrtf(z);

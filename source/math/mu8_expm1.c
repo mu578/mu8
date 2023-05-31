@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_expm1_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_expm1))
 			return __builtin_expm1(x);
 #		else
-		return expm1(x);
+			return expm1(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_expm1(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_expm1_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_expm1f))
 			return __builtin_expm1f(x);
 #		else
-		return expm1f(x);
+			return expm1f(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_expm1f(x);

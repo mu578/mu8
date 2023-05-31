@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_round_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_round))
 			return __builtin_round(x);
 #		else
-		return round(x);
+			return round(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_round(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_round_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_roundf))
 			return __builtin_roundf(x);
 #		else
-		return roundf(x);
+			return roundf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_roundf(x);

@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_fma_fp64  (const mu0_fp64_t  x, const mu0_fp64_t  y, const mu0_f
 #		if  (__has_builtin(__builtin_fma))
 			return __builtin_fma(x, y, z);
 #		else
-		return fma(x, y, z);
+			return fma(x, y, z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_fma(x, y, z);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_fma_fp32  (const mu0_fp32_t  x, const mu0_fp32_t  y, const mu0_f
 #		if  (__has_builtin(__builtin_fmaf))
 			return __builtin_fmaf(x, y, z);
 #		else
-		return fmaf(x, y, z);
+			return fmaf(x, y, z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_fmaf(x, y, z);

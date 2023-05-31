@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_nearbyint_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_nearbyint))
 			return __builtin_nearbyint(x);
 #		else
-		return nearbyint(x);
+			return nearbyint(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_nearbyint(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_nearbyint_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_nearbyintf))
 			return __builtin_nearbyintf(x);
 #		else
-		return nearbyintf(x);
+			return nearbyintf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_nearbyintf(x);

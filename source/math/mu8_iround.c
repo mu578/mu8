@@ -48,7 +48,7 @@ mu0_sint64_t mu8_iround_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_llround))
 			return __builtin_llround(x);
 #		else
-		return llround(x);
+			return llround(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_llround(x);
@@ -63,7 +63,7 @@ mu0_sint64_t mu8_iround_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_llroundf))
 			return __builtin_llroundf(x);
 #		else
-		return llroundf(x);
+			return llroundf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_llroundf(x);

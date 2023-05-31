@@ -55,7 +55,7 @@ mu0_cfp64_t  mu8_cacosh_fp64  (const mu0_cfp64_t  z)
 #		if  (__has_builtin(__builtin_cacosh))
 			return __builtin_cacosh(z);
 #		else
-		return cacosh(z);
+			return cacosh(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cacosh(z);
@@ -76,7 +76,7 @@ mu0_cfp32_t  mu8_cacosh_fp32  (const mu0_cfp32_t  z)
 #		if  (__has_builtin(__builtin_cacoshf))
 			return __builtin_cacoshf(z);
 #		else
-		return cacoshf(z);
+			return cacoshf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cacoshf(z);

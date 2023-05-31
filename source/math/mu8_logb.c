@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_logb_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_logb))
 			return __builtin_logb(x);
 #		else
-		return logb(x);
+			return logb(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_logb(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_logb_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_logbf))
 			return __builtin_logbf(x);
 #		else
-		return logbf(x);
+			return logbf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_logbf(x);

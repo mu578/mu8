@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_ceil_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_ceil))
 			return __builtin_ceil(x);
 #		else
-		return ceil(x);
+			return ceil(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_ceil(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_ceil_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_ceilf))
 			return __builtin_ceilf(x);
 #		else
-		return ceilf(x);
+			return ceilf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_ceilf(x);

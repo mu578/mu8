@@ -55,7 +55,7 @@ mu0_cfp64_t  mu8_catan_fp64  (const mu0_cfp64_t  z)
 #		if  (__has_builtin(__builtin_catan))
 			return __builtin_catan(z);
 #		else
-		return catan(z);
+			return catan(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_catan(z);
@@ -76,7 +76,7 @@ mu0_cfp32_t  mu8_catan_fp32  (const mu0_cfp32_t  z)
 #		if  (__has_builtin(__builtin_catanf))
 			return __builtin_catanf(z);
 #		else
-		return catanf(z);
+			return catanf(z);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_catanf(z);

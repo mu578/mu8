@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_hypot_fp64  (const mu0_fp64_t  x, const mu0_fp64_t  y)
 #		if  (__has_builtin(__builtin_hypot))
 			return __builtin_hypot(x, y);
 #		else
-		return hypot(x, y);
+			return hypot(x, y);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_hypot(x, y);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_hypot_fp32  (const mu0_fp32_t  x, const mu0_fp32_t  y)
 #		if  (__has_builtin(__builtin_hypotf))
 			return __builtin_hypotf(x, y);
 #		else
-		return hypotf(x, y);
+			return hypotf(x, y);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_hypotf(x, y);

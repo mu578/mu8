@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_cosh_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_cosh))
 			return __builtin_cosh(x);
 #		else
-		return cosh(x);
+			return cosh(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_cosh(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_cosh_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_coshf))
 			return __builtin_coshf(x);
 #		else
-		return coshf(x);
+			return coshf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_coshf(x);

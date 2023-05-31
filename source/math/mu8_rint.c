@@ -48,7 +48,7 @@ mu0_fp64_t  mu8_rint_fp64  (const mu0_fp64_t  x)
 #		if  (__has_builtin(__builtin_rint))
 			return __builtin_rint(x);
 #		else
-		return rint(x);
+			return rint(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_rint(x);
@@ -63,7 +63,7 @@ mu0_fp32_t  mu8_rint_fp32  (const mu0_fp32_t  x)
 #		if  (__has_builtin(__builtin_rintf))
 			return __builtin_rintf(x);
 #		else
-		return rintf(x);
+			return rintf(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
 		return __builtin_rintf(x);

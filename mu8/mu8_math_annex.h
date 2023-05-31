@@ -92,6 +92,11 @@ mu0_sint64_t  mu8_rempio2d_fp64  (const mu0_fp64_t  x, mu0_fp64_t  * z);
 mu0_sint64_t  mu8_rempio2d_fp32  (const mu0_fp32_t  x, mu0_fp32_t  * z);
 mu0_sint32_t  mu8_rempio2d_fp16  (const mu0_fp16_t  x, mu0_fp16_t  * z);
 
+void          mu8_sincos_fp128   (const mu0_fp128_t x, mu0_fp128_t * s, mu0_fp128_t * c);
+void          mu8_sincos_fp64    (const mu0_fp64_t  x, mu0_fp64_t  * s, mu0_fp64_t  * c);
+void          mu8_sincos_fp32    (const mu0_fp32_t  x, mu0_fp32_t  * s, mu0_fp32_t  * c);
+void          mu8_sincos_fp16    (const mu0_fp16_t  x, mu0_fp16_t  * s, mu0_fp16_t  * c);
+
 mu0_fp128_t   mu8_sinpi_fp128    (const mu0_fp128_t x);
 mu0_fp64_t    mu8_sinpi_fp64     (const mu0_fp64_t  x);
 mu0_fp32_t    mu8_sinpi_fp32     (const mu0_fp32_t  x);
