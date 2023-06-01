@@ -22,6 +22,11 @@
 
 MU0_BEGIN_CDECL
 
+mu0_fp128_t   mu8_cosd_fp128     (const mu0_fp128_t x);
+mu0_fp64_t    mu8_cosd_fp64      (const mu0_fp64_t  x);
+mu0_fp32_t    mu8_cosd_fp32      (const mu0_fp32_t  x);
+mu0_fp16_t    mu8_cosd_fp16      (const mu0_fp16_t  x);
+
 mu0_fp128_t   mu8_cospi_fp128    (const mu0_fp128_t x);
 mu0_fp64_t    mu8_cospi_fp64     (const mu0_fp64_t  x);
 mu0_fp32_t    mu8_cospi_fp32     (const mu0_fp32_t  x);
@@ -96,6 +101,21 @@ void          mu8_sincos_fp128   (const mu0_fp128_t x, mu0_fp128_t * s, mu0_fp12
 void          mu8_sincos_fp64    (const mu0_fp64_t  x, mu0_fp64_t  * s, mu0_fp64_t  * c);
 void          mu8_sincos_fp32    (const mu0_fp32_t  x, mu0_fp32_t  * s, mu0_fp32_t  * c);
 void          mu8_sincos_fp16    (const mu0_fp16_t  x, mu0_fp16_t  * s, mu0_fp16_t  * c);
+
+void          mu8_sincosd_fp128  (const mu0_fp128_t x, mu0_fp128_t * s, mu0_fp128_t * c);
+void          mu8_sincosd_fp64   (const mu0_fp64_t  x, mu0_fp64_t  * s, mu0_fp64_t  * c);
+void          mu8_sincosd_fp32   (const mu0_fp32_t  x, mu0_fp32_t  * s, mu0_fp32_t  * c);
+void          mu8_sincosd_fp16   (const mu0_fp16_t  x, mu0_fp16_t  * s, mu0_fp16_t  * c);
+
+void          mu8_sincospi_fp128 (const mu0_fp128_t x, mu0_fp128_t * s, mu0_fp128_t * c);
+void          mu8_sincospi_fp64  (const mu0_fp64_t  x, mu0_fp64_t  * s, mu0_fp64_t  * c);
+void          mu8_sincospi_fp32  (const mu0_fp32_t  x, mu0_fp32_t  * s, mu0_fp32_t  * c);
+void          mu8_sincospi_fp16  (const mu0_fp16_t  x, mu0_fp16_t  * s, mu0_fp16_t  * c);
+
+mu0_fp128_t   mu8_sind_fp128     (const mu0_fp128_t x);
+mu0_fp64_t    mu8_sind_fp64      (const mu0_fp64_t  x);
+mu0_fp32_t    mu8_sind_fp32      (const mu0_fp32_t  x);
+mu0_fp16_t    mu8_sind_fp16      (const mu0_fp16_t  x);
 
 mu0_fp128_t   mu8_sinpi_fp128    (const mu0_fp128_t x);
 mu0_fp64_t    mu8_sinpi_fp64     (const mu0_fp64_t  x);
