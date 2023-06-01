@@ -48,7 +48,7 @@ void mu8_zatanh_fp128 (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t ar,
 		mu8_zsub_fp128(&dr, &di,  mu0_fp128_one, mu0_fp128_zero, ar, ai);
 		mu8_zdiv_fp128( zr,  zi,  wr,  wi, dr, di);
 		mu8_zlog_fp128( zr,  zi, *zr, *zi);
-		mu8_zmul_fp128( zr,  zi, *zr, *zi, __mu0_fp128_const__(0.5), mu0_fp128_zero);
+		mu8_zmul_fp128( zr,  zi, *zr, *zi, mu0_fp128_half, mu0_fp128_zero);
 		*zr = mu8_copysign_fp128(*zr,  ar);
 		*zi = mu8_copysign_fp128(*zi,  ai);
 	}
@@ -82,7 +82,7 @@ void mu8_zatanh_fp64  (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  ar,
 		mu8_zsub_fp64(&dr, &di,  mu0_fp64_one, mu0_fp64_zero, ar, ai);
 		mu8_zdiv_fp64( zr,  zi,  wr,  wi, dr, di);
 		mu8_zlog_fp64( zr,  zi, *zr, *zi);
-		mu8_zmul_fp64( zr,  zi, *zr, *zi, __mu0_fp64_const__(0.5), mu0_fp64_zero);
+		mu8_zmul_fp64( zr,  zi, *zr, *zi, mu0_fp64_half, mu0_fp64_zero);
 		*zr = mu8_copysign_fp64(*zr,  ar);
 		*zi = mu8_copysign_fp64(*zi,  ai);
 	}
@@ -116,7 +116,7 @@ void mu8_zatanh_fp32  (mu0_fp32_t  * zr, mu0_fp32_t  * zi, const mu0_fp32_t  ar,
 		mu8_zsub_fp32(&dr, &di,  mu0_fp32_one, mu0_fp32_zero, ar, ai);
 		mu8_zdiv_fp32( zr,  zi,  wr,  wi, dr, di);
 		mu8_zlog_fp32( zr,  zi, *zr, *zi);
-		mu8_zmul_fp32( zr,  zi, *zr, *zi, __mu0_fp32_const__(0.5), mu0_fp32_zero);
+		mu8_zmul_fp32( zr,  zi, *zr, *zi, mu0_fp32_half, mu0_fp32_zero);
 		*zr = mu8_copysign_fp32(*zr,  ar);
 		*zi = mu8_copysign_fp32(*zi,  ai);
 	}
@@ -150,7 +150,7 @@ void mu8_zatanh_fp16  (mu0_fp16_t  * zr, mu0_fp16_t  * zi, const mu0_fp16_t  ar,
 		mu8_zsub_fp16(&dr, &di,  mu0_fp16_one, mu0_fp16_zero, ar, ai);
 		mu8_zdiv_fp16( zr,  zi,  wr,  wi, dr, di);
 		mu8_zlog_fp16( zr,  zi, *zr, *zi);
-		mu8_zmul_fp16( zr,  zi, *zr, *zi, __mu0_fp16_const__(0.5), mu0_fp16_zero);
+		mu8_zmul_fp16( zr,  zi, *zr, *zi, mu0_fp16_half, mu0_fp16_zero);
 		*zr = mu8_copysign_fp16(*zr,  ar);
 		*zi = mu8_copysign_fp16(*zi,  ai);
 	}

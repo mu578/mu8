@@ -62,6 +62,7 @@ __mu0_static__ const mu0_fp64_t  mu8_math_pio4_fp64    = mu0_const_fp64  (__mu8_
 __mu0_static__ const mu0_fp32_t  mu8_math_pio4_fp32    = mu0_const_fp32  (__mu8_math_pio4__);
 __mu0_static__ const mu0_fp16_t  mu8_math_pio4_fp16    = mu0_const_fp16  (__mu8_math_pio4__);
 
+//#! pi/180.
 #	define __mu8_math_pio180__ +0.0174532925199432957692369076848861271344287188854172545609719144E+00
 
 __mu0_static__ const mu0_fp128_t mu8_math_pio180_fp128 = mu0_const_fp128 (__mu8_math_pio180__);

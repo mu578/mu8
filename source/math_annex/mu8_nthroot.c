@@ -101,7 +101,7 @@ mu0_fp16_t  mu8_nthroot_fp16  (const mu0_uint64_t n, const mu0_fp16_t  x)
 		if (n == 4U) {
 			return mu8_fhrt_fp16(x);
 		}
-		if (x < mu0_fp16_zero && ((n % 2) == 0)) {
+		if (x < mu0_fp16_zero && ((n ) == 0)) {
 			return mu0_fp16_nan;
 		}
 		return mu8_pow_fp16(x, mu0_fp16_one / n);

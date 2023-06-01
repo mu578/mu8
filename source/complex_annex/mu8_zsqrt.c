@@ -24,7 +24,7 @@ void mu8_zsqrt_fp128 (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t ar, 
 #	if MU0_HAVE_FASTMATH
 	mu8_zpolar_fp128(zr, zi
 		, mu8_sqrt_fp128(mu8_zabs_fp128(ar, ai))
-		, mu8_zarg_fp128(ar, ai) * __mu0_fp128_const__(0.5)
+		, mu8_zarg_fp128(ar, ai) * mu0_fp128_half
 	);
 #	else
 	if (mu8_isinf_fp128(ai)) {
@@ -41,7 +41,7 @@ void mu8_zsqrt_fp128 (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t ar, 
 	} else {
 		mu8_zpolar_fp128(zr, zi
 			, mu8_sqrt_fp128(mu8_zabs_fp128(ar, ai))
-			, mu8_zarg_fp128(ar, ai) * __mu0_fp128_const__(0.5)
+			, mu8_zarg_fp128(ar, ai) * mu0_fp128_half
 		);
 	}
 #	endif
@@ -52,7 +52,7 @@ void mu8_zsqrt_fp64  (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  ar, 
 #	if MU0_HAVE_FASTMATH
 	mu8_zpolar_fp64(zr, zi
 		, mu8_sqrt_fp64(mu8_zabs_fp64(ar, ai))
-		, mu8_zarg_fp64(ar, ai) * __mu0_fp64_const__(0.5)
+		, mu8_zarg_fp64(ar, ai) * mu0_fp64_half
 	);
 #	else
 	if (mu8_isinf_fp64(ai)) {
@@ -69,7 +69,7 @@ void mu8_zsqrt_fp64  (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  ar, 
 	} else {
 		mu8_zpolar_fp64(zr, zi
 			, mu8_sqrt_fp64(mu8_zabs_fp64(ar, ai))
-			, mu8_zarg_fp64(ar, ai) * __mu0_fp64_const__(0.5)
+			, mu8_zarg_fp64(ar, ai) * mu0_fp64_half
 		);
 	}
 #	endif
@@ -80,7 +80,7 @@ void mu8_zsqrt_fp32  (mu0_fp32_t  * zr, mu0_fp32_t  * zi, const mu0_fp32_t  ar, 
 #	if MU0_HAVE_FASTMATH
 	mu8_zpolar_fp32(zr, zi
 		, mu8_sqrt_fp32(mu8_zabs_fp32(ar, ai))
-		, mu8_zarg_fp32(ar, ai) * __mu0_fp32_const__(0.5)
+		, mu8_zarg_fp32(ar, ai) * mu0_fp32_half
 	);
 #	else
 	if (mu8_isinf_fp32(ai)) {
@@ -97,7 +97,7 @@ void mu8_zsqrt_fp32  (mu0_fp32_t  * zr, mu0_fp32_t  * zi, const mu0_fp32_t  ar, 
 	} else {
 		mu8_zpolar_fp32(zr, zi
 			, mu8_sqrt_fp32(mu8_zabs_fp32(ar, ai))
-			, mu8_zarg_fp32(ar, ai) * __mu0_fp32_const__(0.5)
+			, mu8_zarg_fp32(ar, ai) * mu0_fp32_half
 		);
 	}
 #	endif
@@ -108,7 +108,7 @@ void mu8_zsqrt_fp16  (mu0_fp16_t  * zr, mu0_fp16_t  * zi, const mu0_fp16_t  ar, 
 #	if MU0_HAVE_FASTMATH
 	mu8_zpolar_fp16(zr, zi
 		, mu8_sqrt_fp16(mu8_zabs_fp16(ar, ai))
-		, mu8_zarg_fp16(ar, ai) * __mu0_fp16_const__(0.5)
+		, mu8_zarg_fp16(ar, ai) * mu0_fp16_half
 	);
 #	else
 	if (mu8_isinf_fp16(ai)) {
@@ -125,7 +125,7 @@ void mu8_zsqrt_fp16  (mu0_fp16_t  * zr, mu0_fp16_t  * zi, const mu0_fp16_t  ar, 
 	} else {
 		mu8_zpolar_fp16(zr, zi
 			, mu8_sqrt_fp16(mu8_zabs_fp16(ar, ai))
-			, mu8_zarg_fp16(ar, ai) * __mu0_fp16_const__(0.5)
+			, mu8_zarg_fp16(ar, ai) * mu0_fp16_half
 		);
 	}
 #	endif
