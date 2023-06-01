@@ -53,7 +53,7 @@ mu0_cfp32_t  mu8_clog2_fp32  (const mu0_cfp32_t  z)
 mu0_cfp16_t  mu8_clog2_fp16  (const mu0_cfp16_t  z)
 {
 #	if MU0_HAVE_STDCOMPLEX
-	return mu8_clog_fp16  (z) / mu8_clog_fp16  (mu0_cfp16  (mu0_fp16_two, mu0_fp16_zero));
+	return mu8_cdiv_fp16(mu8_clog_fp16(z), mu8_clog_fp16(mu0_cfp16(mu0_fp16_two, mu0_fp16_zero)));
 #	else
 	mu0_cfp16_t  c = { 0 };
 	mu8_zlog2_fp16  (&c.u_re, &c.u_im, z.u_re, z.u_im);

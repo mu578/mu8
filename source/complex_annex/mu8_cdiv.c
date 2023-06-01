@@ -53,7 +53,13 @@ mu0_cfp32_t  mu8_cdiv_fp32  (const mu0_cfp32_t  a, const mu0_cfp32_t  b)
 mu0_cfp16_t  mu8_cdiv_fp16  (const mu0_cfp16_t  a, const mu0_cfp16_t  b)
 {
 #	if MU0_HAVE_STDCOMPLEX
+#	if !(MU0_HAVE_ARM64 && MU0_HAVE_FLOAT16)
 	return a / b;
+#	else
+	mu0_fp16_t  cr, ci;
+	mu8_zdiv_fp16  (&cr, &ci, mu8_creal_fp16(a), mu8_cimag_fp16(a), mu8_creal_fp16(b), mu8_cimag_fp16(b));
+	return mu0_cfp16(cr, ci);
+#	endif
 #	else
 	mu0_cfp16_t  c = { 0 };
 	mu8_zdiv_fp16  (&c.u_re, &c.u_im, a.u_re, a.u_im, b.u_re, b.u_im);
