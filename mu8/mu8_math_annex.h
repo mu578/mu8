@@ -22,6 +22,16 @@
 
 MU0_BEGIN_CDECL
 
+mu0_fp128_t   mu8_acot_fp128     (const mu0_fp128_t x);
+mu0_fp64_t    mu8_acot_fp64      (const mu0_fp64_t  x);
+mu0_fp32_t    mu8_acot_fp32      (const mu0_fp32_t  x);
+mu0_fp16_t    mu8_acot_fp16      (const mu0_fp16_t  x);
+
+mu0_fp128_t   mu8_acoth_fp128    (const mu0_fp128_t x);
+mu0_fp64_t    mu8_acoth_fp64     (const mu0_fp64_t  x);
+mu0_fp32_t    mu8_acoth_fp32     (const mu0_fp32_t  x);
+mu0_fp16_t    mu8_acoth_fp16     (const mu0_fp16_t  x);
+
 mu0_fp128_t   mu8_cosd_fp128     (const mu0_fp128_t x);
 mu0_fp64_t    mu8_cosd_fp64      (const mu0_fp64_t  x);
 mu0_fp32_t    mu8_cosd_fp32      (const mu0_fp32_t  x);
@@ -36,6 +46,11 @@ mu0_fp128_t   mu8_cot_fp128      (const mu0_fp128_t x);
 mu0_fp64_t    mu8_cot_fp64       (const mu0_fp64_t  x);
 mu0_fp32_t    mu8_cot_fp32       (const mu0_fp32_t  x);
 mu0_fp16_t    mu8_cot_fp16       (const mu0_fp16_t  x);
+
+mu0_fp128_t   mu8_coth_fp128     (const mu0_fp128_t x);
+mu0_fp64_t    mu8_coth_fp64      (const mu0_fp64_t  x);
+mu0_fp32_t    mu8_coth_fp32      (const mu0_fp32_t  x);
+mu0_fp16_t    mu8_coth_fp16      (const mu0_fp16_t  x);
 
 mu0_fp128_t   mu8_exp2m1_fp128   (const mu0_fp128_t x);
 mu0_fp64_t    mu8_exp2m1_fp64    (const mu0_fp64_t  x);
