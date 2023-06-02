@@ -72,6 +72,29 @@ mu0_fp32_t  mu8_exp_fp32  (const mu0_fp32_t  x)
 #	endif
 }
 
+__mu0_static_inline__
+const mu0_fp16_t __mu8_approx_expf16__(const mu0_fp16_t x)
+{
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
+#		if MU0_HAVE_FLOAT16
+			mu0_fp32_t e = mu0_fp32(mu0_fp16_one + x) / __mu0_fp32_const__(256.0);
+			e *= e; e *= e; e *= e; e *= e;
+			e *= e; e *= e; e *= e; e *= e;
+			return mu0_fp16(e);
+#		else
+#			if (__has_builtin(__builtin_expf))
+				return __builtin_expf(x);
+#			else
+				return expf(x);
+#			endif
+#		endif
+#	elif MU0_HAVE_CC_GNUCC
+		return __builtin_expf(x);
+#	else
+	return expf(x);
+#	endif
+}
+
 mu0_fp16_t  mu8_exp_fp16  (const mu0_fp16_t  x)
 {
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
