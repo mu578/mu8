@@ -76,7 +76,7 @@ mu0_fp16_t  mu8_pow_fp16  (const mu0_fp16_t  x, const mu0_fp16_t  y)
 {
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
 #		if MU0_HAVE_FLOAT16
-#			if  (__has_builtin(__builtin_powf16))
+#			if  (__has_builtin(__builtin_powf16_BUG))
 				return __builtin_powf16(x, y);
 #			elif (__has_builtin(__builtin_powf))
 				return mu0_const_fp16(__builtin_powf(x, y));

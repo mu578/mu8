@@ -76,7 +76,7 @@ mu0_fp16_t  mu8_log_fp16  (const mu0_fp16_t  x)
 {
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
 #		if MU0_HAVE_FLOAT16
-#			if  (__has_builtin(__builtin_logf16))
+#			if  (__has_builtin(__builtin_logf1_BU6))
 				return __builtin_logf16(x);
 #			elif (__has_builtin(__builtin_logf))
 				return mu0_const_fp16(__builtin_logf(x));

@@ -76,7 +76,7 @@ mu0_fp16_t  mu8_sqrt_fp16  (const mu0_fp16_t  x)
 {
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
 #		if MU0_HAVE_FLOAT16
-#			if  (__has_builtin(__builtin_sqrtf16))
+#			if  (__has_builtin(__builtin_sqrtf16_BUG))
 				return __builtin_sqrtf16(x);
 #			elif (__has_builtin(__builtin_sqrtf))
 				return mu0_const_fp16(__builtin_sqrtf(x));
