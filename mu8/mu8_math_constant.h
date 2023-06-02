@@ -35,7 +35,11 @@ MU0_BEGIN_CDECL
 #	define __mu8_math_pi_fp32__  __mu8_math_pi__
 #	endif
 
+#	if MU0_HAVE_FLOAT128
+__mu0_static__ const mu0_fp128_t mu8_math_pi_fp128     = mu0_const_fp128 (__mu8_math_pi__);
+#	else
 __mu0_static__ const mu0_fp128_t mu8_math_pi_fp128     = mu0_const_fp128 (__mu8_math_pi_fpex__);
+#	endif
 __mu0_static__ const mu0_fp64_t  mu8_math_pi_fp64      = mu0_const_fp64  (__mu8_math_pi_fp64__);
 __mu0_static__ const mu0_fp32_t  mu8_math_pi_fp32      = mu0_const_fp32  (__mu8_math_pi_fp32__);
 __mu0_static__ const mu0_fp16_t  mu8_math_pi_fp16      = mu0_const_fp16  (__mu8_math_pi_fp32__);
@@ -48,12 +52,16 @@ __mu0_static__ const mu0_fp16_t  mu8_math_pi_fp16      = mu0_const_fp16  (__mu8_
 #	define __mu8_math_2pi_fp64__ 0x1.921fb54442d18p+2
 #	define __mu8_math_2pi_fp32__ 0x1.921fb6p+2
 #	else
-#	define __mu8_math_2pi_fpex__ __mu8_math_pi__
-#	define __mu8_math_2pi_fp64__ __mu8_math_pi__
-#	define __mu8_math_2pi_fp32__ __mu8_math_pi__
+#	define __mu8_math_2pi_fpex__ __mu8_math_2pi__
+#	define __mu8_math_2pi_fp64__ __mu8_math_2pi__
+#	define __mu8_math_2pi_fp32__ __mu8_math_2pi__
 #	endif
 
+#	if MU0_HAVE_FLOAT128
+__mu0_static__ const mu0_fp128_t mu8_math_2pi_fp128    = mu0_const_fp128 (__mu8_math_2pi__);
+#	else
 __mu0_static__ const mu0_fp128_t mu8_math_2pi_fp128    = mu0_const_fp128 (__mu8_math_2pi_fpex__);
+#	endif
 __mu0_static__ const mu0_fp64_t  mu8_math_2pi_fp64     = mu0_const_fp64  (__mu8_math_2pi_fp64__);
 __mu0_static__ const mu0_fp32_t  mu8_math_2pi_fp32     = mu0_const_fp32  (__mu8_math_2pi_fp32__);
 __mu0_static__ const mu0_fp16_t  mu8_math_2pi_fp16     = mu0_const_fp16  (__mu8_math_2pi_fp32__);
@@ -66,15 +74,19 @@ __mu0_static__ const mu0_fp16_t  mu8_math_2pi_fp16     = mu0_const_fp16  (__mu8_
 #	define __mu8_math_4pi_fp64__ 0x1.921fb54442d18p+3
 #	define __mu8_math_4pi_fp32__ 0x1.921fb6p+3
 #	else
-#	define __mu8_math_4pi_fpex__ __mu8_math_pi__
-#	define __mu8_math_4pi_fp64__ __mu8_math_pi__
-#	define __mu8_math_4pi_fp32__ __mu8_math_pi__
+#	define __mu8_math_4pi_fpex__ __mu8_math_4pi__
+#	define __mu8_math_4pi_fp64__ __mu8_math_4pi__
+#	define __mu8_math_4pi_fp32__ __mu8_math_4pi__
 #	endif
 
+#	if MU0_HAVE_FLOAT128
 __mu0_static__ const mu0_fp128_t mu8_math_4pi_fp128    = mu0_const_fp128 (__mu8_math_4pi__);
-__mu0_static__ const mu0_fp64_t  mu8_math_4pi_fp64     = mu0_const_fp64  (__mu8_math_4pi__);
-__mu0_static__ const mu0_fp32_t  mu8_math_4pi_fp32     = mu0_const_fp32  (__mu8_math_4pi__);
-__mu0_static__ const mu0_fp16_t  mu8_math_4pi_fp16     = mu0_const_fp16  (__mu8_math_4pi__);
+#	else
+__mu0_static__ const mu0_fp128_t mu8_math_4pi_fp128    = mu0_const_fp128 (__mu8_math_4pi_fpex__);
+#	endif
+__mu0_static__ const mu0_fp64_t  mu8_math_4pi_fp64     = mu0_const_fp64  (__mu8_math_4pi_fp64__);
+__mu0_static__ const mu0_fp32_t  mu8_math_4pi_fp32     = mu0_const_fp32  (__mu8_math_4pi_fp32__);
+__mu0_static__ const mu0_fp16_t  mu8_math_4pi_fp16     = mu0_const_fp16  (__mu8_math_4pi_fp32__);
 
 //#! pi/2.
 #	define __mu8_math_pio2__     +1.5707963267948966192313216916397514420985846996875529104874722961E+00
