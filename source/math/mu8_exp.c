@@ -77,7 +77,7 @@ const mu0_fp16_t __mu8_approx_expf16__(const mu0_fp16_t x)
 {
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
 #		if MU0_HAVE_FLOAT16
-			mu0_fp32_t e  = mu0_fp32(mu0_fp16_one + x) / __mu0_fp32_const__(256.0);
+			mu0_fp32_t e  = mu0_fp32_one + mu0_fp32(x) / __mu0_fp32_const__(256.0);
 			           e *= e; e *= e; e *= e; e *= e;
 			           e *= e; e *= e; e *= e; e *= e;
 			return mu0_fp16(e);
