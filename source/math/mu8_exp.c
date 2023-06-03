@@ -72,6 +72,7 @@ mu0_fp32_t  mu8_exp_fp32  (const mu0_fp32_t  x)
 #	endif
 }
 
+#	if 0
 __mu0_static_inline__
 const mu0_fp16_t __mu8_approx_expf16__(const mu0_fp16_t x)
 {
@@ -94,6 +95,7 @@ const mu0_fp16_t __mu8_approx_expf16__(const mu0_fp16_t x)
 	return expf(x);
 #	endif
 }
+#	endif
 
 mu0_fp16_t  mu8_exp_fp16  (const mu0_fp16_t  x)
 {
