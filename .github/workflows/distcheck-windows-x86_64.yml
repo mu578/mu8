@@ -24,6 +24,6 @@ jobs:
       with:
         path: mu8
     - name: Run distcheck
-      run: echo "PATH=$PATH:C:\msys64\mingw64\bin" >> $GITHUB_ENV && cd mu8/mk && make -f mu8.mk distcheck
+      run: echo "PATH=$PATH:C:\msys64\mingw64\bin" >> $GITHUB_ENV && cd mu8/mk && C:\msys64\mingw64\bin\make -f mu8.mk distcheck
 
 # EOF
