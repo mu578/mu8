@@ -31,6 +31,6 @@ all       : rule_all
 static    : rule_static
 shared    : rule_shared
 clean     : rule_clean
-distcheck : rule_all rule_show_buildir rule_static rule_show_buildir rule_clean
+distcheck : rule_all rule_static rule_show_buildir rule_clean
 
 # EOF
