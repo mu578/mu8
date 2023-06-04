@@ -16,11 +16,9 @@
 #
 
 LOCAL_MODULE      := mu8
-#LOCAL_MODULE_PATH := $(dir $(abspath ..))$(LOCAL_MODULE)
-LOCAL_MODULE_PATH := ../../$(LOCAL_MODULE)
+LOCAL_MODULE_PATH := $(dir $(abspath ..))$(LOCAL_MODULE)
 MU8_ROOT_PATH     := $(LOCAL_MODULE_PATH)
-#MU0_ROOT_PATH     := $(dir $(abspath ..))mu0
-MU0_ROOT_PATH     := ../../mu0
+MU0_ROOT_PATH     := $(dir $(abspath ..))mu0
 
 PLATFORM_VARIANT  := macos_macport.fat
 
@@ -34,6 +32,5 @@ static    : rule_static
 shared    : rule_shared
 clean     : rule_clean
 distcheck : rule_all rule_static rule_show_buildir rule_clean
-
 
 # EOF
