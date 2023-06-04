@@ -122,6 +122,16 @@ mu0_bool_t    mu8_fisval_fp64    (const mu0_fp64_t  x);
 mu0_bool_t    mu8_fisval_fp32    (const mu0_fp32_t  x);
 mu0_bool_t    mu8_fisval_fp16    (const mu0_fp16_t  x);
 
+mu0_fp128_t   mu8_log1m_fp128    (const mu0_fp128_t x);
+mu0_fp64_t    mu8_log1m_fp64     (const mu0_fp64_t  x);
+mu0_fp32_t    mu8_log1m_fp32     (const mu0_fp32_t  x);
+mu0_fp16_t    mu8_log1m_fp16     (const mu0_fp16_t  x);
+
+mu0_fp128_t   mu8_log1me_fp128   (const mu0_fp128_t x);
+mu0_fp64_t    mu8_log1me_fp64    (const mu0_fp64_t  x);
+mu0_fp32_t    mu8_log1me_fp32    (const mu0_fp32_t  x);
+mu0_fp16_t    mu8_log1me_fp16    (const mu0_fp16_t  x);
+
 mu0_fp128_t   mu8_nthroot_fp128  (const mu0_uint64_t n, const mu0_fp128_t x);
 mu0_fp64_t    mu8_nthroot_fp64   (const mu0_uint64_t n, const mu0_fp64_t  x);
 mu0_fp32_t    mu8_nthroot_fp32   (const mu0_uint64_t n, const mu0_fp32_t  x);
