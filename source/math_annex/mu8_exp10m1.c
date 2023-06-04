@@ -15,8 +15,8 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu8/mu8_math_constant.h>
 #include <mu8/mu8_math_annex.h>
+#include <mu8/mu8_math_constant.h>
 
 mu0_fp128_t mu8_exp10m1_fp128 (const mu0_fp128_t x)
 {

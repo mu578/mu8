@@ -15,7 +15,8 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu8/mu8_math_annex.h>
+#include <mu8/mu8_complex_annex.h>
+#include <mu8/mu8_math.h>
 
 mu0_fp128_t mu8_zarg_fp128 (const mu0_fp128_t zr, const mu0_fp128_t zi)
 {

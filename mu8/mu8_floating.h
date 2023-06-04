@@ -10,7 +10,7 @@
 //                                           | |                                                            //
 //                                           |_|                                                            //
 
-// mu0_floating.h
+// mu8_floating.h
 //
 // Copyright (C) 2023 mu578. All rights reserved.
 //

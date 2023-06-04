@@ -17,6 +17,7 @@
 //
 
 #include <mu8/mu8_complex_annex.h>
+#include <mu8/mu8_math.h>
 #include <mu8/mu8_math_annex.h>
 
 void mu8_zlog10_fp128 (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t ar, const mu0_fp128_t ai)
