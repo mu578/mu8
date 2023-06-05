@@ -22,6 +22,11 @@
 
 MU0_BEGIN_CDECL
 
+mu0_fp128_t   mu8_2sum_fp128     (const mu0_fp128_t a, const mu0_fp128_t b, mu0_fp128_t * x, mu0_fp128_t * y);
+mu0_fp64_t    mu8_2sum_fp64      (const mu0_fp64_t  a, const mu0_fp64_t  b, mu0_fp64_t  * x, mu0_fp64_t  * y);
+mu0_fp32_t    mu8_2sum_fp32      (const mu0_fp32_t  a, const mu0_fp32_t  b, mu0_fp32_t  * x, mu0_fp32_t  * y);
+mu0_fp16_t    mu8_2sum_fp16      (const mu0_fp16_t  a, const mu0_fp16_t  b, mu0_fp16_t  * x, mu0_fp16_t  * y);
+
 mu0_fp128_t   mu8_acosd_fp128    (const mu0_fp128_t x);
 mu0_fp64_t    mu8_acosd_fp64     (const mu0_fp64_t  x);
 mu0_fp32_t    mu8_acosd_fp32     (const mu0_fp32_t  x);
