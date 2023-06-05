@@ -207,6 +207,11 @@ mu0_fp64_t    mu8_tanpi_fp64     (const mu0_fp64_t  x);
 mu0_fp32_t    mu8_tanpi_fp32     (const mu0_fp32_t  x);
 mu0_fp16_t    mu8_tanpi_fp16     (const mu0_fp16_t  x);
 
+mu0_fp128_t   mu8_xlogy_fp128    (const mu0_fp128_t x, const mu0_fp128_t y);
+mu0_fp64_t    mu8_xlogy_fp64     (const mu0_fp64_t  x, const mu0_fp64_t  y);
+mu0_fp32_t    mu8_xlogy_fp32     (const mu0_fp32_t  x, const mu0_fp32_t  y);
+mu0_fp16_t    mu8_xlogy_fp16     (const mu0_fp16_t  x, const mu0_fp16_t  y);
+
 MU0_END_CDECL
 
 #endif /* !MU8_MATH_ANNEX_H */

@@ -280,6 +280,11 @@ void         mu8_ztanh_fp64    (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp
 void         mu8_ztanh_fp32    (mu0_fp32_t  * zr, mu0_fp32_t  * zi, const mu0_fp32_t  ar, const mu0_fp32_t  ai);
 void         mu8_ztanh_fp16    (mu0_fp16_t  * zr, mu0_fp16_t  * zi, const mu0_fp16_t  ar, const mu0_fp16_t  ai);
 
+void         mu8_zxlogy_fp128  (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t xr, const mu0_fp128_t xi, const mu0_fp128_t yr, const mu0_fp128_t yi);
+void         mu8_zxlogy_fp64   (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  xr, const mu0_fp64_t  xi, const mu0_fp64_t  yr, const mu0_fp64_t  yi);
+void         mu8_zxlogy_fp32   (mu0_fp32_t  * zr, mu0_fp32_t  * zi, const mu0_fp32_t  xr, const mu0_fp32_t  xi, const mu0_fp32_t  yr, const mu0_fp32_t  yi);
+void         mu8_zxlogy_fp16   (mu0_fp16_t  * zr, mu0_fp16_t  * zi, const mu0_fp16_t  xr, const mu0_fp16_t  xi, const mu0_fp16_t  yr, const mu0_fp16_t  yi);
+
 MU0_END_CDECL
 
 #endif /* !MU8_COMPLEX_ANNEX_H */
