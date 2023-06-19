@@ -63,7 +63,7 @@ MU0_BEGIN_CDECL
 
 #	define __mu8_alias06__(_Tp, __alias, __binary_fn)                                           \
 	__mu0_static_inline__                                                                       \
-	const _Tp __mu8_aliasing__(_Tp, __alias) (const mu0_sint64_t __a, const _Tp __a)            \
+	const _Tp __mu8_aliasing__(_Tp, __alias) (const mu0_sint64_t __a, const _Tp __b)            \
 	{                                                                                           \
 		return __binary_fn(__a, __b);                                                            \
 	} __mu0_delineate__
