@@ -29,11 +29,12 @@ MU0_ROOT_PATH     := ../../mu0
 # PLATFORM_VARIANT := macos_macport.x86_64
 # PLATFORM_VARIANT := macos_macport.fat
 # PLATFORM_VARIANT := macos_android
-  PLATFORM_VARIANT := macos_android.arm64
+# PLATFORM_VARIANT := macos_android.arm64
 # PLATFORM_VARIANT := macos_android.arm32
 # PLATFORM_VARIANT := macos_android.x86_64
 # PLATFORM_VARIANT := macos_android.all
 
+include $(MU0_ROOT_PATH)/mk/inc/mu0_function.mk
 include $(MU8_ROOT_PATH)/mk/inc/mu8_source.mk
 include $(MU0_ROOT_PATH)/mk/inc/mu0_header.mk
 include $(MU0_ROOT_PATH)/mk/inc/mu0_toolchain.mk
