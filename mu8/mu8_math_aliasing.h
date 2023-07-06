@@ -96,17 +96,6 @@ MU0_BEGIN_CDECL
 		return __trinary_fn(__a, __b, __c);                                                      \
 	} __mu0_delineate__
 
-
-mu0_fp128_t  mu8_cabs2_fp128   (const mu0_cfp128_t z);
-mu0_fp64_t   mu8_cabs2_fp64    (const mu0_cfp64_t  z);
-mu0_fp32_t   mu8_cabs2_fp32    (const mu0_cfp32_t  z);
-mu0_fp16_t   mu8_cabs2_fp16    (const mu0_cfp16_t  z);
-
-mu0_cfp128_t mu8_cadd_fp128    (const mu0_cfp128_t a, const mu0_cfp128_t b);
-mu0_cfp64_t  mu8_cadd_fp64     (const mu0_cfp64_t  a, const mu0_cfp64_t  b);
-mu0_cfp32_t  mu8_cadd_fp32     (const mu0_cfp32_t  a, const mu0_cfp32_t  b);
-mu0_cfp16_t  mu8_cadd_fp16     (const mu0_cfp16_t  a, const mu0_cfp16_t  b);
-
 __mu8_alias01__(mu0_fp128_t, mu8_alias_acos      , mu8_acos_fp128);
 __mu8_alias01__(mu0_fp64_t , mu8_alias_acos      , mu8_acos_fp64 );
 __mu8_alias01__(mu0_fp32_t , mu8_alias_acos      , mu8_acos_fp32 );
