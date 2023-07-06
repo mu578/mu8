@@ -265,7 +265,11 @@ __mu8_alias02__(mu0_uint16_t , mu8_alias_sub , __mu8_sub_u16__ );
 
 #	else
 
-#	define mu8_ini(_Tp, __x)      (_Tp) { __x }
+#	define mu8_ini(_Tp, __x)                     \
+		mu0_is_complex_number(__x)                \
+			? (_Tp) { __x, 0 }                     \
+			: (_Tp) { __x    }
+
 #	define mu8_add(_Tp, __a, __b) mu8_alias_add(_Tp, __a, __b)
 #	define mu8_div(_Tp, __a, __b) mu8_alias_div(_Tp, __a, __b)
 #	define mu8_mul(_Tp, __a, __b) mu8_alias_mul(_Tp, __a, __b)
