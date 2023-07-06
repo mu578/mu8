@@ -215,7 +215,7 @@ __mu8_alias02__(mu0_uint16_t , mu8_alias_sub , __mu8_sub_u16__ );
 //#!
 //#! macro<_Tp>(_Tp & __a, _Tp & __b) : _Tp
 //#!
-#	define mu8_add(_Tp, __a, __b)            \
+#	define mu8_add(_Tp, __a, __b)                 \
 	__mu0_issame__(mu0_cfp16_t, _Tp)              \
 		? mu8_cadd_fp16(__a, __b)                  \
 		: (__mu0_issame__(mu0_cfp32_t, _Tp)        \
@@ -225,30 +225,6 @@ __mu8_alias02__(mu0_uint16_t , mu8_alias_sub , __mu8_sub_u16__ );
 				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
 					? mu8_cadd_fp128(__a, __b)        \
 					: mu8_alias_add(_Tp, __a, __b)    \
-		)))
-
-#	define mu8_sub(_Tp, __a, __b)                 \
-	__mu0_issame__(mu0_cfp16_t, _Tp)              \
-		? mu8_csub_fp16(__a, __b)                  \
-		: (__mu0_issame__(mu0_cfp32_t, _Tp)        \
-			? mu8_csub_fp32(__a, __b)               \
-			: (__mu0_issame__(mu0_cfp64_t, _Tp)     \
-				? mu8_csub_fp64(__a, __b)            \
-				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
-					? mu8_csub_fp128(__a, __b)        \
-					: mu8_alias_sub(_Tp, __a, __b)    \
-		)))
-
-#	define mu8_mul(_Tp, __a, __b)                 \
-	__mu0_issame__(mu0_cfp16_t, _Tp)              \
-		? mu8_cmul_fp16(__a, __b)                  \
-		: (__mu0_issame__(mu0_cfp32_t, _Tp)        \
-			? mu8_cmul_fp32(__a, __b)               \
-			: (__mu0_issame__(mu0_cfp64_t, _Tp)     \
-				? mu8_cmul_fp64(__a, __b)            \
-				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
-					? mu8_cmul_fp128(__a, __b)        \
-					: mu8_alias_mul(_Tp, __a, __b)    \
 		)))
 
 #	define mu8_div(_Tp, __a, __b)                 \
@@ -263,13 +239,37 @@ __mu8_alias02__(mu0_uint16_t , mu8_alias_sub , __mu8_sub_u16__ );
 					: mu8_alias_div(_Tp, __a, __b)    \
 		)))
 
+#	define mu8_mul(_Tp, __a, __b)                 \
+	__mu0_issame__(mu0_cfp16_t, _Tp)              \
+		? mu8_cmul_fp16(__a, __b)                  \
+		: (__mu0_issame__(mu0_cfp32_t, _Tp)        \
+			? mu8_cmul_fp32(__a, __b)               \
+			: (__mu0_issame__(mu0_cfp64_t, _Tp)     \
+				? mu8_cmul_fp64(__a, __b)            \
+				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
+					? mu8_cmul_fp128(__a, __b)        \
+					: mu8_alias_mul(_Tp, __a, __b)    \
+		)))
+
+#	define mu8_sub(_Tp, __a, __b)                 \
+	__mu0_issame__(mu0_cfp16_t, _Tp)              \
+		? mu8_csub_fp16(__a, __b)                  \
+		: (__mu0_issame__(mu0_cfp32_t, _Tp)        \
+			? mu8_csub_fp32(__a, __b)               \
+			: (__mu0_issame__(mu0_cfp64_t, _Tp)     \
+				? mu8_csub_fp64(__a, __b)            \
+				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
+					? mu8_csub_fp128(__a, __b)        \
+					: mu8_alias_sub(_Tp, __a, __b)    \
+		)))
+
 #	else
 
 #	define mu8_ini(_Tp, __x)      (_Tp) { __x }
 #	define mu8_add(_Tp, __a, __b) mu8_alias_add(_Tp, __a, __b)
-#	define mu8_sub(_Tp, __a, __b) mu8_alias_sub(_Tp, __a, __b)
-#	define mu8_mul(_Tp, __a, __b) mu8_alias_mul(_Tp, __a, __b)
 #	define mu8_div(_Tp, __a, __b) mu8_alias_div(_Tp, __a, __b)
+#	define mu8_mul(_Tp, __a, __b) mu8_alias_mul(_Tp, __a, __b)
+#	define mu8_sub(_Tp, __a, __b) mu8_alias_sub(_Tp, __a, __b)
 
 #	endif
 
