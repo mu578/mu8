@@ -23,6 +23,8 @@
 
 MU0_BEGIN_CDECL
 
+//#! Compile time strict arithmetic operations compatible with mu9's binary operations.
+
 __mu0_static_inline__ const mu0_cfp128_t  __mu8_add_cfp128__ (const mu0_cfp128_t __a, const mu0_cfp128_t __b)   { return mu8_cadd_fp128 (__a, __b); }
 __mu0_static_inline__ const mu0_cfp64_t   __mu8_add_cfp64__  (const mu0_cfp64_t  __a, const mu0_cfp64_t  __b)   { return mu8_cadd_fp64  (__a, __b); }
 __mu0_static_inline__ const mu0_cfp32_t   __mu8_add_cfp32__  (const mu0_cfp32_t  __a, const mu0_cfp32_t  __b)   { return mu8_cadd_fp32  (__a, __b); }
