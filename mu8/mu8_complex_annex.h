@@ -40,6 +40,11 @@ mu0_cfp64_t  mu8_cdiv_fp64     (const mu0_cfp64_t  a, const mu0_cfp64_t  b);
 mu0_cfp32_t  mu8_cdiv_fp32     (const mu0_cfp32_t  a, const mu0_cfp32_t  b);
 mu0_cfp16_t  mu8_cdiv_fp16     (const mu0_cfp16_t  a, const mu0_cfp16_t  b);
 
+mu0_bool_t   mu8_ceq_fp128     (const mu0_cfp128_t a, const mu0_cfp128_t b);
+mu0_bool_t   mu8_ceq_fp64      (const mu0_cfp64_t  a, const mu0_cfp64_t  b);
+mu0_bool_t   mu8_ceq_fp32      (const mu0_cfp32_t  a, const mu0_cfp32_t  b);
+mu0_bool_t   mu8_ceq_fp16      (const mu0_cfp16_t  a, const mu0_cfp16_t  b);
+
 mu0_cfp128_t mu8_cexp2_fp128   (const mu0_cfp128_t z);
 mu0_cfp64_t  mu8_cexp2_fp64    (const mu0_cfp64_t  z);
 mu0_cfp32_t  mu8_cexp2_fp32    (const mu0_cfp32_t  z);

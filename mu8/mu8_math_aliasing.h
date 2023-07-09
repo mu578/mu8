@@ -96,6 +96,13 @@ MU0_BEGIN_CDECL
 		return __trinary_fn(__a, __b, __c);                                                      \
 	} __mu0_delineate__
 
+#	define __mu8_alias11__(_Tp, __alias, __comp_fn)                                             \
+	__mu0_static_inline__                                                                       \
+	const mu0_bool_t __mu8_aliasing__(_Tp, __alias) (const _Tp __a, const _Tp __b)              \
+	{                                                                                           \
+		return __comp_fn(__a, __b);                                                              \
+	} __mu0_delineate__
+
 __mu8_alias01__(mu0_fp128_t, mu8_alias_acos      , mu8_acos_fp128);
 __mu8_alias01__(mu0_fp64_t , mu8_alias_acos      , mu8_acos_fp64 );
 __mu8_alias01__(mu0_fp32_t , mu8_alias_acos      , mu8_acos_fp32 );
