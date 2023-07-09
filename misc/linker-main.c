@@ -15,11 +15,12 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu8/mu8_arithmetic.h>
 #include <mu8/mu8_complex_annex.h>
 #include <mu8/mu8_complex.h>
 #include <mu8/mu8_floating.h>
 #include <mu8/mu8_math.h>
+#include <mu8/mu8_functional_aliasing.h>
+#include <mu8/mu8_functional.h>
 #include <mu8/mu8_math_aliasing.h>
 #include <mu8/mu8_math_annex.h>
 #include <mu8/mu8_math_constant.h>
