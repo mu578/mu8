@@ -22,7 +22,12 @@
 
 MU0_BEGIN_CDECL
 
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_GNUCC || MU0_HAVE_CC_MSVCL
+#	define mu8_lt(_Tp, __a, __b) (((__a) <  (__b)) ? mu0_true : mu0_false)
+#	define mu8_le(_Tp, __a, __b) (((__a) <= (__b)) ? mu0_true : mu0_false)
+#	define mu8_gt(_Tp, __a, __b) (((__a) >  (__b)) ? mu0_true : mu0_false)
+#	define mu8_ge(_Tp, __a, __b) (((__a) >= (__b)) ? mu0_true : mu0_false)
+
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_GNUCC || MU0_HAVE_CC_MSVCL || MU0_HAVE_CC_ITLCL
 
 //#!
 //#! macro<_Tp>(_Tp __x) : _Tp
@@ -37,6 +42,21 @@ MU0_BEGIN_CDECL
 				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
 					? mu0_cfp128(__x, 0)              \
 					: (_Tp) { __x }                   \
+		)))
+
+//#!
+//#! macro<_Tp>(_Tp & __a, _Tp & __b) : bool
+//#!
+#	define mu8_eq(_Tp, __a, __b)                  \
+	__mu0_issame__(mu0_cfp16_t, _Tp)              \
+		? mu8_ceq_fp16(__a, __b)                   \
+		: (__mu0_issame__(mu0_cfp32_t, _Tp)        \
+			? mu8_ceq_fp32(__a, __b)                \
+			: (__mu0_issame__(mu0_cfp64_t, _Tp)     \
+				? mu8_ceq_fp64(__a, __b)             \
+				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
+					? mu8_ceq_fp128(__a, __b)         \
+					: mu8_alias_eq(_Tp, __a, __b)     \
 		)))
 
 //#!
@@ -92,11 +112,12 @@ MU0_BEGIN_CDECL
 
 #	else
 
-#	define mu8_ini(_Tp, __x)                     \
-		mu0_is_complex_number(__x)                \
-			? (_Tp) { __x, 0 }                     \
-			: (_Tp) { __x    }
+#	define mu8_ini(_Tp, __x)                   \
+		mu0_is_complex_number(__x)              \
+			? __mu0_extension__ (_Tp) { __x, 0 } \
+			: __mu0_extension__ (_Tp) { __x    }
 
+#	define mu8_eq(_Tp, __a, __b)  mu8_alias_eq(_Tp, __a, __b)
 #	define mu8_add(_Tp, __a, __b) mu8_alias_add(_Tp, __a, __b)
 #	define mu8_div(_Tp, __a, __b) mu8_alias_div(_Tp, __a, __b)
 #	define mu8_mul(_Tp, __a, __b) mu8_alias_mul(_Tp, __a, __b)
