@@ -220,7 +220,7 @@ __mu0_static_inline__ const mu0_bool_t    mu8_le_u16           (const mu0_uint16
 __mu0_static_inline__ const mu0_bool_t    mu8_lt_u128          (const mu0_uint128_t __a, const mu0_uint128_t __b) { return __a <  __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_lt_u64           (const mu0_uint64_t  __a, const mu0_uint64_t  __b) { return __a <  __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_lt_u32           (const mu0_uint32_t  __a, const mu0_uint32_t  __b) { return __a <  __b ? mu0_true : mu0_false; }
-__mu0_static_inline__ const mu0_bool_t    mu8_lt_u16           (const mu0_uint16_t  __a, const mu0_uint16_t  __b) { return __a <
+__mu0_static_inline__ const mu0_bool_t    mu8_lt_u16           (const mu0_uint16_t  __a, const mu0_uint16_t  __b) { return __a <  __b ? mu0_true : mu0_false; }
 
 __mu0_static_inline__ const mu0_uint128_t mu8_conjugate_u128   (const mu0_uint128_t __x)                          { return __x;                               }
 __mu0_static_inline__ const mu0_uint64_t  mu8_conjugate_u64    (const mu0_uint64_t  __x)                          { return __x;                               }
