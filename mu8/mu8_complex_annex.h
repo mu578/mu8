@@ -60,6 +60,21 @@ mu0_cfp64_t  mu8_cexpm1_fp64   (const mu0_cfp64_t  z);
 mu0_cfp32_t  mu8_cexpm1_fp32   (const mu0_cfp32_t  z);
 mu0_cfp16_t  mu8_cexpm1_fp16   (const mu0_cfp16_t  z);
 
+mu0_bool_t   mu8_cge_fp128     (const mu0_cfp128_t a, const mu0_cfp128_t b);
+mu0_bool_t   mu8_cge_fp64      (const mu0_cfp64_t  a, const mu0_cfp64_t  b);
+mu0_bool_t   mu8_cge_fp32      (const mu0_cfp32_t  a, const mu0_cfp32_t  b);
+mu0_bool_t   mu8_cge_fp16      (const mu0_cfp16_t  a, const mu0_cfp16_t  b);
+
+mu0_bool_t   mu8_cgt_fp128     (const mu0_cfp128_t a, const mu0_cfp128_t b);
+mu0_bool_t   mu8_cgt_fp64      (const mu0_cfp64_t  a, const mu0_cfp64_t  b);
+mu0_bool_t   mu8_cgt_fp32      (const mu0_cfp32_t  a, const mu0_cfp32_t  b);
+mu0_bool_t   mu8_cgt_fp16      (const mu0_cfp16_t  a, const mu0_cfp16_t  b);
+
+mu0_bool_t   mu8_cle_fp128     (const mu0_cfp128_t a, const mu0_cfp128_t b);
+mu0_bool_t   mu8_cle_fp64      (const mu0_cfp64_t  a, const mu0_cfp64_t  b);
+mu0_bool_t   mu8_cle_fp32      (const mu0_cfp32_t  a, const mu0_cfp32_t  b);
+mu0_bool_t   mu8_cle_fp16      (const mu0_cfp16_t  a, const mu0_cfp16_t  b);
+
 mu0_cfp128_t mu8_clog1p_fp128  (const mu0_cfp128_t z);
 mu0_cfp64_t  mu8_clog1p_fp64   (const mu0_cfp64_t  z);
 mu0_cfp32_t  mu8_clog1p_fp32   (const mu0_cfp32_t  z);
@@ -74,6 +89,11 @@ mu0_cfp128_t mu8_clog10_fp128  (const mu0_cfp128_t z);
 mu0_cfp64_t  mu8_clog10_fp64   (const mu0_cfp64_t  z);
 mu0_cfp32_t  mu8_clog10_fp32   (const mu0_cfp32_t  z);
 mu0_cfp16_t  mu8_clog10_fp16   (const mu0_cfp16_t  z);
+
+mu0_bool_t   mu8_clt_fp128     (const mu0_cfp128_t a, const mu0_cfp128_t b);
+mu0_bool_t   mu8_clt_fp64      (const mu0_cfp64_t  a, const mu0_cfp64_t  b);
+mu0_bool_t   mu8_clt_fp32      (const mu0_cfp32_t  a, const mu0_cfp32_t  b);
+mu0_bool_t   mu8_clt_fp16      (const mu0_cfp16_t  a, const mu0_cfp16_t  b);
 
 mu0_cfp128_t mu8_csub_fp128    (const mu0_cfp128_t a, const mu0_cfp128_t b);
 mu0_cfp64_t  mu8_csub_fp64     (const mu0_cfp64_t  a, const mu0_cfp64_t  b);
@@ -200,6 +220,21 @@ void         mu8_zexpm1_fp64   (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp
 void         mu8_zexpm1_fp32   (mu0_fp32_t  * zr, mu0_fp32_t  * zi, const mu0_fp32_t  ar, const mu0_fp32_t  ai);
 void         mu8_zexpm1_fp16   (mu0_fp16_t  * zr, mu0_fp16_t  * zi, const mu0_fp16_t  ar, const mu0_fp16_t  ai);
 
+mu0_bool_t   mu8_zge_fp128     (const mu0_fp128_t ar, const mu0_fp128_t ai, const mu0_fp128_t br, const mu0_fp128_t bi);
+mu0_bool_t   mu8_zge_fp64      (const mu0_fp64_t  ar, const mu0_fp64_t  ai, const mu0_fp64_t  br, const mu0_fp64_t  bi);
+mu0_bool_t   mu8_zge_fp32      (const mu0_fp32_t  ar, const mu0_fp32_t  ai, const mu0_fp32_t  br, const mu0_fp32_t  bi);
+mu0_bool_t   mu8_zge_fp16      (const mu0_fp16_t  ar, const mu0_fp16_t  ai, const mu0_fp16_t  br, const mu0_fp16_t  bi);
+
+mu0_bool_t   mu8_zgt_fp128     (const mu0_fp128_t ar, const mu0_fp128_t ai, const mu0_fp128_t br, const mu0_fp128_t bi);
+mu0_bool_t   mu8_zgt_fp64      (const mu0_fp64_t  ar, const mu0_fp64_t  ai, const mu0_fp64_t  br, const mu0_fp64_t  bi);
+mu0_bool_t   mu8_zgt_fp32      (const mu0_fp32_t  ar, const mu0_fp32_t  ai, const mu0_fp32_t  br, const mu0_fp32_t  bi);
+mu0_bool_t   mu8_zgt_fp16      (const mu0_fp16_t  ar, const mu0_fp16_t  ai, const mu0_fp16_t  br, const mu0_fp16_t  bi);
+
+mu0_bool_t   mu8_zle_fp128     (const mu0_fp128_t ar, const mu0_fp128_t ai, const mu0_fp128_t br, const mu0_fp128_t bi);
+mu0_bool_t   mu8_zle_fp64      (const mu0_fp64_t  ar, const mu0_fp64_t  ai, const mu0_fp64_t  br, const mu0_fp64_t  bi);
+mu0_bool_t   mu8_zle_fp32      (const mu0_fp32_t  ar, const mu0_fp32_t  ai, const mu0_fp32_t  br, const mu0_fp32_t  bi);
+mu0_bool_t   mu8_zle_fp16      (const mu0_fp16_t  ar, const mu0_fp16_t  ai, const mu0_fp16_t  br, const mu0_fp16_t  bi);
+
 void         mu8_zlog_fp128    (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t ar, const mu0_fp128_t ai);
 void         mu8_zlog_fp64     (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  ar, const mu0_fp64_t  ai);
 void         mu8_zlog_fp32     (mu0_fp32_t  * zr, mu0_fp32_t  * zi, const mu0_fp32_t  ar, const mu0_fp32_t  ai);
@@ -220,6 +255,16 @@ void         mu8_zlog10_fp64   (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp
 void         mu8_zlog10_fp32   (mu0_fp32_t  * zr, mu0_fp32_t  * zi, const mu0_fp32_t  ar, const mu0_fp32_t  ai);
 void         mu8_zlog10_fp16   (mu0_fp16_t  * zr, mu0_fp16_t  * zi, const mu0_fp16_t  ar, const mu0_fp16_t  ai);
 
+mu0_bool_t   mu8_zlt_fp128     (const mu0_fp128_t ar, const mu0_fp128_t ai, const mu0_fp128_t br, const mu0_fp128_t bi);
+mu0_bool_t   mu8_zlt_fp64      (const mu0_fp64_t  ar, const mu0_fp64_t  ai, const mu0_fp64_t  br, const mu0_fp64_t  bi);
+mu0_bool_t   mu8_zlt_fp32      (const mu0_fp32_t  ar, const mu0_fp32_t  ai, const mu0_fp32_t  br, const mu0_fp32_t  bi);
+mu0_bool_t   mu8_zlt_fp16      (const mu0_fp16_t  ar, const mu0_fp16_t  ai, const mu0_fp16_t  br, const mu0_fp16_t  bi);
+
+mu0_fp128_t  mu8_zmod_fp128    (const mu0_fp128_t zr, const mu0_fp128_t zi);
+mu0_fp64_t   mu8_zmod_fp64     (const mu0_fp64_t  zr, const mu0_fp64_t  zi);
+mu0_fp32_t   mu8_zmod_fp32     (const mu0_fp32_t  zr, const mu0_fp32_t  zi);
+mu0_fp16_t   mu8_zmod_fp16     (const mu0_fp16_t  zr, const mu0_fp16_t  zi);
+
 void         mu8_zmul_fp128    (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t ar, const mu0_fp128_t ai, const mu0_fp128_t br, const mu0_fp128_t bi);
 void         mu8_zmul_fp64     (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  ar, const mu0_fp64_t  ai, const mu0_fp64_t  br, const mu0_fp64_t  bi);
 void         mu8_zmul_fp32     (mu0_fp32_t  * zr, mu0_fp32_t  * zi, const mu0_fp32_t  ar, const mu0_fp32_t  ai, const mu0_fp32_t  br, const mu0_fp32_t  bi);
@@ -234,11 +279,6 @@ mu0_fp128_t  mu8_znorm_fp128   (const mu0_fp128_t zr, const mu0_fp128_t zi);
 mu0_fp64_t   mu8_znorm_fp64    (const mu0_fp64_t  zr, const mu0_fp64_t  zi);
 mu0_fp32_t   mu8_znorm_fp32    (const mu0_fp32_t  zr, const mu0_fp32_t  zi);
 mu0_fp16_t   mu8_znorm_fp16    (const mu0_fp16_t  zr, const mu0_fp16_t  zi);
-
-mu0_fp128_t  mu8_zmod_fp128    (const mu0_fp128_t zr, const mu0_fp128_t zi);
-mu0_fp64_t   mu8_zmod_fp64     (const mu0_fp64_t  zr, const mu0_fp64_t  zi);
-mu0_fp32_t   mu8_zmod_fp32     (const mu0_fp32_t  zr, const mu0_fp32_t  zi);
-mu0_fp16_t   mu8_zmod_fp16     (const mu0_fp16_t  zr, const mu0_fp16_t  zi);
 
 void         mu8_zpolar_fp128  (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t rho, const mu0_fp128_t theta);
 void         mu8_zpolar_fp64   (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  rho, const mu0_fp64_t  theta);
