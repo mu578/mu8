@@ -934,6 +934,24 @@ MU0_BEGIN_CDECL
 		, mu0_uint8_t   : mu8_alias_eq(mu0_uint8_t   , __a, __b) \
 		, default       : ((__a) == (__b))                       \
 	)
+#	elif MU0_HAVE_INT128
+#	define mu8_eq(_Tp, __a, __b) __mu0_generic__((__a) + 0      \
+		, mu0_cfp64_t   : mu8_alias_eq(mu0_cfp64_t   , __a, __b) \
+		, mu0_cfp32_t   : mu8_alias_eq(mu0_cfp32_t   , __a, __b) \
+		, mu0_fp64_t    : mu8_alias_eq(mu0_fp64_t    , __a, __b) \
+		, mu0_fp32_t    : mu8_alias_eq(mu0_fp32_t    , __a, __b) \
+		, mu0_sint128_t : mu8_alias_eq(mu0_sint128_t , __a, __b) \
+		, mu0_sint64_t  : mu8_alias_eq(mu0_sint64_t  , __a, __b) \
+		, mu0_sint32_t  : mu8_alias_eq(mu0_sint32_t  , __a, __b) \
+		, mu0_sint16_t  : mu8_alias_eq(mu0_sint16_t  , __a, __b) \
+		, mu0_sint8_t   : mu8_alias_eq(mu0_sint8_t   , __a, __b) \
+		, mu0_uint128_t : mu8_alias_eq(mu0_uint128_t , __a, __b) \
+		, mu0_uint64_t  : mu8_alias_eq(mu0_uint64_t  , __a, __b) \
+		, mu0_uint32_t  : mu8_alias_eq(mu0_uint32_t  , __a, __b) \
+		, mu0_uint16_t  : mu8_alias_eq(mu0_uint16_t  , __a, __b) \
+		, mu0_uint8_t   : mu8_alias_eq(mu0_uint8_t   , __a, __b) \
+		, default       : ((__a) == (__b))                       \
+	)
 #	else
 #	define mu8_eq(_Tp, __a, __b) __mu0_generic__((__a) + 0      \
 		, mu0_cfp64_t   : mu8_alias_eq(mu0_cfp64_t   , __a, __b) \
@@ -1068,6 +1086,24 @@ MU0_BEGIN_CDECL
 		, mu0_sint32_t  : mu8_alias_ge(mu0_sint32_t  , __a, __b) \
 		, mu0_sint16_t  : mu8_alias_ge(mu0_sint16_t  , __a, __b) \
 		, mu0_sint8_t   : mu8_alias_ge(mu0_sint8_t   , __a, __b) \
+		, mu0_uint64_t  : mu8_alias_ge(mu0_uint64_t  , __a, __b) \
+		, mu0_uint32_t  : mu8_alias_ge(mu0_uint32_t  , __a, __b) \
+		, mu0_uint16_t  : mu8_alias_ge(mu0_uint16_t  , __a, __b) \
+		, mu0_uint8_t   : mu8_alias_ge(mu0_uint8_t   , __a, __b) \
+		, default       : ((__a) >= (__b))                       \
+	)
+#	elif MU0_HAVE_INT128
+#	define mu8_ge(_Tp, __a, __b) __mu0_generic__((__a) + 0      \
+		, mu0_cfp64_t   : mu8_alias_ge(mu0_cfp64_t   , __a, __b) \
+		, mu0_cfp32_t   : mu8_alias_ge(mu0_cfp32_t   , __a, __b) \
+		, mu0_fp64_t    : mu8_alias_ge(mu0_fp64_t    , __a, __b) \
+		, mu0_fp32_t    : mu8_alias_ge(mu0_fp32_t    , __a, __b) \
+		, mu0_sint128_t : mu8_alias_ge(mu0_sint128_t , __a, __b) \
+		, mu0_sint64_t  : mu8_alias_ge(mu0_sint64_t  , __a, __b) \
+		, mu0_sint32_t  : mu8_alias_ge(mu0_sint32_t  , __a, __b) \
+		, mu0_sint16_t  : mu8_alias_ge(mu0_sint16_t  , __a, __b) \
+		, mu0_sint8_t   : mu8_alias_ge(mu0_sint8_t   , __a, __b) \
+		, mu0_uint128_t : mu8_alias_ge(mu0_uint128_t , __a, __b) \
 		, mu0_uint64_t  : mu8_alias_ge(mu0_uint64_t  , __a, __b) \
 		, mu0_uint32_t  : mu8_alias_ge(mu0_uint32_t  , __a, __b) \
 		, mu0_uint16_t  : mu8_alias_ge(mu0_uint16_t  , __a, __b) \
@@ -1211,6 +1247,24 @@ MU0_BEGIN_CDECL
 		, mu0_uint64_t  : mu8_alias_gt(mu0_uint64_t  , __a, __b) \
 		, mu0_uint32_t  : mu8_alias_gt(mu0_uint32_t  , __a, __b) \
 		, mu0_uint16_t  : mu8_alias_gt(mu0_uint16_t  , __a, __b) \
+		, mu0_uint8_t   : mu8_alias_gt(mu0_uint8_t   , __a, __b) \
+		, default       : ((__a) > (__b))                        \
+	)
+#	elif MU0_HAVE_INT128
+#	define mu8_gt(_Tp, __a, __b) __mu0_generic__((__a) + 0      \
+		, mu0_cfp64_t   : mu8_alias_gt(mu0_cfp64_t   , __a, __b) \
+		, mu0_cfp32_t   : mu8_alias_gt(mu0_cfp32_t   , __a, __b) \
+		, mu0_fp64_t    : mu8_alias_gt(mu0_fp64_t    , __a, __b) \
+		, mu0_fp32_t    : mu8_alias_gt(mu0_fp32_t    , __a, __b) \
+		, mu0_sint128_t : mu8_alias_gt(mu0_sint128_t , __a, __b) \
+		, mu0_sint64_t  : mu8_alias_gt(mu0_sint64_t  , __a, __b) \
+		, mu0_sint32_t  : mu8_alias_gt(mu0_sint32_t  , __a, __b) \
+		, mu0_sint16_t  : mu8_alias_gt(mu0_sint16_t  , __a, __b) \
+		, mu0_sint8_t   : mu8_alias_gt(mu0_sint8_t   , __a, __b) \
+		, mu0_uint128_t : mu8_alias_gt(mu0_uint128_t , __a, __b) \
+		, mu0_uint64_t  : mu8_alias_gt(mu0_uint64_t  , __a, __b) \
+		, mu0_uint32_t  : mu8_alias_gt(mu0_uint32_t  , __a, __b) \
+		, mu0_uint16_t  : mu8_alias_ge(mu0_uint16_t  , __a, __b) \
 		, mu0_uint8_t   : mu8_alias_gt(mu0_uint8_t   , __a, __b) \
 		, default       : ((__a) > (__b))                        \
 	)
