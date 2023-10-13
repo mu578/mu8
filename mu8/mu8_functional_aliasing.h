@@ -24,18 +24,6 @@ MU0_BEGIN_CDECL
 
 //#! Compile time strict functional operations compatible with mu7's and mu9's operations.
 
-#	define mu8_alias_eq_functional___typeof__(__a, __b) ((__a) == (__b))
-#	define mu8_alias_ge_functional___typeof__(__a, __b) ((__a) >= (__b))
-#	define mu8_alias_gt_functional___typeof__(__a, __b) ((__a) >  (__b))
-#	define mu8_alias_le_functional___typeof__(__a, __b) ((__a) <= (__b))
-#	define mu8_alias_lt_functional___typeof__(__a, __b) ((__a) <  (__b))
-
-#	define mu8_alias_eq_functional_typeof(__a, __b)     ((__a) == (__b))
-#	define mu8_alias_ge_functional_typeof(__a, __b)     ((__a) >= (__b))
-#	define mu8_alias_gt_functional_typeof(__a, __b)     ((__a) >  (__b))
-#	define mu8_alias_le_functional_typeof(__a, __b)     ((__a) <= (__b))
-#	define mu8_alias_lt_functional_typeof(__a, __b)     ((__a) <  (__b))
-
 #	define __mu8_functional_aliasing__(_Tp, __alias) __alias ## _functional_ ## _Tp
 
 #	define __mu8_functional_alias01__(_Tp, __alias, __unary_fn)                               \

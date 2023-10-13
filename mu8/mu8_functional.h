@@ -87,9 +87,11 @@ MU0_BEGIN_CDECL
 	)
 #	elif MU0_HAVE_FLOAT16 && MU0_HAVE_INT128
 #	define mu8_ini(_Tp, __x) __mu0_generic__((__x) + 0 \
+		, mu0_cfpex_t   : mu0_cfpex  (__x, 0)           \
 		, mu0_cfp64_t   : mu0_cfp64  (__x, 0)           \
 		, mu0_cfp32_t   : mu0_cfp32  (__x, 0)           \
 		, mu0_cfp16_t   : mu0_cfp16  (__x, 0)           \
+		, mu0_fpex_t    : mu0_fpex   (__x)              \
 		, mu0_fp64_t    : mu0_fp64   (__x)              \
 		, mu0_fp32_t    : mu0_fp32   (__x)              \
 		, mu0_fp16_t    : mu0_fp16   (__x)              \
@@ -125,9 +127,11 @@ MU0_BEGIN_CDECL
 	)
 #	elif MU0_HAVE_FLOAT16
 #	define mu8_ini(_Tp, __x) __mu0_generic__((__x) + 0 \
+		, mu0_cfpex_t   : mu0_cfpex  (__x, 0)           \
 		, mu0_cfp64_t   : mu0_cfp64  (__x, 0)           \
 		, mu0_cfp32_t   : mu0_cfp32  (__x, 0)           \
 		, mu0_cfp16_t   : mu0_cfp16  (__x, 0)           \
+		, mu0_fpex_t    : mu0_fpex   (__x)              \
 		, mu0_fp64_t    : mu0_fp64   (__x)              \
 		, mu0_fp32_t    : mu0_fp32   (__x)              \
 		, mu0_fp16_t    : mu0_fp16   (__x)              \
@@ -143,8 +147,10 @@ MU0_BEGIN_CDECL
 	)
 #	elif MU0_HAVE_INT128
 #	define mu8_ini(_Tp, __x) __mu0_generic__((__x) + 0 \
+		, mu0_cfpex_t   : mu0_cfpex  (__x, 0)           \
 		, mu0_cfp64_t   : mu0_cfp64  (__x, 0)           \
 		, mu0_cfp32_t   : mu0_cfp32  (__x, 0)           \
+		, mu0_fpex_t    : mu0_fpex   (__x)              \
 		, mu0_fp64_t    : mu0_fp64   (__x)              \
 		, mu0_fp32_t    : mu0_fp32   (__x)              \
 		, mu0_sint128_t : mu0_sint128(__x)              \
@@ -161,8 +167,10 @@ MU0_BEGIN_CDECL
 	)
 #	else
 #	define mu8_ini(_Tp, __x) __mu0_generic__((__x) + 0 \
+		, mu0_cfpex_t   : mu0_cfpex  (__x, 0)           \
 		, mu0_cfp64_t   : mu0_cfp64  (__x, 0)           \
 		, mu0_cfp32_t   : mu0_cfp32  (__x, 0)           \
+		, mu0_fpex_t    : mu0_fpex   (__x)              \
 		, mu0_fp64_t    : mu0_fp64   (__x)              \
 		, mu0_fp32_t    : mu0_fp32   (__x)              \
 		, mu0_sint64_t  : mu0_sint64 (__x)              \
@@ -1408,6 +1416,24 @@ MU0_BEGIN_CDECL
 		, mu0_uint8_t   : mu8_alias_le(mu0_uint8_t   , __a, __b) \
 		, default       : ((__a) <= (__b))                       \
 	)
+#	elif MU0_HAVE_INT128
+#	define mu8_le(_Tp, __a, __b) __mu0_generic__((__a) + 0      \
+		, mu0_cfp64_t   : mu8_alias_le(mu0_cfp64_t   , __a, __b) \
+		, mu0_cfp32_t   : mu8_alias_le(mu0_cfp32_t   , __a, __b) \
+		, mu0_fp64_t    : mu8_alias_le(mu0_fp64_t    , __a, __b) \
+		, mu0_fp32_t    : mu8_alias_le(mu0_fp32_t    , __a, __b) \
+		, mu0_sint128_t : mu8_alias_le(mu0_sint128_t , __a, __b) \
+		, mu0_sint64_t  : mu8_alias_le(mu0_sint64_t  , __a, __b) \
+		, mu0_sint32_t  : mu8_alias_le(mu0_sint32_t  , __a, __b) \
+		, mu0_sint16_t  : mu8_alias_le(mu0_sint16_t  , __a, __b) \
+		, mu0_sint8_t   : mu8_alias_le(mu0_sint8_t   , __a, __b) \
+		, mu0_uint128_t : mu8_alias_le(mu0_uint128_t , __a, __b) \
+		, mu0_uint64_t  : mu8_alias_le(mu0_uint64_t  , __a, __b) \
+		, mu0_uint32_t  : mu8_alias_le(mu0_uint32_t  , __a, __b) \
+		, mu0_uint16_t  : mu8_alias_ge(mu0_uint16_t  , __a, __b) \
+		, mu0_uint8_t   : mu8_alias_le(mu0_uint8_t   , __a, __b) \
+		, default       : ((__a) <= (__b))                       \
+	)
 #	else
 #	define mu8_le(_Tp, __a, __b) __mu0_generic__((__a) + 0      \
 		, mu0_cfp64_t   : mu8_alias_le(mu0_cfp64_t   , __a, __b) \
@@ -1545,6 +1571,24 @@ MU0_BEGIN_CDECL
 		, mu0_uint64_t  : mu8_alias_lt(mu0_uint64_t  , __a, __b) \
 		, mu0_uint32_t  : mu8_alias_lt(mu0_uint32_t  , __a, __b) \
 		, mu0_uint16_t  : mu8_alias_lt(mu0_uint16_t  , __a, __b) \
+		, mu0_uint8_t   : mu8_alias_lt(mu0_uint8_t   , __a, __b) \
+		, default       : ((__a) < (__b))                        \
+	)
+#	elif MU0_HAVE_INT128
+#	define mu8_lt(_Tp, __a, __b) __mu0_generic__((__a) + 0      \
+		, mu0_cfp64_t   : mu8_alias_lt(mu0_cfp64_t   , __a, __b) \
+		, mu0_cfp32_t   : mu8_alias_lt(mu0_cfp32_t   , __a, __b) \
+		, mu0_fp64_t    : mu8_alias_lt(mu0_fp64_t    , __a, __b) \
+		, mu0_fp32_t    : mu8_alias_lt(mu0_fp32_t    , __a, __b) \
+		, mu0_sint128_t : mu8_alias_lt(mu0_sint128_t , __a, __b) \
+		, mu0_sint64_t  : mu8_alias_lt(mu0_sint64_t  , __a, __b) \
+		, mu0_sint32_t  : mu8_alias_lt(mu0_sint32_t  , __a, __b) \
+		, mu0_sint16_t  : mu8_alias_lt(mu0_sint16_t  , __a, __b) \
+		, mu0_sint8_t   : mu8_alias_lt(mu0_sint8_t   , __a, __b) \
+		, mu0_uint128_t : mu8_alias_lt(mu0_uint128_t , __a, __b) \
+		, mu0_uint64_t  : mu8_alias_lt(mu0_uint64_t  , __a, __b) \
+		, mu0_uint32_t  : mu8_alias_lt(mu0_uint32_t  , __a, __b) \
+		, mu0_uint16_t  : mu8_alias_ge(mu0_uint16_t  , __a, __b) \
 		, mu0_uint8_t   : mu8_alias_lt(mu0_uint8_t   , __a, __b) \
 		, default       : ((__a) < (__b))                        \
 	)
