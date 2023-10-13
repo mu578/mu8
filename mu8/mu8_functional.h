@@ -159,6 +159,22 @@ MU0_BEGIN_CDECL
 		, mu0_uint8_t   : mu0_uint8  (__x)              \
 		, default       : ((_Tp)__x)                    \
 	)
+#	else
+#	define mu8_ini(_Tp, __x) __mu0_generic__((__x) + 0 \
+		, mu0_cfp64_t   : mu0_cfp64  (__x, 0)           \
+		, mu0_cfp32_t   : mu0_cfp32  (__x, 0)           \
+		, mu0_fp64_t    : mu0_fp64   (__x)              \
+		, mu0_fp32_t    : mu0_fp32   (__x)              \
+		, mu0_sint64_t  : mu0_sint64 (__x)              \
+		, mu0_sint32_t  : mu0_sint32 (__x)              \
+		, mu0_sint16_t  : mu0_sint16 (__x)              \
+		, mu0_sint8_t   : mu0_sint8  (__x)              \
+		, mu0_uint64_t  : mu0_uint64 (__x)              \
+		, mu0_uint32_t  : mu0_uint32 (__x)              \
+		, mu0_uint16_t  : mu0_uint16 (__x)              \
+		, mu0_uint8_t   : mu0_uint8  (__x)              \
+		, default       : ((_Tp)__x)                    \
+	)
 #	endif
 #	else
 #	define mu8_ini(_Tp, __x)                   \
