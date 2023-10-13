@@ -24,6 +24,18 @@ MU0_BEGIN_CDECL
 
 //#! Compile time strict functional operations compatible with mu7's and mu9's operations.
 
+#	define mu8_alias_eq_functional___typeof__(__a, __b) ((__a) == (__b))
+#	define mu8_alias_ge_functional___typeof__(__a, __b) ((__a) >= (__b))
+#	define mu8_alias_gt_functional___typeof__(__a, __b) ((__a) >  (__b))
+#	define mu8_alias_le_functional___typeof__(__a, __b) ((__a) <= (__b))
+#	define mu8_alias_lt_functional___typeof__(__a, __b) ((__a) <  (__b))
+
+#	define mu8_alias_eq_functional_typeof(__a, __b)     ((__a) == (__b))
+#	define mu8_alias_ge_functional_typeof(__a, __b)     ((__a) >= (__b))
+#	define mu8_alias_gt_functional_typeof(__a, __b)     ((__a) >  (__b))
+#	define mu8_alias_le_functional_typeof(__a, __b)     ((__a) <= (__b))
+#	define mu8_alias_lt_functional_typeof(__a, __b)     ((__a) <  (__b))
+
 #	define __mu8_functional_aliasing__(_Tp, __alias) __alias ## _functional_ ## _Tp
 
 #	define __mu8_functional_alias01__(_Tp, __alias, __unary_fn)                               \
@@ -151,101 +163,121 @@ __mu0_static_inline__ const mu0_bool_t    mu8_eq_i128          (const mu0_sint12
 __mu0_static_inline__ const mu0_bool_t    mu8_eq_i64           (const mu0_sint64_t  __a, const mu0_sint64_t  __b) { return __a == __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_eq_i32           (const mu0_sint32_t  __a, const mu0_sint32_t  __b) { return __a == __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_eq_i16           (const mu0_sint16_t  __a, const mu0_sint16_t  __b) { return __a == __b ? mu0_true : mu0_false; }
+__mu0_static_inline__ const mu0_bool_t    mu8_eq_i8            (const mu0_sint8_t   __a, const mu0_sint8_t   __b) { return __a == __b ? mu0_true : mu0_false; }
 
 __mu0_static_inline__ const mu0_bool_t    mu8_ge_i128          (const mu0_sint128_t __a, const mu0_sint128_t __b) { return __a >= __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_ge_i64           (const mu0_sint64_t  __a, const mu0_sint64_t  __b) { return __a >= __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_ge_i32           (const mu0_sint32_t  __a, const mu0_sint32_t  __b) { return __a >= __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_ge_i16           (const mu0_sint16_t  __a, const mu0_sint16_t  __b) { return __a >= __b ? mu0_true : mu0_false; }
+__mu0_static_inline__ const mu0_bool_t    mu8_ge_i8            (const mu0_sint8_t   __a, const mu0_sint8_t   __b) { return __a >= __b ? mu0_true : mu0_false; }
 
 __mu0_static_inline__ const mu0_bool_t    mu8_gt_i128          (const mu0_sint128_t __a, const mu0_sint128_t __b) { return __a >  __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_gt_i64           (const mu0_sint64_t  __a, const mu0_sint64_t  __b) { return __a >  __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_gt_i32           (const mu0_sint32_t  __a, const mu0_sint32_t  __b) { return __a >  __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_gt_i16           (const mu0_sint16_t  __a, const mu0_sint16_t  __b) { return __a >  __b ? mu0_true : mu0_false; }
+__mu0_static_inline__ const mu0_bool_t    mu8_gt_i8            (const mu0_sint8_t   __a, const mu0_sint8_t   __b) { return __a >  __b ? mu0_true : mu0_false; }
 
 __mu0_static_inline__ const mu0_bool_t    mu8_le_i128          (const mu0_sint128_t __a, const mu0_sint128_t __b) { return __a <= __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_le_i64           (const mu0_sint64_t  __a, const mu0_sint64_t  __b) { return __a <= __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_le_i32           (const mu0_sint32_t  __a, const mu0_sint32_t  __b) { return __a <= __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_le_i16           (const mu0_sint16_t  __a, const mu0_sint16_t  __b) { return __a <= __b ? mu0_true : mu0_false; }
+__mu0_static_inline__ const mu0_bool_t    mu8_le_i8            (const mu0_sint8_t  __a, const mu0_sint8_t  __b)   { return __a <= __b ? mu0_true : mu0_false; }
 
 __mu0_static_inline__ const mu0_bool_t    mu8_lt_i128          (const mu0_sint128_t __a, const mu0_sint128_t __b) { return __a <  __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_lt_i64           (const mu0_sint64_t  __a, const mu0_sint64_t  __b) { return __a <  __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_lt_i32           (const mu0_sint32_t  __a, const mu0_sint32_t  __b) { return __a <  __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_lt_i16           (const mu0_sint16_t  __a, const mu0_sint16_t  __b) { return __a <  __b ? mu0_true : mu0_false; }
+__mu0_static_inline__ const mu0_bool_t    mu8_lt_i8            (const mu0_sint8_t   __a, const mu0_sint8_t   __b) { return __a <  __b ? mu0_true : mu0_false; }
 
 __mu0_static_inline__ const mu0_sint128_t mu8_conjugate_i128   (const mu0_sint128_t __x)                          { return __x;                               }
 __mu0_static_inline__ const mu0_sint64_t  mu8_conjugate_i64    (const mu0_sint64_t  __x)                          { return __x;                               }
 __mu0_static_inline__ const mu0_sint32_t  mu8_conjugate_i32    (const mu0_sint32_t  __x)                          { return __x;                               }
 __mu0_static_inline__ const mu0_sint16_t  mu8_conjugate_i16    (const mu0_sint16_t  __x)                          { return __x;                               }
+__mu0_static_inline__ const mu0_sint8_t   mu8_conjugate_i8     (const mu0_sint8_t   __x)                          { return __x;                               }
 
 __mu0_static_inline__ const mu0_sint128_t mu8_add_i128         (const mu0_sint128_t __a, const mu0_sint128_t __b) { return __a + __b;                         }
 __mu0_static_inline__ const mu0_sint64_t  mu8_add_i64          (const mu0_sint64_t  __a, const mu0_sint64_t  __b) { return __a + __b;                         }
 __mu0_static_inline__ const mu0_sint32_t  mu8_add_i32          (const mu0_sint32_t  __a, const mu0_sint32_t  __b) { return __a + __b;                         }
 __mu0_static_inline__ const mu0_sint16_t  mu8_add_i16          (const mu0_sint16_t  __a, const mu0_sint16_t  __b) { return __a + __b;                         }
+__mu0_static_inline__ const mu0_sint8_t   mu8_add_i8           (const mu0_sint8_t   __a, const mu0_sint8_t   __b) { return __a + __b;                         }
 
 __mu0_static_inline__ const mu0_sint128_t mu8_div_i128         (const mu0_sint128_t __a, const mu0_sint128_t __b) { return __a / __b;                         }
 __mu0_static_inline__ const mu0_sint64_t  mu8_div_i64          (const mu0_sint64_t  __a, const mu0_sint64_t  __b) { return __a / __b;                         }
 __mu0_static_inline__ const mu0_sint32_t  mu8_div_i32          (const mu0_sint32_t  __a, const mu0_sint32_t  __b) { return __a / __b;                         }
 __mu0_static_inline__ const mu0_sint16_t  mu8_div_i16          (const mu0_sint16_t  __a, const mu0_sint16_t  __b) { return __a / __b;                         }
+__mu0_static_inline__ const mu0_sint8_t   mu8_div_i8           (const mu0_sint8_t   __a, const mu0_sint8_t   __b) { return __a / __b;                         }
 
 __mu0_static_inline__ const mu0_sint128_t mu8_mul_i128         (const mu0_sint128_t __a, const mu0_sint128_t __b) { return __a * __b;                         }
 __mu0_static_inline__ const mu0_sint64_t  mu8_mul_i64          (const mu0_sint64_t  __a, const mu0_sint64_t  __b) { return __a * __b;                         }
 __mu0_static_inline__ const mu0_sint32_t  mu8_mul_i32          (const mu0_sint32_t  __a, const mu0_sint32_t  __b) { return __a * __b;                         }
 __mu0_static_inline__ const mu0_sint16_t  mu8_mul_i16          (const mu0_sint16_t  __a, const mu0_sint16_t  __b) { return __a * __b;                         }
+__mu0_static_inline__ const mu0_sint8_t   mu8_mul_i8           (const mu0_sint8_t   __a, const mu0_sint8_t   __b) { return __a * __b;                         }
 
 __mu0_static_inline__ const mu0_sint128_t mu8_sub_i128         (const mu0_sint128_t __a, const mu0_sint128_t __b) { return __a - __b;                         }
 __mu0_static_inline__ const mu0_sint64_t  mu8_sub_i64          (const mu0_sint64_t  __a, const mu0_sint64_t  __b) { return __a - __b;                         }
 __mu0_static_inline__ const mu0_sint32_t  mu8_sub_i32          (const mu0_sint32_t  __a, const mu0_sint32_t  __b) { return __a - __b;                         }
 __mu0_static_inline__ const mu0_sint16_t  mu8_sub_i16          (const mu0_sint16_t  __a, const mu0_sint16_t  __b) { return __a - __b;                         }
+__mu0_static_inline__ const mu0_sint8_t   mu8_sub_i8           (const mu0_sint8_t   __a, const mu0_sint8_t   __b) { return __a - __b;                         }
 
 __mu0_static_inline__ const mu0_bool_t    mu8_eq_u128          (const mu0_uint128_t __a, const mu0_uint128_t __b) { return __a == __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_eq_u64           (const mu0_uint64_t  __a, const mu0_uint64_t  __b) { return __a == __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_eq_u32           (const mu0_uint32_t  __a, const mu0_uint32_t  __b) { return __a == __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_eq_u16           (const mu0_uint16_t  __a, const mu0_uint16_t  __b) { return __a == __b ? mu0_true : mu0_false; }
+__mu0_static_inline__ const mu0_bool_t    mu8_eq_u8            (const mu0_uint8_t   __a, const mu0_uint8_t   __b) { return __a == __b ? mu0_true : mu0_false; }
 
 __mu0_static_inline__ const mu0_bool_t    mu8_ge_u128          (const mu0_uint128_t __a, const mu0_uint128_t __b) { return __a >= __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_ge_u64           (const mu0_uint64_t  __a, const mu0_uint64_t  __b) { return __a >= __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_ge_u32           (const mu0_uint32_t  __a, const mu0_uint32_t  __b) { return __a >= __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_ge_u16           (const mu0_uint16_t  __a, const mu0_uint16_t  __b) { return __a >= __b ? mu0_true : mu0_false; }
+__mu0_static_inline__ const mu0_bool_t    mu8_ge_u8            (const mu0_uint8_t   __a, const mu0_uint8_t   __b) { return __a >= __b ? mu0_true : mu0_false; }
 
 __mu0_static_inline__ const mu0_bool_t    mu8_gt_u128          (const mu0_uint128_t __a, const mu0_uint128_t __b) { return __a >  __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_gt_u64           (const mu0_uint64_t  __a, const mu0_uint64_t  __b) { return __a >  __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_gt_u32           (const mu0_uint32_t  __a, const mu0_uint32_t  __b) { return __a >  __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_gt_u16           (const mu0_uint16_t  __a, const mu0_uint16_t  __b) { return __a >  __b ? mu0_true : mu0_false; }
+__mu0_static_inline__ const mu0_bool_t    mu8_gt_u8            (const mu0_uint8_t   __a, const mu0_uint8_t   __b) { return __a >  __b ? mu0_true : mu0_false; }
 
 __mu0_static_inline__ const mu0_bool_t    mu8_le_u128          (const mu0_uint128_t __a, const mu0_uint128_t __b) { return __a <= __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_le_u64           (const mu0_uint64_t  __a, const mu0_uint64_t  __b) { return __a <= __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_le_u32           (const mu0_uint32_t  __a, const mu0_uint32_t  __b) { return __a <= __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_le_u16           (const mu0_uint16_t  __a, const mu0_uint16_t  __b) { return __a <= __b ? mu0_true : mu0_false; }
+__mu0_static_inline__ const mu0_bool_t    mu8_le_u8            (const mu0_uint8_t  __a, const mu0_uint8_t  __b)   { return __a <= __b ? mu0_true : mu0_false; }
 
 __mu0_static_inline__ const mu0_bool_t    mu8_lt_u128          (const mu0_uint128_t __a, const mu0_uint128_t __b) { return __a <  __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_lt_u64           (const mu0_uint64_t  __a, const mu0_uint64_t  __b) { return __a <  __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_lt_u32           (const mu0_uint32_t  __a, const mu0_uint32_t  __b) { return __a <  __b ? mu0_true : mu0_false; }
 __mu0_static_inline__ const mu0_bool_t    mu8_lt_u16           (const mu0_uint16_t  __a, const mu0_uint16_t  __b) { return __a <  __b ? mu0_true : mu0_false; }
+__mu0_static_inline__ const mu0_bool_t    mu8_lt_u8            (const mu0_uint8_t   __a, const mu0_uint8_t   __b) { return __a <  __b ? mu0_true : mu0_false; }
 
 __mu0_static_inline__ const mu0_uint128_t mu8_conjugate_u128   (const mu0_uint128_t __x)                          { return __x;                               }
 __mu0_static_inline__ const mu0_uint64_t  mu8_conjugate_u64    (const mu0_uint64_t  __x)                          { return __x;                               }
 __mu0_static_inline__ const mu0_uint32_t  mu8_conjugate_u32    (const mu0_uint32_t  __x)                          { return __x;                               }
 __mu0_static_inline__ const mu0_uint16_t  mu8_conjugate_u16    (const mu0_uint16_t  __x)                          { return __x;                               }
+__mu0_static_inline__ const mu0_uint8_t   mu8_conjugate_u8     (const mu0_uint8_t   __x)                          { return __x;                               }
 
 __mu0_static_inline__ const mu0_uint128_t mu8_add_u128         (const mu0_uint128_t __a, const mu0_uint128_t __b) { return __a + __b;                         }
 __mu0_static_inline__ const mu0_uint64_t  mu8_add_u64          (const mu0_uint64_t  __a, const mu0_uint64_t  __b) { return __a + __b;                         }
 __mu0_static_inline__ const mu0_uint32_t  mu8_add_u32          (const mu0_uint32_t  __a, const mu0_uint32_t  __b) { return __a + __b;                         }
 __mu0_static_inline__ const mu0_uint16_t  mu8_add_u16          (const mu0_uint16_t  __a, const mu0_uint16_t  __b) { return __a + __b;                         }
+__mu0_static_inline__ const mu0_uint8_t   mu8_add_u8           (const mu0_uint8_t   __a, const mu0_uint8_t   __b) { return __a + __b;                         }
 
 __mu0_static_inline__ const mu0_uint128_t mu8_div_u128         (const mu0_uint128_t __a, const mu0_uint128_t __b) { return __a / __b;                         }
 __mu0_static_inline__ const mu0_uint64_t  mu8_div_u64          (const mu0_uint64_t  __a, const mu0_uint64_t  __b) { return __a / __b;                         }
 __mu0_static_inline__ const mu0_uint32_t  mu8_div_u32          (const mu0_uint32_t  __a, const mu0_uint32_t  __b) { return __a / __b;                         }
 __mu0_static_inline__ const mu0_uint16_t  mu8_div_u16          (const mu0_uint16_t  __a, const mu0_uint16_t  __b) { return __a / __b;                         }
+__mu0_static_inline__ const mu0_uint8_t   mu8_div_u8           (const mu0_uint8_t   __a, const mu0_uint8_t   __b) { return __a / __b;                         }
 
 __mu0_static_inline__ const mu0_uint128_t mu8_mul_u128         (const mu0_uint128_t __a, const mu0_uint128_t __b) { return __a * __b;                         }
 __mu0_static_inline__ const mu0_uint64_t  mu8_mul_u64          (const mu0_uint64_t  __a, const mu0_uint64_t  __b) { return __a * __b;                         }
 __mu0_static_inline__ const mu0_uint32_t  mu8_mul_u32          (const mu0_uint32_t  __a, const mu0_uint32_t  __b) { return __a * __b;                         }
 __mu0_static_inline__ const mu0_uint16_t  mu8_mul_u16          (const mu0_uint16_t  __a, const mu0_uint16_t  __b) { return __a * __b;                         }
+__mu0_static_inline__ const mu0_uint8_t   mu8_mul_u8           (const mu0_uint8_t   __a, const mu0_uint8_t   __b) { return __a * __b;                         }
 
 __mu0_static_inline__ const mu0_uint128_t mu8_sub_u128         (const mu0_uint128_t __a, const mu0_uint128_t __b) { return __a - __b;                         }
 __mu0_static_inline__ const mu0_uint64_t  mu8_sub_u64          (const mu0_uint64_t  __a, const mu0_uint64_t  __b) { return __a - __b;                         }
 __mu0_static_inline__ const mu0_uint32_t  mu8_sub_u32          (const mu0_uint32_t  __a, const mu0_uint32_t  __b) { return __a - __b;                         }
 __mu0_static_inline__ const mu0_uint16_t  mu8_sub_u16          (const mu0_uint16_t  __a, const mu0_uint16_t  __b) { return __a - __b;                         }
+__mu0_static_inline__ const mu0_uint8_t   mu8_sub_u8           (const mu0_uint8_t   __a, const mu0_uint8_t   __b) { return __a - __b;                         }
 
 __mu8_functional_alias03__(mu0_cfp128_t , mu8_alias_eq  , mu8_eq_cfp128);
 __mu8_functional_alias03__(mu0_cfp64_t  , mu8_alias_eq  , mu8_eq_cfp64 );
@@ -351,101 +383,121 @@ __mu8_functional_alias03__(mu0_sint128_t, mu8_alias_eq  , mu8_eq_i128);
 __mu8_functional_alias03__(mu0_sint64_t , mu8_alias_eq  , mu8_eq_i64 );
 __mu8_functional_alias03__(mu0_sint32_t , mu8_alias_eq  , mu8_eq_i32 );
 __mu8_functional_alias03__(mu0_sint16_t , mu8_alias_eq  , mu8_eq_i16 );
+__mu8_functional_alias03__(mu0_sint8_t  , mu8_alias_eq  , mu8_eq_i8  );
 
 __mu8_functional_alias03__(mu0_sint128_t , mu8_alias_ge , mu8_ge_i128);
 __mu8_functional_alias03__(mu0_sint64_t  , mu8_alias_ge , mu8_ge_i64 );
 __mu8_functional_alias03__(mu0_sint32_t  , mu8_alias_ge , mu8_ge_i32 );
 __mu8_functional_alias03__(mu0_sint16_t  , mu8_alias_ge , mu8_ge_i16 );
+__mu8_functional_alias03__(mu0_sint8_t   , mu8_alias_ge , mu8_ge_i8 );
 
 __mu8_functional_alias03__(mu0_sint128_t , mu8_alias_gt , mu8_gt_i128);
 __mu8_functional_alias03__(mu0_sint64_t  , mu8_alias_gt , mu8_gt_i64 );
 __mu8_functional_alias03__(mu0_sint32_t  , mu8_alias_gt , mu8_gt_i32 );
 __mu8_functional_alias03__(mu0_sint16_t  , mu8_alias_gt , mu8_gt_i16 );
+__mu8_functional_alias03__(mu0_sint8_t   , mu8_alias_gt , mu8_gt_i8  );
 
 __mu8_functional_alias03__(mu0_sint128_t , mu8_alias_le , mu8_le_i128);
 __mu8_functional_alias03__(mu0_sint64_t  , mu8_alias_le , mu8_le_i64 );
 __mu8_functional_alias03__(mu0_sint32_t  , mu8_alias_le , mu8_le_i32 );
 __mu8_functional_alias03__(mu0_sint16_t  , mu8_alias_le , mu8_le_i16 );
+__mu8_functional_alias03__(mu0_sint8_t   , mu8_alias_le , mu8_le_i8  );
 
 __mu8_functional_alias03__(mu0_sint128_t , mu8_alias_lt , mu8_lt_i128);
 __mu8_functional_alias03__(mu0_sint64_t  , mu8_alias_lt , mu8_lt_i64 );
 __mu8_functional_alias03__(mu0_sint32_t  , mu8_alias_lt , mu8_lt_i32 );
 __mu8_functional_alias03__(mu0_sint16_t  , mu8_alias_lt , mu8_lt_i16 );
+__mu8_functional_alias03__(mu0_sint8_t   , mu8_alias_lt , mu8_lt_i8 );
 
 __mu8_functional_alias01__(mu0_sint128_t, mu8_alias_conj, mu8_conjugate_i128);
 __mu8_functional_alias01__(mu0_sint64_t , mu8_alias_conj, mu8_conjugate_i64 );
 __mu8_functional_alias01__(mu0_sint32_t , mu8_alias_conj, mu8_conjugate_i32 );
 __mu8_functional_alias01__(mu0_sint16_t , mu8_alias_conj, mu8_conjugate_i16 );
+__mu8_functional_alias01__(mu0_sint8_t  , mu8_alias_conj, mu8_conjugate_i8  );
 
 __mu8_functional_alias02__(mu0_sint128_t, mu8_alias_add , mu8_add_i128);
 __mu8_functional_alias02__(mu0_sint64_t , mu8_alias_add , mu8_add_i64 );
 __mu8_functional_alias02__(mu0_sint32_t , mu8_alias_add , mu8_add_i32 );
 __mu8_functional_alias02__(mu0_sint16_t , mu8_alias_add , mu8_add_i16 );
+__mu8_functional_alias02__(mu0_sint8_t  , mu8_alias_add , mu8_add_i8  );
 
 __mu8_functional_alias02__(mu0_sint128_t, mu8_alias_div , mu8_div_i128);
 __mu8_functional_alias02__(mu0_sint64_t , mu8_alias_div , mu8_div_i64 );
 __mu8_functional_alias02__(mu0_sint32_t , mu8_alias_div , mu8_div_i32 );
 __mu8_functional_alias02__(mu0_sint16_t , mu8_alias_div , mu8_div_i16 );
+__mu8_functional_alias02__(mu0_sint8_t  , mu8_alias_div , mu8_div_i8  );
 
 __mu8_functional_alias02__(mu0_sint128_t, mu8_alias_mul , mu8_mul_i128);
 __mu8_functional_alias02__(mu0_sint64_t , mu8_alias_mul , mu8_mul_i64 );
 __mu8_functional_alias02__(mu0_sint32_t , mu8_alias_mul , mu8_mul_i32 );
 __mu8_functional_alias02__(mu0_sint16_t , mu8_alias_mul , mu8_mul_i16 );
+__mu8_functional_alias02__(mu0_sint8_t  , mu8_alias_mul , mu8_mul_i8 );
 
 __mu8_functional_alias02__(mu0_sint128_t, mu8_alias_sub , mu8_sub_i128);
 __mu8_functional_alias02__(mu0_sint64_t , mu8_alias_sub , mu8_sub_i64 );
 __mu8_functional_alias02__(mu0_sint32_t , mu8_alias_sub , mu8_sub_i32 );
 __mu8_functional_alias02__(mu0_sint16_t , mu8_alias_sub , mu8_sub_i16 );
+__mu8_functional_alias02__(mu0_sint8_t  , mu8_alias_sub , mu8_sub_i8  );
 
 __mu8_functional_alias03__(mu0_uint128_t, mu8_alias_eq  , mu8_eq_u128);
 __mu8_functional_alias03__(mu0_uint64_t , mu8_alias_eq  , mu8_eq_u64 );
 __mu8_functional_alias03__(mu0_uint32_t , mu8_alias_eq  , mu8_eq_u32 );
 __mu8_functional_alias03__(mu0_uint16_t , mu8_alias_eq  , mu8_eq_u16 );
+__mu8_functional_alias03__(mu0_uint8_t  , mu8_alias_eq  , mu8_eq_u8  );
 
 __mu8_functional_alias03__(mu0_uint128_t , mu8_alias_ge , mu8_ge_u128);
 __mu8_functional_alias03__(mu0_uint64_t  , mu8_alias_ge , mu8_ge_u64 );
 __mu8_functional_alias03__(mu0_uint32_t  , mu8_alias_ge , mu8_ge_u32 );
-__mu8_functional_alias03__(mu0_uint16_t  , mu8_alias_g  , mu8_ge_u16 );
+__mu8_functional_alias03__(mu0_uint16_t  , mu8_alias_ge , mu8_ge_u16 );
+__mu8_functional_alias03__(mu0_uint8_t   , mu8_alias_ge , mu8_ge_u8 );
 
 __mu8_functional_alias03__(mu0_uint128_t , mu8_alias_gt , mu8_gt_u128);
 __mu8_functional_alias03__(mu0_uint64_t  , mu8_alias_gt , mu8_gt_u64 );
 __mu8_functional_alias03__(mu0_uint32_t  , mu8_alias_gt , mu8_gt_u32 );
 __mu8_functional_alias03__(mu0_uint16_t  , mu8_alias_gt , mu8_gt_u16 );
+__mu8_functional_alias03__(mu0_uint8_t   , mu8_alias_gt , mu8_gt_u8  );
 
 __mu8_functional_alias03__(mu0_uint128_t , mu8_alias_le , mu8_le_u128);
 __mu8_functional_alias03__(mu0_uint64_t  , mu8_alias_le , mu8_le_u64 );
 __mu8_functional_alias03__(mu0_uint32_t  , mu8_alias_le , mu8_le_u32 );
 __mu8_functional_alias03__(mu0_uint16_t  , mu8_alias_le , mu8_le_u16 );
+__mu8_functional_alias03__(mu0_uint8_t   , mu8_alias_le , mu8_le_u8  );
 
 __mu8_functional_alias03__(mu0_uint128_t , mu8_alias_lt , mu8_lt_u128);
 __mu8_functional_alias03__(mu0_uint64_t  , mu8_alias_lt , mu8_lt_u64 );
 __mu8_functional_alias03__(mu0_uint32_t  , mu8_alias_lt , mu8_lt_u32 );
 __mu8_functional_alias03__(mu0_uint16_t  , mu8_alias_lt , mu8_lt_u16 );
+__mu8_functional_alias03__(mu0_uint8_t   , mu8_alias_lt , mu8_lt_u8 );
 
 __mu8_functional_alias01__(mu0_uint128_t, mu8_alias_conj, mu8_conjugate_u128);
 __mu8_functional_alias01__(mu0_uint64_t , mu8_alias_conj, mu8_conjugate_u64 );
 __mu8_functional_alias01__(mu0_uint32_t , mu8_alias_conj, mu8_conjugate_u32 );
 __mu8_functional_alias01__(mu0_uint16_t , mu8_alias_conj, mu8_conjugate_u16 );
+__mu8_functional_alias01__(mu0_uint8_t  , mu8_alias_conj, mu8_conjugate_u8  );
 
 __mu8_functional_alias02__(mu0_uint128_t, mu8_alias_add , mu8_add_u128);
 __mu8_functional_alias02__(mu0_uint64_t , mu8_alias_add , mu8_add_u64 );
 __mu8_functional_alias02__(mu0_uint32_t , mu8_alias_add , mu8_add_u32 );
 __mu8_functional_alias02__(mu0_uint16_t , mu8_alias_add , mu8_add_u16 );
+__mu8_functional_alias02__(mu0_uint8_t  , mu8_alias_add , mu8_add_u8  );
 
 __mu8_functional_alias02__(mu0_uint128_t, mu8_alias_div , mu8_div_u128);
 __mu8_functional_alias02__(mu0_uint64_t , mu8_alias_div , mu8_div_u64 );
 __mu8_functional_alias02__(mu0_uint32_t , mu8_alias_div , mu8_div_u32 );
 __mu8_functional_alias02__(mu0_uint16_t , mu8_alias_div , mu8_div_u16 );
+__mu8_functional_alias02__(mu0_uint8_t  , mu8_alias_div , mu8_div_u8  );
 
 __mu8_functional_alias02__(mu0_uint128_t, mu8_alias_mul , mu8_mul_u128);
 __mu8_functional_alias02__(mu0_uint64_t , mu8_alias_mul , mu8_mul_u64 );
 __mu8_functional_alias02__(mu0_uint32_t , mu8_alias_mul , mu8_mul_u32 );
 __mu8_functional_alias02__(mu0_uint16_t , mu8_alias_mul , mu8_mul_u16 );
+__mu8_functional_alias02__(mu0_uint8_t  , mu8_alias_mul , mu8_mul_u8 );
 
 __mu8_functional_alias02__(mu0_uint128_t, mu8_alias_sub , mu8_sub_u128);
 __mu8_functional_alias02__(mu0_uint64_t , mu8_alias_sub , mu8_sub_u64 );
 __mu8_functional_alias02__(mu0_uint32_t , mu8_alias_sub , mu8_sub_u32 );
 __mu8_functional_alias02__(mu0_uint16_t , mu8_alias_sub , mu8_sub_u16 );
+__mu8_functional_alias02__(mu0_uint8_t  , mu8_alias_sub , mu8_sub_u8  );
 
 #	define mu8_alias_eq(_Tp, __a, __b) \
 	__mu8_functional_aliasing__(_Tp, mu8_alias_eq)(__a, __b)
