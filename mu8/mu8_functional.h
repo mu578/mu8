@@ -256,9 +256,11 @@ MU0_BEGIN_CDECL
 	)
 #	elif MU0_HAVE_FLOAT16 && MU0_HAVE_INT128
 #	define mu8_add(_Tp, __a, __b) __mu0_generic__((__a) + 0      \
+		, mu0_cfpex_t   : mu8_alias_add(mu0_cfpex_t   , __a, __b) \
 		, mu0_cfp64_t   : mu8_alias_add(mu0_cfp64_t   , __a, __b) \
 		, mu0_cfp32_t   : mu8_alias_add(mu0_cfp32_t   , __a, __b) \
 		, mu0_cfp16_t   : mu8_alias_add(mu0_cfp16_t   , __a, __b) \
+		, mu0_fpex_t    : mu8_alias_add(mu0_fpex_t    , __a, __b) \
 		, mu0_fp64_t    : mu8_alias_add(mu0_fp64_t    , __a, __b) \
 		, mu0_fp32_t    : mu8_alias_add(mu0_fp32_t    , __a, __b) \
 		, mu0_fp16_t    : mu8_alias_add(mu0_fp16_t    , __a, __b) \
@@ -294,9 +296,11 @@ MU0_BEGIN_CDECL
 	)
 #	elif MU0_HAVE_FLOAT16
 #	define mu8_add(_Tp, __a, __b) __mu0_generic__((__a) + 0      \
+		, mu0_cfpex_t   : mu8_alias_add(mu0_cfpex_t   , __a, __b) \
 		, mu0_cfp64_t   : mu8_alias_add(mu0_cfp64_t   , __a, __b) \
 		, mu0_cfp32_t   : mu8_alias_add(mu0_cfp32_t   , __a, __b) \
 		, mu0_cfp16_t   : mu8_alias_add(mu0_cfp16_t   , __a, __b) \
+		, mu0_fpex_t    : mu8_alias_add(mu0_fpex_t    , __a, __b) \
 		, mu0_fp64_t    : mu8_alias_add(mu0_fp64_t    , __a, __b) \
 		, mu0_fp32_t    : mu8_alias_add(mu0_fp32_t    , __a, __b) \
 		, mu0_fp16_t    : mu8_alias_add(mu0_fp16_t    , __a, __b) \
@@ -312,8 +316,10 @@ MU0_BEGIN_CDECL
 	)
 #	elif MU0_HAVE_INT128
 #	define mu8_add(_Tp, __a, __b) __mu0_generic__((__a) + 0      \
+		, mu0_cfpex_t   : mu8_alias_add(mu0_cfpex_t   , __a, __b) \
 		, mu0_cfp64_t   : mu8_alias_add(mu0_cfp64_t   , __a, __b) \
 		, mu0_cfp32_t   : mu8_alias_add(mu0_cfp32_t   , __a, __b) \
+		, mu0_fpex_t    : mu8_alias_add(mu0_fpex_t    , __a, __b) \
 		, mu0_fp64_t    : mu8_alias_add(mu0_fp64_t    , __a, __b) \
 		, mu0_fp32_t    : mu8_alias_add(mu0_fp32_t    , __a, __b) \
 		, mu0_sint128_t : mu8_alias_add(mu0_sint128_t , __a, __b) \
@@ -330,8 +336,10 @@ MU0_BEGIN_CDECL
 	)
 #	else
 #	define mu8_add(_Tp, __a, __b) __mu0_generic__((__a) + 0      \
+		, mu0_cfpex_t   : mu8_alias_add(mu0_cfpex_t   , __a, __b) \
 		, mu0_cfp64_t   : mu8_alias_add(mu0_cfp64_t   , __a, __b) \
 		, mu0_cfp32_t   : mu8_alias_add(mu0_cfp32_t   , __a, __b) \
+		, mu0_fpex_t    : mu8_alias_add(mu0_fpex_t    , __a, __b) \
 		, mu0_fp64_t    : mu8_alias_add(mu0_fp64_t    , __a, __b) \
 		, mu0_fp32_t    : mu8_alias_add(mu0_fp32_t    , __a, __b) \
 		, mu0_sint64_t  : mu8_alias_add(mu0_sint64_t  , __a, __b) \
