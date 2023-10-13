@@ -22,7 +22,7 @@
 
 MU0_BEGIN_CDECL
 
-#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_GNUCC || MU0_HAVE_CC_MSVCL || MU0_HAVE_CC_ITLCL
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_GNUCC || MU0_HAVE_CC_MSVCL || MU0_HAVE_CC_ITLCL || MU0_HAVE_CC_ITLGC
 
 //#!
 //#! macro<_Tp>(_Tp __x) : _Tp
@@ -51,7 +51,7 @@ MU0_BEGIN_CDECL
 				? mu8_ceq_fp64(__a, __b)             \
 				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
 					? mu8_ceq_fp128(__a, __b)         \
-					: mu8_alias_eq(_Tp, __a, __b)     \
+					: ((__a) == (__b))                \
 		)))
 
 //#!
@@ -66,7 +66,7 @@ MU0_BEGIN_CDECL
 				? mu8_cge_fp64(__a, __b)             \
 				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
 					? mu8_cge_fp128(__a, __b)         \
-					: mu8_alias_ge(_Tp, __a, __b)     \
+					: ((__a) >= (__b))                \
 		)))
 
 //#!
@@ -81,7 +81,7 @@ MU0_BEGIN_CDECL
 				? mu8_cgt_fp64(__a, __b)             \
 				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
 					? mu8_cgt_fp128(__a, __b)         \
-					: mu8_alias_gt(_Tp, __a, __b)     \
+					: ((__a) > (__b))                 \
 		)))
 
 //#!
@@ -96,12 +96,9 @@ MU0_BEGIN_CDECL
 				? mu8_cle_fp64(__a, __b)             \
 				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
 					? mu8_cle_fp128(__a, __b)         \
-					: mu8_alias_le(_Tp, __a, __b)     \
+					: ((__a) <= (__b))                \
 		)))
 
-//#!
-//#! macro<_Tp>(_Tp & __a, _Tp & __b) : bool
-//#!
 #	define mu8_lt(_Tp, __a, __b)                  \
 	__mu0_issame__(mu0_cfp16_t, _Tp)              \
 		? mu8_clt_fp16(__a, __b)                   \
@@ -111,7 +108,7 @@ MU0_BEGIN_CDECL
 				? mu8_clt_fp64(__a, __b)             \
 				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
 					? mu8_clt_fp128(__a, __b)         \
-					: mu8_alias_lt(_Tp, __a, __b)     \
+					: ((__a) < (__b))                 \
 		)))
 
 //#!
@@ -126,7 +123,7 @@ MU0_BEGIN_CDECL
 				? mu8_cadd_fp64(__a, __b)            \
 				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
 					? mu8_cadd_fp128(__a, __b)        \
-					: mu8_alias_add(_Tp, __a, __b)    \
+					: ((__a) + (__b))                 \
 		)))
 
 #	define mu8_div(_Tp, __a, __b)                 \
@@ -138,7 +135,7 @@ MU0_BEGIN_CDECL
 				? mu8_cdiv_fp64(__a, __b)            \
 				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
 					? mu8_cdiv_fp128(__a, __b)        \
-					: mu8_alias_div(_Tp, __a, __b)    \
+					: ((__a) / (__b))                 \
 		)))
 
 #	define mu8_mul(_Tp, __a, __b)                 \
@@ -150,7 +147,7 @@ MU0_BEGIN_CDECL
 				? mu8_cmul_fp64(__a, __b)            \
 				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
 					? mu8_cmul_fp128(__a, __b)        \
-					: mu8_alias_mul(_Tp, __a, __b)    \
+					: ((__a) * (__b))                 \
 		)))
 
 #	define mu8_sub(_Tp, __a, __b)                 \
@@ -162,7 +159,7 @@ MU0_BEGIN_CDECL
 				? mu8_csub_fp64(__a, __b)            \
 				: (__mu0_issame__(mu0_cfp128_t, _Tp) \
 					? mu8_csub_fp128(__a, __b)        \
-					: mu8_alias_sub(_Tp, __a, __b)    \
+					: ((__a) - (__b))                 \
 		)))
 
 #	else
