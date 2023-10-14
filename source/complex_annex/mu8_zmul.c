@@ -76,6 +76,64 @@ void mu8_zmul_fp128 (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t ar, c
 #	endif
 }
 
+void mu8_zmul_fpex  (mu0_fpex_t  * zr, mu0_fpex_t  * zi, const mu0_fpex_t  ar, const mu0_fpex_t  ai, const mu0_fpex_t  br, const mu0_fpex_t  bi)
+{
+#	if MU0_HAVE_FASTMATH
+	*zr = (ar * br) - (ai * bi);
+	*zi = (ar * bi) + (ai * br);
+#	else
+	mu0_fpex_t   gr = ar, gi = ai, hr = br, hi = bi;
+	mu0_fpex_t   a  = gr * hr, b = gi * hi;
+	mu0_fpex_t   c  = gr * hi, d = gi * hr;
+	mu0_sint32_t w  = 0;
+	*zr             = a - b;
+	*zi             = c + d;
+	if (mu8_isnan_fpex(*zr) && mu8_isnan_fpex(*zi)) {
+		if (mu8_isinf_fpex(gr) || mu8_isinf_fpex(gi)) {
+			gr = mu8_copysign_fpex(mu8_isinf_fpex(gr) ? mu0_fpex_one : mu0_fpex_zero, gr);
+			gi = mu8_copysign_fpex(mu8_isinf_fpex(gi) ? mu0_fpex_one : mu0_fpex_zero, gi);
+			if (mu8_isnan_fpex(hr)) {
+				hr = mu8_copysign_fpex(mu0_fpex_zero, hr);
+			}
+			if (mu8_isnan_fpex(hi)) {
+				hi = mu8_copysign_fpex(mu0_fpex_zero, hi);
+			}
+			w = 1;
+		}
+		if (mu8_isinf_fpex(hr) || mu8_isinf_fpex(hi)) {
+			hr = mu8_copysign_fpex(mu8_isinf_fpex(hr) ? mu0_fpex_one : mu0_fpex_zero, hr);
+			hi = mu8_copysign_fpex(mu8_isinf_fpex(hi) ? mu0_fpex_one : mu0_fpex_zero, hi);
+			if (mu8_isnan_fpex(gr)) {
+				gr = mu8_copysign_fpex(mu0_fpex_zero, gr);
+			}
+			if (mu8_isnan_fpex(gi)) {
+				gi = mu8_copysign_fpex(mu0_fpex_zero, gi);
+			}
+			w = 1;
+		}
+		if (w == 0 && (mu8_isinf_fpex(a) || mu8_isinf_fpex(b) || mu8_isinf_fpex(c) || mu8_isinf_fpex(d))) {
+			if (mu8_isnan_fpex(gr)) {
+				gr = mu8_copysign_fpex(mu0_fpex_zero, gr);
+			}
+			if (mu8_isnan_fpex(gi)) {
+				gi = mu8_copysign_fpex(mu0_fpex_zero, gi);
+			}
+			if (mu8_isnan_fpex(hr)) {
+				hr = mu8_copysign_fpex(mu0_fpex_zero, hr);
+			}
+			if (mu8_isnan_fpex(hi)) {
+				hi = mu8_copysign_fpex(mu0_fpex_zero, hi);
+			}
+			w = 1;
+		}
+		if (w) {
+			*zr = mu0_fpex_inf * (gr * hr - gi * hi);
+			*zi = mu0_fpex_inf * (gr * hi + gi * hr);
+		}
+	}
+#	endif
+}
+
 void mu8_zmul_fp64  (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  ar, const mu0_fp64_t  ai, const mu0_fp64_t  br, const mu0_fp64_t  bi)
 {
 #	if MU0_HAVE_FASTMATH

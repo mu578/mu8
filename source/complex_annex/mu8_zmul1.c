@@ -40,6 +40,28 @@ void mu8_zmul1_fp128 (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t ar, 
 #	endif
 }
 
+void mu8_zmul1_fpex  (mu0_fpex_t  * zr, mu0_fpex_t  * zi, const mu0_fpex_t  ar, const mu0_fpex_t  ai, const mu0_fpex_t  b)
+{
+#	if MU0_HAVE_FASTMATH
+	*zr = ar * b;
+	*zi = ai * b;
+#	else
+	if (mu8_isinf_fpex(b)) {
+		*zr = b;
+		*zi = mu0_fpex_inf;
+	} else if (mu8_isnan_fpex(b)) {
+		*zr = mu0_fpex_nan;
+		*zi = mu0_fpex_nan;
+	} else if (b == mu0_fpex_zero) {
+		*zr = mu0_fpex_zero;
+		*zi = mu0_fpex_zero;
+	} else {
+		*zr = ar * b;
+		*zi = ai * b;
+	}
+#	endif
+}
+
 void mu8_zmul1_fp64  (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  ar, const mu0_fp64_t  ai, const mu0_fp64_t  b)
 {
 #	if MU0_HAVE_FASTMATH

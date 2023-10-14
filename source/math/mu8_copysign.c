@@ -42,6 +42,21 @@ mu0_fp128_t mu8_copysign_fp128 (const mu0_fp128_t x, const mu0_fp128_t y)
 #	endif
 }
 
+mu0_fpex_t  mu8_copysign_fpex  (const mu0_fpex_t  x, const mu0_fpex_t  y)
+{
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL
+#		if  (__has_builtin(__builtin_copysignl))
+			return __builtin_copysignl(x, y);
+#		else
+			return copysignl(x, y);
+#		endif
+#	elif MU0_HAVE_CC_GNUCC
+		return __builtin_copysignl(x, y);
+#	else
+		return copysignl(x, y);
+#	endif
+}
+
 mu0_fp64_t  mu8_copysign_fp64  (const mu0_fp64_t  x, const mu0_fp64_t  y)
 {
 #	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG || MU0_HAVE_CC_MSVCL

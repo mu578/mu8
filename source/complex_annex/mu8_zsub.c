@@ -24,6 +24,12 @@ void mu8_zsub_fp128 (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t ar, c
 	*zi = ai - bi;
 }
 
+void mu8_zsub_fpex  (mu0_fpex_t  * zr, mu0_fpex_t  * zi, const mu0_fpex_t  ar, const mu0_fpex_t  ai, const mu0_fpex_t  br, const mu0_fpex_t  bi)
+{
+	*zr = ar - br;
+	*zi = ai - bi;
+}
+
 void mu8_zsub_fp64  (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  ar, const mu0_fp64_t  ai, const mu0_fp64_t  br, const mu0_fp64_t  bi)
 {
 	*zr = ar - br;

@@ -84,21 +84,25 @@ __mu0_static_inline__ const mu0_cfp32_t   mu8_conjugate_cfp32  (const mu0_cfp32_
 __mu0_static_inline__ const mu0_cfp16_t   mu8_conjugate_cfp16  (const mu0_cfp16_t  __x)                           { return mu8_cconj_fp16  (__x);             }
 
 __mu0_static_inline__ const mu0_cfp128_t  mu8_add_cfp128       (const mu0_cfp128_t __a, const mu0_cfp128_t __b)   { return mu8_cadd_fp128 (__a, __b);         }
+__mu0_static_inline__ const mu0_cfpex_t   mu8_add_cfpex        (const mu0_cfpex_t  __a, const mu0_cfpex_t  __b)   { return mu8_cadd_fpex  (__a, __b);         }
 __mu0_static_inline__ const mu0_cfp64_t   mu8_add_cfp64        (const mu0_cfp64_t  __a, const mu0_cfp64_t  __b)   { return mu8_cadd_fp64  (__a, __b);         }
 __mu0_static_inline__ const mu0_cfp32_t   mu8_add_cfp32        (const mu0_cfp32_t  __a, const mu0_cfp32_t  __b)   { return mu8_cadd_fp32  (__a, __b);         }
 __mu0_static_inline__ const mu0_cfp16_t   mu8_add_cfp16        (const mu0_cfp16_t  __a, const mu0_cfp16_t  __b)   { return mu8_cadd_fp16  (__a, __b);         }
 
 __mu0_static_inline__ const mu0_cfp128_t  mu8_div_cfp128       (const mu0_cfp128_t __a, const mu0_cfp128_t __b)   { return mu8_cdiv_fp128 (__a, __b);         }
+__mu0_static_inline__ const mu0_cfpex_t   mu8_div_cfpex        (const mu0_cfpex_t  __a, const mu0_cfpex_t  __b)   { return mu8_cdiv_fpex  (__a, __b);         }
 __mu0_static_inline__ const mu0_cfp64_t   mu8_div_cfp64        (const mu0_cfp64_t  __a, const mu0_cfp64_t  __b)   { return mu8_cdiv_fp64  (__a, __b);         }
 __mu0_static_inline__ const mu0_cfp32_t   mu8_div_cfp32        (const mu0_cfp32_t  __a, const mu0_cfp32_t  __b)   { return mu8_cdiv_fp32  (__a, __b);         }
 __mu0_static_inline__ const mu0_cfp16_t   mu8_div_cfp16        (const mu0_cfp16_t  __a, const mu0_cfp16_t  __b)   { return mu8_cdiv_fp16  (__a, __b);         }
 
 __mu0_static_inline__ const mu0_cfp128_t  mu8_mul_cfp128       (const mu0_cfp128_t __a, const mu0_cfp128_t __b)   { return mu8_cmul_fp128 (__a, __b);         }
+__mu0_static_inline__ const mu0_cfpex_t   mu8_mul_cfpex        (const mu0_cfpex_t  __a, const mu0_cfpex_t  __b)   { return mu8_cmul_fpex  (__a, __b);         }
 __mu0_static_inline__ const mu0_cfp64_t   mu8_mul_cfp64        (const mu0_cfp64_t  __a, const mu0_cfp64_t  __b)   { return mu8_cmul_fp64  (__a, __b);         }
 __mu0_static_inline__ const mu0_cfp32_t   mu8_mul_cfp32        (const mu0_cfp32_t  __a, const mu0_cfp32_t  __b)   { return mu8_cmul_fp32  (__a, __b);         }
 __mu0_static_inline__ const mu0_cfp16_t   mu8_mul_cfp16        (const mu0_cfp16_t  __a, const mu0_cfp16_t  __b)   { return mu8_cmul_fp16  (__a, __b);         }
 
 __mu0_static_inline__ const mu0_cfp128_t  mu8_sub_cfp128       (const mu0_cfp128_t __a, const mu0_cfp128_t __b)   { return mu8_csub_fp128 (__a, __b);         }
+__mu0_static_inline__ const mu0_cfpex_t   mu8_sub_cfpex        (const mu0_cfpex_t  __a, const mu0_cfpex_t  __b)   { return mu8_csub_fpex  (__a, __b);         }
 __mu0_static_inline__ const mu0_cfp64_t   mu8_sub_cfp64        (const mu0_cfp64_t  __a, const mu0_cfp64_t  __b)   { return mu8_csub_fp64  (__a, __b);         }
 __mu0_static_inline__ const mu0_cfp32_t   mu8_sub_cfp32        (const mu0_cfp32_t  __a, const mu0_cfp32_t  __b)   { return mu8_csub_fp32  (__a, __b);         }
 __mu0_static_inline__ const mu0_cfp16_t   mu8_sub_cfp16        (const mu0_cfp16_t  __a, const mu0_cfp16_t  __b)   { return mu8_csub_fp16  (__a, __b);         }

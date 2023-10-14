@@ -28,6 +28,17 @@ mu0_cfp128_t mu8_cadd_fp128 (const mu0_cfp128_t a, const mu0_cfp128_t b)
 #	endif
 }
 
+mu0_cfpex_t  mu8_cadd_fpex  (const mu0_cfpex_t  a, const mu0_cfpex_t  b)
+{
+#	if MU0_HAVE_STDCOMPLEX
+	return a + b;
+#	else
+	mu0_cfpex_t  c = { 0 };
+	mu8_zadd_fpex  (&c.u_re, &c.u_im, a.u_re, a.u_im, b.u_re, b.u_im);
+	return c;
+#	endif
+}
+
 mu0_cfp64_t  mu8_cadd_fp64  (const mu0_cfp64_t  a, const mu0_cfp64_t  b)
 {
 #	if MU0_HAVE_STDCOMPLEX

@@ -43,11 +43,13 @@ __mu0_static_inline__ const mu0_bool_t  mu8_isfinite_fp32  (const mu0_fp32_t  __
 __mu0_static_inline__ const mu0_bool_t  mu8_isfinite_fp16  (const mu0_fp16_t  __x) { return mu0_fp_isfinite (__x) == 0 ? mu0_false     : mu0_true;       }
 
 __mu0_static_inline__ const mu0_bool_t  mu8_isinf_fp128    (const mu0_fp128_t __x) { return mu0_fp_isinf    (__x) == 0 ? mu0_false     : mu0_true;       }
+__mu0_static_inline__ const mu0_bool_t  mu8_isinf_fpex     (const mu0_fpex_t  __x) { return mu0_fp_isinf    (__x) == 0 ? mu0_false     : mu0_true;       }
 __mu0_static_inline__ const mu0_bool_t  mu8_isinf_fp64     (const mu0_fp64_t  __x) { return mu0_fp_isinf    (__x) == 0 ? mu0_false     : mu0_true;       }
 __mu0_static_inline__ const mu0_bool_t  mu8_isinf_fp32     (const mu0_fp32_t  __x) { return mu0_fp_isinf    (__x) == 0 ? mu0_false     : mu0_true;       }
 __mu0_static_inline__ const mu0_bool_t  mu8_isinf_fp16     (const mu0_fp16_t  __x) { return mu0_fp_isinf    (__x) == 0 ? mu0_false     : mu0_true;       }
 
 __mu0_static_inline__ const mu0_bool_t  mu8_isnan_fp128    (const mu0_fp128_t __x) { return mu0_fp_isnan    (__x) == 0 ? mu0_false     : mu0_true;       }
+__mu0_static_inline__ const mu0_bool_t  mu8_isnan_fpex     (const mu0_fpex_t  __x) { return mu0_fp_isnan    (__x) == 0 ? mu0_false     : mu0_true;       }
 __mu0_static_inline__ const mu0_bool_t  mu8_isnan_fp64     (const mu0_fp64_t  __x) { return mu0_fp_isnan    (__x) == 0 ? mu0_false     : mu0_true;       }
 __mu0_static_inline__ const mu0_bool_t  mu8_isnan_fp32     (const mu0_fp32_t  __x) { return mu0_fp_isnan    (__x) == 0 ? mu0_false     : mu0_true;       }
 __mu0_static_inline__ const mu0_bool_t  mu8_isnan_fp16     (const mu0_fp16_t  __x) { return mu0_fp_isnan    (__x) == 0 ? mu0_false     : mu0_true;       }

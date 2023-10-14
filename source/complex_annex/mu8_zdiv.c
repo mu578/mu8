@@ -25,6 +25,13 @@ void mu8_zdiv_fp128 (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t ar, c
 	mu8_zmul1_fp128 (zr, zi, *zr, *zi,  mu0_fp128_one / mu8_raise2_fp128 (mu8_zmod_fp128 (br, bi)));
 }
 
+void mu8_zdiv_fpex  (mu0_fpex_t  * zr, mu0_fpex_t  * zi, const mu0_fpex_t  ar, const mu0_fpex_t  ai, const mu0_fpex_t  br, const mu0_fpex_t  bi)
+{
+	mu8_zconj_fpex  (zr, zi,  br,  bi);
+	mu8_zmul_fpex   (zr, zi,  ar,  ai, *zr, *zi);
+	mu8_zmul1_fpex  (zr, zi, *zr, *zi,  mu0_fp64_one  / mu8_raise2_fp64  (mu8_zmod_fp64  (br, bi)));
+}
+
 void mu8_zdiv_fp64  (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  ar, const mu0_fp64_t  ai, const mu0_fp64_t  br, const mu0_fp64_t  bi)
 {
 	mu8_zconj_fp64  (zr, zi,  br,  bi);
