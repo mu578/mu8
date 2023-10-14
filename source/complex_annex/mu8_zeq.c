@@ -22,6 +22,11 @@ mu0_bool_t mu8_zeq_fp128 (const mu0_fp128_t ar, const mu0_fp128_t ai, const mu0_
 	return ar == br && ai == bi ? mu0_true : mu0_false;
 }
 
+mu0_bool_t mu8_zeq_fpex  (const mu0_fpex_t  ar, const mu0_fpex_t  ai, const mu0_fpex_t  br, const mu0_fpex_t  bi)
+{
+	return ar == br && ai == bi ? mu0_true : mu0_false;
+}
+
 mu0_bool_t mu8_zeq_fp64  (const mu0_fp64_t  ar, const mu0_fp64_t  ai, const mu0_fp64_t  br, const mu0_fp64_t  bi)
 {
 	return ar == br && ai == bi ? mu0_true : mu0_false;

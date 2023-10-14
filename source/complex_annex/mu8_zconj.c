@@ -23,6 +23,12 @@ void mu8_zconj_fp128 (mu0_fp128_t * zr, mu0_fp128_t * zi, const mu0_fp128_t ar, 
 	*zi = -ai;
 }
 
+void mu8_zconj_fpex  (mu0_fpex_t  * zr, mu0_fpex_t  * zi, const mu0_fpex_t  ar, const mu0_fpex_t  ai)
+{
+	*zr =  ar;
+	*zi = -ai;
+}
+
 void mu8_zconj_fp64  (mu0_fp64_t  * zr, mu0_fp64_t  * zi, const mu0_fp64_t  ar, const mu0_fp64_t  ai)
 {
 	*zr =  ar;

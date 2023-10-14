@@ -26,6 +26,15 @@ mu0_bool_t mu8_cge_fp128 (const mu0_cfp128_t a, const mu0_cfp128_t b)
 #	endif
 }
 
+mu0_bool_t mu8_cge_fpex  (const mu0_cfpex_t  a, const mu0_cfpex_t  b)
+{
+#	if MU0_HAVE_STDCOMPLEX
+	return mu8_zge_fpex (mu8_creal_fpex (a), mu8_cimag_fpex (a), mu8_creal_fpex (b), mu8_cimag_fpex (b));
+#	else
+	return mu8_zge_fpex (a.u_re, a.u_im, b.u_re, b.u_im);
+#	endif
+}
+
 mu0_bool_t mu8_cge_fp64  (const mu0_cfp64_t  a, const mu0_cfp64_t  b)
 {
 #	if MU0_HAVE_STDCOMPLEX

@@ -48,6 +48,27 @@ mu0_cfp128_t mu8_cconj_fp128 (const mu0_cfp128_t z)
 #	endif
 }
 
+mu0_cfpex_t  mu8_cconj_fpex  (const mu0_cfpex_t  z)
+{
+#	if MU0_HAVE_STDCOMPLEX
+#	if MU0_HAVE_CC_ARMCC || MU0_HAVE_CC_APLCC || MU0_HAVE_CC_CLANG
+#		if  (__has_builtin(__builtin_conjl))
+			return __builtin_conjl(z);
+#		else
+			return conjl(z);
+#		endif
+#	elif MU0_HAVE_CC_GNUCC
+		return __builtin_conjl(z);
+#	else
+		return conjl(z);
+#	endif
+#	else
+	mu0_cfpex_t  c = { 0 };
+	mu8_zconj_fpex  (&c.u_re, &c.u_im, z.u_re, z.u_im);
+	return c;
+#	endif
+}
+
 mu0_cfp64_t  mu8_cconj_fp64  (const mu0_cfp64_t  z)
 {
 #	if MU0_HAVE_STDCOMPLEX
