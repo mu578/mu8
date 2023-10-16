@@ -32,7 +32,7 @@ mu0_cfp32_t  mu8_cadd_fp32     (const mu0_cfp32_t  a, const mu0_cfp32_t  b);
 mu0_cfp16_t  mu8_cadd_fp16     (const mu0_cfp16_t  a, const mu0_cfp16_t  b);
 
 mu0_cfp128_t mu8_cconj_fp128   (const mu0_cfp128_t z);
-mu0_cfp128_t mu8_cconj_fpex    (const mu0_cfpex_t  z);
+mu0_cfpex_t  mu8_cconj_fpex    (const mu0_cfpex_t  z);
 mu0_cfp64_t  mu8_cconj_fp64    (const mu0_cfp64_t  z);
 mu0_cfp32_t  mu8_cconj_fp32    (const mu0_cfp32_t  z);
 mu0_cfp16_t  mu8_cconj_fp16    (const mu0_cfp16_t  z);

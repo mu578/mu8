@@ -41,7 +41,7 @@ void mu8_sincos_fp128 (const mu0_fp128_t x, mu0_fp128_t * s, mu0_fp128_t * c)
 #			endif
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-	mu8_sincos_fpex ss, cc;
+	long double ss, cc;
 	__builtin_sincosl(x, &ss, &cc);
 	*s = mu0_const_fp128(ss);
 	*c = mu0_const_fp128(cc);
@@ -61,7 +61,10 @@ void mu8_sincos_fp64  (const mu0_fp64_t  x, mu0_fp64_t  * s, mu0_fp64_t  * c)
 			*c = mu8_cos_fp64(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		__builtin_sincos(x, s, c);
+		double ss, cc;
+		__builtin_sincos(x, &ss, &cc);
+		*s = mu0_const_fp64(ss);
+		*c = mu0_const_fp64(cc);
 #	else
 	*s = mu8_sin_fp64(x);
 	*c = mu8_cos_fp64(x);
@@ -78,7 +81,10 @@ void mu8_sincos_fp32  (const mu0_fp32_t  x, mu0_fp32_t  * s, mu0_fp32_t  * c)
 			*c = mu8_cos_fp32(x);
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-		__builtin_sincosf(x, s, c);
+		float ss, cc;
+		__builtin_sincosf(x, &ss, &cc);
+		*s = mu0_const_fp32(ss);
+		*c = mu0_const_fp64(cc);
 #	else
 	*s = mu8_sin_fp32(x);
 	*c = mu8_cos_fp32(x);
@@ -92,7 +98,7 @@ void mu8_sincos_fp16  (const mu0_fp16_t  x, mu0_fp16_t  * s, mu0_fp16_t  * c)
 #			if  (__has_builtin(__builtin_sincosf16))
 				__builtin_sincosf16(x, s, c);
 #			elif (__has_builtin(__builtin_sincosf))
-				mu8_sincos_fp32 ss, cc;
+				mu0_fp32_t ss, cc;
 				__builtin_sincosf(x, &ss, &cc);
 				*s = mu0_const_fp16(ss);
 				*c = mu0_const_fp16(cc);
@@ -109,7 +115,7 @@ void mu8_sincos_fp16  (const mu0_fp16_t  x, mu0_fp16_t  * s, mu0_fp16_t  * c)
 #			endif
 #		endif
 #	elif MU0_HAVE_CC_GNUCC
-	mu8_sincos_fp32 ss, cc;
+	float ss, cc;
 	__builtin_sincosf(x, &ss, &cc);
 	*s = mu0_const_fp16(ss);
 	*c = mu0_const_fp16(cc);
