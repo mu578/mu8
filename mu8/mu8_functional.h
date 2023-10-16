@@ -214,7 +214,7 @@ MU0_BEGIN_CDECL
 	)((__v))
 #	endif
 #	else
-#	define mu8_ini(_Tp, __v) { __v }
+#	define mu8_ini(_Tp, __v) mu8_alias_ini(_Tp, __x)
 #	endif
 
 #	if   MU0_HAVE_GENERIC
@@ -372,7 +372,7 @@ MU0_BEGIN_CDECL
 	)((__a), (__b))
 #	endif
 #	else
-#	define mu8_eq(_Tp, __a, __b) mu8_arithmetic_eq(_Tp, __a, __b)
+#	define mu8_eq(_Tp, __a, __b) mu8_alias_eq(_Tp, __a, __b)
 #	endif
 
 #	if   MU0_HAVE_GENERIC
@@ -530,7 +530,7 @@ MU0_BEGIN_CDECL
 	)((__a), (__b))
 #	endif
 #	else
-#	define mu8_ge(_Tp, __a, __b) ((__a) >= (__b))
+#	define mu8_ge(_Tp, __a, __b) mu8_alias_ge(_Tp, __a, __b)
 #	endif
 
 #	if   MU0_HAVE_GENERIC
@@ -688,7 +688,7 @@ MU0_BEGIN_CDECL
 	)((__a), (__b))
 #	endif
 #	else
-#	define mu8_gt(_Tp, __a, __b) ((__a) > (__b))
+#	define mu8_gt(_Tp, __a, __b) mu8_alias_gt(_Tp, __a, __b)
 #	endif
 
 #	if   MU0_HAVE_GENERIC
@@ -846,7 +846,7 @@ MU0_BEGIN_CDECL
 	)((__a), (__b))
 #	endif
 #	else
-#	define mu8_le(_Tp, __a, __b) mu8_arithmetic_le(__a, __b)
+#	define mu8_le(_Tp, __a, __b) mu8_alias_le(_Tp, __a, __b)
 #	endif
 
 #	if   MU0_HAVE_GENERIC
@@ -1004,7 +1004,7 @@ MU0_BEGIN_CDECL
 	)((__a), (__b))
 #	endif
 #	else
-#	define mu8_lt(_Tp, __a, __b) mu8_arithmetic_lt(__a, __b)
+#	define mu8_lt(_Tp, __a, __b) mu8_alias_lt(_Tp, __a, __b)
 #	endif
 
 #	if   MU0_HAVE_GENERIC
@@ -1162,7 +1162,7 @@ MU0_BEGIN_CDECL
 	)((__a), (__b))
 #	endif
 #	else
-#	define mu8_add(_Tp, __a, __b) ((__a) + (__b))
+#	define mu8_add(_Tp, __a, __b) mu8_alias_add(_Tp, __a, __b)
 #	endif
 
 #	if   MU0_HAVE_GENERIC
@@ -1320,7 +1320,7 @@ MU0_BEGIN_CDECL
 	)((__a), (__b))
 #	endif
 #	else
-#	define mu8_div(_Tp, __a, __b) ((__a) / (__b))
+#	define mu8_div(_Tp, __a, __b) mu8_alias_div(_Tp, __a, __b)
 #	endif
 
 #	if   MU0_HAVE_GENERIC
@@ -1478,7 +1478,7 @@ MU0_BEGIN_CDECL
 	)((__a), (__b))
 #	endif
 #	else
-#	define mu8_mul(_Tp, __a, __b) ((__a) * (__b))
+#	define mu8_mul(_Tp, __a, __b) mu8_alias_mul(_Tp, __a, __b)
 #	endif
 
 #	if   MU0_HAVE_GENERIC
@@ -1636,7 +1636,7 @@ MU0_BEGIN_CDECL
 	)((__a), (__b))
 #	endif
 #	else
-#	define mu8_sub(_Tp, __a, __b) ((__a) - (__b))
+#	define mu8_sub(_Tp, __a, __b) mu8_alias_sub(_Tp, __a, __b)
 #	endif
 
 MU0_END_CDECL

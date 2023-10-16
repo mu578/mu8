@@ -56,17 +56,6 @@ MU0_BEGIN_CDECL
 		return __unary_fn(__x);                                                                \
 	} __mu0_delineate__
 
-#	define mu8_arithmetic_eq(__a, __b) ((__a) == (__b))
-#	define mu8_arithmetic_ge(__a, __b) ((__a) >= (__b))
-#	define mu8_arithmetic_gt(__a, __b) ((__a) >  (__b))
-#	define mu8_arithmetic_le(__a, __b) ((__a) <= (__b))
-#	define mu8_arithmetic_lt(__a, __b) ((__a) <  (__b))
-
-#	define mu8_arithmetic_add(__a, __b) ((__a) + (__b))
-#	define mu8_arithmetic_sub(__a, __b) ((__a) - (__b))
-#	define mu8_arithmetic_mul(__a, __b) ((__a) * (__b))
-#	define mu8_arithmetic_div(__a, __b) ((__a) / (__b))
-
 __mu0_static_inline__ const mu0_cfp128_t  mu8_ini_cfp128       (const mu0_fp128_t   __x)                          { return mu0_cfp128_v      (__x);           }
 __mu0_static_inline__ const mu0_cfpex_t   mu8_ini_cfpex        (const mu0_fpex_t    __x)                          { return mu0_cfpex_v       (__x);           }
 __mu0_static_inline__ const mu0_cfp64_t   mu8_ini_cfp64        (const mu0_fp64_t    __x)                          { return mu0_cfp64_v       (__x);           }
