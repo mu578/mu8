@@ -24,7 +24,7 @@
 MU0_BEGIN_CDECL
 
 //#!
-//#! macro<_Tp, _Up=_Tp>(const _Up & __x) : _Tp
+//#! macro<_Tp, _Up=_Tp>(const _Up & __v) : _Tp
 //#!
 
 #	if   MU0_HAVE_GENERIC
@@ -214,7 +214,7 @@ MU0_BEGIN_CDECL
 	)((__v))
 #	endif
 #	else
-#	define mu8_ini(_Tp, __v) mu8_alias_ini(_Tp, __x)
+#	define mu8_ini(_Tp, __v) mu8_alias_ini(_Tp, __v)
 #	endif
 
 #	if   MU0_HAVE_GENERIC
