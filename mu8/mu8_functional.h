@@ -334,27 +334,27 @@ MU0_BEGIN_CDECL
 		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_eq)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_FLOAT16
-#	define mu8_eq(_Tp, __a, __b) __mu0_generic__((__a)                             \
+#	define mu8_eq(_Tp, __a, __b) __mu0_generic__((__a)                                \
 /*		, mu0_cfp128_t  : __mu8_functional_aliasing__(mu0_cfp128_t  , mu8_alias_eq) */ \
-		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_eq) \
-		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_eq) \
-		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_eq) \
-		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_eq) \
+		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_eq)    \
+		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_eq)    \
+		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_eq)    \
+		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_eq)    \
 /*		, mu0_fp128_t   : __mu8_functional_aliasing__(mu0_fp128_t   , mu8_alias_eq) */ \
-		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_eq) \
-		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_eq) \
-		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_eq) \
-		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_eq) \
+		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_eq)    \
+		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_eq)    \
+		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_eq)    \
+		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_eq)    \
 /*		, mu0_sint128_t : __mu8_functional_aliasing__(mu0_sint128_t , mu8_alias_eq) */ \
-		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_eq) \
-		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_eq) \
-		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_eq) \
-		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_eq) \
+		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_eq)    \
+		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_eq)    \
+		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_eq)    \
+		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_eq)    \
 /*		, mu0_uint128_t : __mu8_functional_aliasing__(mu0_uint128_t , mu8_alias_eq) */ \
-		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_eq) \
-		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_eq) \
-		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_eq) \
-		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_eq) \
+		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_eq)    \
+		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_eq)    \
+		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_eq)    \
+		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_eq)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_INT128
 #	define mu8_eq(_Tp, __a, __b) __mu0_generic__((__a)                                \
@@ -524,27 +524,27 @@ MU0_BEGIN_CDECL
 		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_ge)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_FLOAT16
-#	define mu8_ge(_Tp, __a, __b) __mu0_generic__((__a)                             \
+#	define mu8_ge(_Tp, __a, __b) __mu0_generic__((__a)                                \
 /*		, mu0_cfp128_t  : __mu8_functional_aliasing__(mu0_cfp128_t  , mu8_alias_ge) */ \
-		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_ge) \
-		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_ge) \
-		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_ge) \
-		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_ge) \
+		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_ge)    \
+		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_ge)    \
+		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_ge)    \
+		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_ge)    \
 /*		, mu0_fp128_t   : __mu8_functional_aliasing__(mu0_fp128_t   , mu8_alias_ge) */ \
-		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_ge) \
-		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_ge) \
-		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_ge) \
-		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_ge) \
+		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_ge)    \
+		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_ge)    \
+		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_ge)    \
+		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_ge)    \
 /*		, mu0_sint128_t : __mu8_functional_aliasing__(mu0_sint128_t , mu8_alias_ge) */ \
-		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_ge) \
-		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_ge) \
-		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_ge) \
-		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_ge) \
+		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_ge)    \
+		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_ge)    \
+		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_ge)    \
+		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_ge)    \
 /*		, mu0_uint128_t : __mu8_functional_aliasing__(mu0_uint128_t , mu8_alias_ge) */ \
-		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_ge) \
-		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_ge) \
-		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_ge) \
-		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_ge) \
+		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_ge)    \
+		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_ge)    \
+		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_ge)    \
+		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_ge)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_INT128
 #	define mu8_ge(_Tp, __a, __b) __mu0_generic__((__a)                                \
@@ -714,27 +714,27 @@ MU0_BEGIN_CDECL
 		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_gt)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_FLOAT16
-#	define mu8_gt(_Tp, __a, __b) __mu0_generic__((__a)                             \
+#	define mu8_gt(_Tp, __a, __b) __mu0_generic__((__a)                                \
 /*		, mu0_cfp128_t  : __mu8_functional_aliasing__(mu0_cfp128_t  , mu8_alias_gt) */ \
-		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_gt) \
-		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_gt) \
-		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_gt) \
-		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_gt) \
+		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_gt)    \
+		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_gt)    \
+		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_gt)    \
+		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_gt)    \
 /*		, mu0_fp128_t   : __mu8_functional_aliasing__(mu0_fp128_t   , mu8_alias_gt) */ \
-		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_gt) \
-		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_gt) \
-		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_gt) \
-		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_gt) \
+		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_gt)    \
+		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_gt)    \
+		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_gt)    \
+		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_gt)    \
 /*		, mu0_sint128_t : __mu8_functional_aliasing__(mu0_sint128_t , mu8_alias_gt) */ \
-		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_gt) \
-		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_gt) \
-		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_gt) \
-		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_gt) \
+		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_gt)    \
+		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_gt)    \
+		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_gt)    \
+		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_gt)    \
 /*		, mu0_uint128_t : __mu8_functional_aliasing__(mu0_uint128_t , mu8_alias_gt) */ \
-		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_gt) \
-		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_gt) \
-		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_gt) \
-		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_gt) \
+		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_gt)    \
+		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_gt)    \
+		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_gt)    \
+		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_gt)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_INT128
 #	define mu8_gt(_Tp, __a, __b) __mu0_generic__((__a)                                \
@@ -904,27 +904,27 @@ MU0_BEGIN_CDECL
 		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_le)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_FLOAT16
-#	define mu8_le(_Tp, __a, __b) __mu0_generic__((__a)                             \
+#	define mu8_le(_Tp, __a, __b) __mu0_generic__((__a)                                \
 /*		, mu0_cfp128_t  : __mu8_functional_aliasing__(mu0_cfp128_t  , mu8_alias_le) */ \
-		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_le) \
-		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_le) \
-		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_le) \
-		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_le) \
+		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_le)    \
+		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_le)    \
+		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_le)    \
+		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_le)    \
 /*		, mu0_fp128_t   : __mu8_functional_aliasing__(mu0_fp128_t   , mu8_alias_le) */ \
-		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_le) \
-		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_le) \
-		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_le) \
-		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_le) \
+		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_le)    \
+		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_le)    \
+		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_le)    \
+		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_le)    \
 /*		, mu0_sint128_t : __mu8_functional_aliasing__(mu0_sint128_t , mu8_alias_le) */ \
-		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_le) \
-		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_le) \
-		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_le) \
-		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_le) \
+		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_le)    \
+		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_le)    \
+		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_le)    \
+		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_le)    \
 /*		, mu0_uint128_t : __mu8_functional_aliasing__(mu0_uint128_t , mu8_alias_le) */ \
-		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_le) \
-		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_le) \
-		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_le) \
-		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_le) \
+		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_le)    \
+		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_le)    \
+		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_le)    \
+		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_le)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_INT128
 #	define mu8_le(_Tp, __a, __b) __mu0_generic__((__a)                                \
@@ -1094,27 +1094,27 @@ MU0_BEGIN_CDECL
 		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_lt)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_FLOAT16
-#	define mu8_lt(_Tp, __a, __b) __mu0_generic__((__a)                             \
+#	define mu8_lt(_Tp, __a, __b) __mu0_generic__((__a)                                \
 /*		, mu0_cfp128_t  : __mu8_functional_aliasing__(mu0_cfp128_t  , mu8_alias_lt) */ \
-		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_lt) \
-		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_lt) \
-		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_lt) \
-		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_lt) \
+		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_lt)    \
+		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_lt)    \
+		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_lt)    \
+		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_lt)    \
 /*		, mu0_fp128_t   : __mu8_functional_aliasing__(mu0_fp128_t   , mu8_alias_lt) */ \
-		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_lt) \
-		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_lt) \
-		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_lt) \
-		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_lt) \
+		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_lt)    \
+		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_lt)    \
+		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_lt)    \
+		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_lt)    \
 /*		, mu0_sint128_t : __mu8_functional_aliasing__(mu0_sint128_t , mu8_alias_lt) */ \
-		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_lt) \
-		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_lt) \
-		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_lt) \
-		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_lt) \
+		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_lt)    \
+		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_lt)    \
+		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_lt)    \
+		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_lt)    \
 /*		, mu0_uint128_t : __mu8_functional_aliasing__(mu0_uint128_t , mu8_alias_lt) */ \
-		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_lt) \
-		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_lt) \
-		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_lt) \
-		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_lt) \
+		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_lt)    \
+		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_lt)    \
+		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_lt)    \
+		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_lt)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_INT128
 #	define mu8_lt(_Tp, __a, __b) __mu0_generic__((__a)                                \
@@ -1284,27 +1284,27 @@ MU0_BEGIN_CDECL
 		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_add)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_FLOAT16
-#	define mu8_add(_Tp, __a, __b) __mu0_generic__((__a)                             \
+#	define mu8_add(_Tp, __a, __b) __mu0_generic__((__a)                                \
 /*		, mu0_cfp128_t  : __mu8_functional_aliasing__(mu0_cfp128_t  , mu8_alias_add) */ \
-		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_add) \
-		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_add) \
-		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_add) \
-		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_add) \
+		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_add)    \
+		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_add)    \
+		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_add)    \
+		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_add)    \
 /*		, mu0_fp128_t   : __mu8_functional_aliasing__(mu0_fp128_t   , mu8_alias_add) */ \
-		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_add) \
-		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_add) \
-		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_add) \
-		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_add) \
+		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_add)    \
+		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_add)    \
+		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_add)    \
+		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_add)    \
 /*		, mu0_sint128_t : __mu8_functional_aliasing__(mu0_sint128_t , mu8_alias_add) */ \
-		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_add) \
-		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_add) \
-		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_add) \
-		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_add) \
+		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_add)    \
+		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_add)    \
+		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_add)    \
+		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_add)    \
 /*		, mu0_uint128_t : __mu8_functional_aliasing__(mu0_uint128_t , mu8_alias_add) */ \
-		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_add) \
-		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_add) \
-		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_add) \
-		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_add) \
+		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_add)    \
+		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_add)    \
+		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_add)    \
+		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_add)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_INT128
 #	define mu8_add(_Tp, __a, __b) __mu0_generic__((__a)                                \
@@ -1474,27 +1474,27 @@ MU0_BEGIN_CDECL
 		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_div)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_FLOAT16
-#	define mu8_div(_Tp, __a, __b) __mu0_generic__((__a)                             \
+#	define mu8_div(_Tp, __a, __b) __mu0_generic__((__a)                                \
 /*		, mu0_cfp128_t  : __mu8_functional_aliasing__(mu0_cfp128_t  , mu8_alias_div) */ \
-		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_div) \
-		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_div) \
-		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_div) \
-		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_div) \
+		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_div)    \
+		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_div)    \
+		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_div)    \
+		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_div)    \
 /*		, mu0_fp128_t   : __mu8_functional_aliasing__(mu0_fp128_t   , mu8_alias_div) */ \
-		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_div) \
-		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_div) \
-		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_div) \
-		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_div) \
+		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_div)    \
+		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_div)    \
+		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_div)    \
+		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_div)    \
 /*		, mu0_sint128_t : __mu8_functional_aliasing__(mu0_sint128_t , mu8_alias_div) */ \
-		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_div) \
-		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_div) \
-		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_div) \
-		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_div) \
+		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_div)    \
+		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_div)    \
+		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_div)    \
+		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_div)    \
 /*		, mu0_uint128_t : __mu8_functional_aliasing__(mu0_uint128_t , mu8_alias_div) */ \
-		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_div) \
-		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_div) \
-		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_div) \
-		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_div) \
+		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_div)    \
+		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_div)    \
+		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_div)    \
+		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_div)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_INT128
 #	define mu8_div(_Tp, __a, __b) __mu0_generic__((__a)                                \
@@ -1664,27 +1664,27 @@ MU0_BEGIN_CDECL
 		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_mul)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_FLOAT16
-#	define mu8_mul(_Tp, __a, __b) __mu0_generic__((__a)                             \
+#	define mu8_mul(_Tp, __a, __b) __mu0_generic__((__a)                                \
 /*		, mu0_cfp128_t  : __mu8_functional_aliasing__(mu0_cfp128_t  , mu8_alias_mul) */ \
-		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_mul) \
-		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_mul) \
-		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_mul) \
-		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_mul) \
+		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_mul)    \
+		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_mul)    \
+		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_mul)    \
+		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_mul)    \
 /*		, mu0_fp128_t   : __mu8_functional_aliasing__(mu0_fp128_t   , mu8_alias_mul) */ \
-		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_mul) \
-		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_mul) \
-		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_mul) \
-		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_mul) \
+		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_mul)    \
+		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_mul)    \
+		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_mul)    \
+		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_mul)    \
 /*		, mu0_sint128_t : __mu8_functional_aliasing__(mu0_sint128_t , mu8_alias_mul) */ \
-		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_mul) \
-		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_mul) \
-		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_mul) \
-		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_mul) \
+		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_mul)    \
+		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_mul)    \
+		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_mul)    \
+		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_mul)    \
 /*		, mu0_uint128_t : __mu8_functional_aliasing__(mu0_uint128_t , mu8_alias_mul) */ \
-		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_mul) \
-		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_mul) \
-		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_mul) \
-		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_mul) \
+		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_mul)    \
+		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_mul)    \
+		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_mul)    \
+		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_mul)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_INT128
 #	define mu8_mul(_Tp, __a, __b) __mu0_generic__((__a)                                \
@@ -1854,27 +1854,27 @@ MU0_BEGIN_CDECL
 		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_sub)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_FLOAT16
-#	define mu8_sub(_Tp, __a, __b) __mu0_generic__((__a)                             \
+#	define mu8_sub(_Tp, __a, __b) __mu0_generic__((__a)                                \
 /*		, mu0_cfp128_t  : __mu8_functional_aliasing__(mu0_cfp128_t  , mu8_alias_sub) */ \
-		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_sub) \
-		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_sub) \
-		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_sub) \
-		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_sub) \
+		, mu0_cfpex_t   : __mu8_functional_aliasing__(mu0_cfpex_t   , mu8_alias_sub)    \
+		, mu0_cfp64_t   : __mu8_functional_aliasing__(mu0_cfp64_t   , mu8_alias_sub)    \
+		, mu0_cfp32_t   : __mu8_functional_aliasing__(mu0_cfp32_t   , mu8_alias_sub)    \
+		, mu0_cfp16_t   : __mu8_functional_aliasing__(mu0_cfp16_t   , mu8_alias_sub)    \
 /*		, mu0_fp128_t   : __mu8_functional_aliasing__(mu0_fp128_t   , mu8_alias_sub) */ \
-		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_sub) \
-		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_sub) \
-		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_sub) \
-		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_sub) \
+		, mu0_fpex_t    : __mu8_functional_aliasing__(mu0_fpex_t    , mu8_alias_sub)    \
+		, mu0_fp64_t    : __mu8_functional_aliasing__(mu0_fp64_t    , mu8_alias_sub)    \
+		, mu0_fp32_t    : __mu8_functional_aliasing__(mu0_fp32_t    , mu8_alias_sub)    \
+		, mu0_fp16_t    : __mu8_functional_aliasing__(mu0_fp16_t    , mu8_alias_sub)    \
 /*		, mu0_sint128_t : __mu8_functional_aliasing__(mu0_sint128_t , mu8_alias_sub) */ \
-		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_sub) \
-		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_sub) \
-		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_sub) \
-		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_sub) \
+		, mu0_sint64_t  : __mu8_functional_aliasing__(mu0_sint64_t  , mu8_alias_sub)    \
+		, mu0_sint32_t  : __mu8_functional_aliasing__(mu0_sint32_t  , mu8_alias_sub)    \
+		, mu0_sint16_t  : __mu8_functional_aliasing__(mu0_sint16_t  , mu8_alias_sub)    \
+		, mu0_sint8_t   : __mu8_functional_aliasing__(mu0_sint8_t   , mu8_alias_sub)    \
 /*		, mu0_uint128_t : __mu8_functional_aliasing__(mu0_uint128_t , mu8_alias_sub) */ \
-		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_sub) \
-		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_sub) \
-		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_sub) \
-		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_sub) \
+		, mu0_uint64_t  : __mu8_functional_aliasing__(mu0_uint64_t  , mu8_alias_sub)    \
+		, mu0_uint32_t  : __mu8_functional_aliasing__(mu0_uint32_t  , mu8_alias_sub)    \
+		, mu0_uint16_t  : __mu8_functional_aliasing__(mu0_uint16_t  , mu8_alias_sub)    \
+		, mu0_uint8_t   : __mu8_functional_aliasing__(mu0_uint8_t   , mu8_alias_sub)    \
 	)((__a), (__b))
 #	elif MU0_HAVE_INT128
 #	define mu8_sub(_Tp, __a, __b) __mu0_generic__((__a)                                \
