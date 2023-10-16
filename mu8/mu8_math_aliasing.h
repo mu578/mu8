@@ -22,7 +22,8 @@
 
 MU0_BEGIN_CDECL
 
-//#! Compile time aliases compatible with mu9's unary, binary and trinary operations.
+//#! Compile time strict functional operations compatible with mu7's and mu9's operations.
+//#! @see mu8_functional_aliasing.h and mu8_functional.h for similar technic.
 
 #	define __mu8_math_aliasing__(_Tp, __alias) __alias ## _math_ ## _Tp
 

@@ -23,6 +23,8 @@
 MU0_BEGIN_CDECL
 
 //#! Compile time strict functional operations compatible with mu7's and mu9's operations.
+//#! A tag-dispatching alike method enabling to choose a inlined function based on type, so
+//#! overloads/aliasing and evaluates at compile-time. @see mu8_functional.h.
 
 #	define __mu8_functional_aliasing__(_Tp, __alias) __alias ## _functional_ ## _Tp
 
