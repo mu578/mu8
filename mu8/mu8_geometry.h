@@ -52,6 +52,12 @@ mu0_scope_begin                                                                 
 	__mu8_vec2_abs__(_Tp, __c, __mu8_vec2_diff__x__, __mu8_vec2_diff__y__);              \
 mu0_scope_end
 
+#	define __mu8_vec2_dist__(_Tp, _RealFp, __c, __ax, __ay, __bx, __by)                  \
+mu0_scope_begin                                                                         \
+	__mu8_vec_diff__(_Tp, __c, __ax, __ay, __bx, __by);                                  \
+	(__c) = mu8_alias_sqrt(_RealFp, mu0_const_cast(_RealFp, c));                         \
+mu0_scope_end
+
 #	define __mu8_vec2_add__(_Tp, __cx, __cy, __ax, __ay, __bx, __by)                     \
 mu0_scope_begin                                                                         \
 	(__cx) = (__ax) + (__bx);                                                            \
@@ -136,6 +142,12 @@ mu0_scope_begin                                                                 
 		, __mu8_vec3_diff__y__                                                            \
 		, __mu8_vec3_diff__z__                                                            \
 	);                                                                                   \
+mu0_scope_end
+
+#	define __mu8_vec3_dist__(_Tp, _RealFp, __c, __ax, __ay, __az, __bx, __by, __bz)      \
+mu0_scope_begin                                                                         \
+	__mu8_vec3_diff__(_Tp, __c, __ax, __ay, __az, __bx, __by, __bz);                     \
+	(__c) = mu8_alias_sqrt(_RealFp, mu0_const_cast(_RealFp, c));                         \
 mu0_scope_end
 
 #	define __mu8_vec3_add__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)   \
