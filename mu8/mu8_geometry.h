@@ -15,6 +15,7 @@
 //
 
 #include <mu8/mu8_math_aliasing.h>
+#include <mu8/mu8_math_constant.h>
 
 #ifndef MU8_GEOMETRY_H
 #define MU8_GEOMETRY_H 1
@@ -56,6 +57,25 @@ mu0_scope_end
 mu0_scope_begin                                                                         \
 	__mu8_vec_diff__(_Tp, __c, __ax, __ay, __bx, __by);                                  \
 	(__c) = mu8_alias_sqrt(_RealFp, mu0_const_cast(_RealFp, c));                         \
+mu0_scope_end
+
+#	define __mu8_vec2_dir__(_Tp, _RealFp, __cx, __cy, __ax, __ay, __bx, __by)            \
+mu0_scope_begin                                                                         \
+	(__cx) = (__bx) - (__ax);                                                            \
+	(__cy) = (__by) - (__ay);                                                            \
+	__mu8_vec2_normd__(_Tp, _RealFp, __cx, __cy, __cx, __cy);                            \
+mu0_scope_end
+
+#	define __mu8_vec2_arg__(_Tp, _RealFp, __c, __ax, __ay)                               \
+mu0_scope_begin                                                                         \
+	(__c) = mu8_alias_atan2(_RealFp                                                      \
+		, mu0_const_cast(_RealFp, __ay)                                                   \
+		, mu0_const_cast(_RealFp, __ax)                                                   \
+	);                                                                                   \
+	(__c) = ((__c) < mu0_const_cast(_RealFp, 0)                                          \
+		? (__c)                                                                           \
+		: (__c) + mu0_const_cast(_RealFp, __mu8_math_2pi__);                              \
+	);                                                                                   \
 mu0_scope_end
 
 #	define __mu8_vec2_add__(_Tp, __cx, __cy, __ax, __ay, __bx, __by)                     \
