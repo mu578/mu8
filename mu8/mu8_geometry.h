@@ -14,7 +14,7 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu8/mu8_functional.h>
+#include <mu8/mu8_math_aliasing.h>
 
 #ifndef MU8_GEOMETRY_H
 #define MU8_GEOMETRY_H 1
@@ -30,6 +30,19 @@ mu0_scope_end
 #	define __mu8_vec2_abs__(_Tp, __c, __ax, __ay)                                        \
 mu0_scope_begin                                                                         \
 	(__c) = (__ax) * (__ax) + (__ay) * (__ay);                                           \
+mu0_scope_end
+
+#	define __mu8_vec2_mag__(_Tp, _RealFp, __c, __ax, __ay)                               \
+mu0_scope_begin                                                                         \
+	__mu8_vec2_abs__(_Tp, __c, __ax, __ay);                                              \
+	(__c) = mu8_alias_sqrt(_RealFp, mu0_const_cast(_RealFp, c));                         \
+mu0_scope_end
+
+#	define __mu8_vec2_normd__(_Tp, _RealFp, __cx, __cy, __ax, __ay)                      \
+mu0_scope_begin                                                                         \
+	__mu8_vec2_mag__(_Tp, _RealFp, __c, __ax, __ay);                                     \
+	(__cx) = (__ax) * (mu0_const_cast(_RealFp, 1) / (__c));                              \
+	(__cy) = (__ay) * (mu0_const_cast(_RealFp, 1) / (__c));                              \
 mu0_scope_end
 
 #	define __mu8_vec2_diff__(_Tp, __c, __ax, __ay, __bx, __by)                           \
@@ -77,7 +90,7 @@ mu0_scope_end
 #	define __mu8_vec2_scale__(_Tp, __cx, __cy, __ax, __ay, __bx, __b)                    \
 mu0_scope_begin                                                                         \
 	(__cx) = (__ax) / (__b);                                                             \
-	(__cy) = (__ax) / (__b);                                                             \
+	(__cy) = (__ay) / (__b);                                                             \
 mu0_scope_end
 
 #	define __mu8_vec2_times__(_Tp, __cx, __cy, __ax, __ay, __bx, __b)                    \
@@ -96,6 +109,20 @@ mu0_scope_end
 #	define __mu8_vec3_abs__(_Tp, __c, __ax, __ay, __az)                                  \
 mu0_scope_begin                                                                         \
 	(__c) = (__ax) * (__ax) + (__ay) * (__ay) + (__az) * (__az);                         \
+mu0_scope_end
+
+#	define __mu8_vec3_mag__(_Tp, _RealFp, __c, __ax, __ay, __az)                         \
+mu0_scope_begin                                                                         \
+	__mu8_vec3_abs__(_Tp, __c, __ax, __ay, __az);                                        \
+	(__c) = mu8_alias_sqrt(_RealFp, mu0_const_cast(_RealFp, c));                         \
+mu0_scope_end
+
+#	define __mu8_vec3_normd__(_Tp, _RealFp, __cx, __cy, __cz, __ax, __ay, __az)          \
+mu0_scope_begin                                                                         \
+	__mu8_vec3_mag__(_Tp, _RealFp, __c, __ax, __ay, __az);                               \
+	(__cx) = (__ax) * (mu0_const_cast(_RealFp, 1) / (__c));                              \
+	(__cy) = (__ay) * (mu0_const_cast(_RealFp, 1) / (__c));                              \
+	(__cz) = (__az) * (mu0_const_cast(_RealFp, 1) / (__c));                              \
 mu0_scope_end
 
 #	define __mu8_vec3_diff__(_Tp, __c, __ax, __ay, __az, __bx, __by, __bz)               \
@@ -154,8 +181,8 @@ mu0_scope_end
 #	define __mu8_vec3_scale__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __b)        \
 mu0_scope_begin                                                                         \
 	(__cx) = (__ax) / (__b);                                                             \
-	(__cy) = (__ax) / (__b);                                                             \
-	(__cz) = (__ax) / (__b);                                                             \
+	(__cy) = (__ay) / (__b);                                                             \
+	(__cz) = (__az) / (__b);                                                             \
 mu0_scope_end
 
 #	define __mu8_vec3_times__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __b)        \

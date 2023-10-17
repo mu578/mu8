@@ -15,7 +15,6 @@
 // Copyright (C) 2023 mu578. All rights reserved.
 //
 
-#include <mu0/mu0_floating.h>
 #include <mu8/mu8_functional_aliasing.h>
 
 #ifndef MU8_FUNCTIONAL_H
