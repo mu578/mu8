@@ -26,6 +26,9 @@ MU0_BEGIN_CDECL
 //#! A tag-dispatching alike method enabling to choose a inlined function based on type, so
 //#! overloads/aliasing and evaluates at compile-time. @see mu8_functional.h.
 
+//#!
+//#! Declaration of various monoid signatures we need to declare compile-time endofunctors.
+//#!
 #	define __mu8_functional_aliasing__(_Tp, __alias) __alias ## _functional_ ## _Tp
 
 #	define __mu8_functional_alias01__(_Tp, __alias, __unary_fn)                               \
@@ -320,6 +323,9 @@ __mu0_static_inline__ const mu0_uint32_t  mu8_sub_u32          (const mu0_uint32
 __mu0_static_inline__ const mu0_uint16_t  mu8_sub_u16          (const mu0_uint16_t  __a, const mu0_uint16_t  __b) { return __a - __b;                         }
 __mu0_static_inline__ const mu0_uint8_t   mu8_sub_u8           (const mu0_uint8_t   __a, const mu0_uint8_t   __b) { return __a - __b;                         }
 
+//#!
+//#! endofunctor declarations i.e. morphism of each set/category composition.
+//#!
 __mu8_functional_alias04__(mu0_cfp128_t , mu0_fp128_t   , mu8_alias_ini, mu8_ini_cfp128);
 __mu8_functional_alias04__(mu0_cfpex_t  , mu0_fpex_t    , mu8_alias_ini, mu8_ini_cfpex );
 __mu8_functional_alias04__(mu0_cfp64_t  , mu0_fp64_t    , mu8_alias_ini, mu8_ini_cfp64 );
@@ -580,9 +586,15 @@ __mu8_functional_alias02__(mu0_uint32_t , mu8_alias_sub , mu8_sub_u32 );
 __mu8_functional_alias02__(mu0_uint16_t , mu8_alias_sub , mu8_sub_u16 );
 __mu8_functional_alias02__(mu0_uint8_t  , mu8_alias_sub , mu8_sub_u8  );
 
+//#!
+//#! macro<_Tp, _Up=_Tp>(const _Up & __x) : _Tp
+//#!
 #	define mu8_alias_ini(_Tp, __x) \
 	__mu8_functional_aliasing__(_Tp, mu8_alias_ini)(__x)
 
+//#!
+//#! macro<_Tp>(const _Tp & __a, const _Tp & __b) : bool
+//#!
 #	define mu8_alias_eq(_Tp, __a, __b) \
 	__mu8_functional_aliasing__(_Tp, mu8_alias_eq)(__a, __b)
 
@@ -601,6 +613,9 @@ __mu8_functional_alias02__(mu0_uint8_t  , mu8_alias_sub , mu8_sub_u8  );
 #	define mu8_alias_conj(_Tp, __x) \
 	__mu8_functional_aliasing__(_Tp, mu8_alias_conj)(__x)
 
+//#!
+//#! macro<_Tp>(const _Tp & __a, const _Tp & __b) : _Tp
+//#!
 #	define mu8_alias_add(_Tp, __a, __b) \
 	__mu8_functional_aliasing__(_Tp, mu8_alias_add)(__a, __b)
 
