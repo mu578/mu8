@@ -394,6 +394,11 @@ mu0_v2fp64_t  mu8_v2dot_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  
 mu0_v2fp32_t  mu8_v2dot_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
 mu0_v2fp16_t  mu8_v2dot_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
 
+mu0_v2fp128_t mu8_v2cross_fp128     (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
+mu0_v2fp64_t  mu8_v2cross_fp64      (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
+mu0_v2fp32_t  mu8_v2cross_fp32      (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
+mu0_v2fp16_t  mu8_v2cross_fp16      (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+
 mu0_v2fp128_t mu8_v2conj_fp128      (const mu0_v2fp128_t v);
 mu0_v2fp64_t  mu8_v2conj_fp64       (const mu0_v2fp64_t  v);
 mu0_v2fp32_t  mu8_v2conj_fp32       (const mu0_v2fp32_t  v);
