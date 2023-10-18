@@ -36,7 +36,7 @@ mu0_scope_end
 #	define __mu8_vec2_mag__(_Tp, _RealFp, __c, __ax, __ay)                                 \
 mu0_scope_begin                                                                           \
 	__mu8_vec2_abs__(_Tp, __c, __ax, __ay);                                                \
-	(__c) = mu8_alias_sqrt(_RealFp, mu0_const_cast(_RealFp, c));                           \
+	(__c) = mu8_alias_sqrt(_RealFp, mu0_const_cast(_RealFp, __c));                         \
 mu0_scope_end
 
 #	define __mu8_vec2_normd__(_Tp, _RealFp, __cx, __cy, __ax, __ay)                        \
@@ -56,7 +56,7 @@ mu0_scope_end
 #	define __mu8_vec2_dist__(_Tp, _RealFp, __c, __ax, __ay, __bx, __by)                    \
 mu0_scope_begin                                                                           \
 	__mu8_vec_diff__(_Tp, __c, __ax, __ay, __bx, __by);                                    \
-	(__c) = mu8_alias_sqrt(_RealFp, mu0_const_cast(_RealFp, c));                           \
+	(__c) = mu8_alias_sqrt(_RealFp, mu0_const_cast(_RealFp, __c));                         \
 mu0_scope_end
 
 #	define __mu8_vec2_dir__(_Tp, _RealFp, __cx, __cy, __ax, __ay, __bx, __by)              \
@@ -131,6 +131,27 @@ mu0_scope_begin                                                                 
 	(__cy) = (__ay) * (__b);                                                               \
 mu0_scope_end
 
+#	define __mu8_vec2_angle__(_Tp, _RealFp, __c, __ax, __ay, __bx, __by)                   \
+mu0_scope_begin                                                                           \
+	_RealFp __mu8_vec2_angle__v__;                                                         \
+	_RealFp __mu8_vec2_angle__w__;                                                         \
+	_Tp     __mu8_vec2_angle__u__;                                                         \
+	__mu8_vec2_mag__(_Tp, _RealFp, __mu8_vec2_angle__v__, __ax, __ay);                     \
+	__mu8_vec2_mag__(_Tp, _RealFp, __mu8_vec2_angle__w__, __bx, __by);                     \
+	__mu8_vec2_angle__v__ = __mu8_vec2_angle__v__ * __mu8_vec2_angle__w__;                 \
+	__mu8_vec2_dotp__(_Tp, __mu8_vec2_angle__u__, __ax, __ay, __bx, __by);                 \
+	__mu8_vec2_angle__w__ = __mu8_vec2_angle__u__ / __mu8_vec2_angle__v__;                 \
+	__mu8_vec2_angle__w__ = (__mu8_vec2_angle__w__ < -mu0_const_cast(_RealFp, 1)           \
+		? -mu0_const_cast(_RealFp, 1)                                                       \
+		: __mu8_vec2_angle__w__                                                             \
+	);                                                                                     \
+	__mu8_vec2_angle__w__ = (__mu8_vec2_angle__w__ >  mu0_const_cast(_RealFp, 1)           \
+		?  mu0_const_cast(_RealFp, 1)                                                       \
+		: __mu8_vec2_angle__w__                                                             \
+	);                                                                                     \
+	(__c) = mu8_alias_acos(_RealFp, __mu8_vec2_angle__w__);                                \
+mu0_scope_end
+
 #	define __mu8_vec3_neg__(_Tp, __cx, __cy, __cz, __ax, __ay, __az)                       \
 mu0_scope_begin                                                                           \
 	(__cx) = -(__ax);                                                                      \
@@ -146,7 +167,7 @@ mu0_scope_end
 #	define __mu8_vec3_mag__(_Tp, _RealFp, __c, __ax, __ay, __az)                           \
 mu0_scope_begin                                                                           \
 	__mu8_vec3_abs__(_Tp, __c, __ax, __ay, __az);                                          \
-	(__c) = mu8_alias_sqrt(_RealFp, mu0_const_cast(_RealFp, c));                           \
+	(__c) = mu8_alias_sqrt(_RealFp, mu0_const_cast(_RealFp, __c));                         \
 mu0_scope_end
 
 #	define __mu8_vec3_normd__(_Tp, _RealFp, __cx, __cy, __cz, __ax, __ay, __az)            \
@@ -173,7 +194,7 @@ mu0_scope_end
 #	define __mu8_vec3_dist__(_Tp, _RealFp, __c, __ax, __ay, __az, __bx, __by, __bz)        \
 mu0_scope_begin                                                                           \
 	__mu8_vec3_diff__(_Tp, __c, __ax, __ay, __az, __bx, __by, __bz);                       \
-	(__c) = mu8_alias_sqrt(_RealFp, mu0_const_cast(_RealFp, c));                           \
+	(__c) = mu8_alias_sqrt(_RealFp, mu0_const_cast(_RealFp, __c));                         \
 mu0_scope_end
 
 #	define __mu8_vec3_lerp(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz, __t) \
