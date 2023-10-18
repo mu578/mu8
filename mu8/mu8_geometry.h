@@ -99,11 +99,20 @@ mu0_scope_begin                                                                 
 	(__c) = (__ax) * (__bx) + (__ay) * (__by);                                                        \
 mu0_scope_end
 
+#	define __mu8_vec2_conj__(_Tp, __cx, __cy, __ax, __ay)                                             \
+mu0_scope_begin                                                                                      \
+	(__cx) = (__ax);                                                                                  \
+	(__cy) = (__ay);                                                                                  \
+mu0_scope_end
+
 #	define __mu8_vec2_cross__(_Tp, __cx, __cy, __ax, __ay, __bx, __by)                                \
 mu0_scope_begin                                                                                      \
 	(__cx) = mu0_const_cast(_Tp, 0);                                                                  \
 	(__cy) = mu0_const_cast(_Tp, 0);                                                                  \
 mu0_scope_end
+
+#	define __mu8_vec2_equals__(_Tp, __c, __ax, __ay, __bx, __by)                                      \
+	((__ax) == (__bx) && (__ay) == (__by) ? mu0_true : mu0_false)
 
 #	define __mu8_vec2_scale__(_Tp, __cx, __cy, __ax, __ay, __b)                                       \
 mu0_scope_begin                                                                                      \
@@ -244,12 +253,23 @@ mu0_scope_begin                                                                 
 	(__c) = (__ax) * (__bx) + (__ay) * (__by) + (__az) * (__bz);                                      \
 mu0_scope_end
 
+#	define __mu8_vec3_conj__(_Tp, __cx, __cy, __cz, __ax, __ay, __az)                                 \
+mu0_scope_begin                                                                                      \
+	(__cx) = (__ax);                                                                                  \
+	(__cy) = (__ay);                                                                                  \
+	(__cz) = (__az);                                                                                  \
+mu0_scope_end
+
+
 #	define __mu8_vec3_cross__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)              \
 mu0_scope_begin                                                                                      \
 	(__cx) = (__ay) * (__bz) - (__az) * (__by);                                                       \
 	(__cy) = (__az) * (__bx) - (__ax) * (__bz);                                                       \
 	(__cz) = (__ax) * (__by) - (__ay) * (__bx);                                                       \
 mu0_scope_end
+
+#	define __mu8_vec3_equals__(_Tp, __c, __ax, __ay, __az, __bx, __by, __bz)                          \
+	((__ax) == (__bx) && (__ay) == (__by) && (__az) * (__bz) ? mu0_true : mu0_false)
 
 #	define __mu8_vec3_scale__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __b)                           \
 mu0_scope_begin                                                                                      \
@@ -349,6 +369,11 @@ mu0_fp64_t    mu8_v2arg_fp64        (const mu0_v2fp64_t  v);
 mu0_fp32_t    mu8_v2arg_fp32        (const mu0_v2fp32_t  v);
 mu0_fp16_t    mu8_v2arg_fp16        (const mu0_v2fp16_t  v);
 
+mu0_bool_t    mu8_v2equals_fp128    (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
+mu0_bool_t    mu8_v2equals_fp64     (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
+mu0_bool_t    mu8_v2equals_fp32     (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
+mu0_bool_t    mu8_v2equals_fp16     (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+
 mu0_v2fp128_t mu8_v2direction_fp128 (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
 mu0_v2fp64_t  mu8_v2direction_fp64  (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
 mu0_v2fp32_t  mu8_v2direction_fp32  (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
@@ -368,6 +393,11 @@ mu0_v2fp128_t mu8_v2dot_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t 
 mu0_v2fp64_t  mu8_v2dot_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
 mu0_v2fp32_t  mu8_v2dot_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
 mu0_v2fp16_t  mu8_v2dot_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+
+mu0_v2fp128_t mu8_v2conj_fp128      (const mu0_v2fp128_t v);
+mu0_v2fp64_t  mu8_v2conj_fp64       (const mu0_v2fp64_t  v);
+mu0_v2fp32_t  mu8_v2conj_fp32       (const mu0_v2fp32_t  v);
+mu0_v2fp16_t  mu8_v2conj_fp16       (const mu0_v2fp16_t  v);
 
 mu0_v2fp128_t mu8_v2lerp_fp128      (const mu0_v2fp128_t v, const mu0_v2fp128_t u, const mu0_fp128_t t);
 mu0_v2fp64_t  mu8_v2lerp_fp64       (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u, const mu0_fp64_t  t);
@@ -419,6 +449,11 @@ mu0_fp64_t    mu8_v3arg_fp64        (const mu0_v3fp64_t  v);
 mu0_fp32_t    mu8_v3arg_fp32        (const mu0_v3fp32_t  v);
 mu0_fp16_t    mu8_v3arg_fp16        (const mu0_v3fp16_t  v);
 
+mu0_bool_t    mu8_v3equals_fp128    (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
+mu0_bool_t    mu8_v3equals_fp64     (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
+mu0_bool_t    mu8_v3equals_fp32     (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
+mu0_bool_t    mu8_v3equals_fp16     (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
+
 mu0_v3fp128_t mu8_v3direction_fp128 (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
 mu0_v3fp64_t  mu8_v3direction_fp64  (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
 mu0_v3fp32_t  mu8_v3direction_fp32  (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
@@ -438,6 +473,11 @@ mu0_v3fp128_t mu8_v3dot_fp128       (const mu0_v3fp128_t v, const mu0_v3fp128_t 
 mu0_v3fp64_t  mu8_v3dot_fp64        (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
 mu0_v3fp32_t  mu8_v3dot_fp32        (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
 mu0_v3fp16_t  mu8_v3dot_fp16        (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
+
+mu0_v3fp128_t mu8_v3conj_fp128      (const mu0_v3fp128_t v);
+mu0_v3fp64_t  mu8_v3conj_fp64       (const mu0_v3fp64_t  v);
+mu0_v3fp32_t  mu8_v3conj_fp32       (const mu0_v3fp32_t  v);
+mu0_v3fp16_t  mu8_v3conj_fp16       (const mu0_v3fp16_t  v);
 
 mu0_v3fp128_t mu8_v3cross_fp128     (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
 mu0_v3fp64_t  mu8_v3cross_fp64      (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
