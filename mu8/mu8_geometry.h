@@ -116,14 +116,9 @@ mu0_scope_begin                                                                 
 	__mu8_vec2_mag__(_Tp, _RealFp, __mu8_vec2_angle__w__, __bx, __by);                          \
 	__mu8_vec2_angle__v__ = __mu8_vec2_angle__v__ * __mu8_vec2_angle__w__;                      \
 	__mu8_vec2_dotp__(_Tp, __mu8_vec2_angle__u__, __ax, __ay, __bx, __by);                      \
-	__mu8_vec2_angle__w__ = __mu8_vec2_angle__u__ / __mu8_vec2_angle__v__;                      \
-	__mu8_vec2_angle__w__ = (__mu8_vec2_angle__w__ < -mu0_const_cast(_RealFp, 1)                \
-		? -mu0_const_cast(_RealFp, 1)                                                            \
-		: __mu8_vec2_angle__w__                                                                  \
-	);                                                                                          \
-	__mu8_vec2_angle__w__ = (__mu8_vec2_angle__w__ >  mu0_const_cast(_RealFp, 1)                \
-		?  mu0_const_cast(_RealFp, 1)                                                            \
-		: __mu8_vec2_angle__w__                                                                  \
+	__mu8_vec2_angle__w__ = __mu0_clamp__((__mu8_vec2_angle__u__ / __mu8_vec2_angle__v__)       \
+		, -mu0_const_cast(_RealFp, 1)                                                            \
+		,  mu0_const_cast(_RealFp, 1)                                                            \
 	);                                                                                          \
 	(__c) = mu8_alias_acos(_RealFp, __mu8_vec2_angle__w__);                                     \
 mu0_scope_end
@@ -269,14 +264,9 @@ mu0_scope_begin                                                                 
 	__mu8_vec3_mag__(_Tp, _RealFp, __mu8_vec3_angle__w__, __bx, __by, __bz);                    \
 	__mu8_vec3_angle__v__ = __mu8_vec3_angle__v__ * __mu8_vec3_angle__w__;                      \
 	__mu8_vec3_dotp__(_Tp, __mu8_vec3_angle__u__, __ax, __ay, __az, __bx, __by, __bz);          \
-	__mu8_vec3_angle__w__ = __mu8_vec3_angle__u__ / __mu8_vec3_angle__v__;                      \
-	__mu8_vec3_angle__w__ = (__mu8_vec3_angle__w__ < -mu0_const_cast(_RealFp, 1)                \
-		? -mu0_const_cast(_RealFp, 1)                                                            \
-		: __mu8_vec3_angle__w__                                                                  \
-	);                                                                                          \
-	__mu8_vec3_angle__w__ = (__mu8_vec3_angle__w__ >  mu0_const_cast(_RealFp, 1)                \
-		?  mu0_const_cast(_RealFp, 1)                                                            \
-		: __mu8_vec3_angle__w__                                                                  \
+	__mu8_vec3_angle__w__ = __mu0_clamp__((__mu8_vec3_angle__u__ / __mu8_vec3_angle__v__)       \
+		, -mu0_const_cast(_RealFp, 1)                                                            \
+		,  mu0_const_cast(_RealFp, 1)                                                            \
 	);                                                                                          \
 	(__c) = mu8_alias_acos(_RealFp, __mu8_vec3_angle__w__);                                     \
 mu0_scope_end
