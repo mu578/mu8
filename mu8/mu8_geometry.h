@@ -46,16 +46,16 @@ mu0_scope_begin                                                                 
 	(__cy) = (__ay) * (mu0_const_cast(_RealFp, 1) / (__c));                                \
 mu0_scope_end
 
-#	define __mu8_vec2_diff__(_Tp, __c, __ax, __ay, __bx, __by)                             \
+#	define __mu8_vec2_area__(_Tp, __c, __ax, __ay, __bx, __by)                             \
 mu0_scope_begin                                                                           \
-	const _Tp __mu8_vec2_diff__x__ = (__ax) - (__bx);                                      \
-	const _Tp __mu8_vec2_diff__y__ = (__ay) - (__by);                                      \
-	__mu8_vec2_abs__(_Tp, __c, __mu8_vec2_diff__x__, __mu8_vec2_diff__y__);                \
+	const _Tp __mu8_vec2_area__x__ = (__ax) - (__bx);                                      \
+	const _Tp __mu8_vec2_area__y__ = (__ay) - (__by);                                      \
+	__mu8_vec2_abs__(_Tp, __c, __mu8_vec2_area__x__, __mu8_vec2_area__y__);                \
 mu0_scope_end
 
 #	define __mu8_vec2_dist__(_Tp, _RealFp, __c, __ax, __ay, __bx, __by)                    \
 mu0_scope_begin                                                                           \
-	__mu8_vec_diff__(_Tp, __c, __ax, __ay, __bx, __by);                                    \
+	__mu8_vec_area__(_Tp, __c, __ax, __ay, __bx, __by);                                    \
 	(__c) = mu8_alias_sqrt(_RealFp, mu0_const_cast(_RealFp, __c));                         \
 mu0_scope_end
 
@@ -84,30 +84,6 @@ mu0_scope_begin                                                                 
 	(__cy) = (__ay) * (mu0_const_cast(_Tp, 1) - (__t)) + __by * (__t);                     \
 mu0_scope_end
 
-#	define __mu8_vec2_add__(_Tp, __cx, __cy, __ax, __ay, __bx, __by)                       \
-mu0_scope_begin                                                                           \
-	(__cx) = (__ax) + (__bx);                                                              \
-	(__cy) = (__ay) + (__by);                                                              \
-mu0_scope_end
-
-#	define __mu8_vec2_add1__(_Tp, __cx, __cy, __ax, __ay, __b)                             \
-mu0_scope_begin                                                                           \
-	(__cx) = (__ax) + (__b);                                                               \
-	(__cy) = (__ay) + (__b);                                                               \
-mu0_scope_end
-
-#	define __mu8_vec2_sub__(_Tp, __cx, __cy, __ax, __ay, __bx, __by)                       \
-mu0_scope_begin                                                                           \
-	(__cx) = (__ax) - (__bx);                                                              \
-	(__cy) = (__ay) - (__by);                                                              \
-mu0_scope_end
-
-#	define __mu8_vec2_sub1__(_Tp, __cx, __cy, __ax, __ay, __b)                             \
-mu0_scope_begin                                                                           \
-	(__cx) = (__ax) - (__b);                                                               \
-	(__cy) = (__ay) - (__b);                                                               \
-mu0_scope_end
-
 #	define __mu8_vec2_dotp__(_Tp, __c, __ax, __ay, __bx, __by)                             \
 mu0_scope_begin                                                                           \
 	(__c) = (__ax) * (__bx) + (__ay) * (__by);                                             \
@@ -119,13 +95,13 @@ mu0_scope_begin                                                                 
 	(__cy) = mu0_const_cast(_Tp, 0);                                                       \
 mu0_scope_end
 
-#	define __mu8_vec2_scale__(_Tp, __cx, __cy, __ax, __ay, __bx, __b)                      \
+#	define __mu8_vec2_scale__(_Tp, __cx, __cy, __ax, __ay, __b)                            \
 mu0_scope_begin                                                                           \
 	(__cx) = (__ax) / (__b);                                                               \
 	(__cy) = (__ay) / (__b);                                                               \
 mu0_scope_end
 
-#	define __mu8_vec2_times__(_Tp, __cx, __cy, __ax, __ay, __bx, __b)                      \
+#	define __mu8_vec2_times__(_Tp, __cx, __cy, __ax, __ay, __b)                            \
 mu0_scope_begin                                                                           \
 	(__cx) = (__ax) * (__b);                                                               \
 	(__cy) = (__ay) * (__b);                                                               \
@@ -150,6 +126,48 @@ mu0_scope_begin                                                                 
 		: __mu8_vec2_angle__w__                                                             \
 	);                                                                                     \
 	(__c) = mu8_alias_acos(_RealFp, __mu8_vec2_angle__w__);                                \
+mu0_scope_end
+
+#	define __mu8_vec2_add__(_Tp, __cx, __cy, __ax, __ay, __bx, __by)                       \
+mu0_scope_begin                                                                           \
+	(__cx) = (__ax) + (__bx);                                                              \
+	(__cy) = (__ay) + (__by);                                                              \
+mu0_scope_end
+
+#	define __mu8_vec2_add1__(_Tp, __cx, __cy, __ax, __ay, __b)                             \
+mu0_scope_begin                                                                           \
+	(__cx) = (__ax) + (__b);                                                               \
+	(__cy) = (__ay) + (__b);                                                               \
+mu0_scope_end
+
+#	define __mu8_vec2_div__(_Tp, __cx, __cy, __ax, __ay, __bx, __by)                       \
+mu0_scope_begin                                                                           \
+	(__cx) = (__ax) / (__bx);                                                              \
+	(__cy) = (__ay) / (__by);                                                              \
+mu0_scope_end
+
+#	define __mu8_vec2_div1__(_Tp, __cx, __cy, __ax, __ay, __b)                             \
+	__mu8_vec2_scale__(_Tp, __cx, __cy, __ax, __ay, __b)
+
+#	define __mu8_vec2_mul__(_Tp, __cx, __cy, __ax, __ay, __bx, __by)                       \
+mu0_scope_begin                                                                           \
+	(__cx) = (__ax) * (__bx);                                                              \
+	(__cy) = (__ay) * (__by);                                                              \
+mu0_scope_end
+
+#	define __mu8_vec2_mul1__(_Tp, __cx, __cy, __ax, __ay, __b)                             \
+	__mu8_vec2_times__(_Tp, __cx, __cy, __ax, __ay, __b)
+
+#	define __mu8_vec2_sub__(_Tp, __cx, __cy, __ax, __ay, __bx, __by)                       \
+mu0_scope_begin                                                                           \
+	(__cx) = (__ax) - (__bx);                                                              \
+	(__cy) = (__ay) - (__by);                                                              \
+mu0_scope_end
+
+#	define __mu8_vec2_sub1__(_Tp, __cx, __cy, __ax, __ay, __b)                             \
+mu0_scope_begin                                                                           \
+	(__cx) = (__ax) - (__b);                                                               \
+	(__cy) = (__ay) - (__b);                                                               \
 mu0_scope_end
 
 #	define __mu8_vec3_neg__(_Tp, __cx, __cy, __cz, __ax, __ay, __az)                       \
@@ -178,22 +196,22 @@ mu0_scope_begin                                                                 
 	(__cz) = (__az) * (mu0_const_cast(_RealFp, 1) / (__c));                                \
 mu0_scope_end
 
-#	define __mu8_vec3_diff__(_Tp, __c, __ax, __ay, __az, __bx, __by, __bz)                 \
+#	define __mu8_vec3_area__(_Tp, __c, __ax, __ay, __az, __bx, __by, __bz)                 \
 mu0_scope_begin                                                                           \
-	const _Tp __mu8_vec3_diff__x__ = (__ax) - (__bx);                                      \
-	const _Tp __mu8_vec3_diff__y__ = (__ay) - (__by);                                      \
-	const _Tp __mu8_vec3_diff__z__ = (__az) - (__bz);                                      \
+	const _Tp __mu8_vec3_area__x__ = (__ax) - (__bx);                                      \
+	const _Tp __mu8_vec3_area__y__ = (__ay) - (__by);                                      \
+	const _Tp __mu8_vec3_area__z__ = (__az) - (__bz);                                      \
 	__mu8_vec3_abs__(_Tp                                                                   \
 		, __c                                                                               \
-		, __mu8_vec3_diff__x__                                                              \
-		, __mu8_vec3_diff__y__                                                              \
-		, __mu8_vec3_diff__z__                                                              \
+		, __mu8_vec3_area__x__                                                              \
+		, __mu8_vec3_area__y__                                                              \
+		, __mu8_vec3_area__z__                                                              \
 	);                                                                                     \
 mu0_scope_end
 
 #	define __mu8_vec3_dist__(_Tp, _RealFp, __c, __ax, __ay, __az, __bx, __by, __bz)        \
 mu0_scope_begin                                                                           \
-	__mu8_vec3_diff__(_Tp, __c, __ax, __ay, __az, __bx, __by, __bz);                       \
+	__mu8_vec3_area__(_Tp, __c, __ax, __ay, __az, __bx, __by, __bz);                       \
 	(__c) = mu8_alias_sqrt(_RealFp, mu0_const_cast(_RealFp, __c));                         \
 mu0_scope_end
 
@@ -202,6 +220,53 @@ mu0_scope_begin                                                                 
 	(__cx) = (__ax) * (mu0_const_cast(_Tp, 1) - (__t)) + __bx * (__t);                     \
 	(__cy) = (__ay) * (mu0_const_cast(_Tp, 1) - (__t)) + __by * (__t);                     \
 	(__cz) = (__az) * (mu0_const_cast(_Tp, 1) - (__t)) + __bz * (__t);                     \
+mu0_scope_end
+
+#	define __mu8_vec3_dotp__(_Tp, __c, __ax, __ay, __az, __bx, __by, __bz)                 \
+mu0_scope_begin                                                                           \
+	(__c) = (__ax) * (__bx) + (__ay) * (__by) + (__az) * (__bz);                           \
+mu0_scope_end
+
+#	define __mu8_vec3_cross__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)   \
+mu0_scope_begin                                                                           \
+	(__cx) = (__ay) * (__bz) - (__az) * (__by);                                            \
+	(__cy) = (__az) * (__bx) - (__ax) * (__bz);                                            \
+	(__cz) = (__ax) * (__by) - (__ay) * (__bx);                                            \
+mu0_scope_end
+
+#	define __mu8_vec3_scale__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __b)                \
+mu0_scope_begin                                                                           \
+	(__cx) = (__ax) / (__b);                                                               \
+	(__cy) = (__ay) / (__b);                                                               \
+	(__cz) = (__az) / (__b);                                                               \
+mu0_scope_end
+
+#	define __mu8_vec3_times__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __b)                \
+mu0_scope_begin                                                                           \
+	(__cx) = (__ax) * (__b);                                                               \
+	(__cy) = (__ay) * (__b);                                                               \
+	(__cz) = (__az) * (__b);                                                               \
+mu0_scope_end
+
+#	define __mu8_vec3_angle__(_Tp, _RealFp, __c, __ax, __ay, __az, __bx, __by, __bz)       \
+mu0_scope_begin                                                                           \
+	_RealFp __mu8_vec3_angle__v__;                                                         \
+	_RealFp __mu8_vec3_angle__w__;                                                         \
+	_Tp     __mu8_vec3_angle__u__;                                                         \
+	__mu8_vec3_mag__(_Tp, _RealFp, __mu8_vec3_angle__v__, __ax, __ay, __az);               \
+	__mu8_vec3_mag__(_Tp, _RealFp, __mu8_vec3_angle__w__, __bx, __by, __bz);               \
+	__mu8_vec3_angle__v__ = __mu8_vec3_angle__v__ * __mu8_vec3_angle__w__;                 \
+	__mu8_vec3_dotp__(_Tp, __mu8_vec3_angle__u__, __ax, __ay, __az, __bx, __by, __bz);     \
+	__mu8_vec3_angle__w__ = __mu8_vec3_angle__u__ / __mu8_vec3_angle__v__;                 \
+	__mu8_vec3_angle__w__ = (__mu8_vec3_angle__w__ < -mu0_const_cast(_RealFp, 1)           \
+		? -mu0_const_cast(_RealFp, 1)                                                       \
+		: __mu8_vec3_angle__w__                                                             \
+	);                                                                                     \
+	__mu8_vec3_angle__w__ = (__mu8_vec3_angle__w__ >  mu0_const_cast(_RealFp, 1)           \
+		?  mu0_const_cast(_RealFp, 1)                                                       \
+		: __mu8_vec3_angle__w__                                                             \
+	);                                                                                     \
+	(__c) = mu8_alias_acos(_RealFp, __mu8_vec3_angle__w__);                                \
 mu0_scope_end
 
 #	define __mu8_vec3_add__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)     \
@@ -218,6 +283,26 @@ mu0_scope_begin                                                                 
 	(__cz) = (__az) + (__b);                                                               \
 mu0_scope_end
 
+#	define __mu8_vec3_div__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)     \
+mu0_scope_begin                                                                           \
+	(__cx) = (__ax) / (__bx);                                                              \
+	(__cy) = (__ay) / (__by);                                                              \
+	(__cz) = (__az) / (__bz);                                                              \
+mu0_scope_end
+
+#	define __mu8_vec3_div1__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)    \
+	__mu8_vec3_scale__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)
+
+#	define __mu8_vec3_mul__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)     \
+mu0_scope_begin                                                                           \
+	(__cx) = (__ax) * (__bx);                                                              \
+	(__cy) = (__ay) * (__by);                                                              \
+	(__cz) = (__az) * (__bz);                                                              \
+mu0_scope_end
+
+#	define __mu8_vec3_mul1__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)    \
+	__mu8_vec3_times__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)
+
 #	define __mu8_vec3_sub__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)     \
 mu0_scope_begin                                                                           \
 	(__cx) = (__ax) - (__bx);                                                              \
@@ -230,32 +315,6 @@ mu0_scope_begin                                                                 
 	(__cx) = (__ax) - (__b);                                                               \
 	(__cy) = (__ay) - (__b);                                                               \
 	(__cz) = (__az) - (__b);                                                               \
-mu0_scope_end
-
-#	define __mu8_vec3_dotp__(_Tp, __c, __ax, __ay, __az, __bx, __by, __bz)                 \
-mu0_scope_begin                                                                           \
-	(__c) = (__ax) * (__bx) + (__ay) * (__by) + (__az) * (__bz);                           \
-mu0_scope_end
-
-#	define __mu8_vec3_cross__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)   \
-mu0_scope_begin                                                                           \
-	(__cx) = (__ay) * (__bz) - (__az) * (__by);                                            \
-	(__cy) = (__az) * (__bx) - (__ax) * (__bz);                                            \
-	(__cz) = (__ax) * (__by) - (__ay) * (__bx);                                            \
-mu0_scope_end
-
-#	define __mu8_vec3_scale__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __b)          \
-mu0_scope_begin                                                                           \
-	(__cx) = (__ax) / (__b);                                                               \
-	(__cy) = (__ay) / (__b);                                                               \
-	(__cz) = (__az) / (__b);                                                               \
-mu0_scope_end
-
-#	define __mu8_vec3_times__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __b)          \
-mu0_scope_begin                                                                           \
-	(__cx) = (__ax) * (__b);                                                               \
-	(__cy) = (__ay) * (__b);                                                               \
-	(__cz) = (__az) * (__b);                                                               \
 mu0_scope_end
 
 MU0_END_CDECL
