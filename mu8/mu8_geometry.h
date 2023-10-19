@@ -22,16 +22,6 @@
 
 MU0_BEGIN_CDECL
 
-typedef struct { mu0_fp128_t u_x; mu0_fp128_t u_y; } mu0_v2fp128_t;
-typedef struct { mu0_fp64_t  u_x; mu0_fp64_t  u_y; } mu0_v2fp64_t;
-typedef struct { mu0_fp32_t  u_x; mu0_fp32_t  u_y; } mu0_v2fp32_t;
-typedef struct { mu0_fp16_t  u_x; mu0_fp16_t  u_y; } mu0_v2fp16_t;
-
-typedef struct { mu0_fp128_t u_x; mu0_fp128_t u_y; mu0_fp128_t u_z; } mu0_v3fp128_t;
-typedef struct { mu0_fp64_t  u_x; mu0_fp64_t  u_y; mu0_fp64_t  u_z; } mu0_v3fp64_t;
-typedef struct { mu0_fp32_t  u_x; mu0_fp32_t  u_y; mu0_fp32_t  u_z; } mu0_v3fp32_t;
-typedef struct { mu0_fp16_t  u_x; mu0_fp16_t  u_y; mu0_fp16_t  u_z; } mu0_v3fp16_t;
-
 #	define __mu8_vec2_negate__(_Tp, __cx, __cy, __ax, __ay)                                           \
 mu0_scope_begin                                                                                      \
 	(__cx) = -(__ax);                                                                                 \
