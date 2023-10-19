@@ -35,10 +35,11 @@ int main(int argc, const char * argv[])
 	mu0_cfp16_t  x5 = mu8_ini(mu0_cfp16_t, 1);
 	mu0_sint16_t x6 = mu8_ini(mu0_sint16_t, 1);
 
-	printf("%d\n", mu0_is_complex_number(x6));
+	mu0_console_log("%d\n", mu0_is_complex_number(x6));
 
 	mu0_unused(argc);
 	mu0_unused(argv);
+
 	return 0;
 }
 

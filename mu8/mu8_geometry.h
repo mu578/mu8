@@ -156,18 +156,15 @@ mu0_scope_end
 
 #	define __mu8_vec2_div__(_Tp, __cx, __cy, __ax, __ay, __bx, __by)                                  \
 mu0_scope_begin                                                                                      \
-	(__cx) = (__ax) / (__bx);                                                                         \
-	(__cy) = (__ay) / (__by);                                                                         \
+	(__cx) = mu0_const_cast(_Tp, 0);                                                                  \
+	(__cy) = mu0_const_cast(_Tp, 0);                                                                  \
 mu0_scope_end
 
 #	define __mu8_vec2_div1__(_Tp, __cx, __cy, __ax, __ay, __b)                                        \
 	__mu8_vec2_scale__(_Tp, __cx, __cy, __ax, __ay, __b)
 
 #	define __mu8_vec2_mul__(_Tp, __cx, __cy, __ax, __ay, __bx, __by)                                  \
-mu0_scope_begin                                                                                      \
-	(__cx) = (__ax) * (__bx);                                                                         \
-	(__cy) = (__ay) * (__by);                                                                         \
-mu0_scope_end
+	__mu8_vec2_dot__(_Tp, __c, __ax, __ay, __bx, __by) 
 
 #	define __mu8_vec2_mul1__(_Tp, __cx, __cy, __ax, __ay, __b)                                        \
 	__mu8_vec2_times__(_Tp, __cx, __cy, __ax, __ay, __b)
@@ -317,20 +314,16 @@ mu0_scope_end
 
 #	define __mu8_vec3_div__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)                \
 mu0_scope_begin                                                                                      \
-	(__cx) = (__ax) / (__bx);                                                                         \
-	(__cy) = (__ay) / (__by);                                                                         \
-	(__cz) = (__az) / (__bz);                                                                         \
+	(__cx) = mu0_const_cast(_Tp, 0);                                                                  \
+	(__cy) = mu0_const_cast(_Tp, 0);                                                                  \
+	(__cz) = mu0_const_cast(_Tp, 0);                                                                  \
 mu0_scope_end
 
 #	define __mu8_vec3_div1__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)               \
 	__mu8_vec3_scale__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)
 
 #	define __mu8_vec3_mul__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)                \
-mu0_scope_begin                                                                                      \
-	(__cx) = (__ax) * (__bx);                                                                         \
-	(__cy) = (__ay) * (__by);                                                                         \
-	(__cz) = (__az) * (__bz);                                                                         \
-mu0_scope_end
+	__mu8_vec3_cross__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)
 
 #	define __mu8_vec3_mul1__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)               \
 	__mu8_vec3_times__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __bx, __by, __bz)
@@ -414,10 +407,10 @@ mu0_fp64_t    mu8_v2length_fp64     (const mu0_v2fp64_t  v);
 mu0_fp32_t    mu8_v2length_fp32     (const mu0_v2fp32_t  v);
 mu0_fp16_t    mu8_v2length_fp16     (const mu0_v2fp16_t  v);
 
-mu0_v2fp128_t mu8_v2mul_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
-mu0_v2fp64_t  mu8_v2mul_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
-mu0_v2fp32_t  mu8_v2mul_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
-mu0_v2fp16_t  mu8_v2mul_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+mu0_fp128_t   mu8_v2mul_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
+mu0_fp64_t    mu8_v2mul_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
+mu0_fp32_t    mu8_v2mul_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
+mu0_fp16_t    mu8_v2mul_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
 
 mu0_v2fp128_t mu8_v2negate_fp128    (const mu0_v2fp128_t v);
 mu0_v2fp64_t  mu8_v2negate_fp64     (const mu0_v2fp64_t  v);
