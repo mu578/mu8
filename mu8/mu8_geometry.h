@@ -332,175 +332,175 @@ mu0_scope_begin                                                                 
 	(__cz) = (__az) - (__b);                                                                          \
 mu0_scope_end
 
-mu0_fp128_t   mu8_v2abs_fp128       (const mu0_v2fp128_t v);
-mu0_fp64_t    mu8_v2abs_fp64        (const mu0_v2fp64_t  v);
-mu0_fp32_t    mu8_v2abs_fp32        (const mu0_v2fp32_t  v);
-mu0_fp16_t    mu8_v2abs_fp16        (const mu0_v2fp16_t  v);
+__mu0_static_inline__ mu0_fp128_t   mu8_v2abs_fp128       (const mu0_v2fp128_t v);
+__mu0_static_inline__ mu0_fp64_t    mu8_v2abs_fp64        (const mu0_v2fp64_t  v);
+__mu0_static_inline__ mu0_fp32_t    mu8_v2abs_fp32        (const mu0_v2fp32_t  v);
+__mu0_static_inline__ mu0_fp16_t    mu8_v2abs_fp16        (const mu0_v2fp16_t  v);
 
-mu0_v2fp128_t mu8_v2angle_fp128     (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
-mu0_v2fp64_t  mu8_v2angle_fp64      (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
-mu0_v2fp32_t  mu8_v2angle_fp32      (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
-mu0_v2fp16_t  mu8_v2angle_fp16      (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+__mu0_static_inline__ mu0_v2fp128_t mu8_v2angle_fp128     (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
+__mu0_static_inline__ mu0_v2fp64_t  mu8_v2angle_fp64      (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
+__mu0_static_inline__ mu0_v2fp32_t  mu8_v2angle_fp32      (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
+__mu0_static_inline__ mu0_v2fp16_t  mu8_v2angle_fp16      (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
 
-mu0_v2fp128_t mu8_v2add_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
-mu0_v2fp64_t  mu8_v2add_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
-mu0_v2fp32_t  mu8_v2add_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
-mu0_v2fp16_t  mu8_v2add_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+__mu0_static_inline__ mu0_v2fp128_t mu8_v2add_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
+__mu0_static_inline__ mu0_v2fp64_t  mu8_v2add_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
+__mu0_static_inline__ mu0_v2fp32_t  mu8_v2add_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
+__mu0_static_inline__ mu0_v2fp16_t  mu8_v2add_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
 
-mu0_fp128_t   mu8_v2arg_fp128       (const mu0_v2fp128_t v);
-mu0_fp64_t    mu8_v2arg_fp64        (const mu0_v2fp64_t  v);
-mu0_fp32_t    mu8_v2arg_fp32        (const mu0_v2fp32_t  v);
-mu0_fp16_t    mu8_v2arg_fp16        (const mu0_v2fp16_t  v);
+__mu0_static_inline__ mu0_fp128_t   mu8_v2arg_fp128       (const mu0_v2fp128_t v);
+__mu0_static_inline__ mu0_fp64_t    mu8_v2arg_fp64        (const mu0_v2fp64_t  v);
+__mu0_static_inline__ mu0_fp32_t    mu8_v2arg_fp32        (const mu0_v2fp32_t  v);
+__mu0_static_inline__ mu0_fp16_t    mu8_v2arg_fp16        (const mu0_v2fp16_t  v);
 
-mu0_bool_t    mu8_v2equals_fp128    (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
-mu0_bool_t    mu8_v2equals_fp64     (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
-mu0_bool_t    mu8_v2equals_fp32     (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
-mu0_bool_t    mu8_v2equals_fp16     (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+__mu0_static_inline__ mu0_bool_t    mu8_v2equals_fp128    (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
+__mu0_static_inline__ mu0_bool_t    mu8_v2equals_fp64     (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
+__mu0_static_inline__ mu0_bool_t    mu8_v2equals_fp32     (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
+__mu0_static_inline__ mu0_bool_t    mu8_v2equals_fp16     (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
 
-mu0_v2fp128_t mu8_v2direction_fp128 (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
-mu0_v2fp64_t  mu8_v2direction_fp64  (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
-mu0_v2fp32_t  mu8_v2direction_fp32  (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
-mu0_v2fp16_t  mu8_v2direction_fp16  (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+__mu0_static_inline__ mu0_v2fp128_t mu8_v2direction_fp128 (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
+__mu0_static_inline__ mu0_v2fp64_t  mu8_v2direction_fp64  (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
+__mu0_static_inline__ mu0_v2fp32_t  mu8_v2direction_fp32  (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
+__mu0_static_inline__ mu0_v2fp16_t  mu8_v2direction_fp16  (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
 
-mu0_v2fp128_t mu8_v2distance_fp128  (const mu0_v2fp128_t v);
-mu0_v2fp64_t  mu8_v2distance_fp64   (const mu0_v2fp64_t  v);
-mu0_v2fp32_t  mu8_v2distance_fp32   (const mu0_v2fp32_t  v);
-mu0_v2fp16_t  mu8_v2distance_fp16   (const mu0_v2fp16_t  v);
+__mu0_static_inline__ mu0_v2fp128_t mu8_v2distance_fp128  (const mu0_v2fp128_t v);
+__mu0_static_inline__ mu0_v2fp64_t  mu8_v2distance_fp64   (const mu0_v2fp64_t  v);
+__mu0_static_inline__ mu0_v2fp32_t  mu8_v2distance_fp32   (const mu0_v2fp32_t  v);
+__mu0_static_inline__ mu0_v2fp16_t  mu8_v2distance_fp16   (const mu0_v2fp16_t  v);
 
-mu0_v2fp128_t mu8_v2div_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
-mu0_v2fp64_t  mu8_v2div_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
-mu0_v2fp32_t  mu8_v2div_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
-mu0_v2fp16_t  mu8_v2div_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+__mu0_static_inline__ mu0_v2fp128_t mu8_v2div_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
+__mu0_static_inline__ mu0_v2fp64_t  mu8_v2div_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
+__mu0_static_inline__ mu0_v2fp32_t  mu8_v2div_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
+__mu0_static_inline__ mu0_v2fp16_t  mu8_v2div_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
 
-mu0_v2fp128_t mu8_v2dot_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
-mu0_v2fp64_t  mu8_v2dot_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
-mu0_v2fp32_t  mu8_v2dot_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
-mu0_v2fp16_t  mu8_v2dot_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+__mu0_static_inline__ mu0_v2fp128_t mu8_v2dot_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
+__mu0_static_inline__ mu0_v2fp64_t  mu8_v2dot_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
+__mu0_static_inline__ mu0_v2fp32_t  mu8_v2dot_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
+__mu0_static_inline__ mu0_v2fp16_t  mu8_v2dot_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
 
-mu0_v2fp128_t mu8_v2cross_fp128     (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
-mu0_v2fp64_t  mu8_v2cross_fp64      (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
-mu0_v2fp32_t  mu8_v2cross_fp32      (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
-mu0_v2fp16_t  mu8_v2cross_fp16      (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+__mu0_static_inline__ mu0_v2fp128_t mu8_v2cross_fp128     (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
+__mu0_static_inline__ mu0_v2fp64_t  mu8_v2cross_fp64      (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
+__mu0_static_inline__ mu0_v2fp32_t  mu8_v2cross_fp32      (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
+__mu0_static_inline__ mu0_v2fp16_t  mu8_v2cross_fp16      (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
 
-mu0_v2fp128_t mu8_v2conj_fp128      (const mu0_v2fp128_t v);
-mu0_v2fp64_t  mu8_v2conj_fp64       (const mu0_v2fp64_t  v);
-mu0_v2fp32_t  mu8_v2conj_fp32       (const mu0_v2fp32_t  v);
-mu0_v2fp16_t  mu8_v2conj_fp16       (const mu0_v2fp16_t  v);
+__mu0_static_inline__ mu0_v2fp128_t mu8_v2conj_fp128      (const mu0_v2fp128_t v);
+__mu0_static_inline__ mu0_v2fp64_t  mu8_v2conj_fp64       (const mu0_v2fp64_t  v);
+__mu0_static_inline__ mu0_v2fp32_t  mu8_v2conj_fp32       (const mu0_v2fp32_t  v);
+__mu0_static_inline__ mu0_v2fp16_t  mu8_v2conj_fp16       (const mu0_v2fp16_t  v);
 
-mu0_v2fp128_t mu8_v2lerp_fp128      (const mu0_v2fp128_t v, const mu0_v2fp128_t u, const mu0_fp128_t t);
-mu0_v2fp64_t  mu8_v2lerp_fp64       (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u, const mu0_fp64_t  t);
-mu0_v2fp32_t  mu8_v2lerp_fp32       (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u, const mu0_fp32_t  t);
-mu0_v2fp16_t  mu8_v2lerp_fp16       (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u, const mu0_fp16_t  t);
+__mu0_static_inline__ mu0_v2fp128_t mu8_v2lerp_fp128      (const mu0_v2fp128_t v, const mu0_v2fp128_t u, const mu0_fp128_t t);
+__mu0_static_inline__ mu0_v2fp64_t  mu8_v2lerp_fp64       (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u, const mu0_fp64_t  t);
+__mu0_static_inline__ mu0_v2fp32_t  mu8_v2lerp_fp32       (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u, const mu0_fp32_t  t);
+__mu0_static_inline__ mu0_v2fp16_t  mu8_v2lerp_fp16       (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u, const mu0_fp16_t  t);
 
-mu0_fp128_t   mu8_v2length_fp128    (const mu0_v2fp128_t v);
-mu0_fp64_t    mu8_v2length_fp64     (const mu0_v2fp64_t  v);
-mu0_fp32_t    mu8_v2length_fp32     (const mu0_v2fp32_t  v);
-mu0_fp16_t    mu8_v2length_fp16     (const mu0_v2fp16_t  v);
+__mu0_static_inline__ mu0_fp128_t   mu8_v2length_fp128    (const mu0_v2fp128_t v);
+__mu0_static_inline__ mu0_fp64_t    mu8_v2length_fp64     (const mu0_v2fp64_t  v);
+__mu0_static_inline__ mu0_fp32_t    mu8_v2length_fp32     (const mu0_v2fp32_t  v);
+__mu0_static_inline__ mu0_fp16_t    mu8_v2length_fp16     (const mu0_v2fp16_t  v);
 
-mu0_fp128_t   mu8_v2mul_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
-mu0_fp64_t    mu8_v2mul_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
-mu0_fp32_t    mu8_v2mul_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
-mu0_fp16_t    mu8_v2mul_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+__mu0_static_inline__ mu0_fp128_t   mu8_v2mul_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
+__mu0_static_inline__ mu0_fp64_t    mu8_v2mul_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
+__mu0_static_inline__ mu0_fp32_t    mu8_v2mul_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
+__mu0_static_inline__ mu0_fp16_t    mu8_v2mul_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
 
-mu0_v2fp128_t mu8_v2negate_fp128    (const mu0_v2fp128_t v);
-mu0_v2fp64_t  mu8_v2negate_fp64     (const mu0_v2fp64_t  v);
-mu0_v2fp32_t  mu8_v2negate_fp32     (const mu0_v2fp32_t  v);
-mu0_v2fp16_t  mu8_v2negate_fp16     (const mu0_v2fp16_t  v);
+__mu0_static_inline__ mu0_v2fp128_t mu8_v2negate_fp128    (const mu0_v2fp128_t v);
+__mu0_static_inline__ mu0_v2fp64_t  mu8_v2negate_fp64     (const mu0_v2fp64_t  v);
+__mu0_static_inline__ mu0_v2fp32_t  mu8_v2negate_fp32     (const mu0_v2fp32_t  v);
+__mu0_static_inline__ mu0_v2fp16_t  mu8_v2negate_fp16     (const mu0_v2fp16_t  v);
 
-mu0_v2fp128_t mu8_v2normalize_fp128 (const mu0_v2fp128_t v);
-mu0_v2fp64_t  mu8_v2normalize_fp64  (const mu0_v2fp64_t  v);
-mu0_v2fp32_t  mu8_v2normalize_fp32  (const mu0_v2fp32_t  v);
-mu0_v2fp16_t  mu8_v2normalize_fp16  (const mu0_v2fp16_t  v);
+__mu0_static_inline__ mu0_v2fp128_t mu8_v2normalize_fp128 (const mu0_v2fp128_t v);
+__mu0_static_inline__ mu0_v2fp64_t  mu8_v2normalize_fp64  (const mu0_v2fp64_t  v);
+__mu0_static_inline__ mu0_v2fp32_t  mu8_v2normalize_fp32  (const mu0_v2fp32_t  v);
+__mu0_static_inline__ mu0_v2fp16_t  mu8_v2normalize_fp16  (const mu0_v2fp16_t  v);
 
-mu0_v2fp128_t mu8_v2sub_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
-mu0_v2fp64_t  mu8_v2sub_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
-mu0_v2fp32_t  mu8_v2sub_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
-mu0_v2fp16_t  mu8_v2sub_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+__mu0_static_inline__ mu0_v2fp128_t mu8_v2sub_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
+__mu0_static_inline__ mu0_v2fp64_t  mu8_v2sub_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
+__mu0_static_inline__ mu0_v2fp32_t  mu8_v2sub_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
+__mu0_static_inline__ mu0_v2fp16_t  mu8_v2sub_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
 
-mu0_fp128_t   mu8_v3abs_fp128       (const mu0_v3fp128_t v);
-mu0_fp64_t    mu8_v3abs_fp64        (const mu0_v3fp64_t  v);
-mu0_fp32_t    mu8_v3abs_fp32        (const mu0_v3fp32_t  v);
-mu0_fp16_t    mu8_v3abs_fp16        (const mu0_v3fp16_t  v);
+__mu0_static_inline__ mu0_fp128_t   mu8_v3abs_fp128       (const mu0_v3fp128_t v);
+__mu0_static_inline__ mu0_fp64_t    mu8_v3abs_fp64        (const mu0_v3fp64_t  v);
+__mu0_static_inline__ mu0_fp32_t    mu8_v3abs_fp32        (const mu0_v3fp32_t  v);
+__mu0_static_inline__ mu0_fp16_t    mu8_v3abs_fp16        (const mu0_v3fp16_t  v);
 
-mu0_v3fp128_t mu8_v3angle_fp128     (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
-mu0_v3fp64_t  mu8_v3angle_fp64      (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
-mu0_v3fp32_t  mu8_v3angle_fp32      (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
-mu0_v3fp16_t  mu8_v3angle_fp16      (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
+__mu0_static_inline__ mu0_v3fp128_t mu8_v3angle_fp128     (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
+__mu0_static_inline__ mu0_v3fp64_t  mu8_v3angle_fp64      (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
+__mu0_static_inline__ mu0_v3fp32_t  mu8_v3angle_fp32      (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
+__mu0_static_inline__ mu0_v3fp16_t  mu8_v3angle_fp16      (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
 
-mu0_v3fp128_t mu8_v3add_fp128       (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
-mu0_v3fp64_t  mu8_v3add_fp64        (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
-mu0_v3fp32_t  mu8_v3add_fp32        (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
-mu0_v3fp16_t  mu8_v3add_fp16        (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
+__mu0_static_inline__ mu0_v3fp128_t mu8_v3add_fp128       (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
+__mu0_static_inline__ mu0_v3fp64_t  mu8_v3add_fp64        (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
+__mu0_static_inline__ mu0_v3fp32_t  mu8_v3add_fp32        (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
+__mu0_static_inline__ mu0_v3fp16_t  mu8_v3add_fp16        (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
 
-mu0_fp128_t   mu8_v3arg_fp128       (const mu0_v3fp128_t v);
-mu0_fp64_t    mu8_v3arg_fp64        (const mu0_v3fp64_t  v);
-mu0_fp32_t    mu8_v3arg_fp32        (const mu0_v3fp32_t  v);
-mu0_fp16_t    mu8_v3arg_fp16        (const mu0_v3fp16_t  v);
+__mu0_static_inline__ mu0_fp128_t   mu8_v3arg_fp128       (const mu0_v3fp128_t v);
+__mu0_static_inline__ mu0_fp64_t    mu8_v3arg_fp64        (const mu0_v3fp64_t  v);
+__mu0_static_inline__ mu0_fp32_t    mu8_v3arg_fp32        (const mu0_v3fp32_t  v);
+__mu0_static_inline__ mu0_fp16_t    mu8_v3arg_fp16        (const mu0_v3fp16_t  v);
 
-mu0_bool_t    mu8_v3equals_fp128    (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
-mu0_bool_t    mu8_v3equals_fp64     (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
-mu0_bool_t    mu8_v3equals_fp32     (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
-mu0_bool_t    mu8_v3equals_fp16     (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
+__mu0_static_inline__ mu0_bool_t    mu8_v3equals_fp128    (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
+__mu0_static_inline__ mu0_bool_t    mu8_v3equals_fp64     (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
+__mu0_static_inline__ mu0_bool_t    mu8_v3equals_fp32     (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
+__mu0_static_inline__ mu0_bool_t    mu8_v3equals_fp16     (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
 
-mu0_v3fp128_t mu8_v3direction_fp128 (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
-mu0_v3fp64_t  mu8_v3direction_fp64  (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
-mu0_v3fp32_t  mu8_v3direction_fp32  (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
-mu0_v3fp16_t  mu8_v3direction_fp16  (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
+__mu0_static_inline__ mu0_v3fp128_t mu8_v3direction_fp128 (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
+__mu0_static_inline__ mu0_v3fp64_t  mu8_v3direction_fp64  (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
+__mu0_static_inline__ mu0_v3fp32_t  mu8_v3direction_fp32  (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
+__mu0_static_inline__ mu0_v3fp16_t  mu8_v3direction_fp16  (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
 
-mu0_v3fp128_t mu8_v3distance_fp128  (const mu0_v3fp128_t v);
-mu0_v3fp64_t  mu8_v3distance_fp64   (const mu0_v3fp64_t  v);
-mu0_v3fp32_t  mu8_v3distance_fp32   (const mu0_v3fp32_t  v);
-mu0_v3fp16_t  mu8_v3distance_fp16   (const mu0_v3fp16_t  v);
+__mu0_static_inline__ mu0_v3fp128_t mu8_v3distance_fp128  (const mu0_v3fp128_t v);
+__mu0_static_inline__ mu0_v3fp64_t  mu8_v3distance_fp64   (const mu0_v3fp64_t  v);
+__mu0_static_inline__ mu0_v3fp32_t  mu8_v3distance_fp32   (const mu0_v3fp32_t  v);
+__mu0_static_inline__ mu0_v3fp16_t  mu8_v3distance_fp16   (const mu0_v3fp16_t  v);
 
-mu0_v3fp128_t mu8_v3div_fp128       (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
-mu0_v3fp64_t  mu8_v3div_fp64        (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
-mu0_v3fp32_t  mu8_v3div_fp32        (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
-mu0_v3fp16_t  mu8_v3div_fp16        (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
+__mu0_static_inline__ mu0_v3fp128_t mu8_v3div_fp128       (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
+__mu0_static_inline__ mu0_v3fp64_t  mu8_v3div_fp64        (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
+__mu0_static_inline__ mu0_v3fp32_t  mu8_v3div_fp32        (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
+__mu0_static_inline__ mu0_v3fp16_t  mu8_v3div_fp16        (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
 
-mu0_v3fp128_t mu8_v3dot_fp128       (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
-mu0_v3fp64_t  mu8_v3dot_fp64        (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
-mu0_v3fp32_t  mu8_v3dot_fp32        (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
-mu0_v3fp16_t  mu8_v3dot_fp16        (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
+__mu0_static_inline__ mu0_v3fp128_t mu8_v3dot_fp128       (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
+__mu0_static_inline__ mu0_v3fp64_t  mu8_v3dot_fp64        (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
+__mu0_static_inline__ mu0_v3fp32_t  mu8_v3dot_fp32        (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
+__mu0_static_inline__ mu0_v3fp16_t  mu8_v3dot_fp16        (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
 
-mu0_v3fp128_t mu8_v3conj_fp128      (const mu0_v3fp128_t v);
-mu0_v3fp64_t  mu8_v3conj_fp64       (const mu0_v3fp64_t  v);
-mu0_v3fp32_t  mu8_v3conj_fp32       (const mu0_v3fp32_t  v);
-mu0_v3fp16_t  mu8_v3conj_fp16       (const mu0_v3fp16_t  v);
+__mu0_static_inline__ mu0_v3fp128_t mu8_v3conj_fp128      (const mu0_v3fp128_t v);
+__mu0_static_inline__ mu0_v3fp64_t  mu8_v3conj_fp64       (const mu0_v3fp64_t  v);
+__mu0_static_inline__ mu0_v3fp32_t  mu8_v3conj_fp32       (const mu0_v3fp32_t  v);
+__mu0_static_inline__ mu0_v3fp16_t  mu8_v3conj_fp16       (const mu0_v3fp16_t  v);
 
-mu0_v3fp128_t mu8_v3cross_fp128     (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
-mu0_v3fp64_t  mu8_v3cross_fp64      (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
-mu0_v3fp32_t  mu8_v3cross_fp32      (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
-mu0_v3fp16_t  mu8_v3cross_fp16      (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
+__mu0_static_inline__ mu0_v3fp128_t mu8_v3cross_fp128     (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
+__mu0_static_inline__ mu0_v3fp64_t  mu8_v3cross_fp64      (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
+__mu0_static_inline__ mu0_v3fp32_t  mu8_v3cross_fp32      (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
+__mu0_static_inline__ mu0_v3fp16_t  mu8_v3cross_fp16      (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
 
-mu0_v3fp128_t mu8_v3lerp_fp128      (const mu0_v3fp128_t v, const mu0_v3fp128_t u, const mu0_fp128_t t);
-mu0_v3fp64_t  mu8_v3lerp_fp64       (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u, const mu0_fp64_t  t);
-mu0_v3fp32_t  mu8_v3lerp_fp32       (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u, const mu0_fp32_t  t);
-mu0_v3fp16_t  mu8_v3lerp_fp16       (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u, const mu0_fp16_t  t);
+__mu0_static_inline__ mu0_v3fp128_t mu8_v3lerp_fp128      (const mu0_v3fp128_t v, const mu0_v3fp128_t u, const mu0_fp128_t t);
+__mu0_static_inline__ mu0_v3fp64_t  mu8_v3lerp_fp64       (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u, const mu0_fp64_t  t);
+__mu0_static_inline__ mu0_v3fp32_t  mu8_v3lerp_fp32       (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u, const mu0_fp32_t  t);
+__mu0_static_inline__ mu0_v3fp16_t  mu8_v3lerp_fp16       (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u, const mu0_fp16_t  t);
 
-mu0_fp128_t   mu8_v3length_fp128    (const mu0_v3fp128_t v);
-mu0_fp64_t    mu8_v3length_fp64     (const mu0_v3fp64_t  v);
-mu0_fp32_t    mu8_v3length_fp32     (const mu0_v3fp32_t  v);
-mu0_fp16_t    mu8_v3length_fp16     (const mu0_v3fp16_t  v);
+__mu0_static_inline__ mu0_fp128_t   mu8_v3length_fp128    (const mu0_v3fp128_t v);
+__mu0_static_inline__ mu0_fp64_t    mu8_v3length_fp64     (const mu0_v3fp64_t  v);
+__mu0_static_inline__ mu0_fp32_t    mu8_v3length_fp32     (const mu0_v3fp32_t  v);
+__mu0_static_inline__ mu0_fp16_t    mu8_v3length_fp16     (const mu0_v3fp16_t  v);
 
-mu0_v3fp128_t mu8_v3mul_fp128       (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
-mu0_v3fp64_t  mu8_v3mul_fp64        (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
-mu0_v3fp32_t  mu8_v3mul_fp32        (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
-mu0_v3fp16_t  mu8_v3mul_fp16        (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
+__mu0_static_inline__ mu0_v3fp128_t mu8_v3mul_fp128       (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
+__mu0_static_inline__ mu0_v3fp64_t  mu8_v3mul_fp64        (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
+__mu0_static_inline__ mu0_v3fp32_t  mu8_v3mul_fp32        (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
+__mu0_static_inline__ mu0_v3fp16_t  mu8_v3mul_fp16        (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
 
-mu0_v3fp128_t mu8_v3negate_fp128    (const mu0_v3fp128_t v);
-mu0_v3fp64_t  mu8_v3negate_fp64     (const mu0_v3fp64_t  v);
-mu0_v3fp32_t  mu8_v3negate_fp32     (const mu0_v3fp32_t  v);
-mu0_v3fp16_t  mu8_v3negate_fp16     (const mu0_v3fp16_t  v);
+__mu0_static_inline__ mu0_v3fp128_t mu8_v3negate_fp128    (const mu0_v3fp128_t v);
+__mu0_static_inline__ mu0_v3fp64_t  mu8_v3negate_fp64     (const mu0_v3fp64_t  v);
+__mu0_static_inline__ mu0_v3fp32_t  mu8_v3negate_fp32     (const mu0_v3fp32_t  v);
+__mu0_static_inline__ mu0_v3fp16_t  mu8_v3negate_fp16     (const mu0_v3fp16_t  v);
 
-mu0_v3fp128_t mu8_v3normalize_fp128 (const mu0_v3fp128_t v);
-mu0_v3fp64_t  mu8_v3normalize_fp64  (const mu0_v3fp64_t  v);
-mu0_v3fp32_t  mu8_v3normalize_fp32  (const mu0_v3fp32_t  v);
-mu0_v3fp16_t  mu8_v3normalize_fp16  (const mu0_v3fp16_t  v);
+__mu0_static_inline__ mu0_v3fp128_t mu8_v3normalize_fp128 (const mu0_v3fp128_t v);
+__mu0_static_inline__ mu0_v3fp64_t  mu8_v3normalize_fp64  (const mu0_v3fp64_t  v);
+__mu0_static_inline__ mu0_v3fp32_t  mu8_v3normalize_fp32  (const mu0_v3fp32_t  v);
+__mu0_static_inline__ mu0_v3fp16_t  mu8_v3normalize_fp16  (const mu0_v3fp16_t  v);
 
-mu0_v3fp128_t mu8_v3sub_fp128       (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
-mu0_v3fp64_t  mu8_v3sub_fp64        (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
-mu0_v3fp32_t  mu8_v3sub_fp32        (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
-mu0_v3fp16_t  mu8_v3sub_fp16        (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
+__mu0_static_inline__ mu0_v3fp128_t mu8_v3sub_fp128       (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
+__mu0_static_inline__ mu0_v3fp64_t  mu8_v3sub_fp64        (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
+__mu0_static_inline__ mu0_v3fp32_t  mu8_v3sub_fp32        (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
+__mu0_static_inline__ mu0_v3fp16_t  mu8_v3sub_fp16        (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
 
 MU0_END_CDECL
 
