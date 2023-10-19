@@ -367,10 +367,10 @@ __mu0_static_inline__ mu0_v2fp64_t  mu8_v2distance_fp64   (const mu0_v2fp64_t  v
 __mu0_static_inline__ mu0_v2fp32_t  mu8_v2distance_fp32   (const mu0_v2fp32_t  v);
 __mu0_static_inline__ mu0_v2fp16_t  mu8_v2distance_fp16   (const mu0_v2fp16_t  v);
 
-__mu0_static_inline__ mu0_v2fp128_t mu8_v2div_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
-__mu0_static_inline__ mu0_v2fp64_t  mu8_v2div_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
-__mu0_static_inline__ mu0_v2fp32_t  mu8_v2div_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
-__mu0_static_inline__ mu0_v2fp16_t  mu8_v2div_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+__mu0_static_inline__ mu0_v2fp128_t mu8_v2div_fp128       (const mu0_v2fp128_t v, const mu0_fp128_t a);
+__mu0_static_inline__ mu0_v2fp64_t  mu8_v2div_fp64        (const mu0_v2fp64_t  v, const mu0_fp64_t  a);
+__mu0_static_inline__ mu0_v2fp32_t  mu8_v2div_fp32        (const mu0_v2fp32_t  v, const mu0_fp32_t  a);
+__mu0_static_inline__ mu0_v2fp16_t  mu8_v2div_fp16        (const mu0_v2fp16_t  v, const mu0_fp16_t  a);
 
 __mu0_static_inline__ mu0_v2fp128_t mu8_v2dot_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
 __mu0_static_inline__ mu0_v2fp64_t  mu8_v2dot_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
@@ -452,10 +452,10 @@ __mu0_static_inline__ mu0_v3fp64_t  mu8_v3distance_fp64   (const mu0_v3fp64_t  v
 __mu0_static_inline__ mu0_v3fp32_t  mu8_v3distance_fp32   (const mu0_v3fp32_t  v);
 __mu0_static_inline__ mu0_v3fp16_t  mu8_v3distance_fp16   (const mu0_v3fp16_t  v);
 
-__mu0_static_inline__ mu0_v3fp128_t mu8_v3div_fp128       (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
-__mu0_static_inline__ mu0_v3fp64_t  mu8_v3div_fp64        (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
-__mu0_static_inline__ mu0_v3fp32_t  mu8_v3div_fp32        (const mu0_v3fp32_t  v, const mu0_v3fp32_t  u);
-__mu0_static_inline__ mu0_v3fp16_t  mu8_v3div_fp16        (const mu0_v3fp16_t  v, const mu0_v3fp16_t  u);
+__mu0_static_inline__ mu0_v3fp128_t mu8_v3div_fp128       (const mu0_v3fp128_t v, const mu0_fp128_t a);
+__mu0_static_inline__ mu0_v3fp64_t  mu8_v3div_fp64        (const mu0_v3fp64_t  v, const mu0_fp64_t  a);
+__mu0_static_inline__ mu0_v3fp32_t  mu8_v3div_fp32        (const mu0_v3fp32_t  v, const mu0_fp32_t  a);
+__mu0_static_inline__ mu0_v3fp16_t  mu8_v3div_fp16        (const mu0_v3fp16_t  v, const mu0_fp16_t  a);
 
 __mu0_static_inline__ mu0_v3fp128_t mu8_v3dot_fp128       (const mu0_v3fp128_t v, const mu0_v3fp128_t u);
 __mu0_static_inline__ mu0_v3fp64_t  mu8_v3dot_fp64        (const mu0_v3fp64_t  v, const mu0_v3fp64_t  u);
