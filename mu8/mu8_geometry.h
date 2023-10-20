@@ -41,9 +41,10 @@ mu0_scope_end
 
 #	define __mu8_vec2_normalize__(_Tp, _RealFp, __cx, __cy, __ax, __ay)                               \
 mu0_scope_begin                                                                                      \
-	__mu8_vec2_mag__(_Tp, _RealFp, __c, __ax, __ay);                                                  \
-	(__cx) = (__ax) * (mu0_const_cast(_RealFp, 1) / (__c));                                           \
-	(__cy) = (__ay) * (mu0_const_cast(_RealFp, 1) / (__c));                                           \
+	_RealFp __mu8_vec2_normalize__c__;                                                                \
+	__mu8_vec2_mag__(_Tp, _RealFp, __mu8_vec2_normalize__c__, __ax, __ay);                            \
+	(__cx) = (__ax) * (mu0_const_cast(_RealFp, 1) / (__mu8_vec2_normalize__c__));                     \
+	(__cy) = (__ay) * (mu0_const_cast(_RealFp, 1) / (__mu8_vec2_normalize__c__));                     \
 mu0_scope_end
 
 #	define __mu8_vec2_area__(_Tp, __c, __ax, __ay, __bx, __by)                                        \
@@ -74,7 +75,7 @@ mu0_scope_begin                                                                 
 	);                                                                                                \
 	(__c) = ((__c) < mu0_const_cast(_RealFp, 0)                                                       \
 		? (__c)                                                                                        \
-		: (__c) + mu0_const_cast(_RealFp, __mu8_math_2pi__);                                           \
+		: (__c) + mu0_const_cast(_RealFp, __mu8_math_2pi__)                                            \
 	);                                                                                                \
 mu0_scope_end
 
@@ -102,7 +103,9 @@ mu0_scope_begin                                                                 
 mu0_scope_end
 
 #	define __mu8_vec2_equals__(_Tp, __c, __ax, __ay, __bx, __by)                                      \
-	((__ax) == (__bx) && (__ay) == (__by) ? mu0_true : mu0_false)
+mu0_scope_begin                                                                                      \
+	(__c) = ((__ax) == (__bx) && (__ay) == (__by) ? mu0_true : mu0_false);                            \
+mu0_scope_end
 
 #	define __mu8_vec2_scale__(_Tp, __cx, __cy, __ax, __ay, __b)                                       \
 mu0_scope_begin                                                                                      \
@@ -256,7 +259,9 @@ mu0_scope_begin                                                                 
 mu0_scope_end
 
 #	define __mu8_vec3_equals__(_Tp, __c, __ax, __ay, __az, __bx, __by, __bz)                          \
-	((__ax) == (__bx) && (__ay) == (__by) && (__az) * (__bz) ? mu0_true : mu0_false)
+mu0_scope_begin                                                                                      \
+	(__c) = ((__ax) == (__bx) && (__ay) == (__by) && (__az) * (__bz) ? mu0_true : mu0_false);         \
+mu0_scope_end
 
 #	define __mu8_vec3_scale__(_Tp, __cx, __cy, __cz, __ax, __ay, __az, __b)                           \
 mu0_scope_begin                                                                                      \
@@ -332,40 +337,229 @@ mu0_scope_begin                                                                 
 	(__cz) = (__az) - (__b);                                                                          \
 mu0_scope_end
 
-__mu0_static_inline__ mu0_fp128_t   mu8_v2abs_fp128       (const mu0_v2fp128_t v);
-__mu0_static_inline__ mu0_fp64_t    mu8_v2abs_fp64        (const mu0_v2fp64_t  v);
-__mu0_static_inline__ mu0_fp32_t    mu8_v2abs_fp32        (const mu0_v2fp32_t  v);
-__mu0_static_inline__ mu0_fp16_t    mu8_v2abs_fp16        (const mu0_v2fp16_t  v);
+__mu0_static_inline__
+mu0_fp128_t   mu8_v2abs_fp128       (const mu0_v2fp128_t v)
+{
+	mu0_fp128_t c;
+	__mu8_vec2_abs__(mu0_fp128_t, c, v.u_x, v.u_y);
+	return c;
+}
 
-__mu0_static_inline__ mu0_v2fp128_t mu8_v2angle_fp128     (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
-__mu0_static_inline__ mu0_v2fp64_t  mu8_v2angle_fp64      (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
-__mu0_static_inline__ mu0_v2fp32_t  mu8_v2angle_fp32      (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
-__mu0_static_inline__ mu0_v2fp16_t  mu8_v2angle_fp16      (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+__mu0_static_inline__
+mu0_fp64_t    mu8_v2abs_fp64        (const mu0_v2fp64_t  v)
+{
+	mu0_fp64_t  c;
+	__mu8_vec2_abs__(mu0_fp64_t , c, v.u_x, v.u_y);
+	return c;
+}
 
-__mu0_static_inline__ mu0_v2fp128_t mu8_v2add_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
-__mu0_static_inline__ mu0_v2fp64_t  mu8_v2add_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
-__mu0_static_inline__ mu0_v2fp32_t  mu8_v2add_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
-__mu0_static_inline__ mu0_v2fp16_t  mu8_v2add_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+__mu0_static_inline__
+mu0_fp32_t    mu8_v2abs_fp32        (const mu0_v2fp32_t  v)
+{
+	mu0_fp32_t  c;
+	__mu8_vec2_abs__(mu0_fp32_t , c, v.u_x, v.u_y);
+	return c;
+}
 
-__mu0_static_inline__ mu0_fp128_t   mu8_v2arg_fp128       (const mu0_v2fp128_t v);
-__mu0_static_inline__ mu0_fp64_t    mu8_v2arg_fp64        (const mu0_v2fp64_t  v);
-__mu0_static_inline__ mu0_fp32_t    mu8_v2arg_fp32        (const mu0_v2fp32_t  v);
-__mu0_static_inline__ mu0_fp16_t    mu8_v2arg_fp16        (const mu0_v2fp16_t  v);
+__mu0_static_inline__
+mu0_fp16_t    mu8_v2abs_fp16        (const mu0_v2fp16_t  v)
+{
+	mu0_fp16_t  c;
+	__mu8_vec2_abs__(mu0_fp16_t , c, v.u_x, v.u_y);
+	return c;
+}
 
-__mu0_static_inline__ mu0_bool_t    mu8_v2equals_fp128    (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
-__mu0_static_inline__ mu0_bool_t    mu8_v2equals_fp64     (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
-__mu0_static_inline__ mu0_bool_t    mu8_v2equals_fp32     (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
-__mu0_static_inline__ mu0_bool_t    mu8_v2equals_fp16     (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+__mu0_static_inline__
+mu0_fp128_t   mu8_v2angle_fp128     (const mu0_v2fp128_t v, const mu0_v2fp128_t u)
+{
+	mu0_fp128_t c;
+	__mu8_vec2_angle__(mu0_fp128_t, mu0_fp128_t, c, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
 
-__mu0_static_inline__ mu0_v2fp128_t mu8_v2direction_fp128 (const mu0_v2fp128_t v, const mu0_v2fp128_t u);
-__mu0_static_inline__ mu0_v2fp64_t  mu8_v2direction_fp64  (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u);
-__mu0_static_inline__ mu0_v2fp32_t  mu8_v2direction_fp32  (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u);
-__mu0_static_inline__ mu0_v2fp16_t  mu8_v2direction_fp16  (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u);
+__mu0_static_inline__
+mu0_fp64_t    mu8_v2angle_fp64      (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u)
+{
+	mu0_fp64_t  c;
+	__mu8_vec2_angle__(mu0_fp64_t , mu0_fp64_t , c, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
 
-__mu0_static_inline__ mu0_v2fp128_t mu8_v2distance_fp128  (const mu0_v2fp128_t v);
-__mu0_static_inline__ mu0_v2fp64_t  mu8_v2distance_fp64   (const mu0_v2fp64_t  v);
-__mu0_static_inline__ mu0_v2fp32_t  mu8_v2distance_fp32   (const mu0_v2fp32_t  v);
-__mu0_static_inline__ mu0_v2fp16_t  mu8_v2distance_fp16   (const mu0_v2fp16_t  v);
+__mu0_static_inline__
+mu0_fp32_t    mu8_v2angle_fp32      (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u)
+{
+	mu0_fp32_t  c;
+	__mu8_vec2_angle__(mu0_fp32_t , mu0_fp32_t , c, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_fp16_t    mu8_v2angle_fp16      (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u)
+{
+	mu0_fp16_t  c;
+	__mu8_vec2_angle__(mu0_fp16_t , mu0_fp16_t , c, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_v2fp128_t mu8_v2add_fp128       (const mu0_v2fp128_t v, const mu0_v2fp128_t u)
+{
+	mu0_v2fp128_t c;
+	__mu8_vec2_add__(mu0_fp128_t, c.u_x, c.u_y, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_v2fp64_t  mu8_v2add_fp64        (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u)
+{
+	mu0_v2fp64_t  c;
+	__mu8_vec2_add__(mu0_fp64_t , c.u_x, c.u_y, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_v2fp32_t  mu8_v2add_fp32        (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u)
+{
+	mu0_v2fp32_t  c;
+	__mu8_vec2_add__(mu0_fp32_t , c.u_x, c.u_y, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_v2fp16_t  mu8_v2add_fp16        (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u)
+{
+	mu0_v2fp16_t  c;
+	__mu8_vec2_add__(mu0_fp16_t , c.u_x, c.u_y, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_fp128_t   mu8_v2arg_fp128       (const mu0_v2fp128_t v)
+{
+	mu0_fp128_t c;
+	__mu8_vec2_arg__(mu0_fp128_t, mu0_fp128_t, c, v.u_x, v.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_fp64_t    mu8_v2arg_fp64        (const mu0_v2fp64_t  v)
+{
+	mu0_fp64_t  c;
+	__mu8_vec2_arg__(mu0_fp64_t , mu0_fp64_t , c, v.u_x, v.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_fp32_t    mu8_v2arg_fp32        (const mu0_v2fp32_t  v)
+{
+	mu0_fp32_t  c;
+	__mu8_vec2_arg__(mu0_fp32_t , mu0_fp32_t , c, v.u_x, v.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_fp16_t    mu8_v2arg_fp16        (const mu0_v2fp16_t  v)
+{
+	mu0_fp16_t  c;
+	__mu8_vec2_arg__(mu0_fp16_t , mu0_fp16_t , c, v.u_x, v.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_bool_t    mu8_v2equals_fp128    (const mu0_v2fp128_t v, const mu0_v2fp128_t u)
+{
+	mu0_bool_t c;
+	__mu8_vec2_equals__(mu0_fp128_t, c, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_bool_t    mu8_v2equals_fp64     (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u)
+{
+	mu0_bool_t c;
+	__mu8_vec2_equals__(mu0_fp64_t , c, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_bool_t    mu8_v2equals_fp32     (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u)
+{
+	mu0_bool_t c;
+	__mu8_vec2_equals__(mu0_fp32_t , c, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_bool_t    mu8_v2equals_fp16     (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u)
+{
+	mu0_bool_t c;
+	__mu8_vec2_equals__(mu0_fp16_t , c, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_v2fp128_t mu8_v2direction_fp128 (const mu0_v2fp128_t v, const mu0_v2fp128_t u)
+{
+	mu0_v2fp128_t c;
+	__mu8_vec2_direction__(mu0_fp128_t, mu0_fp128_t, c.u_x, c.u_y, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_v2fp64_t  mu8_v2direction_fp64  (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u)
+{
+	mu0_v2fp64_t  c;
+	__mu8_vec2_direction__(mu0_fp64_t , mu0_fp64_t , c.u_x, c.u_y, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_v2fp32_t  mu8_v2direction_fp32  (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u)
+{
+	mu0_v2fp32_t  c;
+	__mu8_vec2_direction__(mu0_fp32_t , mu0_fp32_t , c.u_x, c.u_y, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_v2fp16_t  mu8_v2direction_fp16  (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u)
+{
+	mu0_v2fp16_t  c;
+	__mu8_vec2_direction__(mu0_fp16_t , mu0_fp16_t , c.u_x, c.u_y, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_v2fp128_t mu8_v2distance_fp128  (const mu0_v2fp128_t v, const mu0_v2fp128_t u)
+{
+	mu0_v2fp128_t c;
+	__mu8_vec2_distance__(mu0_fp128_t, mu0_fp128_t, c.u_x, c.u_y, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_v2fp64_t  mu8_v2distance_fp64   (const mu0_v2fp64_t  v, const mu0_v2fp64_t  u)
+{
+	mu0_v2fp64_t  c;
+	__mu8_vec2_distance__(mu0_fp64_t , mu0_fp64_t , c.u_x, c.u_y, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_v2fp32_t  mu8_v2distance_fp32   (const mu0_v2fp32_t  v, const mu0_v2fp32_t  u)
+{
+	mu0_v2fp32_t  c;
+	__mu8_vec2_distance__(mu0_fp32_t , mu0_fp32_t , c.u_x, c.u_y, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
+
+__mu0_static_inline__
+mu0_v2fp16_t  mu8_v2distance_fp16   (const mu0_v2fp16_t  v, const mu0_v2fp16_t  u)
+{
+	mu0_v2fp16_t  c;
+	__mu8_vec2_distance__(mu0_fp16_t , mu0_fp16_t , c.u_x, c.u_y, v.u_x, v.u_y, u.u_x, u.u_y);
+	return c;
+}
 
 __mu0_static_inline__ mu0_v2fp128_t mu8_v2div_fp128       (const mu0_v2fp128_t v, const mu0_fp128_t a);
 __mu0_static_inline__ mu0_v2fp64_t  mu8_v2div_fp64        (const mu0_v2fp64_t  v, const mu0_fp64_t  a);
